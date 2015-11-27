@@ -1,0 +1,39 @@
+import MySQLdb
+
+########
+def connect_to_mysql (user=None, passwd=None, host=None, port=None):
+    try:
+        if (user is None):
+            db = MySQLdb.connect(user="root")
+        elif (host is None):
+            db = MySQLdb.connect(user=user, passwd=passwd)
+        elif passwd is None:
+            db = MySQLdb.connect(user=user, host=host)
+        else:
+            db = MySQLdb.connect(user=user, passwd=passwd, host=host, port=port)
+            
+    except  MySQLdb.Error, e:
+        print "Error connecting to mysql as root (%s) " % (e.args[1])
+        sys.exit(1)
+ 
+    return db
+
+#########################################
+def main():
+    # mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A
+    db     = connect_to_mysql(user="genome",  host="genome-mysql.cse.ucsc.edu")
+    cursor = db.cursor()
+    [all_species, ensembl_db_name] = get_species (cursor)
+    cursor.close()
+    db.close()
+
+    parallelize (no_threads, collect_paralogues, all_species, [local_db, ensembl_db_name])
+    
+    return True
+
+
+#########################################
+if __name__ == '__main__':
+    main()
+
+
