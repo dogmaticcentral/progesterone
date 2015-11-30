@@ -23,8 +23,8 @@ end
 
 ##################################
 # read in the regions detected in the presence of P4 and oil only
-$oil_chrom = parse_chipseq_table "data/GSM857545_1_PR_oil_s_4_aligned.csv"
-$p4_chrom  = parse_chipseq_table "data/GSM857546_2_PR_P4_s_1_aligned.csv"
+$oil_chrom = parse_chipseq_table "../data/GSM857545_1_PR_oil_s_4_aligned.csv"
+$p4_chrom  = parse_chipseq_table "../data/GSM857546_2_PR_P4_s_1_aligned.csv"
 
 different_keys =  $p4_chrom.keys - $oil_chrom.keys
 if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
@@ -40,7 +40,7 @@ chromosomes = (1..19).map { |i| i.to_s} + ['X']
 total_genes_hit = 0
 chromosomes.each do |chrom|
      
-     gene_data, gene_ranges  = parse_gene_table "data/gene_ranges.chr"+chrom+ ".csv"
+     gene_data, gene_ranges  = parse_gene_table "../data/gene_ranges.chr"+chrom+ ".csv"
      overlaps, genes_not_hit = find_overlapping_regions gene_ranges, uniq_for_p4[chrom]
 
      genes_hit = {}
@@ -79,16 +79,16 @@ chromosomes.each do |chrom|
                puts " splices: "
                hash[:splices].each do |splice_data|
                     splice_name, txStart, txEnd = splice_data
-                    puts " \t #{splice_name}    #{txStart-origin}   #{txEnd - origin}  "
+                    puts " \t #{splice_name}    #{txStart-origin}   #{txEnd-origin}  "
                end
                puts " PR binding sites: "
                hash[:pr_binding_sites].each do |pr_region|
                     puts " \t #{pr_region.from-origin}    #{pr_region.to-origin}  "
                end
           else
-               outstr +=   "#{name} #{origin} #{rev_origin} "
+               outstr +=   "#{name}\t#{origin}\t#{rev_origin}\t"
                outstr +=   hash[:splices].map { |splice_data| splice_data[0] }.join","
-               outstr +=  "  "
+               outstr +=  "\t"
                outstr +=   hash[:pr_binding_sites].map {|bs|  "#{bs.from-origin}..#{bs.to-origin}" }.join","
                outstr +=  "\n"
           end
