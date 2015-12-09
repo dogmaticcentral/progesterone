@@ -15,13 +15,13 @@ def main():
     chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX"]
     for chrom in chromosomes:
         print "downloading data for", chrom
-        outf = open("../data/gene_ranges."+chrom+".csv", "w")
+        outf = open("../data_raw/gene_ranges."+chrom+".csv", "w")
         print  >>outf,  "\t".join( ["name", "name2", "txStart", "txEnd"] )
         qry  = "select g.name,  g.name2, g.txStart, g.txEnd "
         qry += "from refGene as g, gbCdnaInfo as i, refSeqStatus as s "
         qry += "where chrom='%s' " % chrom
         qry += "and i.acc=g.name  and i.type='mRNA' and i.mol='mRNA' "
-        qry += "and s.mrnaAcc=g.name and s.status = 'Validated' "
+        qry += "and s.mrnaAcc=g.name and s.status in ('Validated', 'Reviewed') "
         rows = search_db(cursor,qry)
         
         for row in rows:

@@ -1,0 +1,313 @@
+name	splice	description	strand	trsl start	trsl end	length	number of exons	PR binding region (from trsl start)
+Greb1	NM_015764	gene regulated by estrogen in breast cancer protein (Greb1), transcript variant 1, mRNA.	negative	16677420	16807692	130272	35	131408..132203:   1.1 kbp upstream from the first exon	117840..118481:   within  intron 1 	111230..111926:   within  intron 1 	104063..105217:   within  intron 1 	97423..98561:   within  intron 1 	60255..61103:   within  intron 6 	56095..56628:   within  intron 6 	51679..52251:   within  intron 8 
+Greb1	NM_001252071	gene regulated by estrogen in breast cancer protein (Greb1), transcript variant 2, mRNA.	negative	16677420	16807692	130272	33	131408..132203:   44.8 kbp upstream from the first exon	117840..118481:   31.2 kbp upstream from the first exon	111230..111926:   24.6 kbp upstream from the first exon	104063..105217:   17.4 kbp upstream from the first exon	97423..98561:   10.8 kbp upstream from the first exon	60255..61103:   within  intron 4 	56095..56628:   within  intron 4 	51679..52251:   within  intron 6 
+Foxn3	NM_183186	forkhead box N3 (Foxn3), mRNA.	negative	100433303	100688284	254981	6	244784..245293:   within  intron 1 	195098..195761:   within  intron 1 	176137..176783:   within  intron 2 	165805..166463:   within  intron 2 	163656..164374:   within  intron 2 	156550..157731:   within  intron 2 	150340..151640:   within  intron 2 	141205..141853:   within  intron 3 	140432..141061:   within  intron 3 	124054..124662:   within  intron 3 	103584..104313:   within  intron 3 	97191..98455:   within  intron 3 	87270..87830:   within  intron 4 
+Cep128	NM_181815	centrosomal protein 128 (Cep128), mRNA.	negative	92236931	92622849	385918	26	288887..289694:   within  intron 14 
+Rgs6	NM_015812	regulator of G-protein signaling 6 (Rgs6), transcript variant 1, mRNA.	positive	83717911	84263043	545132	17	470604..471228:   within  intron 12 	483566..484166:   within  intron 13 
+Rgs6	NM_001282061	regulator of G-protein signaling 6 (Rgs6), transcript variant 2, mRNA.	positive	83717911	84263043	545132	17	470604..471228:   within  intron 12 	483566..484166:   within  intron 13 
+Rgs6	NM_001310478	regulator of G-protein signaling 6 (Rgs6), transcript variant 3, mRNA.	positive	83717911	84263043	545132	18	470604..471228:   within  intron 12 	483566..484166:   within  intron 13 
+Klhl29	NM_001164493	kelch-like 29 (Klhl29), mRNA.	negative	5084273	5382488	298215	14	192486..193052:   within  intron 2 
+Myt1l	NM_001093775	myelin transcription factor 1-like (Myt1l), transcript variant 1, mRNA.	positive	30213248	30608074	394826	25	101547..102282:   within  intron 2 
+Myt1l	NM_008666	myelin transcription factor 1-like (Myt1l), transcript variant 2, mRNA.	positive	30213248	30608074	394826	25	101547..102282:   within  intron 2 
+Myt1l	NM_001093778	myelin transcription factor 1-like (Myt1l), transcript variant 4, mRNA.	positive	30213248	30608074	394826	25	101547..102282:   within  intron 2 
+Myt1l	NM_001093776	myelin transcription factor 1-like (Myt1l), transcript variant 3, mRNA.	positive	30213248	30608074	394826	25	101547..102282:   within  intron 2 
+Cog5	NM_001163126	component of oligomeric golgi complex 5 (Cog5), mRNA.	positive	32339733	32622495	282762	23	20860..21553:   within  intron 5 	103520..104321:   within  intron 6 	262367..263060:   within  intron 19 
+Stxbp6	NM_144552	syntaxin binding protein 6 (amisyn) (Stxbp6), mRNA.	negative	45953472	46175470	221998	6	197332..197939:   within  intron 1 	169288..169946:   within  intron 1 	168508..168992:   within  intron 1 	159441..160080:   within  intron 2 	71444..71922:   within  intron 2 	5552..6249:   within  intron 5 
+Npas3	NM_013780	neuronal PAS domain protein 3 (Npas3), mRNA.	positive	54349663	55173162	823499	12	689013..689412:   within  intron 5 
+Rtn1	NM_153457	reticulon 1 (Rtn1), transcript variant 1, mRNA.	negative	73312735	73510041	197306	9	145568..146275:   within  intron 1 	139075..139699:   within  intron 1 
+Rtn1	NM_001286448	reticulon 1 (Rtn1), transcript variant 3, mRNA.	negative	73312735	73510041	197306	7	145568..146275:   within  intron 1 	139075..139699:   within  intron 1 
+Gphn	NM_145965	gephyrin (Gphn), transcript variant 1, mRNA.	positive	79327641	79785756	458115	23	129705..130313:   within  intron 2 	460523..461179:   2.4 kbp downstream from the last exon
+Gphn	NM_172952	gephyrin (Gphn), transcript variant 2, mRNA.	positive	79327641	79785756	458115	24	129705..130313:   within  intron 2 	460523..461179:   2.4 kbp downstream from the last exon
+Nrxn3	NM_001198587	neurexin III (Nrxn3), transcript variant 1, mRNA.	positive	90032947	91573373	1540426	20	468205..468830:   within  intron 7 	602690..603259:   within  intron 9 	710693..711276:   within  intron 10 	856721..857238:   within  intron 14 	1238902..1239413:   within  intron 15 	1480194..1480549:   within  intron 18 
+Nrxn3	NM_001252074	neurexin III (Nrxn3), transcript variant 3, mRNA.	positive	90032947	91573373	1540426	7	468205..468830:   549.1 kbp upstream from the first exon	602690..603259:   414.7 kbp upstream from the first exon	710693..711276:   306.7 kbp upstream from the first exon	856721..857238:   160.7 kbp upstream from the first exon	1238902..1239413:   within  intron 2 	1480194..1480549:   within  intron 5 
+Nrxn3	NM_172544	neurexin III (Nrxn3), transcript variant 2, mRNA.	positive	90032947	91573373	1540426	20	468205..468830:   within  intron 6 	602690..603259:   within  intron 8 	710693..711276:   within  intron 9 	856721..857238:   within  intron 14 	1238902..1239413:   within  intron 15 	1480194..1480549:   within  intron 18 
+Ttc7b	NM_001033213	tetratricopeptide repeat domain 7B (Ttc7b), mRNA.	negative	101538979	101759032	220053	20	121161..121816:   within  intron 5 	51182..51721:   within  intron 16 	14607..15200:   within  intron 19 
+Wars	NM_001164488	tryptophanyl-tRNA synthetase (Wars), transcript variant 3, mRNA.	negative	110098239	110132384	34145	10	20478..20930:   within  intron 4 	15308..16410:   starts in  intron 4, ends in   intron 5
+Wars	NM_001164314	tryptophanyl-tRNA synthetase (Wars), transcript variant 2, mRNA.	negative	110098239	110132384	34145	10	20478..20930:   within  intron 4 	15308..16410:   starts in  intron 4, ends in   intron 5
+Wars	NM_011710	tryptophanyl-tRNA synthetase (Wars), transcript variant 1, mRNA.	negative	110098239	110132384	34145	11	20478..20930:   within  intron 4 	15308..16410:   starts in  intron 4, ends in   intron 5
+Tecpr2	NM_001081057	tectonin beta-propeller repeat containing 2 (Tecpr2), transcript variant 1, mRNA.	positive	112127473	112210606	83133	21	38061..38755:   within  intron 7 	56821..57498:   starts in  intron 15, ends in   intron 16
+Tecpr2	NM_001289510	tectonin beta-propeller repeat containing 2 (Tecpr2), transcript variant 2, mRNA.	positive	112127473	112210606	83133	20	38061..38755:   within  intron 6 	56821..57498:   starts in  intron 14, ends in   intron 15
+Tecpr2	NM_175336	tectonin beta-propeller repeat containing 2 (Tecpr2), transcript variant 3, mRNA.	positive	112127473	112210606	83133	21	38061..38755:   within  intron 7 	56821..57498:   starts in  intron 15, ends in   intron 16
+Pacs2	NM_001291445	phosphofurin acidic cluster sorting protein 2 (Pacs2), transcript variant 3, mRNA.	positive	114252718	114312612	59894	23	41610..42072:   within  intron 7 
+Pacs2	NM_001291444	phosphofurin acidic cluster sorting protein 2 (Pacs2), transcript variant 1, mRNA.	positive	114252718	114312612	59894	24	41610..42072:   within  intron 8 
+Ptprn2	NM_011215	protein tyrosine phosphatase, receptor type, N polypeptide 2 (Ptprn2), mRNA.	positive	117724192	118516640	792448	23	29835..30311:   within  intron 1 	42060..42783:   within  intron 1 	64366..64874:   within  intron 1 	99155..99764:   within  intron 2 	606232..606693:   within  intron 12 	626580..626986:   within  intron 12 	690498..690946:   within  intron 13 	714860..715346:   within  intron 14 	738218..738898:   within  intron 15 
+Rab10	NM_016676	RAB10, member RAS oncogene family (Rab10), mRNA.	negative	3247427	3309969	62542	6	36930..37518:   within  intron 1 
+Dtnb	NM_001162465	dystrobrevin, beta (Dtnb), transcript variant 1, mRNA.	positive	3572390	3781398	209008	18	10193..10713:   within  intron 1 
+Dtnb	NM_007886	dystrobrevin, beta (Dtnb), transcript variant 2, mRNA.	positive	3572390	3781398	209008	19	10193..10713:   within  intron 1 
+Ncoa1	NM_010881	nuclear receptor coactivator 1 (Ncoa1), mRNA.	negative	4247361	4484060	236699	23	23707..24395:   within  intron 16 
+Ldah	NM_001167768	lipid droplet associated hydrolase (Ldah), transcript variant 3, mRNA.	positive	8214912	8292565	77653	6	36440..37199:   within  intron 4 
+Ldah	NM_001167767	lipid droplet associated hydrolase (Ldah), transcript variant 2, mRNA.	positive	8214912	8292565	77653	6	36440..37199:   within  intron 4 
+Ldah	NM_172401	lipid droplet associated hydrolase (Ldah), transcript variant 1, mRNA.	positive	8214912	8292565	77653	7	36440..37199:   within  intron 4 
+Vsnl1	NM_012038	visinin-like 1 (Vsnl1), mRNA.	negative	11332050	11443455	111405	4	63723..64427:   within  intron 1 
+Fam49a	NM_029758	family with sequence similarity 49, member A (Fam49a), transcript variant 1, mRNA.	positive	12268944	12383167	114223	13	22417..22970:   within  intron 2 
+Fam49a	NM_001146119	family with sequence similarity 49, member A (Fam49a), transcript variant 2, mRNA.	positive	12268944	12383167	114223	12	22417..22970:   within  intron 1 
+Nbas	NM_027706	neuroblastoma amplified sequence (Nbas), mRNA.	positive	13275932	13590617	314685	52	290049..290630:   within  intron 49 
+Rock2	NM_009072	Rho-associated coiled-coil containing protein kinase 2 (Rock2), mRNA.	positive	16901783	16995080	93297	33	-1237..480:   starts before the first exon, ends in  intron 1 
+Asap2	NM_001098168	ArfGAP with SH3 domain, ankyrin repeat and PH domain 2 (Asap2), transcript variant 1, mRNA.	positive	21117616	21276032	158416	28	115316..116069:   within  intron 13 
+Asap2	NM_001135192	ArfGAP with SH3 domain, ankyrin repeat and PH domain 2 (Asap2), transcript variant 3, mRNA.	positive	21117616	21276032	158416	29	115316..116069:   within  intron 13 
+Asap2	NM_001004364	ArfGAP with SH3 domain, ankyrin repeat and PH domain 2 (Asap2), transcript variant 2, mRNA.	positive	21117616	21276032	158416	27	115316..116069:   within  intron 12 
+Adam17	NM_009615	a disintegrin and metallopeptidase domain 17 (Adam17), transcript variant 1, mRNA.	negative	21329369	21379493	50124	19	12196..12678:   within  intron 11 	10704..11061:   within  intron 11 
+Adam17	NM_001277266	a disintegrin and metallopeptidase domain 17 (Adam17), transcript variant 2, mRNA.	negative	21329369	21379493	50124	20	12196..12678:   within  intron 12 	10704..11061:   within  intron 12 
+Adam17	NM_001291871	a disintegrin and metallopeptidase domain 17 (Adam17), transcript variant 4, mRNA.	negative	21329369	21379493	50124	19	12196..12678:   within  intron 11 	10704..11061:   within  intron 11 
+Mboat2	NM_026037	membrane bound O-acyltransferase domain containing 2 (Mboat2), transcript variant 1, mRNA.	positive	25516463	25645164	128701	13	27491..28141:   within  intron 1 	32306..32940:   within  intron 1 	34790..35642:   within  intron 1 	57600..58374:   within  intron 3 	65673..67186:   within  intron 3 	85533..86209:   within  intron 3 
+Mboat2	NM_001083341	membrane bound O-acyltransferase domain containing 2 (Mboat2), transcript variant 2, mRNA.	positive	25516463	25645164	128701	12	27491..28141:   within  intron 1 	32306..32940:   within  intron 1 	34790..35642:   within  intron 1 	57600..58374:   within  intron 3 	65673..67186:   within  intron 3 	85533..86209:   within  intron 3 
+Grhl1	NM_001161406	grainyhead-like 1 (Drosophila) (Grhl1), transcript variant 1, mRNA.	positive	25257151	25302256	45105	16	20331..21362:   within  intron 8 	30142..30606:   within  intron 8 
+Grhl1	NM_145890	grainyhead-like 1 (Drosophila) (Grhl1), transcript variant 2, mRNA.	positive	25257151	25302256	45105	14	20331..21362:   within  intron 6 	30142..30606:   within  intron 6 
+Tssc1	NM_201357	tumor suppressing subtransferable candidate 1 (Tssc1), mRNA.	positive	29436692	29552356	115664	9	17984..18727:   within  intron 3 	28156..28655:   within  intron 3 	33014..33943:   within  intron 3 	63960..64395:   within  intron 3 	65285..65874:   within  intron 3 
+Tpo	NM_009417	thyroid peroxidase (Tpo), mRNA.	negative	30739525	30817489	77964	17	3257..3821:   within  intron 16 
+Lamb1	NM_008482	laminin B1 (Lamb1), mRNA.	positive	31950158	32014504	64346	33	28061..28768:   within  intron 12 	30037..30675:   within  intron 12 
+Hdac9	NM_001271386	histone deacetylase 9 (Hdac9), transcript variant 1, mRNA.	negative	34732446	35601767	869321	28	787978..788437:   within  intron 2 	649949..650558:   within  intron 3 	515324..515909:   within  intron 3 	278860..279555:   within  intron 14 	31351..31869:   within  intron 26 
+Ispd	NM_001289503	isoprenoid synthase domain containing (Ispd), transcript variant 3, mRNA.	positive	37108036	37416090	308054	10	128345..129093:   within  intron 6 
+Ispd	NM_001289502	isoprenoid synthase domain containing (Ispd), transcript variant 2, mRNA.	positive	37108036	37416090	308054	9	128345..129093:   within  intron 5 
+Ispd	NM_178629	isoprenoid synthase domain containing (Ispd), transcript variant 1, mRNA.	positive	37108036	37416090	308054	10	128345..129093:   within  intron 6 
+Etv1	NM_007960	ets variant 1 (Etv1), transcript variant 1, mRNA.	positive	39506844	39594802	87958	13	79501..79957:   within  intron 11 
+Etv1	NM_001163154	ets variant 1 (Etv1), transcript variant 2, mRNA.	positive	39506844	39594802	87958	10	79501..79957:   within  intron 8 
+Dock4	NM_172803	dedicator of cytokinesis 4 (Dock4), mRNA.	positive	41172639	41573075	400436	53	62412..62936:   within  intron 1 	86440..87008:   within  intron 1 	122992..123791:   within  intron 1 
+Prkd1	NM_008858	protein kinase D1 (Prkd1), mRNA.	negative	51442218	51750210	307992	19	247139..247749:   within  intron 1 	154716..155219:   within  intron 1 
+Nubpl	NM_029760	nucleotide binding protein-like (Nubpl), mRNA.	positive	53198732	53411946	213214	11	200455..200837:   within  intron 8 
+Akap6	NM_198111	A kinase (PRKA) anchor protein 6 (Akap6), mRNA.	positive	53800369	54252002	451633	14	50456..51154:   within  intron 1 	103437..104247:   within  intron 2 
+Psma6	NM_001310583	proteasome (prosome, macropain) subunit, alpha type 6 (Psma6), transcript variant 2, mRNA.	positive	56485208	56519446	34238	7	-8258..-7692:   7.7 kbp upstream from the first exon	13860..15035:   within  intron 1 
+Psma6	NM_011968	proteasome (prosome, macropain) subunit, alpha type 6 (Psma6), mRNA.	positive	56485208	56519446	34238	7	-8258..-7692:   22.3 kbp upstream from the first exon	13860..15035:   starts before the first exon, ends in  intron 1 
+Slc25a21	NM_172577	solute carrier family 25 (mitochondrial oxodicarboxylate carrier), member 21 (Slc25a21), transcript variant 1, mRNA.	negative	57813620	58298459	484839	10	466546..467504:   within  intron 1 	454480..454961:   within  intron 1 
+Slc25a21	NM_001167976	solute carrier family 25 (mitochondrial oxodicarboxylate carrier), member 21 (Slc25a21), transcript variant 2, mRNA.	negative	57813620	58298459	484839	11	466546..467504:   18.5 kbp upstream from the first exon	454480..454961:   6.5 kbp upstream from the first exon
+Mipol1	NM_001164370	mirror-image polydactyly gene 1 homolog (human) (Mipol1), mRNA.	positive	58331411	58558228	226817	10	11367..11854:   within  intron 1 	44893..45460:   within  intron 1 
+Nin	NM_008697	ninein (Nin), transcript variant 2, mRNA.	negative	71112421	71213022	100601	30	60895..61621:   within  intron 5 	47937..48629:   within  intron 7 
+Nin	NM_001081453	ninein (Nin), transcript variant 1, mRNA.	negative	71112421	71213022	100601	29	60895..61621:   within  intron 3 	47937..48629:   within  intron 5 
+Nin	NM_001286080	ninein (Nin), transcript variant 4, mRNA.	negative	71112421	71213022	100601	30	60895..61621:   within  intron 5 	47937..48629:   within  intron 7 
+Nin	NM_001286079	ninein (Nin), transcript variant 3, mRNA.	negative	71112421	71213022	100601	29	60895..61621:   within  intron 4 	47937..48629:   within  intron 6 
+Atl1	NM_178628	atlastin GTPase 1 (Atl1), mRNA.	positive	70994091	71065072	70981	15	48332..48971:   within  intron 7 
+Trim9	NM_053167	tripartite motif-containing 9 (Trim9), transcript variant 1, mRNA.	negative	71345520	71448601	103081	14	46516..47098:   within  intron 2 
+Trim9	NM_001110203	tripartite motif-containing 9 (Trim9), transcript variant 3, mRNA.	negative	71345520	71448601	103081	9	46516..47098:   within  intron 2 
+Trim9	NM_001286388	tripartite motif-containing 9 (Trim9), transcript variant 6, mRNA.	negative	71345520	71448601	103081	14	46516..47098:   within  intron 2 
+Trim9	NM_001110202	tripartite motif-containing 9 (Trim9), transcript variant 2, mRNA.	negative	71345520	71448601	103081	12	46516..47098:   within  intron 2 
+Trim9	NM_001286387	tripartite motif-containing 9 (Trim9), transcript variant 5, mRNA.	negative	71345520	71448601	103081	14	46516..47098:   within  intron 2 
+Trim9	NM_001286386	tripartite motif-containing 9 (Trim9), transcript variant 4, mRNA.	negative	71345520	71448601	103081	8	46516..47098:   within  intron 2 
+Daam1	NM_172464	dishevelled associated activator of morphogenesis 1 (Daam1), transcript variant 2, mRNA.	positive	72932054	73093363	161309	26	871..1558:   within  intron 1 
+Daam1	NM_026102	dishevelled associated activator of morphogenesis 1 (Daam1), transcript variant 1, mRNA.	positive	72932054	73093363	161309	26	871..1558:   within  intron 1 
+Mnat1	NM_008612	menage a trois 1 (Mnat1), mRNA.	positive	74224703	74374975	150272	8	36097..37010:   within  intron 1 	82073..83018:   within  intron 6 	85229..86000:   within  intron 6 	121882..122454:   within  intron 7 
+Prkch	NM_008856	protein kinase C, eta (Prkch), transcript variant 1, mRNA.	positive	74685782	74879171	193389	14	6926..7458:   within  intron 1 	123736..124724:   within  intron 9 	159362..160188:   within  intron 10 	193228..193783:   starts in  exon 14, ends after the last exon 
+Prkch	NM_001313977	protein kinase C, eta (Prkch), transcript variant 2, mRNA.	positive	74685782	74879171	193389	15	6926..7458:   within  intron 1 	123736..124724:   within  intron 10 	159362..160188:   within  intron 11 	193228..193783:   starts in  exon 15, ends after the last exon 
+Syt16	NM_172804	synaptotagmin XVI (Syt16), mRNA.	positive	75098747	75368903	270156	7	146440..147282:   within  intron 2 
+Rhoj	NM_023275	ras homolog gene family, member J (Rhoj), mRNA.	positive	76409299	76502442	93143	5	-4420..-3568:   3.6 kbp upstream from the first exon	2432..3143:   within  intron 1 
+Zbtb25	NM_001172104	zinc finger and BTB domain containing 25 (Zbtb25), transcript variant 1, mRNA.	negative	77449886	77470547	20661	3	28767..29571:   8.2 kbp upstream from the first exon	24102..24607:   3.5 kbp upstream from the first exon
+Zbtb25	NM_028356	zinc finger and BTB domain containing 25 (Zbtb25), transcript variant 2, mRNA.	negative	77449886	77470547	20661	3	28767..29571:   8.1 kbp upstream from the first exon	24102..24607:   3.4 kbp upstream from the first exon
+Tex21	NM_001159532	testis expressed gene 21 (Tex21), transcript variant 2, mRNA.	negative	77299676	77347733	48057	9	32158..33378:   within  intron 3 	-2856..-1636:   6.9 kbp downstream from the last exon
+Tex21	NM_019784	testis expressed gene 21 (Tex21), transcript variant 1, mRNA.	negative	77299676	77347733	48057	10	32158..33378:   within  intron 3 	-2856..-1636:   1.6 kbp downstream from the last exon
+Syne2	NM_001005510	spectrin repeat containing, nuclear envelope 2 (Syne2), mRNA.	positive	76919304	77211915	292611	116	8318..10580:   within  intron 1 	37134..37814:   within  intron 2 	228001..228761:   within  intron 84 
+Fut8	NM_016893	fucosyltransferase 8 (Fut8), transcript variant 1, mRNA.	positive	78339090	78576983	237893	12	52900..53491:   within  intron 2 
+Fut8	NM_001252614	fucosyltransferase 8 (Fut8), transcript variant 2, mRNA.	positive	78339090	78576983	237893	13	52900..53491:   within  intron 3 
+Sptb	NM_013675	spectrin beta, erythrocytic (Sptb), mRNA.	negative	77681474	77811534	130060	36	-7878..-6861:   6.9 kbp downstream from the last exon
+Tmem229b	NM_178745	transmembrane protein 229B (Tmem229b), transcript variant 1, mRNA.	negative	80062781	80108264	45483	3	54352..54847:   8.9 kbp upstream from the first exon	20251..20981:   within  intron 1 	15260..15863:   within  intron 2 	9428..10349:   within  intron 2 
+Tmem229b	NM_001170401	transmembrane protein 229B (Tmem229b), transcript variant 2, mRNA.	negative	80062781	80108264	45483	3	54352..54847:   32.7 kbp upstream from the first exon	20251..20981:   within  intron 1 	15260..15863:   within  intron 2 	9428..10349:   within  intron 2 
+Fam71d	NM_027597	family with sequence similarity 71, member D (Fam71d), transcript variant 2, mRNA.	positive	79792521	79835506	42985	8	-4357..-3701:   3.7 kbp upstream from the first exon
+Fam71d	NM_029069	family with sequence similarity 71, member D (Fam71d), transcript variant 1, mRNA.	positive	79792521	79835506	42985	9	-4357..-3701:   3.7 kbp upstream from the first exon
+Rad51b	NM_001252562	RAD51 homolog B (Rad51b), transcript variant 2, mRNA.	positive	80398337	80609641	211304	8	40408..41211:   within  intron 7 	42892..43718:   within  intron 7 	54785..55610:   within  intron 7 	138082..138674:   within  intron 7 	145705..146497:   within  intron 7 	184456..184922:   within  intron 7 
+Zfyve26	NM_001008550	zinc finger, FYVE domain containing 26 (Zfyve26), mRNA.	negative	80333333	80397269	63936	42	22075..22485:   within  intron 29 	15633..16319:   within  intron 32 
+Dcaf5	NM_177267	DDB1 and CUL4 associated factor 5 (Dcaf5), mRNA.	negative	81436833	81537588	100755	9	43684..44926:   within  intron 5 	-4082..-3658:   3.7 kbp downstream from the last exon
+Smoc1	NM_022316	SPARC related modular calcium binding 1 (Smoc1), transcript variant 2, mRNA.	positive	82127794	82287401	159607	13	625..2150:   within  intron 1 	6707..7414:   within  intron 1 	103992..104654:   within  intron 3 	128891..129654:   within  intron 7 
+Smoc1	NM_001146217	SPARC related modular calcium binding 1 (Smoc1), transcript variant 1, mRNA.	positive	82127794	82287401	159607	13	625..2150:   within  intron 1 	6707..7414:   within  intron 1 	103992..104654:   within  intron 3 	128891..129654:   within  intron 7 
+Susd6	NM_178682	sushi domain containing 6 (Susd6), transcript variant 2, mRNA.	positive	81891518	81981820	90302	6	53015..54121:   within  intron 2 
+Susd6	NM_001242419	sushi domain containing 6 (Susd6), transcript variant 1, mRNA.	positive	81891518	81981820	90302	7	53015..54121:   within  intron 2 
+Sipa1l1	NM_172579	signal-induced proliferation-associated 1 like 1 (Sipa1l1), transcript variant 1, mRNA.	positive	83271002	83552771	281769	21	153111..153486:   within  intron 1 	155554..156203:   within  intron 1 	158071..158658:   within  intron 1 	164798..165242:   within  intron 1 	199345..200215:   within  intron 4 	221636..222214:   within  intron 7 	238591..239282:   within  intron 10 	241974..242992:   within  intron 10 	3639..4438:   136.9 kbp upstream from the first exon	54732..55344:   86.0 kbp upstream from the first exon	75857..76744:   64.6 kbp upstream from the first exon	86027..86722:   54.6 kbp upstream from the first exon
+Sipa1l1	NM_001167983	signal-induced proliferation-associated 1 like 1 (Sipa1l1), transcript variant 2, mRNA.	positive	83271002	83552771	281769	24	153111..153486:   within  intron 4 	155554..156203:   within  intron 4 	158071..158658:   within  intron 4 	164798..165242:   within  intron 4 	199345..200215:   within  intron 7 	221636..222214:   within  intron 10 	238591..239282:   within  intron 13 	241974..242992:   within  intron 13 	3639..4438:   within  intron 1 	54732..55344:   within  intron 1 	75857..76744:   within  intron 2 	86027..86722:   within  intron 2 
+Numb	NM_001272056	numb gene homolog (Drosophila) (Numb), transcript variant 4, mRNA.	negative	85134983	85217762	82779	10	84264..84925:   1.5 kbp upstream from the first exon
+Dnal1	NM_028821	dynein, axonemal, light chain 1 (Dnal1), mRNA.	positive	85455277	85484460	29183	8	-1597..-930:   930 bp upstream from the first exon	11475..12050:   within  intron 3 
+Isca2	NM_028863	iron-sulfur cluster assembly 2 homolog (S. cerevisiae) (Isca2), mRNA.	positive	86114219	86116039	1820	4	836..1464:   starts in  intron 3, ends in   exon 4
+Zc2hc1c	NM_172414	zinc finger, C2HC-type containing 1C (Zc2hc1c), mRNA.	positive	86629540	86640308	10768	3	476..1312:   starts in  intron 1, ends in   exon 2	8556..9455:   within  exon 3 
+Esrrb	NM_001159500	estrogen related receptor, beta (Esrrb), transcript variant 2, mRNA.	positive	87702066	87862578	160512	7	-5208..-4694:   4.7 kbp upstream from the first exon	9896..10326:   within  intron 1 
+Ift43	NM_001199843	intraflagellar transport 43 (Ift43), transcript variant 1, mRNA.	positive	87423510	87503409	79899	9	20644..21448:   within  intron 2 
+Ift43	NM_029601	intraflagellar transport 43 (Ift43), transcript variant 2, mRNA.	positive	87423510	87503409	79899	8	20644..21448:   within  intron 2 
+Gm21319	NM_001270722	predicted gene, 21319 (Gm21319), mRNA.	positive	89320164	89569046	248882	3	129341..129751:   within  intron 2 	175625..176102:   within  intron 2 
+Gtf2a1	NM_031391	general transcription factor II A, 1 (Gtf2a1), transcript variant 1, mRNA.	negative	92793701	92828927	35226	9	37924..38531:   3.5 kbp upstream from the first exon
+Gtf2a1	NM_175335	general transcription factor II A, 1 (Gtf2a1), transcript variant 2, mRNA.	negative	92793701	92828927	35226	9	37924..38531:   2.7 kbp upstream from the first exon
+Sel1l	NM_001039089	sel-1 suppressor of lin-12-like (C. elegans) (Sel1l), transcript variant 1, mRNA.	negative	93044482	93087597	43115	21	47920..49201:   4.8 kbp upstream from the first exon
+Sel1l	NM_011344	sel-1 suppressor of lin-12-like (C. elegans) (Sel1l), transcript variant 2, mRNA.	negative	93044482	93087597	43115	21	47920..49201:   4.8 kbp upstream from the first exon
+Flrt2	NM_201518	fibronectin leucine rich transmembrane protein 2 (Flrt2), mRNA.	positive	96930435	97023423	92988	2	48945..49562:   within  intron 1 
+Galc	NM_008079	galactosylceramidase (Galc), mRNA.	negative	99440509	99497669	57160	17	47308..47979:   within  intron 5 	44297..45109:   within  intron 5 	41900..42451:   within  intron 6 
+Zc3h14	NM_029334	zinc finger CCCH type containing 14 (Zc3h14), transcript variant 1, mRNA.	positive	99985177	100025984	40807	17	-5951..-5110:   5.1 kbp upstream from the first exon
+Zc3h14	NM_001008506	zinc finger CCCH type containing 14 (Zc3h14), transcript variant 2, mRNA.	positive	99985177	100025984	40807	15	-5951..-5110:   5.1 kbp upstream from the first exon
+Zc3h14	NM_001160107	zinc finger CCCH type containing 14 (Zc3h14), transcript variant 3, mRNA.	positive	99985177	100025984	40807	14	-5951..-5110:   5.1 kbp upstream from the first exon
+Tdp1	NM_028354	tyrosyl-DNA phosphodiesterase 1 (Tdp1), mRNA.	positive	101122724	101193426	70702	16	-1324..363:   starts before the first exon, ends in  intron 1 
+Tc2n	NM_001082976	tandem C2 domains, nuclear (Tc2n), transcript variant 2, mRNA.	negative	102883655	102956733	73078	12	72551..73311:   starts before the first exon, ends in  intron 1 
+Tc2n	NM_028924	tandem C2 domains, nuclear (Tc2n), transcript variant 1, mRNA.	negative	102883655	102956733	73078	12	72551..73311:   6.4 kbp upstream from the first exon
+Tc2n	NM_001286364	tandem C2 domains, nuclear (Tc2n), transcript variant 3, mRNA.	negative	102883655	102956733	73078	13	72551..73311:   6.1 kbp upstream from the first exon
+Fbln5	NM_011812	fibulin 5 (Fbln5), mRNA.	negative	102984774	103057329	72555	11	57302..58043:   within  intron 4 
+Rin3	NM_001161365	Ras and Rab interactor 3 (Rin3), transcript variant 2, mRNA.	positive	103521283	103629064	107781	10	-383..264:   303 bp upstream from the first exon
+Rin3	NM_177620	Ras and Rab interactor 3 (Rin3), transcript variant 1, mRNA.	positive	103521283	103629064	107781	10	-383..264:   starts before the first exon, ends in  intron 1 
+Prima1	NM_133364	proline rich membrane anchor 1 (Prima1), mRNA.	negative	104435117	104480356	45239	5	19330..19989:   within  intron 3 	5925..6503:   within  intron 3 
+D430019H16Rik	NM_001252508	RIKEN cDNA D430019H16 gene (D430019H16Rik), mRNA.	positive	106692065	106731305	39240	2	21273..21669:   within  intron 1 
+Syne3	NM_001042699	spectrin repeat containing, nuclear envelope family member 3 (Syne3), transcript variant 1, mRNA.	negative	106168142	106248019	79877	19	25087..25700:   starts in  exon 10, ends in   intron 10
+Syne3	NM_172500	spectrin repeat containing, nuclear envelope family member 3 (Syne3), transcript variant 2, mRNA.	negative	106168142	106248019	79877	17	25087..25700:   starts in  exon 8, ends in   intron 8
+Bdkrb2	NM_009747	bradykinin receptor, beta 2 (Bdkrb2), mRNA.	positive	106801381	106831281	29900	3	20471..21318:   within  intron 1 
+Bcl11b	NM_021399	B cell leukemia/lymphoma 11B (Bcl11b), transcript variant 2, mRNA.	negative	109148612	109241624	93012	3	42654..43356:   within  intron 2 	20437..21182:   within  intron 2 
+Bcl11b	NM_001079883	B cell leukemia/lymphoma 11B (Bcl11b), transcript variant 1, mRNA.	negative	109148612	109241624	93012	4	42654..43356:   within  intron 3 	20437..21182:   within  intron 3 
+Bcl11b	NM_001286343	B cell leukemia/lymphoma 11B (Bcl11b), transcript variant 3, mRNA.	negative	109148612	109241624	93012	2	42654..43356:   within  intron 1 	20437..21182:   within  intron 1 
+Eml1	NM_001286346	echinoderm microtubule associated protein like 1 (Eml1), transcript variant 3, mRNA.	positive	109609362	109777774	168412	22	-5889..-5175:   5.2 kbp upstream from the first exon
+Wdr25	NM_177602	WD repeat domain 25 (Wdr25), mRNA.	positive	110132481	110266662	134181	7	33285..34037:   within  intron 2 	58725..59130:   within  intron 2 	59147..59886:   within  intron 2 	119989..120805:   within  intron 4 
+Ppp2r5c	NM_001081458	protein phosphatase 2, regulatory subunit B', gamma (Ppp2r5c), transcript variant 3, mRNA.	positive	111685388	111821284	135896	12	84564..85093:   within  intron 2 	105008..105684:   starts in  intron 6, ends in   exon 7
+Ppp2r5c	NM_001081457	protein phosphatase 2, regulatory subunit B', gamma (Ppp2r5c), transcript variant 2, mRNA.	positive	111685388	111821284	135896	13	84564..85093:   within  intron 2 	105008..105684:   starts in  intron 6, ends in   exon 7
+Ppp2r5c	NM_012023	protein phosphatase 2, regulatory subunit B', gamma (Ppp2r5c), transcript variant 1, mRNA.	positive	111685388	111821284	135896	14	84564..85093:   within  intron 2 	105008..105684:   starts in  intron 6, ends in   exon 7
+Ppp2r5c	NM_001135001	protein phosphatase 2, regulatory subunit B', gamma (Ppp2r5c), transcript variant 4, mRNA.	positive	111685388	111821284	135896	14	84564..85093:   within  intron 4 	105008..105684:   starts in  intron 8, ends in   exon 9
+Mark3	NM_022801	MAP/microtubule affinity regulating kinase 3 (Mark3), transcript variant 2, mRNA.	positive	112812720	112894438	81718	16	5332..6011:   within  intron 1 
+Mark3	NM_021516	MAP/microtubule affinity regulating kinase 3 (Mark3), transcript variant 1, mRNA.	positive	112812720	112894438	81718	17	5332..6011:   within  intron 1 
+Apopt1	NM_001163388	apoptogenic, mitochondrial 1 (Apopt1), transcript variant 1, mRNA.	positive	112951479	112993266	41787	6	5430..6043:   within  intron 1 
+Apopt1	NM_026511	apoptogenic, mitochondrial 1 (Apopt1), transcript variant 2, mRNA.	positive	112951479	112993266	41787	5	5430..6043:   within  intron 1 
+Akt1	NM_001165894	thymoma viral proto-oncogene 1 (Akt1), transcript variant 2, mRNA.	negative	113892031	113912487	20456	14	11363..11941:   within  intron 2 
+Akt1	NM_009652	thymoma viral proto-oncogene 1 (Akt1), transcript variant 1, mRNA.	negative	113892031	113912487	20456	14	11363..11941:   within  intron 2 
+Dnah11	NM_010060	dynein, axonemal, heavy chain 11 (Dnah11), mRNA.	negative	119116454	119437516	321062	82	174471..175046:   within  intron 35 	60232..60923:   within  intron 65 
+Rapgef5	NM_175930	Rap guanine nucleotide exchange factor (GEF) 5 (Rapgef5), mRNA.	positive	118754951	118995451	240500	28	23621..24532:   within  intron 3 	178397..178917:   within  intron 13 
+Abcb5	NM_029961	ATP-binding cassette, sub-family B (MDR/TAP), member 5 (Abcb5), mRNA.	negative	120106296	120204894	98598	28	98453..99039:   starts before the first exon, ends in  intron 1 
+Dnmt3a	NM_007872	DNA methyltransferase 3A (Dnmt3a), transcript variant 1, mRNA.	positive	3806979	3914443	107464	23	57146..57883:   within  intron 3 
+Dnmt3a	NM_001271753	DNA methyltransferase 3A (Dnmt3a), transcript variant 3, mRNA.	positive	3806979	3914443	107464	23	57146..57883:   within  intron 3 
+Ptrhd1	NM_001204912	peptidyl-tRNA hydrolase domain containing 1 (Ptrhd1), mRNA.	positive	4234026	4240123	6097	2	-3674..-2782:   2.8 kbp upstream from the first exon
+Hs1bp3	NM_021429	HCLS1 binding protein 3 (Hs1bp3), mRNA.	positive	8320238	8350630	30392	7	31443..31984:   1.1 kbp downstream from the last exon
+Slc7a15	NM_177802	solute carrier family 7 (cationic amino acid transporter, y+ system), member 15 (Slc7a15), transcript variant 2, mRNA.	negative	8535288	8605872	70584	7	27627..28182:   within  intron 1 
+Wdr35	NM_001159527	WD repeat domain 35 (Wdr35), transcript variant 2, mRNA.	positive	8980806	9035653	54847	27	-4308..-3675:   3.7 kbp upstream from the first exon
+Wdr35	NM_172470	WD repeat domain 35 (Wdr35), transcript variant 1, mRNA.	positive	8980806	9035653	54847	28	-4308..-3675:   3.7 kbp upstream from the first exon
+Matn3	NM_010770	matrilin 3 (Matn3), mRNA.	positive	8954734	8978834	24100	8	13643..14191:   within  intron 5 	21764..22397:   within  intron 7 
+Laptm4a	NM_008640	lysosomal-associated protein transmembrane 4A (Laptm4a), mRNA.	positive	8928112	8945547	17435	7	-4736..-3321:   3.3 kbp upstream from the first exon	13501..14547:   starts in  intron 3, ends in   intron 4
+E2f6	NM_033270	E2F transcription factor 6 (E2f6), transcript variant 1, mRNA.	positive	16817770	16833558	15788	7	-8942..-8147:   8.1 kbp upstream from the first exon
+Kcnf1	NM_201531	potassium voltage-gated channel, subfamily F, member 1 (Kcnf1), mRNA.	negative	17178905	17183694	4789	1	10886..11409:   6.1 kbp upstream from the first exon
+Odc1	NM_013614	ornithine decarboxylase, structural 1 (Odc1), mRNA.	positive	17551678	17558308	6630	12	-502..644:   starts before the first exon, ends in  intron 1 
+Cpsf3	NM_018813	cleavage and polyadenylation specificity factor 3 (Cpsf3), mRNA.	positive	21292157	21320917	28760	18	3016..3304:   within  intron 1 	15599..16447:   starts in  intron 9, ends in   intron 10
+Rrm2	NM_009104	ribonucleotide reductase M2 (Rrm2), mRNA.	positive	25393118	25399011	5893	10	-2869..-2225:   2.2 kbp upstream from the first exon	15239..16567:   9.3 kbp downstream from the last exon
+Klf11	NM_178357	Kruppel-like factor 11 (Klf11), mRNA.	positive	25336235	25347647	11412	4	2898..3695:   starts in  intron 2, ends in   exon 3
+Id2	NM_010496	inhibitor of DNA binding 2 (Id2), mRNA.	negative	25778663	25780957	2294	3	-1053..-108:   108 bp downstream from the last exon	-10675..-9549:   9.5 kbp downstream from the last exon
+Allc	NM_053156	allantoicase (Allc), mRNA.	negative	29238619	29267348	28729	12	35635..36287:   6.9 kbp upstream from the first exon
+Colec11	NM_027866	collectin sub-family member 11 (Colec11), transcript variant 2, mRNA.	negative	29279036	29308195	29159	7	-4782..-4130:   4.1 kbp downstream from the last exon
+Colec11	NM_001313978	collectin sub-family member 11 (Colec11), transcript variant 1, mRNA.	negative	29279036	29308195	29159	7	-4782..-4130:   4.1 kbp downstream from the last exon
+Trappc12	NM_001161410	trafficking protein particle complex 12 (Trappc12), transcript variant 2, mRNA.	negative	29375492	29435318	59826	12	50066..51187:   within  intron 2 	18426..19031:   within  intron 6 	13776..15054:   within  intron 6 
+Trappc12	NM_178811	trafficking protein particle complex 12 (Trappc12), transcript variant 1, mRNA.	negative	29375492	29435318	59826	12	50066..51187:   within  intron 2 	18426..19031:   within  intron 6 	13776..15054:   within  intron 6 
+Trappc12	NM_001161411	trafficking protein particle complex 12 (Trappc12), transcript variant 3, mRNA.	negative	29375492	29435318	59826	7	50066..51187:   within  intron 2 	18426..19031:   starts in  exon 7, ends after the last exon 	13776..15054:   3.8 kbp downstream from the last exon
+Bcap29	NM_001164090	B cell receptor associated protein 29 (Bcap29), transcript variant 2, mRNA.	negative	32280218	32319523	39305	8	4059..4739:   within  intron 7 
+Bcap29	NM_007530	B cell receptor associated protein 29 (Bcap29), transcript variant 1, mRNA.	negative	32280218	32319523	39305	7	4059..4739:   within  intron 6 
+Hbp1	NM_177993	high mobility group box transcription factor 1 (Hbp1), transcript variant 2, mRNA.	negative	32611319	32635400	24081	9	-9219..-8526:   11.5 kbp downstream from the last exon	23394..24802:   starts before the first exon, ends in  intron 1 
+Hbp1	NM_153198	high mobility group box transcription factor 1 (Hbp1), transcript variant 1, mRNA.	negative	32611319	32635400	24081	11	-9219..-8526:   8.5 kbp downstream from the last exon	23394..24802:   starts before the first exon, ends in  intron 1 
+Prkar2b	NM_011158	protein kinase, cAMP dependent regulatory, type II beta (Prkar2b), mRNA.	negative	32643343	32746144	102801	11	-8630..-7222:   7.2 kbp downstream from the last exon
+Pik3cg	NM_001146201	phosphoinositide-3-kinase, catalytic, gamma polypeptide (Pik3cg), transcript variant 2, mRNA.	negative	32858261	32893514	35253	11	26957..27650:   starts in  intron 2, ends in   intron 4
+Pik3cg	NM_001146200	phosphoinositide-3-kinase, catalytic, gamma polypeptide (Pik3cg), transcript variant 3, mRNA.	negative	32858261	32893514	35253	11	26957..27650:   starts in  intron 2, ends in   intron 4
+Pik3cg	NM_020272	phosphoinositide-3-kinase, catalytic, gamma polypeptide (Pik3cg), transcript variant 1, mRNA.	negative	32858261	32893514	35253	11	26957..27650:   starts in  intron 2, ends in   intron 4
+Sypl	NM_198710	synaptophysin-like protein (Sypl), transcript variant 2, mRNA.	positive	33638809	33664367	25558	5	20841..21352:   within  intron 4 	-10613..-9817:   10.1 kbp upstream from the first exon
+Sypl	NM_013635	synaptophysin-like protein (Sypl), transcript variant 1, mRNA.	positive	33638809	33664367	25558	6	20841..21352:   within  intron 5 	-10613..-9817:   9.8 kbp upstream from the first exon
+Ahr	NM_013464	aryl-hydrocarbon receptor (Ahr), transcript variant 1, mRNA.	negative	36182650	36219661	37011	11	8211..8771:   starts in  intron 8, ends in   intron 9
+Ahr	NM_001314027	aryl-hydrocarbon receptor (Ahr), transcript variant 2, mRNA.	negative	36182650	36219661	37011	10	8211..8771:   starts in  intron 7, ends in   intron 8
+Ifrd1	NM_013562	interferon-related developmental regulator 1 (Ifrd1), mRNA.	negative	40929715	40949776	20061	12	-836..-458:   458 bp downstream from the last exon
+Hectd1	NM_144788	HECT domain containing 1 (Hectd1), mRNA.	negative	52844708	52930523	85815	43	85436..87288:   starts before the first exon, ends in  intron 1 	22547..23155:   within  intron 26 
+Heatr5a	NM_177171	HEAT repeat containing 5A (Heatr5a), mRNA.	negative	52976859	53072308	95449	36	79646..80366:   starts in  exon 5, ends in   exon 6	39335..39899:   within  intron 20 	11948..12625:   starts in  intron 31, ends in   intron 32	-10999..-9343:   9.3 kbp downstream from the last exon
+Egln3	NM_028133	egl-9 family hypoxia-inducible factor 3 (Egln3), mRNA.	negative	55279967	55304861	24894	5	20939..21512:   within  intron 1 	8444..9067:   within  intron 1 
+Sptssa	NM_134054	serine palmitoyltransferase, small subunit A (Sptssa), mRNA.	negative	55746360	55757559	11199	2	10154..10903:   within  intron 1 
+1110008L16Rik	NM_025373	RIKEN cDNA 1110008L16 gene (1110008L16Rik), mRNA.	positive	56403623	56483478	79855	7	46239..46978:   within  intron 4 	73327..73893:   within  intron 4 
+Nfkbia	NM_010907	nuclear factor of kappa light polypeptide gene enhancer in B cells inhibitor, alpha (Nfkbia), mRNA.	negative	56590395	56593634	3239	6	8032..8807:   4.8 kbp upstream from the first exon
+Prps1l3	NM_001037746	phosphoribosyl pyrophosphate synthetase 1-like 3 (Prps1l3), mRNA.	positive	58331398	58343155	11757	2	11380..11867:   starts in  exon 2, ends after the last exon 
+Clec14a	NM_025809	C-type lectin domain family 14, member a (Clec14a), mRNA.	negative	59365706	59370245	4539	1	3813..4865:   starts before the first exon, ends in  exon 1 
+Ctage5	NM_001165254	CTAGE family, member 5 (Ctage5), transcript variant 3, mRNA.	positive	60230732	60291207	60475	23	43415..43932:   within  intron 16 
+Ctage5	NM_001165253	CTAGE family, member 5 (Ctage5), transcript variant 2, mRNA.	positive	60230732	60291207	60475	23	43415..43932:   within  intron 16 
+Ctage5	NM_146034	CTAGE family, member 5 (Ctage5), transcript variant 1, mRNA.	positive	60230732	60291207	60475	25	43415..43932:   within  intron 18 
+Fam179b	NM_177805	family with sequence similarity 179, member B (Fam179b), mRNA.	positive	66066728	66123560	56832	20	-737..288:   starts before the first exon, ends in  exon 1 
+Hif1a	NM_010431	hypoxia inducible factor 1, alpha subunit (Hif1a), transcript variant 2, mRNA.	positive	75002310	75048541	46231	15	-177..436:   6.1 kbp upstream from the first exon	4107..4808:   1.7 kbp upstream from the first exon	53352..53986:   7.1 kbp downstream from the last exon
+Hif1a	NM_001313920	hypoxia inducible factor 1, alpha subunit (Hif1a), transcript variant 3, mRNA.	positive	75002310	75048541	46231	15	-177..436:   starts before the first exon, ends in  intron 1 	4107..4808:   within  intron 1 	53352..53986:   7.1 kbp downstream from the last exon
+Hif1a	NM_001313919	hypoxia inducible factor 1, alpha subunit (Hif1a), transcript variant 1, mRNA.	positive	75002310	75048541	46231	15	-177..436:   6.1 kbp upstream from the first exon	4107..4808:   1.7 kbp upstream from the first exon	53352..53986:   7.1 kbp downstream from the last exon
+Dbpht2	NM_198866	DNA binding protein with his-thr domain (Dbpht2), mRNA.	positive	75398460	75401455	2995	1	-9177..-8661:   8.7 kbp upstream from the first exon	-7640..-6992:   7.0 kbp upstream from the first exon	-5616..-4883:   4.9 kbp upstream from the first exon
+Sgpp1	NM_030750	sphingosine-1-phosphate phosphatase 1 (Sgpp1), mRNA.	negative	76815234	76836716	21482	3	27705..28331:   6.2 kbp upstream from the first exon
+Mthfd1	NM_138745	methylenetetrahydrofolate dehydrogenase (NADP+ dependent), methenyltetrahydrofolate cyclohydrolase, formyltetrahydrofolate synthase (Mthfd1), mRNA.	positive	77356218	77420807	64589	28	12823..13397:   within  intron 1 
+Zbtb1	NM_178744	zinc finger and BTB domain containing 1 (Zbtb1), mRNA.	positive	77471252	77489734	18482	2	2736..3241:   within  intron 1 	7401..8205:   within  intron 1 
+Plekhg3	NM_153804	pleckstrin homology domain containing, family G (with RhoGef domain) member 3 (Plekhg3), mRNA.	positive	77634546	77680026	45480	19	-4456..-4014:   4.0 kbp upstream from the first exon	12620..13343:   within  intron 1 	39050..40067:   starts in  exon 16, ends in   intron 17
+Gpx2	NM_030677	glutathione peroxidase 2 (Gpx2), mRNA.	negative	77893321	77896541	3220	2	12691..13352:   9.5 kbp upstream from the first exon
+Rab15	NM_134050	RAB15, member RAS oncogene family (Rab15), mRNA.	negative	77898949	77923511	24562	7	19815..20547:   within  intron 1 	7063..7724:   within  intron 1 
+Max	NM_001146176	Max protein (Max), transcript variant 2, mRNA.	negative	78038255	78063235	24980	4	-3321..-2181:   2.2 kbp downstream from the last exon	-9740..-9183:   9.2 kbp downstream from the last exon
+Max	NM_008558	Max protein (Max), transcript variant 1, mRNA.	negative	78038255	78063235	24980	5	-3321..-2181:   2.2 kbp downstream from the last exon	-9740..-9183:   9.2 kbp downstream from the last exon
+Plekhh1	NM_181073	pleckstrin homology domain containing, family H (with MyTH4 domain) member 1 (Plekhh1), mRNA.	positive	80130149	80182642	52493	29	61263..61689:   8.8 kbp downstream from the last exon
+Pigh	NM_029988	phosphatidylinositol glycan anchor biosynthesis, class H (Pigh), mRNA.	negative	80181657	80190657	9000	4	9755..10181:   755 bp upstream from the first exon
+Actn1	NM_134156	actinin, alpha 1 (Actn1), mRNA.	negative	81268528	81361358	92830	21	62422..63102:   within  intron 1 	43376..43997:   within  intron 1 	12249..12649:   within  intron 11 
+Erh	NM_007951	enhancer of rudimentary homolog (Drosophila) (Erh), mRNA.	negative	81735009	81744848	9839	4	13301..13812:   3.5 kbp upstream from the first exon
+Slc39a9	NM_026244	solute carrier family 39 (zinc transporter), member 9 (Slc39a9), mRNA.	positive	81745201	81784329	39128	7	3109..3620:   within  intron 1 
+Ccdc177	NM_001008423	coiled-coil domain containing 177 (Ccdc177), mRNA.	negative	81856433	81861702	5269	2	10417..11032:   5.1 kbp upstream from the first exon
+Slc10a1	NM_001177561	solute carrier family 10 (sodium/bile acid cotransporter family), member 1 (Slc10a1), transcript variant 1, mRNA.	negative	82054171	82069066	14895	5	17427..17949:   2.5 kbp upstream from the first exon
+Slc10a1	NM_011387	solute carrier family 10 (sodium/bile acid cotransporter family), member 1 (Slc10a1), transcript variant 2, mRNA.	negative	82054171	82069066	14895	4	17427..17949:   2.5 kbp upstream from the first exon
+Papln	NM_130887	papilin, proteoglycan-like sulfated glycoprotein (Papln), transcript variant 2, mRNA.	positive	85104583	85133334	28751	27	4065..5442:   within  intron 2 
+Papln	NM_001205343	papilin, proteoglycan-like sulfated glycoprotein (Papln), transcript variant 1, mRNA.	positive	85104583	85133334	28751	28	4065..5442:   within  intron 2 
+Acot5	NM_145444	acyl-CoA thioesterase 5 (Acot5), mRNA.	positive	85410274	85416969	6695	3	15210..15723:   8.5 kbp downstream from the last exon
+Elmsan1	NM_001163502	ELM2 and Myb/SANT-like domain containing 1 (Elmsan1), transcript variant 1, mRNA.	negative	85490122	85559831	69709	13	69915..70633:   25.1 kbp upstream from the first exon	38475..39090:   within  intron 1 	35749..36387:   within  intron 1 	25624..27337:   within  intron 1 
+Elmsan1	NM_001163501	ELM2 and Myb/SANT-like domain containing 1 (Elmsan1), transcript variant 2, mRNA.	negative	85490122	85559831	69709	13	69915..70633:   206 bp upstream from the first exon	38475..39090:   within  intron 1 	35749..36387:   within  intron 1 	25624..27337:   within  intron 1 
+Zfp410	NM_001252583	zinc finger protein 410 (Zfp410), transcript variant 3, mRNA.	positive	85657808	85684780	26972	9	-985..-281:   281 bp upstream from the first exon
+Zfp410	NM_001252582	zinc finger protein 410 (Zfp410), transcript variant 2, mRNA.	positive	85657808	85684780	26972	8	-985..-281:   281 bp upstream from the first exon
+Zfp410	NM_144833	zinc finger protein 410 (Zfp410), transcript variant 1, mRNA.	positive	85657808	85684780	26972	12	-985..-281:   281 bp upstream from the first exon
+Ptgr2	NM_029880	prostaglandin reductase 2 (Ptgr2), transcript variant 1, mRNA.	positive	85626245	85656782	30537	10	30578..31282:   41 bp downstream from the last exon
+Ptgr2	NM_001252626	prostaglandin reductase 2 (Ptgr2), transcript variant 3, mRNA.	positive	85626245	85656782	30537	11	30578..31282:   41 bp downstream from the last exon
+Ptgr2	NM_001252625	prostaglandin reductase 2 (Ptgr2), transcript variant 2, mRNA.	positive	85626245	85656782	30537	10	30578..31282:   41 bp downstream from the last exon
+Aldh6a1	NM_134042	aldehyde dehydrogenase family 6, subfamily A1 (Aldh6a1), transcript variant 1, mRNA.	negative	85771670	85791974	20304	12	16532..17328:   within  intron 1 
+Aldh6a1	NM_001313967	aldehyde dehydrogenase family 6, subfamily A1 (Aldh6a1), transcript variant 2, mRNA.	negative	85771670	85791974	20304	12	16532..17328:   within  intron 1 
+Npc2	NM_023409	Niemann-Pick type C2 (Npc2), mRNA.	negative	86095508	86114062	18554	4	19547..20175:   993 bp upstream from the first exon
+Ltbp2	NM_013589	latent transforming growth factor beta binding protein 2 (Ltbp2), mRNA.	negative	86124161	86217445	93284	35	-9106..-8478:   8.5 kbp downstream from the last exon
+Fcf1	NM_028632	FCF1 small subunit (SSU) processome component homolog (S. cerevisiae) (Fcf1), mRNA.	positive	86311879	86324253	12374	8	-3257..-2730:   2.7 kbp upstream from the first exon
+Arel1	NM_178065	apoptosis resistant E3 ubiquitin protein ligase 1 (Arel1), mRNA.	negative	86259098	86311836	52738	20	49524..50051:   within  intron 1 
+Pgf	NM_008827	placental growth factor (Pgf), transcript variant 1, mRNA.	negative	86507588	86518263	10675	7	11241..12036:   566 bp upstream from the first exon	-4742..-4497:   4.5 kbp downstream from the last exon
+Pgf	NM_001271705	placental growth factor (Pgf), transcript variant 2, mRNA.	negative	86507588	86518263	10675	7	11241..12036:   1.9 kbp upstream from the first exon	-4742..-4497:   4.5 kbp downstream from the last exon
+Mlh3	NM_001304475	mutL homolog 3 (E coli) (Mlh3), transcript variant 2, mRNA.	negative	86575415	86611549	36134	12	26545..27079:   within  intron 3 
+Mlh3	NM_175337	mutL homolog 3 (E coli) (Mlh3), transcript variant 1, mRNA.	negative	86575415	86611549	36134	12	26545..27079:   within  intron 3 
+Acyp1	NM_025421	acylphosphatase 1, erythrocyte (common) type (Acyp1), mRNA.	negative	86613347	86621385	8038	3	16669..17505:   8.6 kbp upstream from the first exon
+Tmed10	NM_026775	transmembrane emp24-like trafficking protein 10 (yeast) (Tmed10), mRNA.	negative	86681563	86715667	34104	5	43351..44128:   9.2 kbp upstream from the first exon
+Nek9	NM_145138	NIMA (never in mitosis gene a)-related expressed kinase 9 (Nek9), mRNA.	negative	86640463	86680312	39849	22	-2367..-1468:   1.5 kbp downstream from the last exon	-10447..-9611:   9.6 kbp downstream from the last exon
+Jdp2	NM_030887	Jun dimerization protein 2 (Jdp2), transcript variant 1, mRNA.	positive	86940054	86980828	40774	4	21799..22605:   within  intron 2 
+Jdp2	NM_001205053	Jun dimerization protein 2 (Jdp2), transcript variant 3, mRNA.	positive	86940054	86980828	40774	4	21799..22605:   within  intron 2 
+Jdp2	NM_001205052	Jun dimerization protein 2 (Jdp2), transcript variant 2, mRNA.	positive	86940054	86980828	40774	4	21799..22605:   within  intron 2 
+Cipc	NM_001289432	CLOCK interacting protein, circadian (Cipc), transcript variant 5, mRNA.	positive	88287990	88306316	18326	5	25894..26574:   7.6 kbp downstream from the last exon
+Cipc	NM_001289431	CLOCK interacting protein, circadian (Cipc), transcript variant 4, mRNA.	positive	88287990	88306316	18326	5	25894..26574:   7.6 kbp downstream from the last exon
+Cipc	NM_001289429	CLOCK interacting protein, circadian (Cipc), transcript variant 2, mRNA.	positive	88287990	88306316	18326	5	25894..26574:   7.6 kbp downstream from the last exon
+Cipc	NM_001289430	CLOCK interacting protein, circadian (Cipc), transcript variant 3, mRNA.	positive	88287990	88306316	18326	4	25894..26574:   7.6 kbp downstream from the last exon
+Cipc	NM_173735	CLOCK interacting protein, circadian (Cipc), transcript variant 1, mRNA.	positive	88287990	88306316	18326	4	25894..26574:   7.6 kbp downstream from the last exon
+Gstz1	NM_001252556	glutathione transferase zeta 1 (maleylacetoacetate isomerase) (Gstz1), transcript variant 3, mRNA.	positive	88488114	88505673	17559	8	11012..11710:   within  intron 2 
+Gstz1	NM_001252555	glutathione transferase zeta 1 (maleylacetoacetate isomerase) (Gstz1), transcript variant 2, mRNA.	positive	88488114	88505673	17559	10	11012..11710:   within  intron 3 
+Gstz1	NM_010363	glutathione transferase zeta 1 (maleylacetoacetate isomerase) (Gstz1), transcript variant 1, mRNA.	positive	88488114	88505673	17559	9	11012..11710:   within  intron 2 
+Ism2	NM_001290302	isthmin 2 homolog (zebrafish) (Ism2), mRNA.	negative	88619587	88640655	21068	6	26705..27424:   5.6 kbp upstream from the first exon
+Sptlc2	NM_011479	serine palmitoyltransferase, long chain base subunit 2 (Sptlc2), mRNA.	negative	88646007	88729305	83298	12	83021..83925:   starts before the first exon, ends in  exon 1 	25618..26698:   within  intron 9 	285..1004:   within  exon 12 
+Alkbh1	NM_001102565	alkB, alkylation repair homolog 1 (E. coli) (Alkbh1), mRNA.	negative	88769027	88784789	15762	6	-439..248:   starts in  exon 6, ends after the last exon 
+Snw1	NM_025507	SNW domain containing 1 (Snw1), mRNA.	negative	88790859	88813249	22390	14	24784..25439:   2.4 kbp upstream from the first exon
+Ptpn21	NM_001146199	protein tyrosine phosphatase, non-receptor type 21 (Ptpn21), transcript variant 2, mRNA.	negative	99914950	99975615	60665	19	64276..65117:   3.6 kbp upstream from the first exon
+Ptpn21	NM_011877	protein tyrosine phosphatase, non-receptor type 21 (Ptpn21), transcript variant 1, mRNA.	negative	99914950	99975615	60665	19	64276..65117:   6.4 kbp upstream from the first exon
+Kcnk13	NM_001164427	potassium channel, subfamily K, member 13 (Kcnk13), transcript variant 1, mRNA.	positive	101202708	101300892	98184	3	80005..80576:   within  intron 2 
+Kcnk13	NM_001164426	potassium channel, subfamily K, member 13 (Kcnk13), transcript variant 2, mRNA.	positive	101202708	101300892	98184	3	80005..80576:   within  intron 2 
+Kcnk13	NM_146037	potassium channel, subfamily K, member 13 (Kcnk13), transcript variant 3, mRNA.	positive	101202708	101300892	98184	3	80005..80576:   within  intron 2 
+Gpr68	NM_001177674	G protein-coupled receptor 68 (Gpr68), transcript variant 3, mRNA.	negative	102114891	102146408	31517	3	32696..33923:   9.9 kbp upstream from the first exon	31726..32311:   8.9 kbp upstream from the first exon
+Gpr68	NM_001177673	G protein-coupled receptor 68 (Gpr68), transcript variant 2, mRNA.	negative	102114891	102146408	31517	3	32696..33923:   1.2 kbp upstream from the first exon	31726..32311:   209 bp upstream from the first exon
+Gpr68	NM_175493	G protein-coupled receptor 68 (Gpr68), transcript variant 1, mRNA.	negative	102114891	102146408	31517	3	32696..33923:   1.2 kbp upstream from the first exon	31726..32311:   209 bp upstream from the first exon
+Golga5	NM_001199004	golgi autoantigen, golgin subfamily a, 5 (Golga5), transcript variant 1, mRNA.	positive	103707343	103736117	28774	13	21561..22244:   within  intron 9 
+Golga5	NM_013747	golgi autoantigen, golgin subfamily a, 5 (Golga5), transcript variant 2, mRNA.	positive	103707343	103736117	28774	13	21561..22244:   within  intron 9 
+Moap1	NM_001142937	modulator of apoptosis 1 (Moap1), transcript variant 2, mRNA.	negative	103978039	103981871	3832	2	-9587..-9035:   9.0 kbp downstream from the last exon
+Moap1	NM_022323	modulator of apoptosis 1 (Moap1), transcript variant 1, mRNA.	negative	103978039	103981871	3832	2	-9587..-9035:   9.0 kbp downstream from the last exon
+Gm20604	NM_001142939	predicted gene 20604 (Gm20604), mRNA.	negative	103978039	103996020	17981	2	-9587..-9035:   9.0 kbp downstream from the last exon
+Serpina16	NM_001310472	serine (or cysteine) peptidase inhibitor, clade A (alpha-1 antiproteinase, antitrypsin), member 16 (Serpina16), mRNA.	negative	104907017	104914972	7955	6	7763..8254:   starts before the first exon, ends in  intron 1 
+Serpina11	NM_001166350	serine (or cysteine) peptidase inhibitor, clade A (alpha-1 antiproteinase, antitrypsin), member 11 (Serpina11), transcript variant 2, mRNA.	negative	105218452	105228167	9715	5	19413..19871:   9.7 kbp upstream from the first exon	-6995..-6354:   6.4 kbp downstream from the last exon	-9322..-8827:   8.8 kbp downstream from the last exon
+Serpina11	NM_199314	serine (or cysteine) peptidase inhibitor, clade A (alpha-1 antiproteinase, antitrypsin), member 11 (Serpina11), transcript variant 1, mRNA.	negative	105218452	105228167	9715	5	19413..19871:   9.7 kbp upstream from the first exon	-6995..-6354:   6.4 kbp downstream from the last exon	-9322..-8827:   8.8 kbp downstream from the last exon
+Serpina1e	NM_009247	serine (or cysteine) peptidase inhibitor, clade A, member 1E (Serpina1e), mRNA.	negative	105185141	105195107	9966	5	15375..15981:   5.4 kbp upstream from the first exon	14601..15006:   4.6 kbp upstream from the first exon
+Serpina5	NM_172953	serine (or cysteine) peptidase inhibitor, clade A, member 5 (Serpina5), mRNA.	positive	105339322	105344347	5025	5	-3584..-3152:   3.2 kbp upstream from the first exon
+Serpina3g	NM_009251	serine (or cysteine) peptidase inhibitor, clade A, member 3G (Serpina3g), mRNA.	positive	105452753	105480144	27391	6	33051..33503:   5.7 kbp downstream from the last exon
+Dicer1	NM_148948	dicer 1, ribonuclease type III (Dicer1), mRNA.	negative	105925951	105990162	64211	27	66520..66990:   2.3 kbp upstream from the first exon	64210..64830:   starts before the first exon, ends in  exon 1 	50760..51251:   within  intron 1 
+Atg2b	NM_029654	autophagy related 2B (Atg2b), mRNA.	negative	106851748	106923451	71703	42	62345..62766:   within  intron 1 
+Gskip	NM_178613	GSK3B interacting protein (Gskip), mRNA.	positive	106923561	106941267	17706	3	-9468..-9047:   9.0 kbp upstream from the first exon
+Setd3	NM_028262	SET domain containing 3 (Setd3), mRNA.	negative	109344640	109417494	72854	13	72597..73606:   starts before the first exon, ends in  intron 1 	14685..15245:   within  intron 6 	13362..14463:   within  intron 6 
+Ccnk	NM_009832	cyclin K (Ccnk), mRNA.	positive	109417947	109441569	23622	12	-710..299:   starts before the first exon, ends in  intron 1 
+Degs2	NM_001171002	degenerative spermatocyte homolog 2 (Drosophila), lipid desaturase (Degs2), transcript variant 2, mRNA.	negative	109925001	109940516	15515	3	12536..13046:   within  intron 1 
+Degs2	NM_027299	degenerative spermatocyte homolog 2 (Drosophila), lipid desaturase (Degs2), transcript variant 1, mRNA.	negative	109925001	109940516	15515	3	12536..13046:   within  intron 1 
+Slc25a47	NM_001012310	solute carrier family 25, member 47 (Slc25a47), mRNA.	positive	110089338	110095025	5687	6	-10039..-9330:   9.3 kbp upstream from the first exon
+Begain	NM_001163175	brain-enriched guanylate kinase-associated (Begain), mRNA.	negative	110270391	110306427	36036	7	39135..39634:   3.1 kbp upstream from the first exon	13532..13867:   within  intron 2 
+Dync1h1	NM_030238	dynein cytoplasmic 1 heavy chain 1 (Dync1h1), mRNA.	positive	111839604	111905154	65550	77	7238..7863:   within  intron 1 	57663..58417:   starts in  intron 62, ends in   intron 64
+1700001K19Rik	NM_025488	RIKEN cDNA 1700001K19 gene (1700001K19Rik), mRNA.	negative	111905898	111920829	14931	6	-8631..-7877:   7.9 kbp downstream from the last exon
+Wdr20	NM_027149	WD repeat domain 20 (Wdr20), mRNA.	positive	111976158	112033238	57080	3	43168..43877:   within  intron 2 	57017..57693:   starts in  exon 3, ends after the last exon 	58690..59239:   1.6 kbp downstream from the last exon
+Bag5	NM_027404	BCL2-associated athanogene 5 (Bag5), mRNA.	negative	112947703	112951467	3764	2	9206..9819:   5.4 kbp upstream from the first exon
+Klc1	NM_001025363	kinesin light chain 1 (Klc1), transcript variant f, mRNA.	positive	112997059	113046055	48996	14	37736..38421:   1.7 kbp downstream from the last exon	56279..57060:   20.2 kbp downstream from the last exon
+Klc1	NM_001025362	kinesin light chain 1 (Klc1), transcript variant g, mRNA.	positive	112997059	113046055	48996	15	37736..38421:   within  intron 13 	56279..57060:   7.3 kbp downstream from the last exon
+Klc1	NM_001025361	kinesin light chain 1 (Klc1), transcript variant e, mRNA.	positive	112997059	113046055	48996	16	37736..38421:   within  intron 14 	56279..57060:   8.4 kbp downstream from the last exon
+Klc1	NM_001025359	kinesin light chain 1 (Klc1), transcript variant c, mRNA.	positive	112997059	113046055	48996	15	37736..38421:   1.7 kbp downstream from the last exon	56279..57060:   20.2 kbp downstream from the last exon
+Klc1	NM_001025358	kinesin light chain 1 (Klc1), transcript variant b, mRNA.	positive	112997059	113046055	48996	15	37736..38421:   1.7 kbp downstream from the last exon	56279..57060:   20.2 kbp downstream from the last exon
+Klc1	NM_001025360	kinesin light chain 1 (Klc1), transcript variant d, mRNA.	positive	112997059	113046055	48996	16	37736..38421:   within  intron 14 	56279..57060:   8.4 kbp downstream from the last exon
+Klc1	NM_001081959	kinesin light chain 1 (Klc1), transcript variant h, mRNA.	positive	112997059	113046055	48996	16	37736..38421:   within  intron 14 	56279..57060:   8.4 kbp downstream from the last exon
+Klc1	NM_008450	kinesin light chain 1 (Klc1), transcript variant a, mRNA.	positive	112997059	113046055	48996	14	37736..38421:   1.7 kbp downstream from the last exon	56279..57060:   20.2 kbp downstream from the last exon
+Zfyve21	NM_026752	zinc finger, FYVE domain containing 21 (Zfyve21), mRNA.	positive	113052380	113066599	14219	7	958..1739:   within  intron 1 
+Xrcc3	NM_028875	X-ray repair complementing defective repair in Chinese hamster cells 3 (Xrcc3), mRNA.	negative	113041402	113052090	10688	8	11936..12717:   1.2 kbp upstream from the first exon	-6607..-5922:   5.9 kbp downstream from the last exon
+Cep170b	NM_001024602	centrosomal protein 170B (Cep170b), mRNA.	positive	113960384	113984802	24418	19	-1151..64:   starts before the first exon, ends in  exon 1 	5433..6041:   within  intron 2 
+Crip1	NM_007763	cysteine-rich protein 1 (intestinal) (Crip1), mRNA.	positive	114390222	114392090	1868	5	-4654..-4095:   4.1 kbp upstream from the first exon	-4034..-3155:   3.2 kbp upstream from the first exon	3021..4451:   1.2 kbp downstream from the last exon
+Crip2	NM_024223	cysteine rich protein 2 (Crip2), mRNA.	positive	114378446	114383717	5271	7	-7867..-6802:   6.8 kbp upstream from the first exon	7122..7681:   1.9 kbp downstream from the last exon	7742..8621:   2.5 kbp downstream from the last exon	14797..16227:   9.5 kbp downstream from the last exon
+4930427A07Rik	NM_134041	RIKEN cDNA 4930427A07 gene (4930427A07Rik), mRNA.	positive	114394631	114403669	9038	8	-9063..-8504:   8.5 kbp upstream from the first exon	-8443..-7564:   7.6 kbp upstream from the first exon	-1388..42:   starts before the first exon, ends in  exon 1 
+Vipr2	NM_009511	vasoactive intestinal peptide receptor 2 (Vipr2), mRNA.	positive	117316195	117384734	68539	13	75202..75576:   6.7 kbp downstream from the last exon
+Wdr60	NM_146039	WD repeat domain 60 (Wdr60), mRNA.	negative	117445522	117501498	55976	22	34886..35395:   within  intron 7 	24268..25029:   starts in  intron 10, ends in   intron 11

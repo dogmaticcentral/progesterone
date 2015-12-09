@@ -12,8 +12,7 @@ module Parsers
           return chromosome
      end
      ##################################
-     def parse_gene_table table_name
-          extension = 10000
+     def parse_gene_table table_name, extension=10000
           gene_regions = []
           gene_data    = {}
           File.readlines(table_name).drop(1).each do |line|

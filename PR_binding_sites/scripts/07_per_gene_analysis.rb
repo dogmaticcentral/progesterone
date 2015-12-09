@@ -5,7 +5,7 @@ require_relative 'ruby_modules/parsers'
 require_relative 'ruby_modules/utils'
 include Parsers, Utils
 
-$verbose = false
+$verbose = true
 $scratch_space = "/tmp"
 
 
@@ -23,12 +23,17 @@ $p4_chrom.each do |chrom,regions|
      overlaps, uniq_for_p4[chrom] = find_overlapping_regions regions, $oil_chrom[chrom]
 end
 
+# find genes of interest
+qry_genes = ['Fgf2', 'Fgf9', 'Ptgs2', 'Spp1', 'Hand2']
+
 # find overlaps between regions that pop up only in the presence of P4
 chromosomes = (1..19).map { |i| i.to_s} + ['X']
 total_genes_hit = 0
 chromosomes.each do |chrom|
+     gene_data, gene_ranges  = parse_gene_table "../data_raw/gene_ranges.chr"+chrom+ ".csv", 25000
      
-     gene_data, gene_ranges  = parse_gene_table "../data_raw/gene_ranges.chr"+chrom+ ".csv"
+end
+=begin
      overlaps, genes_not_hit = find_overlapping_regions gene_ranges, uniq_for_p4[chrom]
 
      genes_hit = {}
@@ -84,3 +89,4 @@ chromosomes.each do |chrom|
      $verbose || File.write($scratch_space+'/p4_chr'+chrom+'.txt', outstr)
 end     
 puts total_genes_hit
+=end
