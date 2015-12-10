@@ -46,7 +46,7 @@ qry_genes.each do |gene|
 end
 connection_handle.close
 
-# are there any PR binding regions in the neoghborhood
+# report for each gene (this should go)
 qry_genes.each do |gene|
      min_tx_start = gene_coordinates[gene].map { |splice, coords| coords[:region].from }.min
      max_tx_end = gene_coordinates[gene].map { |splice, coords| coords[:region].to }.max
@@ -60,7 +60,9 @@ qry_genes.each do |gene|
      strands =  gene_coordinates[gene].map { |splice, coords| coords[:strand]}.uniq
      (strands.length == 1)  or abort "different strands for different splices (?) for gene #{gene}"
      strand = strands[0]
+
      
+     # are there any PR binding regions in the neoghborhood
      overlaping_p4  = $p4_chrom[chrom].select {|region| region==covering_region}
      overlaping_oil = $oil_chrom[chrom].select {|region| region==covering_region}
 
