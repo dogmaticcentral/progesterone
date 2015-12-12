@@ -19,7 +19,7 @@ module Utils
   def place_pr_regions  regions, strand, exons
        
        descr_str = ""
-       orig_region = regions.dup
+       orig_regions = regions.dup
        if strand=='-'        
             origin  = exons[-1][1]
             regions = regions.map { |x| [-(x[1]-origin), -(x[0]-origin)]}
