@@ -35,12 +35,12 @@ chromosomes.each do |chrom|
      
      overlaps.each do |overlap|
           gene_region, pr_ranges = overlap
-          name, name2, txStart, txEnd, exonStarts, exonEnds  = gene_data[gene_region].split "\t"
+          name, name2, strand, txStart, txEnd, exonStarts, exonEnds  = gene_data[gene_region].split "\t"
           if not genes_hit.key? name2
-               genes_hit[name2] = { splices: [[name, txStart.to_i, txEnd.to_i]],
+               genes_hit[name2] = { splices: [[name, strand, txStart.to_i, txEnd.to_i]],
                     pr_binding_sites:  pr_ranges}
           else
-               genes_hit[name2][:splices].push [name, txStart.to_i, txEnd.to_i]
+               genes_hit[name2][:splices].push [name, strand, txStart.to_i, txEnd.to_i]
                pr_ranges.each do |this_region|
                     ranges_seen = genes_hit[name2][:pr_binding_sites].select { |prb| prb === this_region }
                     if ranges_seen.empty? then genes_hit[name2][:pr_binding_sites].push(this_region) end
@@ -59,8 +59,9 @@ chromosomes.each do |chrom|
 
      genes_hit.each do |name, hash|
           # the first element of each splice_data array is txStart
-          origin = hash[:splices].map { |splice_data| splice_data[1] }.min
-          rev_origin = hash[:splices].map { |splice_data| splice_data[2] }.max
+          strand = hash[:splices][0][1]
+          origin = hash[:splices].map { |splice_data| splice_data[2] }.min
+          rev_origin = hash[:splices].map { |splice_data| splice_data[3] }.max
           if $verbose
                puts "="*20
                puts " #{name}    starts at: #{origin} "
@@ -74,7 +75,7 @@ chromosomes.each do |chrom|
                     puts " \t #{pr_region.from-origin}    #{pr_region.to-origin}  "
                end
           else
-               outstr +=   "#{name}\t#{origin}\t#{rev_origin}\t"
+               outstr +=   "#{name}\t#{strand}\t#{origin}\t#{rev_origin}\t"
                outstr +=   hash[:splices].map { |splice_data| splice_data[0] }.join","
                outstr +=  "\t"
                outstr +=   hash[:pr_binding_sites].map {|bs|  "#{bs.from-origin}..#{bs.to-origin}" }.join","

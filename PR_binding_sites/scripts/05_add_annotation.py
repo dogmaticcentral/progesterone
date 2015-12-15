@@ -74,7 +74,7 @@ def place_pr_regions (pr_regions, strand, exons):
 #########################################
 def main():
 
-    db     = connect_to_mysql("/Users/ivana/.ucsc_myql_conf")
+    db     = connect_to_mysql("/Users/ivana/.ucsc_mysql_conf")
     cursor = db.cursor()
     switch_to_db(cursor, "mm9") # mouse build name
 
@@ -84,13 +84,14 @@ def main():
         outfile = open ("../data_processed/annotated_p4_pr_regions_"+chrom+'.csv', "w")
         print >>outfile, "\t".join (["name", "splice",  "description", "strand",  "trsl start", 
                                      "trsl end", "length", "number of exons", "PR binding region (from trsl start)"]) 
+        gene_ct = 0
         for line in infile:
             line = line.rstrip()
-            [name, origin, rev_origin, splices_str, pr_regions] = line.split("\t")
+            [name, strand,  origin,  rev_origin, splices_str, pr_regions] = line.split("\t")
             origin = int(origin)
             rev_origin = int (rev_origin)
             splices = splices_str.split (",")
-            
+            gene_ct += 1
             prev_id = ""
             exons  = {}
             description_ids = []
@@ -133,6 +134,7 @@ def main():
                     strand_string = "positive"
                 print  >>outfile, "\t".join (map (lambda x: str(x), [name, splice,  description, strand_string,  origin, 
                                   rev_origin, rev_origin-origin, len(exons), pr_region_description_str]) )
+        print "chromosome: ", chrom, "   genes with PR binding regions: ", gene_ct
         outfile.close()
         infile.close()
  

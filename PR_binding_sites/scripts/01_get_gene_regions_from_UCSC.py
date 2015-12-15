@@ -16,8 +16,8 @@ def main():
     for chrom in chromosomes:
         print "downloading data for", chrom
         outf = open("../data_raw/gene_ranges."+chrom+".csv", "w")
-        print  >>outf,  "\t".join( ["name", "name2", "txStart", "txEnd"] )
-        qry  = "select g.name,  g.name2, g.txStart, g.txEnd "
+        print  >>outf,  "\t".join( ["name", "name2", "strand","txStart", "txEnd"] )
+        qry  = "select g.name,  g.name2, g.strand, g.txStart, g.txEnd "
         qry += "from refGene as g, gbCdnaInfo as i, refSeqStatus as s "
         qry += "where chrom='%s' " % chrom
         qry += "and i.acc=g.name  and i.type='mRNA' and i.mol='mRNA' "
