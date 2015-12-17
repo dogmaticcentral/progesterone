@@ -1,0 +1,18 @@
+         next
+          name, strand, chrom, f, t, distance, length, index, motif_l, middle, right, score = line.split
+          if  strand == '+'
+               motif_from = f.to_i  - distance.to_i  - length.to_i  + index.to_i - 9
+          else
+               motif_from = t.to_i  + distance.to_i +  index.to_i - 9
+          end
+          motif_to   = motif_from + 18
+          puts
+          puts motif_from, qry_from
+          puts motif_to, qry_to
+          if motif_from == qry_from  and motif_to == qry_to
+               puts " kjhfglakgjh "
+               motif and abort "motif found already (?)"
+               motif = "#{motif_l}  #{middle}  #{right}"
+               alignment_score = score
+          end
+ 

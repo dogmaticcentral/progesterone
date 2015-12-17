@@ -23,11 +23,6 @@ $p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
 different_keys =  $p4_chrom.keys - $oil_chrom.keys
 if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
 
-# find ovelaps per chromosome
-uniq_for_p4 = {}
-$p4_chrom.each do |chrom,regions|
-      overlaps, uniq_for_p4[chrom] = find_overlapping_regions regions, $oil_chrom[chrom]
-end
 
 # find genes of interest
 chromosomes = (1..19).map { |i| i.to_s} + ['X']
@@ -37,8 +32,11 @@ chromosomes.reverse!
 score = {}
 chromosomes.each do |chrom|
 
+     oil_and_p4_overlaps, uniq_for_p4 = find_overlapping_regions  $p4_chrom[chrom], $oil_chrom[chrom]
+     oil_and_p4_binding_regions  = oil_and_p4_overlaps.map { |ovlp| ovlp[0] }
+     
      gene_data, gene_ranges  = parse_gene_table(table_name:"../data_raw/gene_ranges.chr"+chrom+ ".csv",  extension: $extension, merge_splices: true)
-     overlaps, genes_not_hit = find_overlapping_regions gene_ranges, uniq_for_p4[chrom]
+     overlaps, genes_not_hit = find_overlapping_regions gene_ranges, uniq_for_p4
 
      # each overlap is a pair gene_region, pr_ranges
      puts "chrom: #{chrom}   genes hit: #{overlaps.length}"
@@ -71,12 +69,12 @@ chromosomes.each do |chrom|
                     sum += 1 if subseq[0] =~ /[ag]/
                     sum += 2 if subseq[1] == 'g'
                     if   subseq[3,3] =~ /aca/
-                         sum += 3
+                         sum += 4
                     elsif subseq[3,3] =~ /[ag][ct][ag]/
                          sum += 2
                     end
                     if   subseq[9,3] =~ /tgt/
-                         sum += 3
+                         sum += 4
                     elsif subseq[9,3] =~ /[ct][ag][ct]/
                          sum += 2
                     end
@@ -100,7 +98,7 @@ chromosomes.each do |chrom|
                score [ max_key]  = max_score
           end
      end
-     score.sort_by{|k,v| -v}.each { |k,v| puts "\t #{k}   #{format("%.2f",v)}"  if v > 11}
+     score.sort_by{|k,v| -v}.each { |k,v| puts "\t #{k}   #{format("%.2f",v)}"  if v > 5}
  end
 
 outf = open("top_genes_half_site", 'w')

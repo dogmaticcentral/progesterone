@@ -24,6 +24,42 @@ $p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
 different_keys =  $p4_chrom.keys - $oil_chrom.keys
 if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
 
+
+def score_region (region, chrom, strand, min_tx_start, max_tx_end, comment)
+     score = {}
+     seq =  get_dna_region 'mm9', chrom, region.from, region.to
+     (7...seq.length-7).each do |index|
+          
+          sum  = 0
+          subseq = seq[index-7,15]
+          sum += 1 if subseq[0] =~ /[ag]/
+          sum += 2 if subseq[1] == 'g'
+          if   subseq[3,3] =~ /aca/
+               sum += 3
+          elsif subseq[3,3] =~ /[ag][ct][ag]/
+               sum += 2
+          end
+          if   subseq[9,3] =~ /tgt/
+               sum += 3
+          elsif subseq[9,3] =~ /[ct][ag][ct]/
+               sum += 2
+          end
+          sum += 2 if subseq[13] == 'c'
+          sum += 1 if subseq[14] =~ /[ct]/
+          
+          dist =  strand=='+' ? min_tx_start - region.to :  region.from - max_tx_end
+          #next if dist < 0 or dist > 25000
+          next if dist > 25000
+          
+          sum += 5*exp(- dist.abs/5000.0) 
+          addr_from = region.from + index -7
+          addr_to = region.from + index +7
+          score [ [index, addr_from, addr_to, subseq, comment ] ] = sum
+     end
+
+     return score
+end
+
 # find ovelaps per chromosome
 # uniq_for_p4 = {}
 # $p4_chrom.each do |chrom,regions|
@@ -35,10 +71,10 @@ connection_handle = connect_to_mysql('/Users/ivana/.ucsc_mysql_conf')
 connection_handle.select_db ('mm9')
 
 # find genes of interest
-# qry_genes = ['Fgf9', 'Spp1', 'Fgf2',  'Ptgs2', 'Hand2']
+#qry_genes = ['Fgf9', 'Spp1', 'Fgf2',  'Ptgs2', 'Hand2']
 #qry_genes = ['Hand2']
 
-qry_genes = ['Pgr', 'Gata2', 'Wnt7a', 'Egfr', 'Ihh', 'Fkbp5', 'Cyp26a1', 'Lifr']
+qry_genes = ['Pgr', 'Gata2', 'Wnt7a', 'Egfr', 'Ihh', 'Fkbp5', 'Cyp26a1', 'Lifr', 'Greb1', 'Scgb1a1']
 
 gene_coordinates = {}
 qry_genes.each do |gene|
@@ -105,21 +141,25 @@ qry_genes.each do |gene|
      end
 
      overlaping_p4.length > 0 or next;
-             
-     overlaps, uniq_for_p4 = find_overlapping_regions overlaping_p4, overlaping_oil
+
+     uniq_for_oil = []
+     uniq_for_p4  = []
+     overlaps, uniq_for_oil = find_overlapping_regions overlaping_oil, overlaping_p4
 
      if overlaps.length > 0
           puts "note the overlapping regions between PR binding sites in the presence of progesterone and vehicle only: "
           overlaps.each do |ovlp|
-               p4_region, oil_regions = ovlp
-               printf " p4:  %6d  %6d \n",  p4_region.from - min_tx_start, p4_region.to - min_tx_start
-               oil_regions.each do |oil_region|
-                    printf " p4:  %6d  %6d \n",  oil_region.from - min_tx_start, oil_region.to - min_tx_start
+               oil_region, p4_regions = ovlp
+               printf " oil:  %6d  %6d \n",  oil_region.from - min_tx_start, oil_region.to - min_tx_start
+               p4_regions.each do |p4_region|
+                    printf "  p4:  %6d  %6d \n",  p4_region.from - min_tx_start, p4_region.to - min_tx_start
                end
           end
+     else
+          overlaps, uniq_for_p4 = find_overlapping_regions overlaping_p4, overlaping_oil
      end
-
      
+
      #uniq_for_p4.length > 0 or next;
      
      gene_coordinates[gene].each do |splice, coords|
@@ -158,41 +198,18 @@ qry_genes.each do |gene|
           puts "looking for  RgNaca NRN tgtNcY where R = A|G, Y = T|C, N = any"
           #                 cagaaca gtt tgttctg  2c7a
           score = {}
-          uniq_for_p4.each do |region|
-               puts splice
-               puts "PR binding region #{region.from - min_tx_start} to #{region.to- min_tx_start}  --  chr#{chrom} #{region.from} #{region.to}" 
-               seq =  get_dna_region 'mm9', chrom, region.from, region.to
-               (7...seq.length-7).each do |index|
-                    
-                    sum  = 0
-                    subseq = seq[index-7,15]
-                    sum += 1 if subseq[0] =~ /[ag]/
-                    sum += 2 if subseq[1] == 'g'
-                    if   subseq[3,3] =~ /aca/
-                         sum += 3
-                    elsif subseq[3,3] =~ /[ag][ct][ag]/
-                         sum += 2
-                    end
-                    if   subseq[9,3] =~ /tgt/
-                         sum += 3
-                    elsif subseq[9,3] =~ /[ct][ag][ct]/
-                         sum += 2
-                    end
-                    sum += 2 if subseq[13] == 'c'
-                    sum += 1 if subseq[14] =~ /[ct]/
-                    
-                    dist =  strand=='+' ? min_tx_start - region.to :  region.from - max_tx_end
-                    next if dist < 0 or dist > 25000
-                    
-                    sum += 5*exp(- dist/5000.0) 
-                    addr_from = region.from + index -7
-                    addr_to = region.from + index +7
-                    score [ [index, addr_from, addr_to, subseq ] ] = sum
-               end
-      
+          overlaps.each do |ovlp|
+               region, p4_regions = ovlp
+               score.merge!(score_region region,chrom,strand,min_tx_start,max_tx_end,"oil_and_p4")
           end
-          score.sort_by{|k,v| -v}.each { |k,v| puts "\t #{format("%4d",k[0])}   #{format("%8d",k[1])}  #{format("%8d",k[2])}  #{k[3][0,6]} #{k[3][6,3]} #{k[3][9,6]}  #{format("%.2f",v)}"  }    
-
+          uniq_for_oil.each do |region|
+               score.merge!(score_region region,chrom,strand,min_tx_start,max_tx_end,"oil_only")
+          end
+          uniq_for_p4.each do |region|
+               score.merge!(score_region region,chrom,strand,min_tx_start,max_tx_end,"p4_only")
+          end
+          score.sort_by{|k,v| -v}.each { |k,v| puts "\t #{format("%4d",k[0])}   #{format("%8d",k[1])}  #{format("%8d",k[2])}  #{k[3][0,6]} #{k[3][6,3]} #{k[3][9,6]}  #{format("%15s",k[4])}  #{format("%.2f",v)} " if  v > 8}
+          
      end
 end
 # cagaaca gtt tgttctg

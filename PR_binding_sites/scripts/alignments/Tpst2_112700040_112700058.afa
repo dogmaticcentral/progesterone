@@ -1,0 +1,28 @@
+>mm9 chr5 112700058 112700058
+AA---------------------------AGAACCCTGTGTTCC----------------------------GG
+>rn4 chr19 14252668 14252668
+A-----------------------------GAACCCGGTGTTCC----------------------------GG
+>cavPor2 scaffold_189716 7035 7035
+A-------------------------------ATCCAATGCCTA----------------------------GG
+>ponAbe2 chr22 25121667 25121667
+aatcttggggctggg------gtccatcaagaatcatctcATTT----------------------------GG
+>panTro2 chr22 24763268 24763268
+aatcctggggctggg------gtccgtcaagaatcatctcATTT----------------------------GG
+>hg18 chr22 24367749 24367749
+aatCCTGGAGCTGGG------GTACATCAGGAATCATCTCATTT----------------------------GG
+>rheMac2 chr10 24420909 24420909
+AATCCTGGGGCTGGG------GTCCATCAAGAATCATCTCATTT----------------------------GG
+>calJac1 Contig4406 52137 52137
+aaccctggggctggg------gcccatcaagaatcatctcCTCT----------------------------GG
+>otoGar1 scaffold_102070.1-202199 135294 135294
+aatCCT-----------------------AGAATCATCT--TTC----------------------------AG
+>tupBel1 scaffold_8689.1-374346 211709 211709
+AATCCTGGGTCCAGG------TTCCACCTAGAATCATCTTTTTG----------------------------GG
+>canFam2 chr26 18743255 18743255
+aatcctgggtccagg------ttccactaagaatcatgtctcctactacaagtggtacatgctctgctcttcgg
+>equCab1 chr8 9526826 9526826
+gatcctgggtccaag------ttccacccagaatcatgtctcctggtatgaacagtacacgccctaccctttgg
+>bosTau3 chr17 6159844 6159844
+agtcctgggtccaag------ttccacctagcatcatctctcctgctacaaatggcacATTCCCTGTGCT--GG
+>loxAfr1 scaffold_93511 4065 4065
+aatcctgagtccaggctccacct------ggaattatctctcctattacaaatggaacatgccttgccctttag
