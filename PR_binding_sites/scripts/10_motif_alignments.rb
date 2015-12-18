@@ -4,7 +4,8 @@ require_relative 'ruby_modules/region'
 require_relative 'ruby_modules/httputils'
 include  HttpUtils
 
-table_name                 =  "top_genes_half_site.p4_only.stricter"
+#table_name                 =  "top_genes_half_site.p4_only.stricter"
+table_name                 =  "top_hand2"
 maf_region_extraction_tool =  "/Users/ivana/third_party_utils/kentUtils/bin/mafsInRegion"
 maf_dir                    =  "/Users/ivana/databases/UCSC"
 maf2afa_tool               =  "/usr/local/bin/maf_to_fasta.py"

@@ -35,12 +35,12 @@ def score_region (region, chrom, strand, min_tx_start, max_tx_end, comment)
           sum += 1 if subseq[0] =~ /[ag]/
           sum += 2 if subseq[1] == 'g'
           if   subseq[3,3] =~ /aca/
-               sum += 3
+               sum += 4
           elsif subseq[3,3] =~ /[ag][ct][ag]/
                sum += 2
           end
           if   subseq[9,3] =~ /tgt/
-               sum += 3
+               sum += 4
           elsif subseq[9,3] =~ /[ct][ag][ct]/
                sum += 2
           end
@@ -71,10 +71,10 @@ connection_handle = connect_to_mysql('/Users/ivana/.ucsc_mysql_conf')
 connection_handle.select_db ('mm9')
 
 # find genes of interest
-#qry_genes = ['Fgf9', 'Spp1', 'Fgf2',  'Ptgs2', 'Hand2']
+qry_genes = ['Fgf9', 'Spp1', 'Fgf2',  'Ptgs2', 'Hand2']
 #qry_genes = ['Hand2']
 
-qry_genes = ['Pgr', 'Gata2', 'Wnt7a', 'Egfr', 'Ihh', 'Fkbp5', 'Cyp26a1', 'Lifr', 'Greb1', 'Scgb1a1']
+#qry_genes = ['Pgr', 'Gata2', 'Wnt7a', 'Egfr', 'Ihh', 'Fkbp5', 'Cyp26a1', 'Lifr', 'Greb1', 'Scgb1a1']
 
 gene_coordinates = {}
 qry_genes.each do |gene|
