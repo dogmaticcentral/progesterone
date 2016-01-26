@@ -5,6 +5,9 @@ require_relative 'ruby_modules/parsers'
 require_relative 'ruby_modules/utils'
 require_relative 'ruby_modules/mysqlutils'
 require_relative 'ruby_modules/httputils'
+
+require 'bio'
+
 include Parsers, Utils, MysqlUtils, HttpUtils
 include Math
 
@@ -22,9 +25,15 @@ end
 
 class ::Hash
   def has_pattern_key? (qry, pattern)
+     
+       # check for the  reverse complement, while we're at tha
+       qry_complement = Bio::Sequence.auto(qry).reverse_complement
+       pattern_reverse = pattern.reverse
        self.keys.each do |k|
             return k if  k.matches?(qry,pattern)
+            return k if  k.matches?(qry_complement,pattern_reverse)
        end
+       
        return nil
   end
 end
@@ -44,78 +53,78 @@ $p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
 different_keys =  $p4_chrom.keys - $oil_chrom.keys
 if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
 
+
+
+def build_motifs  alphabet, pattern, motif, ret_storage
+     if pattern.length == 0
+          ret_storage.push motif
+     else
+          alphabet.each { |c| build_motifs(alphabet, pattern[1..-1], motif+(pattern[0]?c:'.'), ret_storage ) }
+         
+     end
+end
+
+def reverse_complement blah
+     compl = {'a'=>'t', 't'=>'a','c'=>'g',  'g'=>'c', '.'=>'.'}
+     retstr = ''
+     blah.downcase.reverse.split(//).each {|c|  retstr += compl[c]}
+     return retstr
+end
+
 winlen  = 6
 pattern = [true, true, true, false, true, true]
-pattern = [true, true, false, true, true, true]
+alphabet = ['a', 'g', 't', 'c']
 
+motifs = []
+build_motifs(alphabet,pattern,'', motifs)
+regex = {}
+# to each motif assig one regex for itself and pone for the complement - we'll consider all of these as equally valid
+motifs.each { |motif|  regex[motif] =  Regexp.new(motif+"|"+reverse_complement(motif) )}
+                                             
 raw_counts = {}
 uniq_containers = {}
-number_uniq_containers = {}
-parent_key = {}
+motifs.each do |motif| 
+     raw_counts[motif] = 0
+     uniq_containers[motif] = []
+end
 
+
+
+total_regions = 0
 $oil_chrom.sort_by {|k,v|  v.length}.each do |chrom, regions|
      puts " chrom  #{chrom}  number of regions:   #{regions.length} "
-
      regions.each do |region|
-          #next if region.length > 500
-          if region.length > 500
-              start_pos = region.length/4.0
-              end_pos = 3*region.length/4.0
-          else
-              start_pos = 0
-              end_pos   = region.length
-          end
-          #puts "\t  #{region.from}  #{region.to} "
+          next if region.length > 500
+          total_regions += 1
+          #if region.length > 500
+          #    start_pos = region.length/4.0
+          #    end_pos = 3*region.length/4.0
+          #else
+          start_pos = 0
+          end_pos   = region.length
+
           seq =  get_dna_region 'mm9', chrom, region.from, region.to
           (start_pos ... end_pos-winlen).each do |index|
                frag = seq[index,winlen]
-               if not raw_counts.has_key? frag
-                    raw_counts[frag] = 0
-                    number_uniq_containers[frag] = 0
-                    uniq_containers[frag] = []
-                    
-               end
-               raw_counts[frag]  += 1
-               if not uniq_containers[frag].include? region
-                    uniq_containers[frag].push region
-                    number_uniq_containers[frag] += 1
-               end
-               
+               # which motifs does this frag make happy
+               motifs.each do |motif| 
+                    next if not regex[motif].match(frag)
+                    raw_counts[motif]  += 1
+                    if not uniq_containers[motif].include? region
+                         uniq_containers[motif].push region
+                    end
+                end
+              
           end
           
      end
  end
 
-#number_uniq_containers.sort_by {|k,v|  v}.each do |frag, count|
-#     puts " #{frag}  #{count}  #{raw_counts[frag]} " #if count > 100
-#end
 
 
-# regroup the motifs that differ in the last two positions and cover the largesr portion of fragments
-super_counts = {}
-super_uniq_containers = {}
-super_number_uniq_containers = {}
-
-raw_counts.keys.each do |frag|
-
- 
-     key_match =  super_counts.has_pattern_key? frag, pattern 
-     if not key_match
-          super_counts[frag] = 0
-          super_uniq_containers[frag] = []
-          super_number_uniq_containers[frag] = 0
-          key_match = frag
-     end
-          
-     parent_key[frag] = key_match
-     uniq_containers[frag].each  { |region|  (super_uniq_containers[key_match].push region) if not (super_uniq_containers[key_match].include? region) }
-     
-end
-
-super_uniq_containers.sort_by {|k, v|  v.length}.each do |key_match, uniq_regions|
-     
-     print  " #{key_match}    #{uniq_regions.length}    "
-     parent_key.select {|k2,v2| v2 == key_match}.keys.each {|frag| print frag, "  ", raw_counts[frag], "      "}
-     puts
+uniq_containers.sort_by {|k, v|  v.length}.each do |motif, uniq_regions|
+     pct = uniq_regions.length*100.0/total_regions
+     next if pct < 70
+     puts  " #{motif}    #{uniq_regions.length}/#{total_regions}  (#{format("%.0f",pct)}%)    "
 
 end

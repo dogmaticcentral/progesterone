@@ -45,15 +45,21 @@ gataaa    276/392  (70%)    gataaa  51      tttttc  105      gatgaa  53      ttt
  aaagag    304/392  (78%)    aaagag  95      aaaaag  76      ctcatt  105      ctcttt  96      aaacag  111      aaatag  59      ctcctt  82      ctcgtt  6      
  tggctt    304/392  (78%)    tggctt  88      tggttt  78      tggatt  45      aagcca  88      aagaca  66      aagtca  72      aaggca  89      tgggtt  63      
  ctggct    305/392  (78%)    ctggct  108      ctgact  79      ctgcct  116      ctgtct  99      agccag  91      agctag  56      agcaag  71      agcgag  13      
- cttctg    305/392  (78%)    cttctg  101      caggag  87      cttttg  92      cagtag  33      cttgtg  72      cagaag  82      cagcag  112      cttatg  27      
+ cttctg    305/392  (78%)    cttctg  101      caggag  87      cttttg  92      cagtag  33      cttgtg  72      cagaag  82      cagcag  112      cttatg  27     
+ 
  tctctt    307/392  (78%)    tctctt  108      tctgtt  113      aaggga  75      aagaga  88      tctttt  119      tctatt  74      aagtga  59      aagcga  7      
  aataca    308/392  (79%)    aataca  66      tgtttt  140      tgtgtt  110      tgtatt  62      tgtctt  91      aatcca  51      aattca  76      aatgca  70      
  tggtct    312/392  (80%)    tggtct  45      agaaca  156      tgggct  78      agagca  118      agatca  43      tggcct  90      agacca  42      tggact  55      
  ctgctt    313/392  (80%)    ctgctt  83      ctggtt  70      ctgttt  113      aagtag  44      aaggag  95      ctgatt  48      aagcag  79      aagaag  114      
  agcaaa    313/392  (80%)    agcaaa  95      ttttct  155      agctaa  46      tttcct  135      agccaa  98      tttact  64      tttgct  87      agcgaa  9      
- ttgtct    317/392  (81%)    ttgtct  79      agataa  48      agagaa  117      ttggct  84      agacaa  73      agaaaa  154      ttgact  49      ttgcct  61      
+  
  tctctg    317/392  (81%)    tctctg  112      caggga  88      tctgtg  129      cagtga  70      cagaga  124      tctttg  92      tctatg  31      cagcga  17      
+
  tgcttt    317/392  (81%)    tgcttt  100      aaagca  110      aaaaca  150      aaatca  77      aaacca  75      tgcctt  78      tgcatt  71      tgcgtt  13      
+
+ttgtct    317/392  (81%)    ttgtct  79      agataa  48      agagaa  117      ttggct  84      agacaa  73      agaaaa  154      ttgact  49      ttgcct  61    
+agcaca    319/392  (81%)    agcaca  92      tgttct  136      tgtact  83      agctca  66      tgtgct  91      agccca  59      tgtcct  82      agcgca  15     
+
+ 
  ctttct    318/392  (81%)    ctttct  130      cttgct  87      agaaag  116      agagag  311      agatag  32      cttcct  126      agacag  68      cttact  38      
- agcaca    319/392  (81%)    agcaca  92      tgttct  136      tgtact  83      agctca  66      tgtgct  91      agccca  59      tgtcct  82      agcgca  15      
  tttctt    341/392  (87%)    tttctt  163      tttgtt  172      tttttt  356      aagaaa  151      aaggaa  128      tttatt  118      aagtaa  64      aagcaa  102      
