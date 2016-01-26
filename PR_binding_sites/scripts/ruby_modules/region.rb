@@ -32,5 +32,9 @@ class Region
           new_to   = @to>reg2.to ? @to: reg2.to
           return Region.new(new_from, new_to)
      end
+
+     def length
+          return @to - @from + 1
+     end
 end
 
