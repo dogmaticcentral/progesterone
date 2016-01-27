@@ -6,8 +6,6 @@ require_relative 'ruby_modules/utils'
 require_relative 'ruby_modules/mysqlutils'
 require_relative 'ruby_modules/httputils'
 
-require 'bio'
-
 include Parsers, Utils, MysqlUtils, HttpUtils
 include Math
 
@@ -21,21 +19,6 @@ class ::String
           (0 .. self.length).each {|i| (match &= (this_arr[i] == other_arr[i]) )  if pattern[i]}
           return match
      end
-end
-
-class ::Hash
-  def has_pattern_key? (qry, pattern)
-     
-       # check for the  reverse complement, while we're at tha
-       qry_complement = Bio::Sequence.auto(qry).reverse_complement
-       pattern_reverse = pattern.reverse
-       self.keys.each do |k|
-            return k if  k.matches?(qry,pattern)
-            return k if  k.matches?(qry_complement,pattern_reverse)
-       end
-       
-       return nil
-  end
 end
 
 $verbose = true
@@ -94,7 +77,7 @@ total_regions = 0
 $oil_chrom.sort_by {|k,v|  v.length}.each do |chrom, regions|
      puts " chrom  #{chrom}  number of regions:   #{regions.length} "
      regions.each do |region|
-          next if region.length > 500
+          #next if region.length > 500
           total_regions += 1
           #if region.length > 500
           #    start_pos = region.length/4.0
