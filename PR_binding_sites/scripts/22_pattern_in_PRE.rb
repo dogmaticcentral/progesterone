@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
 # just by looking at the regions that the ChIPSeq pulls down - can we tell the  motif?
+# it looks like tgt.cy and be found ins some 86% of random cases (random regions)
+# vs 91% of cases labeled oil
+# vs 94% of cases labeled p4
+# vs 93% of cases if both o&p
 
 require_relative 'ruby_modules/region'
 require_relative 'ruby_modules/parsers'
@@ -16,33 +20,24 @@ include Math
 
 $verbose = true
 $scratch_space = "/tmp"
-
+$sanity_check = false
+$random_check = false
 
 ##################################
-# read in the regions detected in the presence of P4 and oil only
-$oil_chrom = parse_chipseq_table "../data_raw/GSM857545_1_PR_oil_s_4_aligned.csv"
-$p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
-
-different_keys =  $p4_chrom.keys - $oil_chrom.keys
-if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
-
-def read_dna condition, chrom
-     file = File.open("../data_raw/#{condition}_chr#{chrom}.fasta", "r")
-     dna_seqs = {}
-     name = ""
-     file.each_line do |line|
-          line.chomp!.strip!
-          next if line.length == 0
-          if line[0] == '>'
-               name = line[1..-1].chomp
-               dna_seqs[name] = ""
-          else
-               dna_seqs[name] += line
-          end
-     end
-     file.close
-     return dna_seqs
+region_sets = {}
+if $random_check
+     $random_chrom =  parse_chipseq_table "../data_raw/random.csv"
+     region_sets   =  {"random"=>$random_chrom}
+else
+     # read in the regions detected in the presence of P4 and oil only
+     $oil_chrom = parse_chipseq_table "../data_raw/GSM857545_1_PR_oil_s_4_aligned.csv"
+     $p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
+     region_sets = {"oil"=> $oil_chrom, "p4"=> $p4_chrom}
+     different_keys =  $p4_chrom.keys - $oil_chrom.keys
+     if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
 end
+region_sets = {"p4"=> $p4_chrom}
+
 
 @all_nts  = ['a', 'g', 't', 'c']
 @purines  = ['a', 'g']
@@ -124,7 +119,6 @@ raw_counts = {}
 initialize_hash  @all_nts, winlen, '', raw_counts
 
 total_regions = 0
-region_sets = {"oil"=> $oil_chrom, "p4"=> $p4_chrom}
 
 region_sets.each do |label, region_set|
      region_set.sort_by {|k,v|  v.length}.each do |chrom, regions|
@@ -141,7 +135,7 @@ region_sets.each do |label, region_set|
                next if seq =~ /n/
                motifs_in_this_region = []
                
-               (start_pos ... end_pos-winlen). each do |index|
+               (start_pos ... end_pos-winlen).each do |index|
                     frag = seq[index,winlen]
                     raw_counts[frag]  += 1
                     motifs = seq2mot[ frag ]
@@ -174,39 +168,42 @@ uniq_containers.sort_by {|k, v|  v.length}.each do |motif, uniq_regions|
           
 end
 
-# check
-motif = "tgt.cy"
-tot_found = 0
-tot_regions = 0
-region_sets.each do |label, region_set|
-     region_set.sort_by {|k,v|  v.length}.each do |chrom, regions|
-          puts " #{label} chrom  #{chrom}  number of regions:   #{regions.length} "
-          dna_seq = read_dna label, chrom
-          regions.each do |region|
-               
-               #next if region.length > 1000
-               tot_regions += 1
-               start_pos = (region.length/5.0).to_i
-               end_pos   = (4*region.length/5.0).to_i
+###############################################################
+if $sanity_check
+     # check
+     motif = "tgt.cy"
+     tot_found = 0
+     tot_regions = 0
+     region_sets.each do |label, region_set|
+          region_set.sort_by {|k,v|  v.length}.each do |chrom, regions|
+               puts " #{label} chrom  #{chrom}  number of regions:   #{regions.length} "
+               dna_seq = read_dna label, chrom
+               regions.each do |region|
+                    
+                    #next if region.length > 1000
+                    tot_regions += 1
+                    start_pos = (region.length/5.0).to_i
+                    end_pos   = (4*region.length/5.0).to_i
 
-               seq = dna_seq[ "mm9_#{chrom}_#{region.from}_#{region.to}"]
-               next if seq =~ /n/
-               found = false
-               (start_pos ... end_pos-winlen). each do |index|
-                    frag = seq[index,winlen]
-                    raw_counts[frag]  += 1
-                    motifs = seq2mot[ frag ]
-                    if motifs.include? motif
-                         puts " #{index}/#{region.length}   #{frag} "
-                         tot_found += 1 if  not found
-                         found = true
-                         
+                    seq = dna_seq[ "mm9_#{chrom}_#{region.from}_#{region.to}"]
+                    next if seq =~ /n/
+                    found = false
+                    (start_pos ... end_pos-winlen). each do |index|
+                         frag = seq[index,winlen]
+                         raw_counts[frag]  += 1
+                         motifs = seq2mot[ frag ]
+                         if motifs.include? motif
+                              puts " #{index}/#{region.length}   #{frag} "
+                              tot_found += 1 if  not found
+                              found = true
+                              
+                         end
                     end
-               end
 
+               end
           end
      end
-end
 
-pct = tot_found*100.0/tot_regions
-puts  " #{motif}    #{tot_found}/#{tot_regions}  (#{format("%.0f",pct)}%) "
+     pct = tot_found*100.0/tot_regions
+     puts  " #{motif}    #{tot_found}/#{tot_regions}  (#{format("%.0f",pct)}%) "
+end

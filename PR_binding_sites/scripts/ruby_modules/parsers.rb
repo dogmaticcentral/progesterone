@@ -11,6 +11,7 @@ module Parsers
           end
           return chromosome
      end
+     
      ##################################
      def parse_gene_table(table_name: nil, extension: 0, merge_splices: false)
 
@@ -49,4 +50,25 @@ module Parsers
           end
           return gene_data, gene_regions
      end
+     
+     ####################################
+     def read_dna condition, chrom
+          file = File.open("../data_raw/#{condition}_chr#{chrom}.fasta", "r")
+          dna_seqs = {}
+          name = ""
+          file.each_line do |line|
+               line.chomp!.strip!
+               next if line.length == 0
+               if line[0] == '>'
+                    name = line[1..-1].chomp
+                    dna_seqs[name] = ""
+               else
+                    dna_seqs[name] += line
+               end
+          end
+          file.close
+          return dna_seqs
+     end
+
+     
 end
