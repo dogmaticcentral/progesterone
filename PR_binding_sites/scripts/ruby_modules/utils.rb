@@ -100,6 +100,93 @@ module Utils
             descr_str += "\n"
        end
        return descr_str
-  end # end of place_pr_regions    
+  end # end of place_pr_regions
+
+
+
+  def reverse_complement blah
+     compl = {'a'=>'t', 't'=>'a','c'=>'g',  'g'=>'c', '.'=>'.', 'r'=>'y',  'y'=>'r'}
+     retstr = ''
+     blah.downcase.reverse.split(//).each {|c|  retstr += compl[c]}
+     return retstr
+  end
+
+
+ def get_alignment alnmt_file_name, chrom, region_from, region_to
+
+      maf_region_extraction_tool =  "/Users/ivana/third_party_utils/kentUtils/bin/mafsInRegion"
+      maf_dir                    =  "/Users/ivana/databases/UCSC"
+      maf2afa_tool               =  "/usr/local/bin/maf_to_fasta.py"
+
+      [maf_region_extraction_tool, maf_dir, maf2afa_tool].each  {|f| File.exists?f or raise "#{f} not found"}
+
+       
+     # now get this region from the alignment
+     outf = open("regions.bed", 'w')
+     outf.write("chr#{chrom}  #{region_from}  #{region_to}\n") 
+     outf.close
+     system ("#{maf_region_extraction_tool}  regions.bed   tmp.maf   #{maf_dir}/chr#{chrom}.maf")
+     
+     if not File.exist? "tmp.maf"
+          puts "maf not produced"
+          return
+     end
+     #turn to afa
+     system ("#{maf2afa_tool} < tmp.maf > tmp.afa")
+     if not File.exist? "tmp.afa"
+          puts "afa not produced"
+          return
+     end
+     if  File.zero? "tmp.afa"
+          puts "afa empty"
+          return
+     end     
+     system ("rm tmp.maf")
+
+     
+     
+     # read in, stich the pieces of the sequence, because of the idiotic format in which the script returns it
+     aligned_seq = {}
+     last_pos = {}
+     first_pos = {}
+     key = ""
+     File.readlines("tmp.afa").each do |line|
+          if line[0]=='>'
+               crap, from_to = line[1..-1].split (/\:/)
+               from, to = from_to.split /\-/
+               fields = crap.split /\./
+               assembly = fields.shift
+               chrom = fields.join '.'
+               
+               key = "#{assembly} #{chrom}"
+               if not aligned_seq.keys.include? key 
+                    aligned_seq[key] = ""
+                    first_pos[key] = to.to_i                    
+               elsif from.to_i != last_pos[key]
+                     aligned_seq[key] += "_pos_mismatch_: #{from} #{last_pos[key]}   #{key}"
+               end
+               last_pos[key] = to.to_i
+          else
+               if key=="" then abort "key not initialized" end
+               aligned_seq[key] += line.chomp
+          end
+     end
+     #system ("rm tmp.afa")
+ 
+     
+     outf = open(alnmt_file_name, 'w')
+     alignment_length = region_to - region_from + 1
+     aligned_seq.each do |seqname, sequence|
+          # cleanup
+          next if sequence.include? "_pos_mismatch_"
+          # note here - we are looking for complete seqeunce - so this search is not general
+          # it assumes we are looking for shortish motfs that we want to be complete, or else
+          #next if sequence.gsub('-','').length < alignment_length
+          outf.write(">#{seqname} #{first_pos[seqname]} #{last_pos[seqname]}\n")
+          outf.write(sequence+"\n")
+     end
+     outf.close
+     # extract rodents and primates  and ungulates (?) if available
+  end # end of  get_alignment alnmt_file_name, chrom, region_from, region_to
     
 end # end of module

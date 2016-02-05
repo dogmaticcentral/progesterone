@@ -6,9 +6,6 @@ include  HttpUtils
 
 #table_name                 =  "top_genes_half_site.p4_only.stricter"
 table_name                 =  "top_hand2"
-maf_region_extraction_tool =  "/Users/ivana/third_party_utils/kentUtils/bin/mafsInRegion"
-maf_dir                    =  "/Users/ivana/databases/UCSC"
-maf2afa_tool               =  "/usr/local/bin/maf_to_fasta.py"
 class Gene
      attr_accessor :stradn, :chrom, :region, :strand, :chrom, :motif_index
      attr_accessor :dist_to_PR_binding_region, :length_of_PR_binding_region, :motif, :score
@@ -55,71 +52,9 @@ genes.each do |gene_name, gene|
      puts seq
      puts "  "+query_seq
      if seq[2..-3] != query_seq then  abort "seq mismatch" end
+     # get_alignment is in utils
+     get_alignment alignment_file, gene.chrom  motif_from-1,   motif_to
 
-     # now get this region from the alignment
-     outf = open("regions.bed", 'w')
-     outf.write("chr#{gene.chrom}  #{motif_from-1}  #{motif_to}\n") 
-     outf.close
-     system ("#{maf_region_extraction_tool}  regions.bed   tmp.maf   #{maf_dir}/chr#{gene.chrom}.maf")
-     
-     if not File.exist? "tmp.maf"
-          puts "maf not produced"
-          next
-     end
-     #turn to afa
-     system ("#{maf2afa_tool} < tmp.maf > tmp.afa")
-     if not File.exist? "tmp.afa"
-          puts "afa not produced"
-          next
-     end
-     if  File.zero? "tmp.afa"
-          puts "afa empty"
-          next
-     end     
-     system ("rm tmp.maf")
-
-     
-     
-     # read in, stich the pieces of the sequnce, because of the idiotic format in which the script returns it
-     aligned_seq = {}
-     last_pos = {}
-     first_pos = {}
-     key = ""
-     File.readlines("tmp.afa").each do |line|
-          if line[0]=='>'
-               crap, from_to = line[1..-1].split (/\:/)
-               from, to = from_to.split /\-/
-               fields = crap.split /\./
-               assembly = fields.shift
-               chrom = fields.join '.'
-               
-               key = "#{assembly} #{chrom}"
-               if not aligned_seq.keys.include? key 
-                    aligned_seq[key] = ""
-                    first_pos[key] = to.to_i                    
-               elsif from.to_i != last_pos[key]
-                     aligned_seq[key] += "_pos_mismatch_: #{from} #{last_pos[key]}   #{key}"
-               end
-               last_pos[key] = to.to_i
-          else
-               if key=="" then abort "key not initialized" end
-               aligned_seq[key] += line.chomp
-          end
-     end
-     system ("rm tmp.afa")
-    puts
-
-     
-     outf = open(alignment_file, 'w')
-     aligned_seq.each do |seqname, sequence|
-          # cleanup
-          next if sequence.include? "_pos_mismatch_"
-          next if sequence.gsub('-','').length < query_seq.length
-          outf.write(">#{seqname} #{first_pos[seqname]} #{last_pos[seqname]}\n")
-          outf.write(sequence+"\n")
-     end
-     outf.close
-     # extract rodents and primates  and ungulates (?) if available
      
 end
 

@@ -23,21 +23,9 @@ $scratch_space = "/tmp"
 $sanity_check = false
 $random_check = false
 
-##################################
-region_sets = {}
-if $random_check
-     $random_chrom =  parse_chipseq_table "../data_raw/random.csv"
-     region_sets   =  {"random"=>$random_chrom}
-else
-     # read in the regions detected in the presence of P4 and oil only
-     $oil_chrom = parse_chipseq_table "../data_raw/GSM857545_1_PR_oil_s_4_aligned.csv"
-     $p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
-     region_sets = {"oil"=> $oil_chrom, "p4"=> $p4_chrom}
-     different_keys =  $p4_chrom.keys - $oil_chrom.keys
-     if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
-end
-region_sets = {"p4"=> $p4_chrom}
-
+#######################################################################################
+#######################################################################################
+# define all those nice little aux fns we'll need below
 
 @all_nts  = ['a', 'g', 't', 'c']
 @purines  = ['a', 'g']
@@ -47,7 +35,7 @@ def build_motifs  alphabet, pattern, motif, ret_storage
      if pattern.length == 0
           ret_storage.push motif
      else
-          if pattern[0]== :same # exact match
+          if pattern[0]== :exact # exact match
                alphabet.each { |c| build_motifs(alphabet, pattern[1..-1], motif+c, ret_storage ) }
           elsif pattern[0]==:same_class_as_prev # class here refers to purine vs pyrimidines
                if @purines.include? motif[-1]
@@ -81,22 +69,48 @@ def initialize_hash  alphabet, length, parent_seq, hash
 end
  
 
-def reverse_complement blah
-     compl = {'a'=>'t', 't'=>'a','c'=>'g',  'g'=>'c', '.'=>'.', 'r'=>'y',  'y'=>'r'}
-     retstr = ''
-     blah.downcase.reverse.split(//).each {|c|  retstr += compl[c]}
-     return retstr
+
+def find_seq  dna_seq,  region_sets, region     
+     region_sets.each do |label, region_set|
+          region_set.sort_by {|k,v|  v.length}.each do |chrom, regions|
+               if regions.include? region 
+                    return dna_seq[label][chrom][ "mm9_#{chrom}_#{region.from}_#{region.to}"]
+               end
+          end
+     end
+     return nil
 end
 
-pattern = [:same, :same, :same, :any, :same,  :same_class_as_prev]
-#pattern = [true, true, true, false, true]
+#######################################################################################
+#######################################################################################
+# start here, by reading in the regions of interest
+
+region_sets = {}
+if $random_check
+     $random_chrom =  parse_chipseq_table "../data_raw/random.csv"
+     region_sets   =  {"random"=>$random_chrom}
+else
+     # read in the regions detected in the presence of P4 and oil only
+     $oil_chrom = parse_chipseq_table "../data_raw/GSM857545_1_PR_oil_s_4_aligned.csv"
+     $p4_chrom  = parse_chipseq_table "../data_raw/GSM857546_2_PR_P4_s_1_aligned.csv"
+     region_sets = {"oil"=> $oil_chrom, "p4"=> $p4_chrom}
+     different_keys =  $p4_chrom.keys - $oil_chrom.keys
+     if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
+
+     region_sets = {"p4"=> $p4_chrom}
+     #region_sets = {"oil"=> $oil_chrom}
+end
+
+
+#######################################################################################
+pattern = [:exact, :exact, :exact, :any, :exact,  :same_class_as_prev]
 winlen  = pattern.length
 
 motifs = []
 build_motifs(@all_nts, pattern,'', motifs)
 #
 regex = {} # this is slow as hell, looks like I should have done it in perl
-# to each motif assig one regex for itself and pone for the complement - we'll consider all of these as equally valid
+# to each motif assign  one regex for itself and pone for the complement - we'll consider all of these as equally valid
 motifs.each do |motif|
      rev_compl = reverse_complement(motif)
      m1 = motif.sub("r","[ag]").sub("y", "[ct]")
@@ -109,7 +123,22 @@ seq2mot = {}
 seq2motif @all_nts, pattern.length, '', regex , seq2mot
 
                                              
-raw_counts = {}
+
+chromosomes = (1..19).map { |i| i.to_s} + ['X']
+dna_seq = {}
+if $random_check
+     labels = ['random']
+else
+     labels = ['oil','p4']
+end
+labels.each do |label|
+     dna_seq[label] = {}
+     chromosomes.each do |chrom|
+          dna_seq[label][chrom] = read_dna label, chrom
+     end
+end
+
+
 uniq_containers = {}
 motifs.each do |motif| 
      uniq_containers[motif] = []
@@ -117,22 +146,19 @@ end
 
 raw_counts = {}
 initialize_hash  @all_nts, winlen, '', raw_counts
-
 total_regions = 0
-
 region_sets.each do |label, region_set|
      region_set.sort_by {|k,v|  v.length}.each do |chrom, regions|
           puts " #{label} chrom  #{chrom}  number of regions:   #{regions.length} "
-          dna_seq = read_dna label, chrom
           regions.each do |region|
                
-               #next if region.length > 1000
+               #next if region.length > 500
                total_regions += 1
                start_pos = (region.length/5.0).to_i
                end_pos   = (4*region.length/5.0).to_i
 
-               seq = dna_seq[ "mm9_#{chrom}_#{region.from}_#{region.to}"]
-               next if seq =~ /n/
+               seq = dna_seq[label][chrom][ "mm9_#{chrom}_#{region.from}_#{region.to}"]
+               next if seq =~ /n/ # I have 4 cases of this altogether
                motifs_in_this_region = []
                
                (start_pos ... end_pos-winlen).each do |index|
@@ -145,12 +171,11 @@ region_sets.each do |label, region_set|
                     end
                     
                end
-
                motifs_in_this_region.each {|m| uniq_containers[m].push region}
-               
           end
      end
 end
+
 
 mot2seq = {}
 uniq_containers.each {|mot,conts| mot2seq[mot] = []}
@@ -161,13 +186,42 @@ end
 
 uniq_containers.sort_by {|k, v|  v.length}.each do |motif, uniq_regions|
      pct = uniq_regions.length*100.0/total_regions
-     next if pct < 80
+     next if ($random_check and pct < 70) or (!$random_check and pct < 80)
+     #next if  motif != "tgg.cy"
      print  " #{motif}    #{uniq_regions.length}/#{total_regions}  (#{format("%.0f",pct)}%)    "
-     #mot2seq[motif].each {|seq| print "  #{seq}  #{raw_counts[seq]} "}
-     puts
-          
+     # how many of these have the reverse complement back to back?
+     m1 = motif.sub("r","[ag]").sub("y", "[ct]")
+     m2 = reverse_complement(motif).sub("r","[ag]").sub("y", "[ct]")
+     pattern = m2+"..."+m1
+     #pattern = m1+"..."+m2
+     reggie =  Regexp.new(pattern)
+     hits = 0
+     uniq_regions.each do |region|
+          seq = find_seq  dna_seq, region_sets, region
+          next if not seq
+          next if seq =~ /n/
+          match_data =  seq.scan(reggie)
+          if match_data.length > 0             
+               hits += 1
+               #match_data.each do |matching_seq|
+               #     puts "\t\t " + matching_seq
+               #end
+               #puts  "\t\t " + "-"*15
+         end
+     end
+     pct = hits*100.0/uniq_regions.length
+     puts "    #{pattern}   #{hits}/#{uniq_regions.length}  (#{format("%.1f",pct)}%) "
 end
 
+
+
+
+
+
+
+
+
+###############################################################
 ###############################################################
 if $sanity_check
      # check
@@ -177,7 +231,6 @@ if $sanity_check
      region_sets.each do |label, region_set|
           region_set.sort_by {|k,v|  v.length}.each do |chrom, regions|
                puts " #{label} chrom  #{chrom}  number of regions:   #{regions.length} "
-               dna_seq = read_dna label, chrom
                regions.each do |region|
                     
                     #next if region.length > 1000
@@ -185,7 +238,7 @@ if $sanity_check
                     start_pos = (region.length/5.0).to_i
                     end_pos   = (4*region.length/5.0).to_i
 
-                    seq = dna_seq[ "mm9_#{chrom}_#{region.from}_#{region.to}"]
+                    seq = dna_seq[label][chrom][ "mm9_#{chrom}_#{region.from}_#{region.to}"]
                     next if seq =~ /n/
                     found = false
                     (start_pos ... end_pos-winlen). each do |index|

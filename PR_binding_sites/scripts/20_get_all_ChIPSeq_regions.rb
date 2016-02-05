@@ -12,7 +12,7 @@ include Math
 $verbose = true
 $scratch_space = "/tmp"
 
-$random_check = true
+$random_check = false
 
 ##################################
 def make_rand_file filename
@@ -65,7 +65,7 @@ region_sets.each do |label, region_set|
           regions.each do |region|
                seq =  get_dna_region 'mm9', chrom, region.from, region.to
                file.write ">mm9_#{chrom}_#{region.from}_#{region.to}\n"
-               (0..seq.length).step(35) { |i| file.write seq[i,50]+"\n"}
+               (0...seq.length).step(50) { |i| file.write seq[i,50]+"\n"}
           end
           file.close
      end
