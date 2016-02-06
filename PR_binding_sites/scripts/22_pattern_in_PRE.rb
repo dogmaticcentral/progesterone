@@ -97,8 +97,8 @@ else
      different_keys =  $p4_chrom.keys - $oil_chrom.keys
      if not different_keys.empty? then abort "oil and P4 do not seem to have the same chromosomes" end
 
-     region_sets = {"p4"=> $p4_chrom}
-     #region_sets = {"oil"=> $oil_chrom}
+     #region_sets = {"p4"=> $p4_chrom}
+     region_sets = {"oil"=> $oil_chrom}
 end
 
 

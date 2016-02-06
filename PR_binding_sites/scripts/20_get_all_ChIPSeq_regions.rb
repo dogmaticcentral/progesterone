@@ -12,7 +12,7 @@ include Math
 $verbose = true
 $scratch_space = "/tmp"
 
-$random_check = false
+$random_check = true
 
 ##################################
 def make_rand_file filename

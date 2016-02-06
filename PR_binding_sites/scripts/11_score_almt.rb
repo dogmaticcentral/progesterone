@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby -W0
 
 ARGV.length > 0 or abort "Usage: #{$0} <afa>"
 
@@ -102,12 +102,18 @@ end
 def cleanup! alignment, ref_species, relevant_species
      # stick to interesting species only
      alignment.keep_if {|k,v| k==ref_species or relevant_species.include? k}
+     maxlength = alignment.values.map {|v| v.length}.max
+     # not sure if I understant this corretly, but it looks like whichever thing is giving me alignments
+     # does not pad to the full sequence length if there is a series of gaps
+     alignment.each_key  {|k|  alignment[k] += '-'*(maxlength - alignment[k].length)}
      remove_gaps! alignment
      # if the ref sequence contains no gaps, we are done
      alignment[ref_species].include? '-' or return
      # remove species with inserts wrt to ref qry
-     ref_length = alignment[ref_species].gsub('-','').length
-     alignment.keep_if {|k,v|  v.gsub('-','').length <= ref_length }
+     ref_seq = alignment[ref_species]
+     alignment.keep_if do |k,v|
+          ( (0 ... ref_seq.length).each.select {|i| ref_seq[i]=='-' and v[i] != '-'}.length) == 0
+     end
      remove_gaps! alignment
      return    
 end
@@ -175,11 +181,11 @@ score = {}
      score[species_group] = 0
      species_names[species_group].each do |spec|
           score[species_group] += seq_comparison_score seq[ref_species], seq[spec]
-          printf "\t\t  %-10s   %6.1f \n", spec,  seq_comparison_score(seq[ref_species], seq[spec])
+          #printf "\t\t  %-10s   %6.1f \n", spec,  seq_comparison_score(seq[ref_species], seq[spec])
      end
      species_names[species_group].length > 0 or next
      score[species_group] /= 1.0*species_names[species_group].length
-     printf "  %-10s   %6.1f \n", species_group, score[species_group]
+     #printf "  %-10s   %6.1f \n", species_group, score[species_group]
 end
 
 
