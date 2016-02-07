@@ -66,7 +66,6 @@ region_sets.each do |label, region_set|
                # I have no friggin idea how this works but it does
                positions = seq.enum_for(:scan, regexp_double_site).map { Regexp.last_match.begin(0) }.sort
                total += positions.length
-#=begin
                if positions.length > 0
                     puts  "\t  #{region.from}   #{region.to} \n"
                     positions.each do |i|
@@ -81,7 +80,6 @@ region_sets.each do |label, region_set|
                          system ("./11_score_almt.rb #{alignment_file}")
                     end
                end
-#=end
            end
      end
 end

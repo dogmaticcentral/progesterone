@@ -118,36 +118,12 @@ def cleanup! alignment, ref_species, relevant_species
      return    
 end
 ###########################################################################################
-require_relative 'ruby_modules/httputils'
-include  HttpUtils
-
-
-file_name = ARGV[0]
-
-seq = {}
-name = ""
-File.readlines(file_name).each do |line|
-     line.chomp!
-     if line[0]=='>'
-          name, chrom, from, to = line[1..-1].split ' '
-          seq[name] = ""
-     else
-          seq[name] += line
-     end
-end
-
 species = [ "anoCar1", "bosTau3", "calJac1", "canFam2", "cavPor2",
            "danRer5", "dasNov1", "echTel1", "equCab1", "eriEur1",
            "felCat3", "fr2", "galGal3", "gasAcu1", "hg18", "loxAfr1",
            "mm9", "monDom4", "ornAna1", "oryCun1", "oryLat1", "otoGar1",
            "panTro2", "ponAbe2", "rheMac2", "rn4", "sorAra1",
            "tetNig1", "tupBel1", "xenTro2"]
-# is this the right seq of species/assembly names?
-seq.each  do |seqname, sequence|
-     species.include? seqname or abort "Unrecognized species (or assembly) #{seqname}"
-end
-
-
 #  how do we want to group the species
 ref_species = "mm9"
 species_names = {
@@ -158,16 +134,55 @@ species_names = {
      other_mammals: ["ornAna1","monDom4"],
      other_verts: [ "anoCar1", "danRer5", "galGal3", "gasAcu1", "fr2","oryLat1","tetNig1", "xenTro2"]
 }
+###########################################################################################
+require_relative 'ruby_modules/httputils'
+include  HttpUtils
 
-# cleanup the alignment: remove species that we will not be considering and realign
-# what if I still have gaps? remove species that do not have the gaps in the same place
-# as the reference sequence, and realign
-cleanup! seq, ref_species, species_names[:rodents]+species_names[:primates]+species_names[:other_placentals]
-if seq.length>1
-     fnm = file_name.split('/').pop
-     outf = open("clean_alignments/#{fnm}", 'w')
-     seq.each {|k,v| outf.write ">#{k}\n#{v}\n"}
-     outf.close
+
+file_name = ARGV[0]
+fnm = file_name.split('/').pop
+
+seq = {}
+
+if File.exist? "clean_alignments/#{fnm}"
+     # read in
+     name = ""
+     File.readlines( "clean_alignments/#{fnm}").each do |line|
+          line.chomp!
+          if line[0]=='>'
+               name, chrom, from, to = line[1..-1].split ' '
+               seq[name] = ""
+          else
+               seq[name] += line
+          end
+     end
+
+
+     
+else
+     name = ""
+     File.readlines(file_name).each do |line|
+          line.chomp!
+          if line[0]=='>'
+               name, chrom, from, to = line[1..-1].split ' '
+               seq[name] = ""
+          else
+               seq[name] += line
+          end
+     end
+     # is this the right seq of species/assembly names?
+     seq.each  do |seqname, sequence|
+          species.include? seqname or abort "Unrecognized species (or assembly) #{seqname}"
+     end
+     # cleanup the alignment: remove species that we will not be considering and realign
+     # what if I still have gaps? remove species that do not have the gaps in the same place
+     # as the reference sequence, and realign
+     cleanup! seq, ref_species, species_names[:rodents]+species_names[:primates]+species_names[:other_placentals]
+     if seq.length>1
+          outf = open("clean_alignments/#{fnm}", 'w')
+          seq.each {|k,v| outf.write ">#{k}\n#{v}\n"}
+          outf.close
+     end
 end
 
 # keep only the species that  we have present in the alignment
