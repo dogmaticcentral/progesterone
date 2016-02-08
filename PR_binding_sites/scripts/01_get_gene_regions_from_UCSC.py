@@ -1,5 +1,6 @@
 #!/usr/bin/python
-
+# mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A
+# -A skips auto rehash
 from   python_modules.mysqldb import *
 
 #########################################
@@ -7,7 +8,7 @@ def main():
     # note the skip-auto-rehash option in .ucsc_myql_conf
     # it is the equivalent to -A on the mysql command line
     # means: no autocompletion, which makes mysql get up mych faster
-    db     = connect_to_mysql("/Users/ivana/.ucsc_myql_conf")
+    db     = connect_to_mysql("/Users/ivana/.ucsc_mysql_conf")
     cursor = db.cursor()
     
     switch_to_db(cursor, "mm9") # mouse build name

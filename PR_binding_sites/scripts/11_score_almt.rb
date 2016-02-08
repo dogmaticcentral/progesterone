@@ -204,9 +204,9 @@ score = {}
 end
 
 
-total_score = 3*score[:rodents] + 2*score[:primates] + score[:other_placentals]
+total_score = 100*score[:rodents] + 10*score[:primates] + score[:other_placentals]
 
-printf " %30s    %6.1f   %3d  \n", file_name, total_score, seq.length
+printf " %30s    %6.1f   %3d  \n", "clean_alignments/#{fnm}", total_score, seq.length
 =begin
  Erinaceus europaeus = European hedgehog
  Sorex araneus = Common shrew

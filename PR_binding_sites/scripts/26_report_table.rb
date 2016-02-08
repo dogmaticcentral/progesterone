@@ -10,13 +10,36 @@ chromosomes = (1..19).map { |i| i.to_s} + ['X']
 
 motif_positions = {}
 chromosomes.each {|chrom| motif_positions[chrom] = []}
-     
-File.readlines('best_alignments').each do |line|
-     
-     name, score, no_species = line.split "\s"
-     chrom, start, stop = name.gsub("alignments/", "").gsub(".afa","").split "_"
+score = {}
+File.readlines('best_alignments').each do |line|     
+     name, scr, no_species = line.split "\s"
+     chrom, start, stop = name.gsub("clean_alignments/", "").gsub(".afa","").split "_"
      motif_positions[chrom].push ([start.to_i,stop.to_i])
+     id = "#{chrom}_#{start}_#{stop}"
+     score[id] = scr
 end
+
+id_translation = get_id_translation # in parsers
+
+=begin
+name = "A"
+puts "#{name}"
+ids = id_translation[name]
+ids[:other_names].each {|o| puts "\t #{o}"}
+ids[:uniprots].each {|o| puts "\t #{o}"}
+ids[:human_names].each {|o| puts "\t #{o}"}
+ids[:human_uniprots].each {|o| puts "\t #{o}"}
+exit
+id_translation.to_a.sample(10).to_h.each do |name, ids|
+     puts "#{name}"
+     ids[:other_names].each {|o| puts "\t #{o}"}
+     ids[:uniprots].each {|o| puts "\t #{o}"}
+     ids[:human_names].each {|o| puts "\t #{o}"}
+     ids[:human_uniprots].each {|o| puts "\t #{o}"}
+end
+exit
+=end
+
 # connect to ucsc, mm9 database
 connection_handle = connect_to_mysql('/Users/ivana/.ucsc_mysql_conf')
 connection_handle.select_db ('mm9')
@@ -41,9 +64,20 @@ chromosomes.each do |chrom|
                     dist[name] = 0
                end
           end
-          dist.sort_by {|k,v| v.abs}.to_h.keys[0,3].each do |name|
-               next if dist[name].abs>50000
-               puts "#{chrom}   #{motif_from} #{motif_to}   #{name}  #{strand[name]}    #{dist[name]}"
+          dist.sort_by {|k,v| v.abs}.to_h.keys[0,1].each do |name|
+               next if dist[name].abs>30000
+               id = "#{chrom}_#{motif_from}_#{motif_to}"
+               printf "%-2s    %12d  %12d   %8.1f  %14s  %1s  %6d   ", chrom, motif_from, motif_to, score[id], name, strand[name], dist[name]
+               if id_translation.has_key? name.upcase
+                    ids = id_translation[name.upcase]
+                    human_name = "unresolved"
+                    if  ids[:human_names].length > 0 then human_name=ids[:human_names][0] end
+                   
+                    printf " %s  %s %s ", human_name,  ids[:uniprots].join(','), ids[:human_uniprots].join(',')
+               else
+                    print " unresolved "
+               end
+               puts  #newline
                
                if false and dist[name] == 0
                     gene_detail = {}

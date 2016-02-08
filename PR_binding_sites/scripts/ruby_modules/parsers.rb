@@ -69,6 +69,51 @@ module Parsers
           file.close
           return dna_seqs
      end
+     ####################################
 
-     
+     def get_id_translation
+          table_name = "/Users/ivana/databases/human_mouse_id_mapping.csv"
+          File.exists? table_name or abort "#{table_name} not found\n"
+          raw_read = {}
+          File.readlines(table_name).drop(1).each do |line|
+               fields = line.split("\t")
+               id = fields[0]
+               if fields[1] =~/mouse/
+                    species = 'mouse'
+               elsif  fields[1] =~/human/
+                    species = 'human'
+               else
+                    next
+               end
+               symbol = fields[3]
+               uniprot = fields[-1].chomp
+               if not raw_read.has_key? id
+                    raw_read[id] = "#{species}_#{symbol}_#{uniprot}"
+               else
+                    raw_read[id] += " #{species}_#{symbol}_#{uniprot}"
+               end
+          end
+          id_translation = {}
+          names = {}
+          uniprots = {}
+          raw_read.values.each do |read|
+               next if not read=~ /mouse/
+               names['human'] = []
+               names['mouse'] = []
+               uniprots['human'] = []
+               uniprots['mouse'] = []
+               entries = read.split (' ')
+               entries.each do |entry|
+                    species, name, uniprot = entry.split('_')
+                    names[species].push name  if name and name !=""
+                    uniprots[species].push uniprot  if uniprot and uniprot !=""
+               end
+               names['mouse'].each do |name|
+                    id_translation[name.upcase] = {other_names: names['mouse'].select {|n| n!=name},
+                         uniprots: uniprots['mouse'], human_names: names['human'], human_uniprots:  uniprots['human'] }
+               end
+          end
+          return id_translation
+     end
+ 
 end
