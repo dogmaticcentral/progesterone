@@ -65,7 +65,7 @@ chromosomes.each do |chrom|
                end
           end
           dist.sort_by {|k,v| v.abs}.to_h.keys[0,1].each do |name|
-               next if dist[name].abs>30000
+               next if dist[name].abs>50000
                id = "#{chrom}_#{motif_from}_#{motif_to}"
                printf "%-2s    %12d  %12d   %8.1f  %14s  %1s  %6d   ", chrom, motif_from, motif_to, score[id], name, strand[name], dist[name]
                if id_translation.has_key? name.upcase
