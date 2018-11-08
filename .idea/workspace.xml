@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/utils/mysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/01_get_gene_regions_from_UCSC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/03_compare_tables.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/05_add_annotation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/07_per_gene_analysis.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/08_per_gene_specific_motif.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/09_best_motifs_anywhere.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/10_motif_alignments.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/11_score_almt.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/12_cumulatve_scoring.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/20_get_all_ChIPSeq_regions.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/22_pattern_in_PRE.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/24_conservation_of_the_best_pattern.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/26_report_table.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/28_inspect_neighborhood.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/almt_score" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/alnmt_scores" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/best_alignments" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/clusters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/current_genes_uniprot.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/current_list_of_interesting_genes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/examples/das_server.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/examples/get_maf.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/examples/http_request.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/examples/mysql_example.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/python_modules/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/python_modules/mysqldb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/regions.bed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/report_table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/ruby_modules/httputils.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/ruby_modules/mysqlutils.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/ruby_modules/parsers.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/ruby_modules/region.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/ruby_modules/utils.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/test.list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/top_genes_oil_and_p4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/scripts/top_genes_p4_only" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="00_tads_overview.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-396">
+              <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="51" />
+              <folding>
+                <element signature="e#116#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2101" />
+    <option name="y" value="56" />
+    <option name="width" value="1679" />
+    <option name="height" value="1016" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="PR_binding_sites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="PR_binding_sites" type="462c0819:PsiDirectoryNode" />
+              <item name="straightforward2016" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="PR_binding_sites" type="462c0819:PsiDirectoryNode" />
+              <item name="tads2018" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="PR_binding_sites" type="462c0819:PsiDirectoryNode" />
+              <item name="tads2018" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="" />
+      <created>1541686370613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541686370613</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2101" y="56" width="1679" height="1016" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23007247" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/03_compare_tables.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/01_get_gene_regions_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/utils/mysql.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/python_modules/mysqldb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/regions.bed">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/report_table">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/alnmt_scores">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/almt_score">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/03_compare_tables.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="51" />
+          <folding>
+            <element signature="e#116#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

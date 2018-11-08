@@ -8,23 +8,23 @@ def main():
     # note the skip-auto-rehash option in .ucsc_myql_conf
     # it is the equivalent to -A on the mysql command line
     # means: no autocompletion, which makes mysql get up mych faster
-    db     = connect_to_mysql("/Users/ivana/.ucsc_mysql_conf")
+    db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
     cursor = db.cursor()
     
-    switch_to_db(cursor, "mm9") # mouse build name
+    #switch_to_db(cursor, "mm9") # mouse build name
     # no Y chromosome, we are looking at uterus tissue
-    chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX"]
+    #chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX"]
+    switch_to_db(cursor, "hg19") # human build name
+    chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
     for chrom in chromosomes:
         print "downloading data for", chrom
-        outf = open("../data_raw/gene_ranges."+chrom+".csv", "w")
+        outf = open("/storage/databases/ucsc/gene_ranges/human/{}.csv".format(chrom), "w")
         print  >>outf,  "\t".join( ["name", "name2", "strand","txStart", "txEnd"] )
-        qry  = "select g.name,  g.name2, g.strand, g.txStart, g.txEnd "
-        qry += "from refGene as g, gbCdnaInfo as i, refSeqStatus as s "
+        qry  = "select name,  name2, strand, txStart, txEnd "
+        qry += "from refGene "
         qry += "where chrom='%s' " % chrom
-        qry += "and i.acc=g.name  and i.type='mRNA' and i.mol='mRNA' "
-        qry += "and s.mrnaAcc=g.name and s.status in ('Validated', 'Reviewed') "
+        qry += "and name like 'NM_%'"   # refseq says: NM_	mRNA	Protein-coding transcripts (usually curated)
         rows = search_db(cursor,qry)
-        
         for row in rows:
             print  >>outf,  "\t".join( [ str(r) for r in row] )
         outf.close()
