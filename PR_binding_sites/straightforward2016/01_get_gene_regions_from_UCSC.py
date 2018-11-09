@@ -18,7 +18,7 @@ def main():
     chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
     for chrom in chromosomes:
         print "downloading data for", chrom
-        outf = open("/storage/databases/ucsc/gene_ranges/human/{}.csv".format(chrom), "w")
+        outf = open("/storage/databases/ucsc/gene_ranges/human/hg19/{}.csv".format(chrom), "w")
         print  >>outf,  "\t".join( ["name", "name2", "strand","txStart", "txEnd"] )
         qry  = "select name,  name2, strand, txStart, txEnd "
         qry += "from refGene "

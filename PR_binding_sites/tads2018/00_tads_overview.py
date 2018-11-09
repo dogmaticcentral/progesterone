@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 # the input files with tad domains are from
 # http://promoter.bx.psu.edu/hi-c/publications.html
+# conclusion: very much against the claims of Dixon et al,
+# the TADs are significantly different from
+# one cell type to the next
 
 import os
 from statistics import mean, stdev
