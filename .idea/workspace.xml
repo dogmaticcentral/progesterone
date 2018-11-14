@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/06_chromatin_interactions_from_encode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/python_modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PR_binding_sites/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/python_modules/mysqldb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" beforeDir="false" afterPath="$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,20 +31,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02_emve_tads.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="02_emve_tads.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="72">
+              <caret line="4" column="56" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="01_get_gene_regions_from_UCSC.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
+      <file leaf-file-name="03_tfbs_from_ensembl.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="67" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="67" />
+            <state relative-caret-position="216">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="04_tf_binding_sites_from_UCSC.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="05_hdf5_exercise.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="717">
+              <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="06_chromatin_interactions_from_encode.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/06_chromatin_interactions_from_encode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysqldb.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+              <folding>
+                <element signature="e#1#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,24 +103,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/06_chromatin_interactions_from_encode.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/05_hfr5_exercise.py" />
+        <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2007" />
-    <option name="y" value="24" />
-    <option name="width" value="1630" />
-    <option name="height" value="1049" />
+    <option name="x" value="2186" />
+    <option name="y" value="51" />
+    <option name="width" value="1485" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,7 +144,7 @@
               <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
               <item name="progesterone" type="462c0819:PsiDirectoryNode" />
               <item name="PR_binding_sites" type="462c0819:PsiDirectoryNode" />
-              <item name="straightforward2016" type="462c0819:PsiDirectoryNode" />
+              <item name="python_modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
@@ -104,19 +156,18 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -145,10 +196,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2007" y="24" width="1630" height="1049" extended-state="0" />
+    <frame x="2037" y="14" width="1485" height="1017" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23708774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2606019" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -171,6 +222,27 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -200,23 +272,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/python_modules/mysqldb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="61" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/03_compare_tables.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
@@ -226,17 +308,275 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="67" />
+        <state relative-caret-position="72">
+          <caret line="4" column="56" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+        <state relative-caret-position="288">
+          <caret line="212" column="29" lean-forward="true" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
+          <folding>
+            <element signature="e#19#343#1" />
+            <element signature="e#345#358#0" expanded="true" />
+            <element signature="e#1039#1300#0" />
+            <element signature="e#1039#1081#1" />
+            <element signature="e#1336#1403#0" />
+            <element signature="e#1431#1647#0" />
+            <element signature="e#1431#1488#1" />
+            <element signature="e#1684#3656#0" />
+            <element signature="e#1684#1832#1" />
+            <element signature="e#2013#3656#0" />
+            <element signature="e#2201#2476#0" />
+            <element signature="e#2534#2845#0" />
+            <element signature="e#2886#3204#0" />
+            <element signature="e#2958#3204#0" />
+            <element signature="e#3255#3400#0" />
+            <element signature="e#3447#3581#0" />
+            <element signature="e#3705#4805#0" />
+            <element signature="e#3705#3825#1" />
+            <element signature="e#3979#4805#0" />
+            <element signature="e#4088#4805#0" />
+            <element signature="e#4530#4805#0" />
+            <element signature="e#4626#4805#0" />
+            <element signature="e#4850#5857#0" />
+            <element signature="e#4850#4905#1" />
+            <element signature="e#5066#5381#0" />
+            <element signature="e#5920#6335#0" />
+            <element signature="e#5920#5974#1" />
+            <element signature="e#6394#6638#1" />
+            <element signature="e#7177#8704#0" />
+            <element signature="e#8204#8229#0" />
+            <element signature="e#8924#9804#0" />
+            <element signature="e#9034#9350#0" />
+            <element signature="e#9883#10647#0" />
+            <element signature="e#9949#10265#0" />
+            <element signature="e#11160#14576#0" />
+            <element signature="e#11493#12789#0" />
+            <element signature="e#12099#12361#0" />
+            <element signature="e#12412#12681#0" />
+            <element signature="e#12846#14217#0" />
+            <element signature="e#12880#14217#0" />
+            <element signature="e#13479#13757#0" />
+            <element signature="e#13816#14101#0" />
+            <element signature="e#14251#14552#0" />
+            <element signature="e#14274#14309#0" />
+            <element signature="e#14659#14716#1" />
+            <element signature="e#14827#14901#0" />
+            <element signature="e#15267#15301#0" />
+            <element signature="e#15440#15502#0" />
+            <element signature="e#15555#15617#0" />
+            <element signature="e#15672#15734#0" />
+            <element signature="e#15789#15851#0" />
+            <element signature="e#15903#15965#0" />
+            <element signature="e#16020#16082#0" />
+            <element signature="e#16139#16201#0" />
+            <element signature="e#16402#16489#0" />
+            <element signature="e#16595#18033#0" />
+            <element signature="e#16782#17586#0" />
+            <element signature="e#16831#17192#0" />
+            <element signature="e#17235#17586#0" />
+            <element signature="e#18526#18600#0" />
+            <element signature="e#18658#20044#0" />
+            <element signature="e#19213#19467#0" />
+            <element signature="e#19510#19776#0" />
+            <element signature="e#19991#20044#0" />
+            <element signature="e#20079#20153#0" />
+            <element signature="e#20370#27514#0" />
+            <element signature="e#20370#20514#1" />
+            <element signature="e#20641#20714#0" />
+            <element signature="e#20790#27514#0" />
+            <element signature="e#21120#21263#0" />
+            <element signature="e#21332#21491#0" />
+            <element signature="e#21560#21717#0" />
+            <element signature="e#21774#21960#0" />
+            <element signature="e#22071#24355#0" />
+            <element signature="e#22126#22216#0" />
+            <element signature="e#22163#22216#0" />
+            <element signature="e#22500#24165#0" />
+            <element signature="e#22540#22709#0" />
+            <element signature="e#22783#23352#0" />
+            <element signature="e#23024#23098#0" />
+            <element signature="e#23404#24165#0" />
+            <element signature="e#23484#24165#0" />
+            <element signature="e#23742#23820#0" />
+            <element signature="e#24202#24355#0" />
+            <element signature="e#24480#27514#0" />
+            <element signature="e#24884#25348#0" />
+            <element signature="e#24994#25035#0" />
+            <element signature="e#25089#25264#0" />
+            <element signature="e#25307#25348#0" />
+            <element signature="e#25408#27330#0" />
+            <element signature="e#25650#25713#0" />
+            <element signature="e#25884#27330#0" />
+            <element signature="e#27154#27330#0" />
+            <element signature="e#27386#27514#0" />
+            <element signature="e#27597#31906#0" />
+            <element signature="e#27597#29554#1" />
+            <element signature="e#29597#29671#0" />
+            <element signature="e#29724#31906#0" />
+            <element signature="e#30011#30027#0" />
+            <element signature="e#30180#30291#0" />
+            <element signature="e#30320#30495#0" />
+            <element signature="e#30551#30703#0" />
+            <element signature="e#30885#31052#0" />
+            <element signature="e#31100#31252#0" />
+            <element signature="e#31279#31906#0" />
+            <element signature="e#31376#31522#0" />
+            <element signature="e#32061#65100#0" />
+            <element signature="e#32061#33365#1" />
+            <element signature="e#33439#33638#0" />
+            <element signature="e#33525#33612#0" />
+            <element signature="e#33659#33858#0" />
+            <element signature="e#33744#33831#0" />
+            <element signature="e#34466#35051#0" />
+            <element signature="e#34493#34758#0" />
+            <element signature="e#34785#35051#0" />
+            <element signature="e#35092#35593#0" />
+            <element signature="e#35119#35343#0" />
+            <element signature="e#35370#35593#0" />
+            <element signature="e#35774#63462#0" />
+            <element signature="e#35796#63462#0" />
+            <element signature="e#36087#36234#0" />
+            <element signature="e#36247#36342#0" />
+            <element signature="e#38279#38383#0" />
+            <element signature="e#38787#57852#0" />
+            <element signature="e#39000#39121#0" />
+            <element signature="e#39138#39165#0" />
+            <element signature="e#39284#44036#0" />
+            <element signature="e#39284#39380#0" />
+            <element signature="e#39559#39596#0" />
+            <element signature="e#39781#39951#0" />
+            <element signature="e#40052#40676#0" />
+            <element signature="e#40085#40598#0" />
+            <element signature="e#40698#40735#0" />
+            <element signature="e#40927#41180#0" />
+            <element signature="e#41201#41225#0" />
+            <element signature="e#41404#42560#0" />
+            <element signature="e#42602#42639#0" />
+            <element signature="e#42818#44036#0" />
+            <element signature="e#44053#44079#0" />
+            <element signature="e#44187#45360#0" />
+            <element signature="e#44216#44565#0" />
+            <element signature="e#44736#45360#0" />
+            <element signature="e#44769#45282#0" />
+            <element signature="e#45411#45448#0" />
+            <element signature="e#45616#49639#0" />
+            <element signature="e#46451#46621#0" />
+            <element signature="e#46817#47114#0" />
+            <element signature="e#47262#48418#0" />
+            <element signature="e#48541#49639#0" />
+            <element signature="e#49673#49710#0" />
+            <element signature="e#49886#53749#0" />
+            <element signature="e#50114#50494#0" />
+            <element signature="e#50598#50667#0" />
+            <element signature="e#51163#51726#0" />
+            <element signature="e#51863#52824#0" />
+            <element signature="e#52944#53749#0" />
+            <element signature="e#53783#53820#0" />
+            <element signature="e#54001#57632#0" />
+            <element signature="e#54343#54723#0" />
+            <element signature="e#55312#55871#0" />
+            <element signature="e#56011#56776#0" />
+            <element signature="e#56827#57632#0" />
+            <element signature="e#57691#57852#0" />
+            <element signature="e#57936#63462#0" />
+            <element signature="e#58028#58185#0" />
+            <element signature="e#58228#58597#0" />
+            <element signature="e#58718#59816#0" />
+            <element signature="e#59928#61589#0" />
+            <element signature="e#60221#60601#0" />
+            <element signature="e#60652#60905#0" />
+            <element signature="e#61732#63462#0" />
+            <element signature="e#62093#62473#0" />
+            <element signature="e#62524#62777#0" />
+            <element signature="e#63607#64229#0" />
+            <element signature="e#63634#64229#0" />
+            <element signature="e#63655#63847#0" />
+            <element signature="e#63975#64134#0" />
+            <element signature="e#64396#64920#0" />
+            <element signature="e#64958#65100#0" />
+            <element signature="e#65209#69087#0" />
+            <element signature="e#65209#65437#1" />
+            <element signature="e#65702#67349#0" />
+            <element signature="e#65867#66318#0" />
+            <element signature="e#65867#65893#0" />
+            <element signature="e#67173#67311#0" />
+            <element signature="e#67412#68989#0" />
+            <element signature="e#67580#67960#0" />
+            <element signature="e#67667#67892#0" />
+            <element signature="e#68809#68947#0" />
+            <element signature="e#69118#69748#0" />
+            <element signature="e#69123#69375#0" />
+            <element signature="e#69770#70682#0" />
+            <element signature="e#69775#70564#0" />
+            <element signature="e#70708#71504#0" />
+            <element signature="e#70713#71386#0" />
+            <element signature="e#71526#72150#0" />
+            <element signature="e#71531#72032#0" />
+            <element signature="e#72174#72738#0" />
+            <element signature="e#72179#72620#0" />
+            <element signature="e#72760#72885#0" />
+            <element signature="e#72907#73526#0" />
+            <element signature="e#72912#73408#0" />
+            <element signature="e#73563#82438#0" />
+            <element signature="e#73563#73587#0" />
+            <element signature="e#75813#76257#0" />
+            <element signature="e#76335#76369#0" />
+            <element signature="e#76406#82438#0" />
+            <element signature="e#76481#77170#0" />
+            <element signature="e#76520#76788#0" />
+            <element signature="e#76843#77097#0" />
+            <element signature="e#77132#77170#0" />
+            <element signature="e#77226#77857#0" />
+            <element signature="e#77265#77476#0" />
+            <element signature="e#77530#77784#0" />
+            <element signature="e#77819#77857#0" />
+            <element signature="e#77913#78319#0" />
+            <element signature="e#77952#78246#0" />
+            <element signature="e#78281#78319#0" />
+            <element signature="e#78378#79035#0" />
+            <element signature="e#78417#78959#0" />
+            <element signature="e#78610#78726#0" />
+            <element signature="e#78994#79035#0" />
+            <element signature="e#79087#81819#0" />
+            <element signature="e#80339#81765#0" />
+            <element signature="e#81875#82364#0" />
+            <element signature="e#81914#82291#0" />
+            <element signature="e#82326#82364#0" />
+            <element signature="e#82400#82438#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/06_chromatin_interactions_from_encode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
         </state>
       </provider>
     </entry>

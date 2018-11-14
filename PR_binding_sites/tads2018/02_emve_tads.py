@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # the single input file from endometrial microvascular endothelial cells from
-# JOb Dekker lab, https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE105710
+# Job Dekker lab, https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE105710
 # the (bed) file with TADs can be found here
 # https://www.encodeproject.org/experiments/ENCSR551IPY/
 # (under processed data)
@@ -23,10 +23,10 @@ def  process_ucsc_ret(gene_name, ucsc_gene_regions_dir, ret):
 	if len(lines)==2:
 		print("more than one entry found for %s found in %s " % (gene_name, ucsc_gene_regions_dir))
 		return None, None
-	# we assume certain format in the file name, containting the chromosome number: e.g. chr18.csv
+	# we assume certain format in the file name, containing the chromosome number: e.g. chr18.csv
 	chromosome = infile.split("/")[-1].replace(".csv","")
 	[name, strand, txStart, txEnd] = lines[0]
-	return chromosome, [int(txStart), int(txEnd)]
+	return chromosome, strand, [int(txStart), int(txEnd)]
 
 #########################################
 def main():
@@ -47,11 +47,11 @@ def main():
 		print ("no entry for %s found in %s " % (gene_name, ucsc_gene_regions_dir))
 		exit()
 
-	chromosome, gene_range = process_ucsc_ret(gene_name, ucsc_gene_regions_dir,ret)
+	chromosome, strand, gene_range = process_ucsc_ret(gene_name, ucsc_gene_regions_dir,ret)
 	if not chromosome or not gene_range:
 		exit()
 
-	print (gene_name, chromosome, gene_range)
+	print (gene_name, chromosome, strand, gene_range)
 
 	tads = {}
 	inf = open(tadfile,"r")
@@ -63,7 +63,7 @@ def main():
 
 	for start,end in tads[chromosome]:
 		if start<=gene_range[0]<=end or start<=gene_range[1]<=end:
-			print (start, end, end-start)
+			print ("TAD containing %s region: from %d to %d   length %d"%(gene_name, start, end, end-start))
 
 #########################################
 if __name__ == '__main__':
