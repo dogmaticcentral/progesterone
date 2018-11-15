@@ -17,17 +17,17 @@ module Utils
 
 
   def place_pr_regions  regions, strand, exons
-       
+
        descr_str = ""
        orig_regions = regions.dup
-       if strand=='-'        
+       if strand=='-'
             origin  = exons[-1][1]
             regions = regions.map { |x| [-(x[1]-origin), -(x[0]-origin)]}
             regions.reverse()
             exons =  exons.map { |x| [-(x[1]-origin), -(x[0]-origin)] }
             exons.reverse()
        end
-       
+
        first = true
        regions.each do |region|
 
@@ -38,24 +38,24 @@ module Utils
             else
                  descr_str += "PR binding region #{region[0]} ... #{region[1]}:   "
             end
-            
-             
+
+
             if  region[1] < exons[0][0]
                  diff = exons[0][0]-region[1]
                  if diff < 1000
-                      descr_str += "#{diff} bp upstream from the first exon" 
+                      descr_str += "#{diff} bp upstream from the first exon"
                  else
                       descr_str += "#{format("%.1f",diff/1000.0)}  kbp upstream from the first exon"
                  end
-                 
+
             elsif  exons[-1][1] < region[0]
                  diff = region[0] -  exons[-1][1]
                  if diff < 1000
-                      descr_str += "#{diff} bp downstream from the last exon" 
+                      descr_str += "#{diff} bp downstream from the last exon"
                  else
                       descr_str += "#{format("%.1f",diff/1000.0)} kbp downstream from the last exon"
                  end
-                 
+
             else
                  region_start = []
                  if  region[0] >= exons[0][0]
@@ -81,9 +81,9 @@ module Utils
                                 region_end = ["intron", i+1]
                                 break
                            end
-                      end     
+                      end
                  end
-            
+
                  if region_start.length ==0  and region_end.length== 0
                       descr_str += "err locating PR region (?)"
                  elsif region_end.length == 0
@@ -91,9 +91,9 @@ module Utils
                  elsif region_start.length == 0
                       descr_str +=  "starts before the first exon, ends in #{region_end[0]}  #{region_end[1]}"
                  elsif region_start[0] == region_end[0] and  region_start[1] == region_end[1]
-                      descr_str += "within  #{region_start[0]}  #{region_start[1]}" 
+                      descr_str += "within  #{region_start[0]}  #{region_start[1]}"
                  else
-                      descr_str += "starts in  #{region_start[0]}  #{region_start[1]}, " 
+                      descr_str += "starts in  #{region_start[0]}  #{region_start[1]}, "
                       descr_str += "ends in  #{region_end[0]}  #{region_end[1]}"
                  end
             end
@@ -114,19 +114,22 @@ module Utils
 
  def get_alignment alnmt_file_name, chrom, region_from, region_to
 
-      maf_region_extraction_tool =  "/Users/ivana/third_party_utils/kentUtils/bin/mafsInRegion"
-      maf_dir                    =  "/Users/ivana/databases/UCSC"
+      maf_region_extraction_tool =  "/usr/local/kentUtils/bin/mafsInRegion"
+      maf_dir                    =  "/storage/databases/ucsc/mafs/mouse/mm9"
+      # pip3 install bx-python
+      # then put https://raw.githubusercontent.com/bxlab/bx-python/master/scripts/maf_to_fasta.py
+      # into /usr/local/bin
       maf2afa_tool               =  "/usr/local/bin/maf_to_fasta.py"
 
       [maf_region_extraction_tool, maf_dir, maf2afa_tool].each  {|f| File.exists?f or raise "#{f} not found"}
 
-       
+
      # now get this region from the alignment
      outf = open("regions.bed", 'w')
-     outf.write("chr#{chrom}  #{region_from}  #{region_to}\n") 
+     outf.write("chr#{chrom}  #{region_from}  #{region_to}\n")
      outf.close
      system ("#{maf_region_extraction_tool}  regions.bed   tmp.maf   #{maf_dir}/chr#{chrom}.maf")
-     
+
      if not File.exist? "tmp.maf"
           puts "maf not produced"
           return
@@ -140,11 +143,11 @@ module Utils
      if  File.zero? "tmp.afa"
           puts "afa empty"
           return
-     end     
+     end
      system ("rm tmp.maf")
 
-     
-     
+
+
      # read in, stich the pieces of the sequence, because of the idiotic format in which the script returns it
      aligned_seq = {}
      last_pos = {}
@@ -157,11 +160,11 @@ module Utils
                fields = crap.split /\./
                assembly = fields.shift
                chrom = fields.join '.'
-               
+
                key = "#{assembly} #{chrom}"
-               if not aligned_seq.keys.include? key 
+               if not aligned_seq.keys.include? key
                     aligned_seq[key] = ""
-                    first_pos[key] = to.to_i                    
+                    first_pos[key] = to.to_i
                elsif from.to_i != last_pos[key]
                      aligned_seq[key] += "_pos_mismatch_: #{from} #{last_pos[key]}   #{key}"
                end
@@ -172,8 +175,8 @@ module Utils
           end
      end
      #system ("rm tmp.afa")
- 
-     
+
+
      outf = open(alnmt_file_name, 'w')
      alignment_length = region_to - region_from + 1
      aligned_seq.each do |seqname, sequence|
@@ -188,5 +191,5 @@ module Utils
      outf.close
      # extract rodents and primates  and ungulates (?) if available
   end # end of  get_alignment alnmt_file_name, chrom, region_from, region_to
-    
+
 end # end of module
