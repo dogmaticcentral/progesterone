@@ -1,5 +1,6 @@
 # Ignore symlinks. Keep in mind Git considers symlinks to be files, not directories.
 linkto_*
+raw_data/
 
 *.tsv
 *.csv

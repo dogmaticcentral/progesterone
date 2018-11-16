@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_modules/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_modules/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +25,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="12_motif_finder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="12_motif_finder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="70" column="62" lean-forward="true" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
+            <state relative-caret-position="165">
+              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -83,7 +89,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
@@ -99,8 +104,9 @@
         <option value="$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" />
-        <option value="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -180,7 +186,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2091" y="21" width="1732" height="1059" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22761849" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -275,13 +280,6 @@
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
@@ -365,8 +363,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="70" column="62" lean-forward="true" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
+        <state relative-caret-position="165">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
         </state>
       </provider>
     </entry>
