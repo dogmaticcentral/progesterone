@@ -2,61 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/03_tfbs_from_ensembl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_from_UCSC.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/05_hdf5_exercise.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/06_hdf5_exercise2_normalization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/python_modules/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/03_compare_tables.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/05_add_annotation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/07_per_gene_analysis.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/08_per_gene_specific_motif.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/09_best_motifs_anywhere.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/10_motif_alignments.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/11_score_almt.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/12_cumulatve_scoring.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/20_get_all_ChIPSeq_regions.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/22_pattern_in_PRE.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/24_conservation_of_the_best_pattern.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/26_report_table.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/28_inspect_neighborhood.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/almt_score" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/alnmt_scores" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/best_alignments" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/clusters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/current_genes_uniprot.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/current_list_of_interesting_genes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/examples/das_server.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/examples/get_maf.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/examples/http_request.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/examples/mysql_example.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/regions.bed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/report_table" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/ruby_modules/httputils.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/ruby_modules/mysqlutils.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/ruby_modules/parsers.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/ruby_modules/region.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/ruby_modules/utils.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/test.list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/top_genes_oil_and_p4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/straightforward2016/top_genes_p4_only" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/08_chromatin_interactions_from_encode.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/tads2018/utils/mysql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_modules/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_modules/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,23 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1112">
-              <caret line="101" column="60" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="10_motif_in_chipseq_binding_region.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="10_motif_in_chipseq_binding_region.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="716">
-              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+            <state relative-caret-position="2178">
+              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
               <folding>
                 <element signature="e#20#43#0" expanded="true" />
               </folding>
@@ -91,27 +28,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py">
+      <file leaf-file-name="12_motif_finder.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
-              <folding>
-                <element signature="e#697#734#0" expanded="true" />
-                <element signature="e#2900#4668#0" />
-                <element signature="e#4698#7327#0" />
-                <element signature="e#7476#8634#0" />
-                <element signature="e#8670#8688#0" />
-                <element signature="e#8730#9513#0" />
-                <element signature="e#9716#10023#0" />
-                <element signature="e#10188#10211#0" />
-                <element signature="e#10260#11199#0" />
-                <element signature="e#11536#11906#0" />
-                <element signature="e#11939#12177#0" />
-                <element signature="e#13689#17423#0" />
-                <element signature="e#17463#18127#0" />
-                <element signature="e#18161#18752#0" />
-              </folding>
+            <state relative-caret-position="615">
+              <caret line="70" column="62" lean-forward="true" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -119,8 +49,8 @@
       <file leaf-file-name="08_chromatin_interactions_from_encode.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="18">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
                 <element signature="e#235#246#0" expanded="true" />
               </folding>
@@ -169,14 +99,16 @@
         <option value="$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2014" />
-    <option name="y" value="18" />
-    <option name="width" value="1801" />
-    <option name="height" value="1034" />
+    <option name="x" value="2091" />
+    <option name="y" value="21" />
+    <option name="width" value="1732" />
+    <option name="height" value="1059" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -195,6 +127,12 @@
               <item name="progesterone" type="462c0819:PsiDirectoryNode" />
               <item name="Hand2_regulation" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="Hand2_regulation" type="462c0819:PsiDirectoryNode" />
+              <item name="linkto_python_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -206,12 +144,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -240,10 +179,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2014" y="18" width="1801" height="1034" extended-state="0" />
+    <frame x="2091" y="21" width="1732" height="1059" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19403824" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22761849" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -271,107 +210,70 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/10_motif_alignments.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="1800">
+          <caret line="101" column="60" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="56" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="56" />
+        <state relative-caret-position="1728">
+          <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
+          <folding>
+            <element signature="e#697#734#0" expanded="true" />
+            <element signature="e#2900#4668#0" />
+            <element signature="e#4698#7327#0" />
+            <element signature="e#7476#8634#0" />
+            <element signature="e#8670#8688#0" />
+            <element signature="e#8730#9513#0" />
+            <element signature="e#9716#10023#0" />
+            <element signature="e#10188#10211#0" />
+            <element signature="e#10260#11199#0" />
+            <element signature="e#11536#11906#0" />
+            <element signature="e#11939#12177#0" />
+            <element signature="e#13689#17423#0" />
+            <element signature="e#17463#18127#0" />
+            <element signature="e#18161#18752#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="144">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#235#246#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/08_chromatin_interactions_from_encode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1278">
-          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="67" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/08_chromatin_interactions_from_encode.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -380,137 +282,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="212" column="29" lean-forward="true" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/08_chromatin_interactions_from_encode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="56" column="71" lean-forward="true" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/08_per_gene_specific_motif.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/06_hdf5_exercise2_normalization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/24_conservation_of_the_best_pattern.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/10_motif_alignments.rb">
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/08_chromatin_interactions_from_encode.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/08_per_gene_specific_motif.rb" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/06_hdf5_exercise2_normalization.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/24_conservation_of_the_best_pattern.rb" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/utils.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#304#313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/utils/mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <element signature="e#235#246#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
+        <state relative-caret-position="1800">
           <caret line="101" column="60" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
+        <state relative-caret-position="1728">
           <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
           <folding>
             <element signature="e#697#734#0" expanded="true" />
@@ -536,13 +336,37 @@
         <state relative-caret-position="-1026" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#235#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        <state relative-caret-position="2178">
+          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
           <folding>
             <element signature="e#20#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="70" column="62" lean-forward="true" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
         </state>
       </provider>
     </entry>

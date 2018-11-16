@@ -71,7 +71,7 @@ def get_alignment(species, assembly, chrom, region_from, region_to, scratch, out
 	# mafs come from here http://hgdownload.cse.ucsc.edu/downloads.html
 	# http://hgdownload.cse.ucsc.edu/goldenPath/hg19/multiz100way/
 	# or whichever species or assembly appropriate
-	maf_file = "/storage/databases/ucsc/mafs/{}/{}/{}/maf".format(species, assembly, chrom)
+	maf_file = "/storage/databases/ucsc/mafs/{}/{}/chr{}.maf".format(species, assembly, chrom)
 	# pip3 install bx-python
 	# then put https://raw.githubusercontent.com/bxlab/bx-python/master/scripts/maf_to_fasta.py
 	# into /usr/local/bin
@@ -89,14 +89,15 @@ def get_alignment(species, assembly, chrom, region_from, region_to, scratch, out
 	tmp_out = "{}/{}.maf".format(scratch,os.getpid())
 	cmd = "{} -s {} -e {}  {} > {}".format(maf_region_extraction_tool,
 											region_from, region_to, maf_file, tmp_out)
-	subprocess.call(cmd)
+	subprocess.call(cmd, shell=True)
 
 	cmd = "{} < {} > {}".format(maf2afa_tool, tmp_out, outfile)
-	subprocess.call(cmd)
+	subprocess.call(cmd, shell=True)
 
 
 	os.remove(tmp_out)
 
 #########################################
 if __name__=="__main__":
-	print(ucsc_fragment_sequence('mm9',8,59791026,59791040))
+	#print(ucsc_fragment_sequence('mm9',8,59791026,59791040))
+	get_alignment('mouse', 'mm10', 8, 57814986, 57815004, '/home/ivana/scratch', '/home/ivana/scratch/test.afa')
