@@ -12,7 +12,7 @@ def ucsc_fragment_sequence(assembly,chrom,start,end):
 	html = response.read()
 	soup = BeautifulSoup(html,'html.parser')
 	if not soup: return None
-	return soup.find('dna').string.strip()
+	return soup.find('dna').string.strip().replace("\n","")
 
 #########################################
 def ucsc_gene_coords(gene_name, ucsc_gene_regions_dir):
@@ -99,5 +99,5 @@ def get_alignment(species, assembly, chrom, region_from, region_to, scratch, out
 
 #########################################
 if __name__=="__main__":
-	#print(ucsc_fragment_sequence('mm9',8,59791026,59791040))
-	get_alignment('mouse', 'mm10', 8, 57814986, 57815004, '/home/ivana/scratch', '/home/ivana/scratch/test.afa')
+	#print(ucsc_fragment_sequence('mm10',8, 57805369, 57805386))
+	get_alignment('mouse', 'mm10', 8, 57805369, 57805386, '/home/ivana/scratch', '/home/ivana/scratch/test.afa')

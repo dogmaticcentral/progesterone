@@ -45,16 +45,20 @@ def main():
 		start = 174447651- 1000000
 		end   = 174447651
 	else:
-		#assembly = "mm10"
-		#chromosome = "8"
+		assembly = "mm10"
+		chromosome = "8"
 		#Hand2 at chr8:57320983-57324517
-		assembly   = "calJac3"
-		chromosome = "3"
+		#start = 57324517
+		#end = 57324517 + 1000000
+		start = 57320983 - 1000000
+		end = 57320983
+		#assembly   = "calJac3"
+		#chromosome = "3"
 		#HAND2 at chr3:15951910-15954607
-		start = 15954607
-		end   = 15954607 + 1000000
-
-
+		#start = 15954607
+		#end   = 15954607 + 1000000
+		#start = 15951910 - 1000000
+		#end = 15951910
 
 	jaspar_motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
 	for f in [ jaspar_motifs_file]:
@@ -68,17 +72,17 @@ def main():
 	pssm = pwm.log_odds()
 
 	# seq from UCSC
+	print("intial range:", start, end)
 	seq = ucsc_fragment_sequence(assembly,chromosome,start,end)
 	bpseq = Seq(seq,unambiguous_dna)
 
 	for position, score in pssm.search(bpseq, threshold=10.0):
-		revstrand=False
 		if position>0:
 			offset = position
+			print("range:", start, end)
 			print("offset %d: score = %5.1f" % (offset, score))
 			matched_seq = bpseq[position:position+motif.length]
 		else:
-			revstrand=True
 			offset = len(bpseq)+position
 			print("offset %d: score = %5.1f (on the compl strand)" % (offset, score))
 			matched_seq = bpseq[position:position+motif.length].reverse_complement()
