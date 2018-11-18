@@ -7,18 +7,23 @@ import sys
 # however python3 does not like the dot
 from linkto_python_modules.mysqldb import *
 
-
+# finding exps by exp num:
+#  SET @row_number = 0;  select * from (SELECT (@row_number:=@row_number + 1) \
+#  AS expNum, source, factor, cellType, treatment, lab from wgEncodeRegTfbsClusteredInputsV3) as t where factor='ESR1';
+# (the wgEncodeRegTfbsClusteredInputsV3 table has no id nums, so we have to count the rows)
 #########################################
 def main():
 
-	if len(sys.argv) < 4:
+	assembly = "hg19"
+
+	if len(sys.argv) < 5:
 		print  ("usage: %s <gene_name> <chrom>  <from>  <to>" % sys.argv[0])
 		exit()
 	#  this should come from the previous script, 02_emve_tads.py
 	[gene_name, chrom, start,end] = sys.argv[1:5]
 	db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
 	cursor = db.cursor()
-	switch_to_db(cursor, "hg19") # human build name
+	switch_to_db(cursor, assembly) # human build name
 
 	# our table du jour is wgEncodeRegTfbsClusteredV3;
 	table = 'wgEncodeRegTfbsClusteredV3'
@@ -38,8 +43,9 @@ def main():
 		print(ret)
 		exit()
 
-	outf = open ("raw_data/%s_tfbs.tsv"%gene_name,"w")
-	outf.write("\n".join( "\t".join([str(field) for field in row]) for row in ret) + "\n")
+	outf = open ("raw_data/%s_tfbs_%s.tsv"%(gene_name,assembly),"w")
+	outf.write("\t".join(["% chrom", "chromStart", "chromEnd", "name", "score", "expCount", "expNums", "expSCores"]) + "\n")
+	outf.write("\n".join( "\t".join([str(field).replace("b'","").replace("'","") for field in row[1:]]) for row in ret) + "\n")
 	outf.close()
 
 	return True

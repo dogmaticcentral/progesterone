@@ -112,7 +112,7 @@ def main():
 
 	bins_sorted_by_strength = [b for b in sorted(int_strength, key=int_strength.get, reverse=True)]
 
-	# regions we are interested in (expected usage: from the previous script, 04_tf_binding_sites_from_UCSC.py)
+	# regions we are interested in (expected usage: from the previous script, 03_tf_binding_sites_human.py)
 	r2name, r2score = range2tfb(tfbs_file)
 
 	print()

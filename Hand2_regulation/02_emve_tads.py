@@ -29,10 +29,10 @@ def main():
 	if not chromosome or not gene_range:
 		exit()
 
-	print (gene_name, chromosome, strand, gene_range)
+	print ( "{} {} {}:{}-{}".format(gene_name, strand, chromosome, gene_range[0], gene_range[1]) )
 
 	[start, end] = get_tad (tadfile, chromosome, gene_range)
-	print ("TAD containing %s region: from %d to %d   length %d"%(gene_name, start, end, end-start))
+	print ("TAD containing %s region: %s:%d-%d   length %d"%(gene_name, chromosome, start, end, end-start))
 
 
 #########################################

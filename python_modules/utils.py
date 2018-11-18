@@ -2,6 +2,79 @@
 
 import subprocess, os, urllib.request
 from bs4 import BeautifulSoup
+from  Bio import motifs
+from Bio.Alphabet.IUPAC import unambiguous_dna
+from Bio.Seq import Seq
+import numpy as np
+
+#########################################
+def read_pfm(jaspar_motifs_file, tf_name):
+	motif = None
+	with open(jaspar_motifs_file) as handle:
+		for m in motifs.parse(handle,"jaspar"):
+			if m.name==tf_name:
+				motif = m
+				break
+	return motif
+
+#########################################
+def read_or_download_sequence(chipseq_regions_dir, assembly, chromosome, tf, start, end):
+	seqfile = "{}/{}_{}_{}_{}_{}.txt".format(chipseq_regions_dir,tf, assembly, chromosome, start, end)
+	if (os.path.exists(seqfile) and os.path.getsize(seqfile)>0):
+		outf = open(seqfile, "r")
+		seq = outf.read()
+		outf.close()
+	else:
+		seq = ucsc_fragment_sequence(assembly, chromosome, start, end)
+		outf = open(seqfile, "w")
+		outf.write(seq.replace("\n",""))
+		outf.close()
+
+	return seq
+
+#########################################
+def almt_simplified(almtfile,pssm,revstrand):
+	outf = open(almtfile, "r")
+	assmbs = []
+	seq = {}
+	ranges = {}
+	for line in outf:
+		line = line.rstrip()
+		if line[0]=='>':
+			[asm,range] = line[1:].split(':')
+			if not asm in seq:
+				assmbs.append(asm)
+				seq[asm] = ""
+				ranges[asm]=[]
+			ranges[asm].append(range)
+		else:
+			seq[asm]+= line
+	outf.close()
+
+	almt = ""
+	for asm in assmbs:
+		fields = asm.split(".")
+		[species, chrom]  =  fields[:2]
+		seq_straight = seq[asm].replace("-","")[:20]
+		biopythonseq = Seq(seq_straight,unambiguous_dna)
+		if revstrand:
+			biopythonseq = biopythonseq.reverse_complement()
+		try:
+			score = pssm.calculate(biopythonseq)
+			maxscore = np.amax(score)
+		except:
+			maxscore = -100
+		almt += "%-10s %-20s %5.1f   %-15s %s\n"%(species, seq_straight, maxscore, chrom, ranges[asm])
+		if (species=='rn5'):
+			almt+= "-------------------------------------------\n"
+	return almt
+
+#####
+def get_alignment_file(alignments_dir, species, assembly, chromosome, tf, start, end):
+	almtfile = "{}/{}_{}_{}_{}_{}.txt".format(alignments_dir, tf, assembly, chromosome, start, end)
+	if not (os.path.exists(almtfile) and os.path.getsize(almtfile)>0):
+		get_alignment(species, assembly, chromosome, start, end, alignments_dir, almtfile)
+	return almtfile
 
 
 #########################################
@@ -48,6 +121,9 @@ def get_tad(tadfile, chromosome, gene_range):
 		if not chr in tads: tads[chr] = []
 		tads[chr].append([int(start), int(end)])
 
+	if not gene_range:
+		return tads[chromosome]
+
 	gene_tads = []
 	for start, end in tads[chromosome]:
 		if start <= gene_range[0] <= end or start <= gene_range[1] <= end:
@@ -63,6 +139,9 @@ def get_tad(tadfile, chromosome, gene_range):
 
 	return gene_tads[0]
 
+#########################################
+def get_all_tads(tadfile, chromosome):
+	return  get_tad(tadfile, chromosome,None)
 
 #########################################
 def get_alignment(species, assembly, chrom, region_from, region_to, scratch, outfile):
@@ -100,4 +179,5 @@ def get_alignment(species, assembly, chrom, region_from, region_to, scratch, out
 #########################################
 if __name__=="__main__":
 	#print(ucsc_fragment_sequence('mm10',8, 57805369, 57805386))
-	get_alignment('mouse', 'mm10', 8, 57805369, 57805386, '/home/ivana/scratch', '/home/ivana/scratch/test.afa')
+	#get_alignment('mouse', 'mm10', 8, 57805369, 57805386, '/home/ivana/scratch', '/home/ivana/scratch/test.afa')
+	print(ucsc_gene_coords('Hand2',  "/storage/databases/ucsc/gene_ranges/mouse/mm9"))

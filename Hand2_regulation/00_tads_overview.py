@@ -7,7 +7,7 @@
 
 import os
 from statistics import mean, stdev
-from math import floor, ceil
+
 
 #########################################
 def find_place(interval_clusters, new_start, new_end):
@@ -40,10 +40,6 @@ def interval_stat(interval_cluster):
 
     return [int(i) for i in [mean(starts), stdev(starts), mean(ends), stdev(ends), mean(lengths), stdev(lengths)]]
 
-
-def clean_up(tads):
-
-    return
 
 #########################################
 

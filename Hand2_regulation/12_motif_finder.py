@@ -45,20 +45,16 @@ def main():
 		start = 174447651- 1000000
 		end   = 174447651
 	else:
-		assembly = "mm10"
-		chromosome = "8"
+		#assembly = "mm10"
+		#chromosome = "8"
 		#Hand2 at chr8:57320983-57324517
 		#start = 57324517
 		#end = 57324517 + 1000000
-		start = 57320983 - 1000000
-		end = 57320983
-		#assembly   = "calJac3"
-		#chromosome = "3"
-		#HAND2 at chr3:15951910-15954607
-		#start = 15954607
-		#end   = 15954607 + 1000000
-		#start = 15951910 - 1000000
-		#end = 15951910
+		assembly = "rn4"
+		# Hand2 at chr16:36324327-36326037
+		chromosome = "16"
+		start = 36326037
+		end = 36326037 + 1000000
 
 	jaspar_motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
 	for f in [ jaspar_motifs_file]:

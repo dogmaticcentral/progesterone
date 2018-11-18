@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/03_tfbs_from_ensembl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hand2_regulation/utils/mysql.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/python_modules/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_modules/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="10_motif_in_chipseq_binding_region.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
+      <file leaf-file-name="10_motif_in_chipseq_region_human.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="113" column="39" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="39" />
+            <state relative-caret-position="141">
+              <caret line="27" column="111" selection-start-line="27" selection-start-column="111" selection-end-line="27" selection-end-column="111" />
               <folding>
                 <element signature="e#20#43#0" expanded="true" />
               </folding>
@@ -26,11 +38,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="12_motif_finder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="12_motif_finder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+            <state relative-caret-position="69">
+              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="16_motif_in_chipseq_region_mouse.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+              <folding>
+                <element signature="e#20#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,19 +62,10 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="766">
-              <caret line="102" column="56" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="08_chromatin_interactions_from_encode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="-1044">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
-                <element signature="e#235#246#0" expanded="true" />
+                <element signature="e#20#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,6 +84,7 @@
     <findStrings>
       <find>row</find>
       <find>pwm</find>
+      <find>pr_</find>
     </findStrings>
     <replaceStrings>
       <replace>col</replace>
@@ -95,18 +111,30 @@
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/06_hdf5_exercise2_normalization.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" />
-        <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region_human.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_binding_region_mouse.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/16_motif_in_ESR1_binding_region_mouse.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_ESR1_binding_region_human.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py" />
+        <option value="$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2044" />
-    <option name="y" value="4" />
-    <option name="width" value="1655" />
-    <option name="height" value="1066" />
+    <option name="x" value="2160" />
+    <option name="y" value="100" />
+    <option name="width" value="1531" />
+    <option name="height" value="945" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -142,13 +170,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -177,12 +205,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2044" y="4" width="1655" height="1066" extended-state="0" />
+    <frame x="2160" y="100" width="1531" height="945" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23835784" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25795755" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.1372973" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
@@ -196,7 +225,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -208,16 +236,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
@@ -289,7 +307,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1278">
           <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
@@ -362,6 +380,26 @@
         <state relative-caret-position="-1026" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/03_tfbs_from_ensembl.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#247#256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -372,34 +410,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state relative-caret-position="485">
+          <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
+          <folding>
+            <element signature="e#304#313#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="113" column="39" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="39" />
+        <state relative-caret-position="594">
+          <caret line="33" column="65" lean-forward="true" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <element signature="e#100#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="113" column="40" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="40" />
+          <folding>
+            <element signature="e#211#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="47" column="101" selection-start-line="47" selection-start-column="101" selection-end-line="47" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="27" column="111" selection-start-line="27" selection-start-column="111" selection-end-line="27" selection-end-column="111" />
           <folding>
             <element signature="e#20#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="102" column="56" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
+        <state relative-caret-position="69">
+          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+        <state relative-caret-position="-1044">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#20#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
