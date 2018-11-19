@@ -78,9 +78,10 @@ def main():
 	#print(avg, stdv, med)
 	#print()
 	for t in range(number_of_tads):
-		if  bin_counts[t]> 15:
-			z = "%3.1f"%( (bin_counts[t]-avg)/stdv )
-			print ("{} chr{}:{}-{}  {} {}".format(t, chrom, tads[t][0], tads[t][1],  bin_counts[t], z))
+		#if  bin_counts[t]> 15:
+
+		z = "%3.1f"%( (bin_counts[t]-avg)/stdv )
+		print ("{} chr{}:{}-{}  {} {}".format(t, chrom, tads[t][0], tads[t][1],  bin_counts[t], z))
 
 
 

@@ -55,7 +55,7 @@ def almt_simplified(almtfile,pssm,revstrand):
 	for asm in assmbs:
 		fields = asm.split(".")
 		[species, chrom]  =  fields[:2]
-		seq_straight = seq[asm].replace("-","")[:20]
+		seq_straight = seq[asm].replace("-","")[:20].upper()
 		biopythonseq = Seq(seq_straight,unambiguous_dna)
 		if revstrand:
 			biopythonseq = biopythonseq.reverse_complement()
