@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A
 # -A skips auto rehash
-from   .linkto_python_modules.mysqldb import *
+from PR_binding_sites.linkto_python_modules.mysqldb import *
 
 #########################################
 def main():

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_modules/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_modules/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PR_binding_sites/01_get_gene_regions_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hand2_regulation/01_get_gene_regions_from_UCSC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +16,7 @@
       <file leaf-file-name="10_motif_in_chipseq_region_human.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="396">
               <caret line="27" column="111" selection-start-line="27" selection-start-column="111" selection-end-line="27" selection-end-column="111" />
               <folding>
                 <element signature="e#20#43#0" expanded="true" />
@@ -27,19 +25,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="12_motif_finder.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="16_motif_in_chipseq_region_mouse.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
+            <state relative-caret-position="882">
               <caret line="53" column="61" selection-start-line="53" selection-start-column="61" selection-end-line="53" selection-end-column="61" />
               <folding>
                 <element signature="e#20#43#0" expanded="true" />
@@ -48,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="04_tf_binding_sites_distribution.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="04_tf_binding_sites_distribution.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="61" column="54" lean-forward="true" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+              <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
               <folding>
                 <element signature="e#100#120#0" expanded="true" />
               </folding>
@@ -60,11 +49,54 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="00_tads_overview.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#247#256#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regions.bed" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/regions.bed">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="report_table" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/report_table">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="test.list" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/test.list">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="20_get_all_ChIPSeq_regions.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PR_binding_sites/20_get_all_ChIPSeq_regions.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-432" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02_emve_tads.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="163" column="34" lean-forward="true" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
+            <state relative-caret-position="2844">
+              <caret line="163" column="34" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
               <folding>
                 <element signature="e#20#57#0" expanded="true" />
               </folding>
@@ -155,12 +187,6 @@
               <item name="progesterone" type="462c0819:PsiDirectoryNode" />
               <item name="Hand2_regulation" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
-              <item name="Hand2_regulation" type="462c0819:PsiDirectoryNode" />
-              <item name="linkto_python_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -171,13 +197,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Hand2_regulation" />
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -207,9 +234,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2164" y="55" width="1531" height="945" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25729442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32891247" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -237,37 +263,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1818">
-          <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -360,24 +355,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -404,7 +385,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
+        <state relative-caret-position="396">
           <caret line="27" column="111" selection-start-line="27" selection-start-column="111" selection-end-line="27" selection-end-column="111" />
           <folding>
             <element signature="e#20#43#0" expanded="true" />
@@ -414,8 +395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="163" column="34" lean-forward="true" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
+        <state relative-caret-position="2844">
+          <caret line="163" column="34" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
           <folding>
             <element signature="e#20#57#0" expanded="true" />
           </folding>
@@ -424,7 +405,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
+        <state relative-caret-position="882">
           <caret line="53" column="61" selection-start-line="53" selection-start-column="61" selection-end-line="53" selection-end-column="61" />
           <folding>
             <element signature="e#20#43#0" expanded="true" />
@@ -435,11 +416,42 @@
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="61" column="54" lean-forward="true" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
           <folding>
             <element signature="e#100#120#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#247#256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/regions.bed">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/report_table">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/test.list">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/20_get_all_ChIPSeq_regions.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
       </provider>
     </entry>
   </component>
