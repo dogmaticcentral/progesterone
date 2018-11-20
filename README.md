@@ -24,6 +24,9 @@ download/install them only when they become necessary.
   
 * ChIPSeq regions from ENCODE experriment, [collected in UCSC genome db](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRegTfbsClustered/)
 
+* [CrossMap](http://crossmap.sourceforge.net/) for transforming coordinates to a single reference assembly 
+  (together with transformation chain files, [here](http://crossmap.sourceforge.net/#chain-file))
+
 * [Gnuplot](http://www.gnuplot.info/)
 
 * [tools](https://www.h5py.org/) for handling data in [HDF5 format](https://portal.hdfgroup.org/display/support)
@@ -43,6 +46,26 @@ download/install them only when they become necessary.
 ## Which TAD does my gene belong to
 
 ## Where are ChIPSeq regions on the chromosome
+_Progesterone_ pipeline takes hg19 and mm9  as its reference assemblies. 
+In GEO repositories there is usually a file called *_series_matrix.txt 
+(which is actually a tsv file), where this info can be found. 
+You may grep for hg or mm to see which one is referred to. If it is not hg19 for human
+or mm9 for mouse, the coordinates need to be translated.
+
+The scripts expect "bed" format, which here means that the columns are tab separated, the
+first column is chromosome number (possibly prefixed by 'chr'), and the following two are
+region start and region end. If the file is not
+too far from that format, you can perhaps help yourself out with 
+[linux _cut_ command](https://www.thegeekstuff.com/2013/06/cut-command-examples/), 
+see also 
+[here](https://unix.stackexchange.com/questions/35369/how-to-define-tab-delimiter-with-cut-in-bash) 
+for tab delimiter handling with _cut_. For example
+
+`cut -d$'\t' -f3-5  GSM857545_1_PR_oil_s_4_aligned.tsv > GSM857545_1_PR_oil_s_4_aligned.bed`
+
+
+ (In Windows you might try using a spreadsheet program to reformat the file. Just make sure
+ you do not have too many  in your bed file.)
 
 ## Which regions come  in contact within the TAD (and how often)
 

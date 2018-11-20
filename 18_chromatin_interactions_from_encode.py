@@ -7,7 +7,7 @@ import math
 
 import h5py
 import os
-from linkto_python_modules.utils import *
+from utils.utils import *
 
 def range2tfb(infile):
 	r2name  = {}
@@ -19,7 +19,7 @@ def range2tfb(infile):
 			chrom=chrom_readin
 		elif (chrom != chrom_readin):
 			print ("Unexpected: chrom not the same for all entry lines in %s", infile)
-			exit()os.path.
+			exit()
 		range = "{}_{}".format(chromStart,chromEnd)
 		if not range in r2name:
 			r2name[range]=[]
@@ -88,8 +88,7 @@ def main():
 	#promoter_bins = [b for b in range(bin_from,bin_to+1) if
 	#				(bin_positions[b][1]<=pstart<=bin_positions[b][2]) or
 	#				(bin_positions[b][1]<=pend<=bin_positions[b][2])]
-	# this is 2.5 time faster
-
+	# this is 2.5 times faster
 	promoter_bins = []
 	for b in range(chrom_bin_from,chrom_bin_to+1):
 		bfrom, bto =bin_positions[b][1:3]
@@ -112,7 +111,7 @@ def main():
 
 	bins_sorted_by_strength = [b for b in sorted(int_strength, key=int_strength.get, reverse=True)]
 
-	# regions we are interested in (expected usage: from the previous script, 03_tf_binding_sites_human.py)
+	# regions we are interested in (expected usage: from the previous script, 03_tf_binding_sites_from_UCSC.py)
 	r2name, r2score = range2tfb(tfbs_file)
 
 	print()

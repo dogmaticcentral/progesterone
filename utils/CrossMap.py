@@ -1573,6 +1573,7 @@ def wig_help():
     ]
     for i,j in msg:
         print('\n' + i + '\n' + '\n'.join(['  ' + k for k in wrap(j,width=80)]), file=sys.stderr)
+
 def bigwig_help():
     msg =[
     ('Usage:', "CrossMap.py bigwig input_chain_file input__bigwig_file output_prefix"),
