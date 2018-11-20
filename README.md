@@ -1,36 +1,41 @@
 # Progesterone
 
-This is a set of scripts that try to answer the question: is it possible that a gene A 
+This is a set of scritps that try to answer the question: is it possible that a gene A 
 is under control of transcription  factor B, given currently available experimental 
-evidence?
+evidence. Response to progesterone and estrogen was the original topic.
 
-This is not a library  - the scripts are loosely connected by some coomon methods 
+_Progesterone_ is not a library  - the scripts are loosely connected by a couple of common methods 
 in the utils module. They have been tested to run under python 3.6.6, and are supposed 
 to be run in the  order in which they are enumerated. They answer a series of 
 sub-questions, which may add up to an answer. Depends on the answer you are hoping for.
 
 ## Dependencies
 
-http://promoter.bx.psu.edu/hi-c/publications.html
+_Progesterone_ pipeline depends on several data sources and python packages. However, you can 
+download/install them only when they become necessary. 
+* [collection of TADs from Yue lab](http://promoter.bx.psu.edu/hi-c/publications.html)
 
-https://genome.ucsc.edu/goldenpath/help/mysql.html
+* [UCSC genome database, accessed directly through MySQL](https://genome.ucsc.edu/goldenpath/help/mysql.html)
 
-MySQLdb
+* MySQLdb, installed with _sudo apt install python3-mysqldb_
 
-https://www.encodeproject.org/experiments/ENCSR551IPY/
-http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRegTfbsClustered/
+* data from HiC experiment on [... something](https://www.encodeproject.org/experiments/ENCSR551IPY/) - 
+  adapt this to the cell/tissue type you are interested in
+  
+* ChIPSeq regions from ENCODE experriment, [collected in UCSC genome db](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRegTfbsClustered/)
 
-Gnuplot
+* [Gnuplot](http://www.gnuplot.info/)
 
-https://portal.hdfgroup.org/display/support
-https://www.h5py.org/
+* [tools](https://www.h5py.org/) for handling data in [HDF5 format](https://portal.hdfgroup.org/display/support)
 
-Motif from Biopython
-http://jaspar.genereg.net/
-http://hocomoco11.autosome.ru/
+* TF binding motif databases [JASPAR](http://jaspar.genereg.net/) and 
+   [Hocomoco](http://hocomoco11.autosome.ru/)
 
-https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE34927
-https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36455
+* [Motif](http://biopython.org/DIST/docs/api/Bio.motifs-module.html) 
+  from [Biopython](https://biopython.org/)
+
+* more ChIPSeq data from [GEO](https://www.ncbi.nlm.nih.gov/geo/) database ([GSE34927](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE34927),
+ [GSE36455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36455), for example. Again YMMV.)
 
 
 ## What's this TAD business
