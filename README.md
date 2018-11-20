@@ -1,11 +1,11 @@
 # Progesterone
 
-This is a set of scritps that try to answer the question: is it possible that a gene A 
+This is a set of scripts that try to answer the question: is it possible that a gene A 
 is under control of transcription  factor B, given currently available experimental 
-evidence.
+evidence?
 
-This is not a library  - the scripts are loosely connected by some coompn methods 
-in the utils module. They have been tested to run under pyth 3.6.6, and are supposed 
+This is not a library  - the scripts are loosely connected by some coomon methods 
+in the utils module. They have been tested to run under python 3.6.6, and are supposed 
 to be run in the  order in which they are enumerated. They answer a series of 
 sub-questions, which may add up to an answer. Depends on the answer you are hoping for.
 
