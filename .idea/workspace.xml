@@ -2,56 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/03_compare_tables.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/07_per_gene_analysis.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/08_per_gene_specific_motif.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/09_best_motifs_anywhere.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/10_motif_alignments.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/11_score_almt.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/12_cumulatve_scoring.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/20_get_all_ChIPSeq_regions.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/22_pattern_in_PRE.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/24_conservation_of_the_best_pattern.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/26_report_table.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/28_inspect_neighborhood.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/almt_score" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/alnmt_scores" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/best_alignments" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/clusters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/current_genes_uniprot.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/current_list_of_interesting_genes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/examples/das_server.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/examples/get_maf.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/examples/http_request.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/examples/mysql_example.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/regions.bed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/report_table" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/ruby_modules/httputils.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/ruby_modules/mysqlutils.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/ruby_modules/parsers.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/ruby_modules/region.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/ruby_modules/utils.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/test.list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/top_genes_oil_and_p4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PR_binding_sites/top_genes_p4_only" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_get_gene_regions_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_get_gene_regions_from_UCSC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_emve_tads.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_emve_tads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_tf_binding_sites_human.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_tf_binding_sites_human.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_tf_binding_sites_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/04_tf_binding_sites_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" beforeDir="false" afterPath="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/14_tf_binding_sites_mouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/14_tf_binding_sites_mouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_modules/CrossMap.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/CrossMap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_modules/mysqldb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mysqldb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_modules/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-786834255">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gplt" value="1" />
+          <entry key="md" value="2" />
+          <entry key="py" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="md" value="1224" />
+          <entry key="py" value="44" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="1224" />
+          <entry key="Python" value="44" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1247">
+                <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/16_motif_in_chipseq_region_mouse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="667">
+              <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/14_tf_binding_sites_mouse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1131">
+              <caret line="96" column="55" lean-forward="true" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+              <folding>
+                <element signature="e#211#225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10_motif_in_chipseq_region_human.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-493">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#21#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04_tf_binding_sites_distribution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-930">
+              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -112,14 +169,39 @@
         <option value="$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/01_get_gene_regions_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/utils/utils.py" />
+        <option value="$PROJECT_DIR$/03_tf_binding_sites_human.py" />
+        <option value="$PROJECT_DIR$/02_emve_tads.py" />
+        <option value="$PROJECT_DIR$/04_tf_binding_sites_distribution.py" />
+        <option value="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" />
+        <option value="$PROJECT_DIR$/14_tf_binding_sites_mouse.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2164" />
-    <option name="y" value="55" />
-    <option name="width" value="1531" />
-    <option name="height" value="945" />
+    <option name="x" value="395" />
+    <option name="y" value="50" />
+    <option name="width" value="3332" />
+    <option name="height" value="2021" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyPep8Inspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -134,6 +216,11 @@
               <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
               <item name="progesterone" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -141,6 +228,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -180,89 +268,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2164" y="55" width="1531" height="945" extended-state="0" />
+    <frame x="395" y="50" width="3332" height="2021" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32891247" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21593674" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.1372973" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.1372973" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="101" column="60" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/08_chromatin_interactions_from_encode.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/05_hdf5_exercise.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py" />
@@ -277,128 +308,127 @@
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/utils.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="101" column="60" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="113" column="40" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="47" column="101" selection-start-line="47" selection-start-column="101" selection-end-line="47" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="27" column="111" selection-start-line="27" selection-start-column="111" selection-end-line="27" selection-end-column="111" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2844">
-          <caret line="163" column="34" selection-start-line="163" selection-start-column="34" selection-end-line="163" selection-end-column="34" />
-          <folding>
-            <element signature="e#20#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="53" column="61" selection-start-line="53" selection-start-column="61" selection-end-line="53" selection-end-column="61" />
-          <folding>
-            <element signature="e#20#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
-          <folding>
-            <element signature="e#100#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#247#256#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/regions.bed">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/report_table">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/test.list">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/20_get_all_ChIPSeq_regions.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="87" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py" />
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py" />
+    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/16_motif_in_chipseq_region_mouse.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/04_tf_binding_sites_distribution.py" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/regions.bed" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/report_table" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/test.list" />
+    <entry file="file://$PROJECT_DIR$/PR_binding_sites/20_get_all_ChIPSeq_regions.rb" />
+    <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_emve_tads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#304#313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_get_gene_regions_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_tf_binding_sites_human.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#100#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05_tad_distr.gplt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_tf_binding_sites_distribution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-930">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_motif_finder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-870" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10_motif_in_chipseq_region_human.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#21#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_tf_binding_sites_mouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1131">
+          <caret line="96" column="55" lean-forward="true" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+          <folding>
+            <element signature="e#211#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_motif_in_chipseq_region_mouse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1247">
+            <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

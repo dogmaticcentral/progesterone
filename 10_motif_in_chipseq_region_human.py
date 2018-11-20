@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-from  Bio import motifs
+
 from Bio.Alphabet.IUPAC import unambiguous_dna
 from Bio.Seq import Seq
 import os
-from linkto_python_modules.utils import *
-import numpy as np
+from utils.utils import *
+
 
 #########################################
 def read_tfbs_ranges(infile):

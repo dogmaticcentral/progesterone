@@ -6,11 +6,9 @@
 # (under processed data)
 
 import os
-import subprocess
-from statistics import mean, stdev
-from math import floor, ceil
 
-from linkto_python_modules.utils import *
+
+from utils.utils import *
 
 #########################################
 def main():

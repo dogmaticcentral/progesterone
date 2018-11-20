@@ -8,8 +8,8 @@ import sys, os
 
 # pycharm recognizes this if it says .linkto
 # however python3 does not like the dot
-from linkto_python_modules.mysqldb import *
-from linkto_python_modules.utils import *
+from utils.mysqldb import *
+from utils.utils import *
 
 def overlap(interval_list, qry_interval):
 

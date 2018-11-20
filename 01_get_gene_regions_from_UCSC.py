@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A
 # -A skips auto rehash
-from PR_binding_sites.linkto_python_modules.mysqldb import *
+from utils.mysqldb import *
 
 #########################################
 def main():
@@ -26,7 +26,7 @@ def main():
         qry += "and name like 'NM_%'"   # refseq says: NM_	mRNA	Protein-coding transcripts (usually curated)
         rows = search_db(cursor,qry)
         for row in rows:
-            outf.writable("\t".join( [ str(r) for r in row]))
+            outf.write("\t".join( [ str(r) for r in row]))
         outf.close()
     cursor.close()
     db.close()

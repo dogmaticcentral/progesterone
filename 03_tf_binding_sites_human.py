@@ -5,7 +5,7 @@ import sys
 
 # pycharm recognizes this if it says .linkto
 # however python3 does not like the dot
-from linkto_python_modules.mysqldb import *
+from utils.mysqldb import *
 
 # finding exps by exp num:
 #  SET @row_number = 0;  select * from (SELECT (@row_number:=@row_number + 1) \
