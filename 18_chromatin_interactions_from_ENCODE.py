@@ -11,10 +11,9 @@ from utils.utils import *
 
 def range2tfb(infile):
 	r2name  = {}
-	r2score = {}
 	chrom = None
 	for line in open(infile, "r"):
-		[encodebin, chrom_readin, chromStart, chromEnd, name, score, expCount, expNums, expSCores] = line.rstrip().split("\t")
+		[chrom_readin, chromStart, chromEnd, name] = line.rstrip().split("\t")[:4]
 		if chrom==None:
 			chrom=chrom_readin
 		elif (chrom != chrom_readin):
@@ -23,24 +22,21 @@ def range2tfb(infile):
 		range = "{}_{}".format(chromStart,chromEnd)
 		if not range in r2name:
 			r2name[range]=[]
-			r2score[range]=[]
 		r2name[range].append(name)
-		r2score[range].append(str(score))
 
-	return r2name, r2score
+	return r2name
 
 
 def inside(container_from, container_to, start, end):
 	return container_from<=start<=container_to or container_from<=end<=container_to
 
 
-def find_tfbs_in(bfrom, bto, r2name, r2score):
+def find_tfbs_in(bfrom, bto, r2name):
 	tfbs = []
 	for range, names in r2name.items():
 		[start, end]= [int(i) for i in range.split("_")]
 		if inside(bfrom, bto, start, end):
-			if  False or 'ESR1' in names:
-				tfbs.append(names +  [range] + r2score[range])
+			tfbs.append(names +  [range])
 	return tfbs
 
 
@@ -48,13 +44,15 @@ def find_tfbs_in(bfrom, bto, r2name, r2score):
 def main():
 	# from 02_emve_tads.py
 	gene_name = "Hand2"
+	tfbs_dir  = "raw_data/tf_binding_sites"
+	tfbs_file = "raw_data/tf_binding_sites/Hand2_ESR1_tfbs_hg19.tsv"
 
 	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/human/hg19"
 	tad_file = "/storage/databases/tads/encode/ENCFF633ORE.bed"
-	tfbs_file = "raw_data/Hand2_tfbs.tsv"
 	contacts_file= "/storage/databases/encode/ENCSR551IPY/ENCFF331ABN.h5"
+	hic_dir = "raw_data/hic_interactions"
 
-	for f in [ucsc_gene_regions_dir,tad_file, tfbs_file,contacts_file]:
+	for f in [ucsc_gene_regions_dir,tad_file, tfbs_dir, tfbs_file, contacts_file, hic_dir]:
 		if not os.path.exists(f):
 			print(f,"not found")
 			exit()
@@ -112,25 +110,22 @@ def main():
 	bins_sorted_by_strength = [b for b in sorted(int_strength, key=int_strength.get, reverse=True)]
 
 	# regions we are interested in (expected usage: from the previous script, 03_tf_binding_sites_from_UCSC.py)
-	r2name, r2score = range2tfb(tfbs_file)
+	r2name = range2tfb(tfbs_file)
 
 	print()
 	print ("number of bins in chromosome %s"%chromosome, chrom_bin_to-chrom_bin_from+1, "interacting bins:",  len(bins_sorted_by_strength))
 
-	outf = open("raw_data/esr1_binding.tsv","w")
-	outf.write("\t".join(["% name", "chipseq_region", "encode_tfbs_score", "hic_region", "hic_int_score"])+ "\n")
+	hic_file = tfbs_file.replace(tfbs_dir,hic_dir)
+	outf = open(hic_file,"w")
+	outf.write("\t".join(["% name", "chipseq_region", "hic_region", "hic_int_score"])+ "\n")
 	rank = 0
 	for b in bins_sorted_by_strength:
 		bfrom, bto =bin_positions[b][1:3]
-		intad = ""
 		if tad_start<=bfrom<=tad_end  or  tad_start<=bto<=tad_end:
-			intad="+"
 			rank += 1
-			print( "%3d   %7d   %6.0f   [%10d  %10d]  %s"%(rank, b, int_strength[b], bfrom, bto, intad))
-			tfbs_inside = find_tfbs_in(bfrom, bto,r2name, r2score)
+			tfbs_inside = find_tfbs_in(bfrom, bto,r2name)
 
 			for t in tfbs_inside:
-				print("\t".join([""]+t))
 				outf.write( "\t".join( t+["{}_{}".format(bfrom, bto), "%5.0f"%(int_strength[b])]) + "\n")
 
 
