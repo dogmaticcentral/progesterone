@@ -44,8 +44,8 @@ download/install them only when they become necessary.
 ## What's with this TAD business
 
 
-With 2 meters of DNA packed in the nucleus of 6 micrometres in diameter, we expect of course,
-that it is packed in there in a quite complex way. What we know nowadays, in addition, is that 
+With 2 meters of DNA squished  in the nucleus with 6 micrometres in diameter, we expect of course,
+that the packing is quite complex. What we know nowadays, in addition, is that 
 the packing is not random. Rather, the genetic material is organized into domains, 
 [TADs](https://en.wikipedia.org/wiki/Topologically_associating_domain),
 that stay localized in space, even as they  keep rearranging internally, and switching their positions within the nucleus, reviewed in 
