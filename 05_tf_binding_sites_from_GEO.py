@@ -79,7 +79,7 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 		chain_file="/storage/databases/liftover/{}To{}.over.chain".format(input_assembly, ref_assembly.capitalize())
 
 
-	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species, ref_assembly)
+	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species, input_assembly)
 
 	if ctrl_file.replace(" ","") == "": ctrl_file = None
 	data_dir = "{}/{}".format(geodir, geo_id)
@@ -100,7 +100,7 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 	else:
 		chrom, strand, gene_range = ucsc_gene_coords(gene_name, ucsc_gene_regions_dir)
 		print ("%s position:"%gene_name, chrom, strand, gene_range)
-		if species=="human":
+		if species=="human" and input_assembly==ref_assembly: # TODO: fix this
 			[region_start, region_end] = get_tad (tadfile, chrom, gene_range)
 		else:
 			# human TAD that includes Hand2 is 1440kbp longrm -rf
@@ -140,6 +140,7 @@ def main():
 
 	outdir  = "raw_data/tf_binding_sites"
 	geodir  = "/storage/databases/geo"
+	#geodir  = "/storage/databases/encode"
 	tadfile = "/storage/databases/tads/encode/ENCFF633ORE.bed"
 	input_data_file = sys.argv[1]
 	for dependency in [outdir, geodir, tadfile, input_data_file]:

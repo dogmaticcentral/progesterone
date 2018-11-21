@@ -12,7 +12,7 @@ def read_tfbs_ranges(infile):
 	chipseq_regions =[]
 	for line in open(infile, "r"):
 		if line[0]=='%': continue
-		[name, chipseq_region, encode_tfbs_score, hic_region, hic_int_score] = line.rstrip().split("\t")
+		[name, chipseq_region, hic_region, hic_int_score] = line.rstrip().split("\t")
 		chipseq_regions.append(chipseq_region)
 	return chipseq_regions
 
@@ -24,9 +24,9 @@ def main():
 	assembly = "hg19"
 	chromosome = "4"
 
-	tfbs_file = "raw_data/esr1_binding.tsv"
+	tfbs_file = "raw_data/hic_interactions/Hand2_ESR1_tfbs_hg19.tsv"
 	jaspar_motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
-	chipseq_regions_dir = "raw_data/chipseq_regions_human"
+	chipseq_regions_dir = "raw_data/chipseq_regions_human_seqs"
 	alignments_dir      = "raw_data/alignments_human"
 	for f in [tfbs_file, jaspar_motifs_file, chipseq_regions_dir]:
 		if not os.path.exists(f):
@@ -45,7 +45,7 @@ def main():
 		print (start, end)
 		seq = read_or_download_sequence(chipseq_regions_dir, assembly, chromosome, tf, start, end)
 		bpseq = Seq(seq,unambiguous_dna)
-		for position, score in pssm.search(bpseq, threshold=10.0):
+		for position, score in pssm.search(bpseq, threshold=5.0):
 			revstrand=False
 			if position>0:
 				offset = position

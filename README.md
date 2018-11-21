@@ -22,7 +22,7 @@ download/install them only when they become necessary.
 * data from HiC experiment on [... something](https://www.encodeproject.org/experiments/ENCSR551IPY/) - 
   adapt this to the cell/tissue type you are interested in
   
-* ChIPSeq regions from ENCODE experriment, [collected in UCSC genome db](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRegTfbsClustered/)
+* ChIPSeq regions from ENCODE experiment, [collected in UCSC genome db](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRegTfbsClustered/)
 
 * [CrossMap](http://crossmap.sourceforge.net/) for transforming coordinates to a single reference assembly 
   (together with transformation chain files, [here](http://crossmap.sourceforge.net/#chain-file))

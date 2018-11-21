@@ -29,7 +29,7 @@ def main():
 	jaspar_motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
 	if tf=="PGR":
 		jaspar_motifs_file  = "/storage/databases/hocomoco/HOCOMOCOv11_core_MOUSE_mono_jaspar_format.txt"
-	chipseq_regions_dir = "raw_data/chipseq_regions_%s" % species
+	chipseq_regions_dir = "raw_data/chipseq_regions_%s_seqs" % species
 	alignments_dir      = "raw_data/alignments_%s" % species
 	for f in [tfbs_file, jaspar_motifs_file, chipseq_regions_dir]:
 		if not os.path.exists(f):
