@@ -114,7 +114,7 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 
 	#############################
 	# output
-	outfile = "%s/%s_%s_tfbs_%s.tsv"%(outdir, gene_name if gene_name else chrom, tf_name, input_assembly)
+	outfile = "%s/%s_%s_tfbs_%s_%s.tsv"%(outdir, gene_name if gene_name else chrom, tf_name, input_assembly, geo_id)
 	outf = open (outfile,"w")
 	outf.write("\t".join(["% chrom", "chromStart", "chromEnd", "name"]) + "\n")
 	for interval in binding_regions:
@@ -138,9 +138,9 @@ def main():
 		print  ("usage: %s <input_data.tsv>" % sys.argv[0])
 		exit()
 
-	outdir  = "raw_data/tf_binding_sites"
-	geodir  = "/storage/databases/geo"
-	#geodir  = "/storage/databases/encode"
+	outdir  = "raw_data/tf_binding_sites_encode"
+	#geodir  = "/storage/databases/geo"
+	geodir  = "/storage/databases/encode"
 	tadfile = "/storage/databases/tads/encode/ENCFF633ORE.bed"
 	input_data_file = sys.argv[1]
 	for dependency in [outdir, geodir, tadfile, input_data_file]:

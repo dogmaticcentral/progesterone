@@ -90,13 +90,15 @@ def main():
 	avg  = mean(bin_counts)
 	stdv = stdev(bin_counts)
 	med = median(bin_counts)
+	max_pop = max(bin_counts)
+	sum_pop = sum(bin_counts)
 	#print(avg, stdv, med)
 	#print()
 	for t in range(number_of_tads):
 		#if  bin_counts[t]> 15:
 
 		z = "%3.1f"%( (bin_counts[t]-avg)/stdv )
-		print ("{} chr{}:{}-{}  {} {}".format(t, chrom, tads[t][0], tads[t][1],  bin_counts[t], z))
+		print ("{} chr{}:{}-{}  {} {}".format(t, chrom, tads[t][0], tads[t][1],  bin_counts[t]/sum_pop, z))
 
 
 

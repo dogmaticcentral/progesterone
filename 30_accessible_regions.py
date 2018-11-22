@@ -100,8 +100,7 @@ def main():
 	colors = []
 	maxw = np.amax(np_weights)
 	for w in np_weights:
-		color=matplotlib.colors.to_hex((w/maxw, 0.0, 0.0))
-		colors.append((1.0, 0.0, 0.0, w/maxw))
+		colors.append((0.29,0,0.5, w/maxw))
 
 	chipseq_regions_ESR1 = read_tfbs_ranges('raw_data/hic_interactions/Hand2_ESR1_tfbs_hg19.tsv')
 	chipseq_regions_PGR  = read_tfbs_ranges('raw_data/hic_interactions/Hand2_PGR_tfbs_hg19.tsv')
@@ -113,15 +112,15 @@ def main():
 
 	hand2_start = rescaled(gene_range[0], tad_start, tad_length)
 	hand2_end  = rescaled(gene_range[1], tad_start, tad_length)
-	ax.hlines(y=0.0, xmin=hand2_start, xmax=hand2_end, linewidth=20, color='b')
+	ax.hlines(y=0.0, xmin=hand2_start-0.002, xmax=hand2_end+0.002, linewidth=30, color='b')
 
 	for chipseq_reg in chipseq_regions_ESR1:
 		[start, end] = [rescaled(int(p), tad_start, tad_length) for p in chipseq_reg.split("_")]
-		ax.hlines(y=0.0, xmin=start-0.001, xmax=end+0.001, linewidth=20, color='r')
+		ax.hlines(y=0.0, xmin=start-0.002, xmax=end+0.002, linewidth=30, color='r')
 
 	for chipseq_reg in chipseq_regions_PGR:
 		[start, end] = [rescaled(int(p), tad_start, tad_length) for p in chipseq_reg.split("_")]
-		ax.hlines(y=0.0, xmin=start-0.001, xmax=end+0.001, linewidth=20, color='g')
+		ax.hlines(y=0.0, xmin=start-0.002, xmax=end+0.002, linewidth=30, color='g')
 
 	plt.show()
 
