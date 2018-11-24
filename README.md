@@ -49,7 +49,7 @@ _sudo apt install python3-tk_)
 
 ## Gene coordinates
 You may start by downloading chromosome lengths and gene coordinates from UCSC using 
-01_chromosome_lengths_from_UCSC.py and 02_gene_ranges_from_UCSC.py, 
+[01_chromosome_lengths_from_UCSC.py](01_chromosome_lengths_from_UCSC.py) and 02_gene_ranges_from_UCSC.py, 
 or you can download them later, when they become needed.
 
 ## What's with this TAD business

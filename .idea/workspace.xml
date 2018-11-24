@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_tads_overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/10_tads_overview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11_tads_pic.py" beforeDir="false" afterPath="$PROJECT_DIR$/11_tads_pic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,32 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="02_gene_ranges_from_UCSC.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/02_gene_ranges_from_UCSC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="936">
+                <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="10_tads_overview.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/10_tads_overview.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="86" column="19" lean-forward="true" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-              <folding>
-                <element signature="e#1760#2215#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="11_tads_pic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="11_tads_pic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/11_tads_pic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="167" column="25" lean-forward="true" selection-start-line="167" selection-start-column="25" selection-end-line="167" selection-end-column="25" />
+            <state relative-caret-position="324">
+              <caret line="18" lean-forward="true" selection-start-line="1" selection-end-line="18" />
               <folding>
                 <element signature="e#964#973#0" expanded="true" />
               </folding>
@@ -82,14 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="504">
-                <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="12_emve_tads.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/12_emve_tads.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -119,7 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
         <option value="$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" />
@@ -168,8 +149,9 @@
         <option value="$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py" />
         <option value="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" />
         <option value="$PROJECT_DIR$/10_tads_overview.py" />
-        <option value="$PROJECT_DIR$/11_tads_pic.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/11_tads_pic.py" />
+        <option value="$PROJECT_DIR$/12_emve_tads.py" />
       </list>
     </option>
   </component>
@@ -270,7 +252,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/03_tfbs_from_ensembl.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/04_tf_binding_sites_from_UCSC.py" />
@@ -441,13 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02_gene_ranges_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/10_tads_overview.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
@@ -458,10 +432,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/02_gene_ranges_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="504">
+          <first_editor relative-caret-position="936">
             <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
           </first_editor>
           <second_editor />
@@ -470,11 +451,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/11_tads_pic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="167" column="25" lean-forward="true" selection-start-line="167" selection-start-column="25" selection-end-line="167" selection-end-column="25" />
+        <state relative-caret-position="324">
+          <caret line="18" lean-forward="true" selection-start-line="1" selection-end-line="18" />
           <folding>
             <element signature="e#964#973#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_emve_tads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
         </state>
       </provider>
     </entry>
