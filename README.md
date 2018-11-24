@@ -49,7 +49,8 @@ _sudo apt install python3-tk_)
 
 ## Gene coordinates
 You may start by downloading chromosome lengths and gene coordinates from UCSC using 
-[01_chromosome_lengths_from_UCSC.py](01_chromosome_lengths_from_UCSC.py) and 02_gene_ranges_from_UCSC.py, 
+[01_chromosome_lengths_from_UCSC.py](01_chromosome_lengths_from_UCSC.py) 
+and [02_gene_ranges_from_UCSC](02_gene_ranges_from_UCSC.py), 
 or you can download them later, when they become needed.
 
 ## What's with this TAD business
@@ -73,7 +74,7 @@ The idea repeatedly appears in the literature that TAD boundaries are conserved 
 That would be useful, beacuse with unversal definetion of TADs  we could write very many scripts with very many 
 purposes, having looked up the TAD definition only once.
 
-The first script, 10_tads_overview.py explores that possibility  - with mixed results.
+ [10_tads_overview.py](10_tads_overview.py) explores that possibility  - with mixed results.
 
 You will need to download TAD files from the [Yue lab page](http://promoter.bx.psu.edu/hi-c/publications.html) 
  (we suggest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). 
@@ -84,8 +85,8 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  TAD hierarchy. The number of these divisions, however, appears to be an order of magnitude smaller
  than the number of TADs typically reported in each experiment.
  
- 11_tads_pic.py contains basic code to illustrate  the reported TAD domains. 
- It uses [Matplotlib](https://matplotlib.org/; note that in Matplotlib you can zoom 
+ [11_tads_pic.py](11_tads_pic.py) 11_tads_pic.py contains basic code to illustrate  the reported TAD domains. 
+ It uses [Matplotlib](https://matplotlib.org/); note that in Matplotlib you can zoom 
  into any region of the graph you are interested in. 
  Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
 ![seepic](images/tad_exp_chr1.png):
