@@ -89,6 +89,7 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  It uses [Matplotlib](https://matplotlib.org/); note that in Matplotlib you can zoom 
  into any region of the graph you are interested in. 
  Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
+ 
 ![seepic](images/tad_exp_chr1.png):
  
  The whole chromosome length has been rescaled to the range [0,1].
