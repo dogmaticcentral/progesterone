@@ -45,6 +45,8 @@ def find_place(interval_clusters, new_start, new_end):
 
     if not interval_placed:
         interval_clusters.append([[new_start, new_end]])
+
+
 #############
 def interval_stat(interval_cluster):
 
@@ -60,9 +62,8 @@ def interval_stat(interval_cluster):
 
 
 #########################################
-
 def main():
-    dirpath = "/storage/databases/3dgenomebrowser/hg19_TADS"
+    dirpath = "/storage/databases/3dgenomebrowser/hg19_TADs"
     outpath = "raw_data/tads"
 
     for d in [dirpath, outpath]:
@@ -70,10 +71,9 @@ def main():
             print(d,"not found")
             exit()
 
-
     datafiles = []
     for path, dirs, files in os.walk(dirpath):
-        datafiles += [ file for file in files if file[-3:] == "txt"]
+        datafiles += [file for file in files if file[-3:] == "txt"]
 
     tads = {}
 
@@ -83,12 +83,11 @@ def main():
             [chr, start, end] = line.rstrip().split()
             if not chr in tads: tads[chr]=[]
             find_place(tads[chr], int(int(start)/1000), int(int(end)/1000))
-
+        inf.close()
 
     for chr, interval_clusters in tads.items():
         stats = []
         for interval_cluster in interval_clusters:
-            if len(interval_cluster)<5: continue
             stats.append([len(interval_cluster)] + interval_stat(interval_cluster))
         outf = open ("raw_data/tads/{}.tsv".format(chr),"w")
         outf.write("\t".join(["% interval_count","mean_start","stdev_start","mean_end",

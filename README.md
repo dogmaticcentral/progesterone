@@ -45,6 +45,10 @@ _sudo apt install python3-tk_)
 * more ChIPSeq data from [GEO](https://www.ncbi.nlm.nih.gov/geo/) database ([GSE34927](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE34927),
  [GSE36455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36455), for example. Again YMMV.)
 
+## Gene coordinates
+You may start by downloading chromosome lengths and gene coordinates from UCSC using 
+01_chromosome_lengths_from_UCSC.py and 02_gene_ranges_from_UCSC.py, 
+or you can download them later, when they become needed.
 
 ## What's with this TAD business
 
@@ -67,11 +71,23 @@ The idea repeatedly appears in the literature that TAD boundaries are conserved 
 That would be useful, beacuse with unversal definetion of TADs  we could write very many scripts with very many 
 purposes, having looked up the TAD definition only once.
 
-The first script, 00_tad_overview.py explores that possibility  - with the results not too encouraging.
+The first script, 10_tads_overview.py explores that possibility  - with the mixed results.
 
 You will need to download TAD files from the [Yue lab page](http://promoter.bx.psu.edu/hi-c/publications.html) 
- (we suugest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). Asjust the dirpath in 
- 00_tad_overview.py accordingly.
+ (we suggest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). Adjust the dirpath in 
+ 10_tad_overview.py accordingly. 11_tads_pic.py contains basic code to illustrate 
+ (using [Matplotlib](https://matplotlib.org/)) 
+ the proposed TAD domains. 
+
+Here are the TADS for chromsome 1, from 35 different experiments from the Yue lab collection.
+![seepic](images/tad_exp_chr1.png).
+ 
+ The whole chromosome length has been rescaled to the range [0,1]
+If you squint a little you can see that the basic TAD  structure corresponds to the regions of densest
+gene occupation region (middle and bottom panels). However the individual TAD assignments 
+(top panel; each horizontal level corresponds to one experiment)  
+vary widely between different experiments. Therefore we choose to stick with a single experiment, 
+in cell type that matches most closely the type of cells we are interested in.
 
 ## Which TAD does my gene belong to
 
