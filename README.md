@@ -78,14 +78,14 @@ purposes, having looked up the TAD definition only once.
 
 You will need to download TAD files from the [Yue lab page](http://promoter.bx.psu.edu/hi-c/publications.html) 
  (we suggest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). 
- Adjust the dirpath in  10_tad_overview.py accordingly. This script groups TAD intervals 
+ Adjust the dirpath in  [10_tad_overview.py](10_tad_overview.py) accordingly. This script groups TAD intervals 
  that appear repeatedly in different experiments, in the hope of finding those
  that are supposedly conserved across different cell types. It seems that one could make some progress
  looking for regions that are rarely assigned to a domain, and thus delineate the topmost division in a 
  TAD hierarchy. The number of these divisions, however, appears to be an order of magnitude smaller
  than the number of TADs typically reported in each experiment.
  
- [11_tads_pic.py](11_tads_pic.py) 11_tads_pic.py contains basic code to illustrate  the reported TAD domains. 
+ [11_tads_pic.py](11_tads_pic.py) contains basic code to illustrate  the reported TAD domains. 
  It uses [Matplotlib](https://matplotlib.org/); note that in Matplotlib you can zoom 
  into any region of the graph you are interested in. 
  Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
@@ -94,7 +94,7 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  The whole chromosome length has been rescaled to the range [0,1].
 If you squint a little you can see that the basic TAD  structure corresponds to the regions of densest
 gene occupation region (middle and bottom panels) -  careful with the interpretation of this graph: see 
-11_tads_pic.py:plot_2()). However the individual TAD assignments 
+[11_tads_pic.py](11_tads_pic.py):plot_2()). However the individual TAD assignments 
 (top panel; each horizontal level corresponds to one experiment) 
 vary widely between different experiments. Therefore we choose to stick with a single experiment
 ([Homo sapiens endometrial microvascular endothelial cells](https://www.encodeproject.org/experiments/ENCSR551IPY/))
