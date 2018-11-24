@@ -28,77 +28,79 @@ from statistics import mean, stdev
 
 
 #########################################
+# clustering of TAD intervals
 def find_place(interval_clusters, new_start, new_end):
 
-    interval_placed = False
-    new_length = new_end-new_start
-    for interval_cluster in interval_clusters:
-        for [start,end] in interval_cluster:
-            length = end-start
-            ds = abs(start-new_start)
-            de = abs(end-new_end)
-            if ds/length<0.2 and de/length<0.2 and ds/new_length<0.2 and de/new_length<0.2:
-                interval_cluster.append([new_start, new_end])
-                interval_placed = True
-                break
-        if interval_placed: break
+	interval_placed = False
+	new_length = new_end-new_start
+	for interval_cluster in interval_clusters:
+		for [start,end] in interval_cluster:
+			length = end-start
+			ds = abs(start-new_start)
+			de = abs(end-new_end)
+			if ds/length<0.2 and de/length<0.2 and ds/new_length<0.2 and de/new_length<0.2:
+				interval_cluster.append([new_start, new_end])
+				interval_placed = True
+				break
+		if interval_placed: break
 
-    if not interval_placed:
-        interval_clusters.append([[new_start, new_end]])
+	if not interval_placed:
+		interval_clusters.append([[new_start, new_end]])
 
 
 #############
 def interval_stat(interval_cluster):
 
-    if len(interval_cluster)==1:
-        interval = interval_cluster[0]
-        return [interval[0], 0, interval[1], 0, interval[1]-interval[0], 0]
+	if len(interval_cluster)==1:
+		interval = interval_cluster[0]
+		return [interval[0], 0, interval[1], 0, interval[1]-interval[0], 0]
 
-    starts  = [interval[0] for interval in interval_cluster]
-    ends    = [interval[1] for interval in interval_cluster]
-    lengths = [interval[1]-interval[0] for interval in interval_cluster]
+	starts  = [interval[0] for interval in interval_cluster]
+	ends    = [interval[1] for interval in interval_cluster]
+	lengths = [interval[1]-interval[0] for interval in interval_cluster]
 
-    return [int(i) for i in [mean(starts), stdev(starts), mean(ends), stdev(ends), mean(lengths), stdev(lengths)]]
+	return [int(i) for i in [mean(starts), stdev(starts), mean(ends), stdev(ends), mean(lengths), stdev(lengths)]]
 
 
 #########################################
 def main():
-    dirpath = "/storage/databases/3dgenomebrowser/hg19_TADs"
-    outpath = "raw_data/tads"
+	dirpath = "/storage/databases/3dgenomebrowser/hg19_TADs"
+	outpath = "raw_data/tads"
 
-    for d in [dirpath, outpath]:
-        if not os.path.exists(d):
-            print(d,"not found")
-            exit()
+	for d in [dirpath, outpath]:
+		if not os.path.exists(d):
+			print(d,"not found")
+			exit()
 
-    datafiles = []
-    for path, dirs, files in os.walk(dirpath):
-        datafiles += [file for file in files if file[-3:] == "txt"]
+	datafiles = []
+	for path, dirs, files in os.walk(dirpath):
+		datafiles += [file for file in files if file[-3:] == "txt"]
 
-    tads = {}
+	# cluster the TAD intervals - note the unit is 1 *kilo* basepair
+	tads = {}
+	for file in datafiles:
+		inf = open("{}/{}".format(dirpath,file),"r")
+		for line in inf:
+			[chr, start, end] = line.rstrip().split()
+			if not chr in tads: tads[chr]=[]
+			find_place(tads[chr], int(int(start)/1000), int(int(end)/1000))
+		inf.close()
 
-    for file in datafiles:
-        inf = open("{}/{}".format(dirpath,file),"r")
-        for line in inf:
-            [chr, start, end] = line.rstrip().split()
-            if not chr in tads: tads[chr]=[]
-            find_place(tads[chr], int(int(start)/1000), int(int(end)/1000))
-        inf.close()
-
-    for chr, interval_clusters in tads.items():
-        stats = []
-        for interval_cluster in interval_clusters:
-            stats.append([len(interval_cluster)] + interval_stat(interval_cluster))
-        outf = open ("raw_data/tads/{}.tsv".format(chr),"w")
-        outf.write("\t".join(["% interval_count","mean_start","stdev_start","mean_end",
-                              "stdev_end", "mean_length", "stdev_length"])+"\n")
-        for stat in sorted(stats, key=lambda s: s[1]):
-            outf.write("\t".join([str(s) for s in stat])+"\n")
-        outf.close()
+	# store for use ub the following script
+	for chr, interval_clusters in tads.items():
+		stats = []
+		for interval_cluster in interval_clusters:
+			stats.append([len(interval_cluster)] + interval_stat(interval_cluster))
+		outf = open ("raw_data/tads/{}.tsv".format(chr),"w")
+		outf.write("\t".join(["% interval_count","mean_start","stdev_start","mean_end",
+							  "stdev_end", "mean_length", "stdev_length"])+"\n")
+		for stat in sorted(stats, key=lambda s: s[1]):
+			outf.write("\t".join([str(s) for s in stat])+"\n")
+		outf.close()
 
 #########################################
 if __name__ == '__main__':
-    main()
+	main()
 
 
 

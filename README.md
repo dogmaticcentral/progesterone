@@ -5,7 +5,9 @@ is under control of transcription  factor B, given currently available experimen
 evidence. Response to progesterone and estrogen was the original topic.
 
 _Progesterone_ is not a library  - the scripts are loosely connected by a couple of common methods 
-in the utils module. They have been tested to run under python 3.6.6, and are supposed 
+in the utils module. They average some hundred lines in length, and can
+probably be figured out without much explanation. 
+They have been tested to run under python 3.6.6, and are supposed 
 to be run in the  order in which they are enumerated. They answer a series of 
 sub-questions, which may add up to an answer. Depends on the answer you are hoping for.
 
@@ -82,15 +84,20 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  TAD hierarchy. The number of these divisions, however, appears to be an order of magnitude smaller
  than the number of TADs typically reported in each experiment.
  
- 11_tads_pic.py contains basic code to illustrate  (using [Matplotlib](https://matplotlib.org/)) 
- the reported TAD domains.  Here are the TADS for chromsome 1, from 35 different experiments from the Yue lab collection.
-![seepic](images/tad_exp_chr1.png).
+ 11_tads_pic.py contains basic code to illustrate  the reported TAD domains. 
+ It uses [Matplotlib](https://matplotlib.org/; note that in Matplotlib you can zoom 
+ into any region of the graph you are interested in. 
+ Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
+![seepic](images/tad_exp_chr1.png):
  
  The whole chromosome length has been rescaled to the range [0,1].
 If you squint a little you can see that the basic TAD  structure corresponds to the regions of densest
-gene occupation region (middle and bottom panels). However the individual TAD assignments 
-(top panel; each horizontal level corresponds to one experiment)   vary widely between different experiments. Therefore we choose to stick with a single experiment, 
-in cell type that matches most closely the type of cells we are interested in.
+gene occupation region (middle and bottom panels) -  careful with the interpretation of this graph: see 
+11_tads_pic.py:plot_2()). However the individual TAD assignments 
+(top panel; each horizontal level corresponds to one experiment) 
+vary widely between different experiments. Therefore we choose to stick with a single experiment
+([Homo sapiens endometrial microvascular endothelial cells](https://www.encodeproject.org/experiments/ENCSR551IPY/))
+because the  cell type it uses  matches most closely the type of cells we are interested in.
 
 ## Which TAD does my gene belong to
 

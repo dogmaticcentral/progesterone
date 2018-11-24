@@ -24,7 +24,6 @@
 # one cell type to the next
 
 import os
-from statistics import mean, stdev
 from math import floor
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -37,6 +36,7 @@ def rescaled(x, offset, scale):
 
 
 #########################################
+# plots input intervals from one file as strips on the same y-height in diagram
 def plot_0(ax, dirpath, datafiles, chromosome, offset, scale):
 
 	patches = []
@@ -54,14 +54,15 @@ def plot_0(ax, dirpath, datafiles, chromosome, offset, scale):
 			patches.append(rect)
 		inf.close()
 
-	collection = PatchCollection(patches)
-
 	ax.set_ylim(0, number_of_files+1)
 	ax.set_xlim(0,1)
-	ax.add_collection(collection)
+	ax.add_collection(PatchCollection(patches))
 
 
 #########################################
+# illustrates clusters of intervals - the thickness of each strip
+# corresponds to the number of experiments
+# the y-position has no intrinsic meaning - the strip should not overlap
 def plot_1(ax, counts, starts, ends, offset, scale):
 
 	y_offset = -1
@@ -78,14 +79,12 @@ def plot_1(ax, counts, starts, ends, offset, scale):
 		rect = mpatches.Rectangle(xy=(start, y_offset-height/2), width=(end-start), height=height)
 		patches.append(rect)
 
-
-	collection = PatchCollection(patches)
-
 	ax.set_ylim(0,10)
 	ax.set_xlim(0,1)
-	ax.add_collection(collection)
+	ax.add_collection(PatchCollection(patches))
 
 #########################################
+# number of interval clusters to which  each bin corresponds
 def plot_2(ax, starts, ends, offset, scale):
 	number_of_bins = 1000
 	bin_counts = [0]*number_of_bins
@@ -166,13 +165,13 @@ def main():
 	for path, dirs, files in os.walk(dirpath):
 		datafiles += [file for file in files if file[-3:] == "txt"]
 
-	offset = min(starts)
-	scale = max(ends) - offset
-	fig, ax = plt.subplots(nrows=2,ncols=1)
+	#offset = min(starts)
+	#scale = max(ends) - offset
 
+	fig, ax = plt.subplots(nrows=3,ncols=1)
 	plot_0(ax[0], dirpath, datafiles, chromosome,  0, chrom_length/1000)
-	#plot_1 (ax[0], counts, starts, ends, offset, scale);
-	plot_2 (ax[1], starts, ends, 0,  chrom_length/1000);
+	plot_1(ax[1], counts, starts, ends, 0, chrom_length/1000);
+	plot_2(ax[2], starts, ends, 0,  chrom_length/1000);
 	plt.show()
 
 	return
