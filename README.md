@@ -90,7 +90,7 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  into any region of the graph you are interested in. 
  Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
  
-![seepic](images/tad_exp_chr1.png):
+![seepic](images/tad_exp_chr1.png)
  
  The whole chromosome length has been rescaled to the range [0,1].
 If you squint a little you can see that the basic TAD  structure corresponds to the regions of densest
