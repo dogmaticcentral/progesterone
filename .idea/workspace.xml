@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/00_tads_overview.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_tads_pic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_emve_tads.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_tf_binding_sites_from_UCSC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_tfbs_UCSC_sources.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_tf_binding_sites_from_GEO.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_tf_binding_sites_distribution.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_tad_distr.gplt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_motif_finder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_hdf5_exercise.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/17_hdf5_exercise2_normalization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/18_chromatin_interactions_from_ENCODE.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/26_motif_in_chipseq_region_mouse.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="486">
-                <caret line="87" column="78" selection-start-line="87" selection-start-column="78" selection-end-line="87" selection-end-column="78" />
+              <first_editor relative-caret-position="450">
+                <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
               </first_editor>
               <second_editor />
             </state>
@@ -454,8 +435,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="486">
-            <caret line="87" column="78" selection-start-line="87" selection-start-column="78" selection-end-line="87" selection-end-column="78" />
+          <first_editor relative-caret-position="450">
+            <caret line="82" column="63" selection-start-line="82" selection-start-column="63" selection-end-line="82" selection-end-column="63" />
           </first_editor>
           <second_editor />
         </state>

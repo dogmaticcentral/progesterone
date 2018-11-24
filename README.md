@@ -65,28 +65,31 @@ the promoter, an idea that would be an anathema half a decade back. In addition 
 are not under a single TF site control, but under control of a number of them, in a stochastic way, with
 the probablity of TF having an effect being proportional to the number of TF binding sites in a TAD.
 
-Where on the sequence, then, is the TAD that my gene belongs to?
+Where on the chromosome, then, is the TAD that my gene belongs to?
 The idea repeatedly appears in the literature that TAD boundaries are conserved across cell types and species
 (for example, [Dixon _et al_ review, Moll Cell 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5371509/)). 
 That would be useful, beacuse with unversal definetion of TADs  we could write very many scripts with very many 
 purposes, having looked up the TAD definition only once.
 
-The first script, 10_tads_overview.py explores that possibility  - with the mixed results.
+The first script, 10_tads_overview.py explores that possibility  - with mixed results.
 
 You will need to download TAD files from the [Yue lab page](http://promoter.bx.psu.edu/hi-c/publications.html) 
- (we suggest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). Adjust the dirpath in 
- 10_tad_overview.py accordingly. 11_tads_pic.py contains basic code to illustrate 
- (using [Matplotlib](https://matplotlib.org/)) 
- the proposed TAD domains. 
-
-Here are the TADS for chromsome 1, from 35 different experiments from the Yue lab collection.
+ (we suggest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). 
+ Adjust the dirpath in  10_tad_overview.py accordingly. This script groups TAD intervals 
+ that appear repeatedly in different experiments, in the hope of finding those
+ that are supposedly conserved across different cell types. It seems that one could make some progress
+ looking for regions that are rarely assigned to a domain, and thus delineate the topmost division in a 
+ TAD hierarchy. The number of these divisions, however, appears to be an order of magnitude smaller
+ than the number of TADs typically reported in each experiment.
+ 
+ 11_tads_pic.py contains basic code to illustrate  (using [Matplotlib](https://matplotlib.org/)) 
+ the reported TAD domains.  Here are the TADS for chromsome 1, from 35 different experiments from the Yue lab collection.
 ![seepic](images/tad_exp_chr1.png).
  
- The whole chromosome length has been rescaled to the range [0,1]
+ The whole chromosome length has been rescaled to the range [0,1].
 If you squint a little you can see that the basic TAD  structure corresponds to the regions of densest
 gene occupation region (middle and bottom panels). However the individual TAD assignments 
-(top panel; each horizontal level corresponds to one experiment)  
-vary widely between different experiments. Therefore we choose to stick with a single experiment, 
+(top panel; each horizontal level corresponds to one experiment)   vary widely between different experiments. Therefore we choose to stick with a single experiment, 
 in cell type that matches most closely the type of cells we are interested in.
 
 ## Which TAD does my gene belong to
