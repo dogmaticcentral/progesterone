@@ -19,6 +19,7 @@ download/install them only when they become necessary.
 
 * MySQLdb, installed with _sudo apt install python3-mysqldb_
 
+
 * data from HiC experiment on [... something](https://www.encodeproject.org/experiments/ENCSR551IPY/) - 
   adapt this to the cell/tissue type you are interested in
   
@@ -28,6 +29,10 @@ download/install them only when they become necessary.
   (together with transformation chain files, [here](http://crossmap.sourceforge.net/#chain-file))
 
 * [Gnuplot](http://www.gnuplot.info/)
+
+* Matplotlib (_pip3 install matplotlib_; 
+if your scripts complain about missing tkinter, you might also have to do
+_sudo apt install python3-tk_)
 
 * [tools](https://www.h5py.org/) for handling data in [HDF5 format](https://portal.hdfgroup.org/display/support)
 
@@ -63,6 +68,10 @@ That would be useful, beacuse with unversal definetion of TADs  we could write v
 purposes, having looked up the TAD definition only once.
 
 The first script, 00_tad_overview.py explores that possibility  - with the results not too encouraging.
+
+You will need to download TAD files from the [Yue lab page](http://promoter.bx.psu.edu/hi-c/publications.html) 
+ (we suugest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). Asjust the dirpath in 
+ 00_tad_overview.py accordingly.
 
 ## Which TAD does my gene belong to
 

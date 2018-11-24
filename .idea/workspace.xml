@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/04_tfbs_UCSC_sources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ivana.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01_tads_pic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" beforeDir="false" afterPath="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_tf_binding_sites_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/07_tf_binding_sites_distribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/08_tad_distr.gplt" beforeDir="false" afterPath="$PROJECT_DIR$/08_tad_distr.gplt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/00_tads_overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/00_tads_overview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_gene_ranges_from_UCSC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_emve_tads.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_tf_binding_sites_from_UCSC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_tfbs_UCSC_sources.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/30_accessible_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/30_accessible_regions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/esr1_distr.table" beforeDir="false" afterPath="$PROJECT_DIR$/esr1_distr.table" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pgr_distr.table" beforeDir="false" afterPath="$PROJECT_DIR$/pgr_distr.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,44 +24,97 @@
     <session id="-786834255">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="LICENSE" value="1" />
           <entry key="gplt" value="1" />
-          <entry key="py" value="3" />
+          <entry key="md" value="1" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="3" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gplt" value="1" />
+          <entry key="md" value="328" />
+          <entry key="py" value="1890" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Markdown" value="328" />
           <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="1890" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="05_tf_binding_sites_from_GEO.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="522">
+                <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/00_tads_overview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="116" column="115" selection-start-line="116" selection-start-column="115" selection-end-line="116" selection-end-column="115" />
+            <state relative-caret-position="1359">
+              <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01_tads_pic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding>
-                <element signature="e#119#133#0" expanded="true" />
+                <element signature="e#964#973#0" expanded="true" />
+                <marker date="1543061346244" expanded="true" signature="1217:2449" ph="..." />
+                <marker date="1543061346244" expanded="true" signature="2502:2503" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1417">
+              <caret line="127" lean-forward="true" selection-start-line="124" selection-end-line="127" />
+              <folding>
+                <element signature="e#20#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1363">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -78,9 +133,11 @@
       <find>row</find>
       <find>pwm</find>
       <find>pr_</find>
+      <find>1000</find>
     </findStrings>
     <replaceStrings>
       <replace>col</replace>
+      <replace>number_of_bins</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -125,30 +182,31 @@
         <option value="$PROJECT_DIR$/utils/CrossMap.py" />
         <option value="$PROJECT_DIR$/18_chromatin_interactions_from_encode.py" />
         <option value="$PROJECT_DIR$/18_chromatin_interactions_from_ENCODE.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" />
         <option value="$PROJECT_DIR$/26_motif_in_chipseq_region_mouse.py" />
         <option value="$PROJECT_DIR$/01_gene_ranges_from_UCSC.py" />
         <option value="$PROJECT_DIR$/07_tf_binding_sites_distribution.py" />
         <option value="$PROJECT_DIR$/08_tad_distr.gplt" />
-        <option value="$PROJECT_DIR$/30_accessible_regions.py" />
         <option value="$PROJECT_DIR$/04_tfbs_UCSC_sources.py" />
         <option value="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" />
+        <option value="$PROJECT_DIR$/00_tads_overview.py" />
+        <option value="$PROJECT_DIR$/30_accessible_regions.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/01_tads_pic.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2089" />
-    <option name="y" value="30" />
-    <option name="width" value="1717" />
-    <option name="height" value="965" />
+    <option name="x" value="1196" />
+    <option name="y" value="120" />
+    <option name="width" value="2550" />
+    <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,21 +223,22 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Hand2_regulation" />
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Hand2_regulation" />
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -208,58 +267,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2089" y="30" width="1717" height="965" extended-state="0" />
+    <frame x="1196" y="120" width="2550" height="2075" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26210153" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20949721" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.13595505" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13595505" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-          <folding>
-            <element signature="e#20#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/07_tf_binding_sites_distribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding>
-            <element signature="e#100#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/08_tad_distr.gplt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" lean-forward="true" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/05_add_annotation.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/mysqldb.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/CrossMap.py" />
@@ -316,16 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="414">
-            <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02_emve_tads.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -377,19 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <element signature="e#100#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-          <folding>
-            <element signature="e#20#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -397,9 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="57" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="57" />
-          <folding>
-            <element signature="e#100#109#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -419,10 +426,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="116" column="115" selection-start-line="116" selection-start-column="115" selection-end-line="116" selection-end-column="115" />
+        <state relative-caret-position="3190">
+          <caret line="116" column="105" selection-start-line="116" selection-start-column="105" selection-end-line="116" selection-end-column="105" />
           <folding>
             <element signature="e#119#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1363">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1359">
+          <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="522">
+            <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1417">
+          <caret line="127" lean-forward="true" selection-start-line="124" selection-end-line="127" />
+          <folding>
+            <element signature="e#20#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_tads_pic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding>
+            <element signature="e#964#973#0" expanded="true" />
+            <marker date="1543061346244" expanded="true" signature="1217:2449" ph="..." />
+            <marker date="1543061346244" expanded="true" signature="2502:2503" ph="..." />
           </folding>
         </state>
       </provider>

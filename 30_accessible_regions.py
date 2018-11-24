@@ -7,7 +7,7 @@ from utils.utils import *
 from openpyxl import load_workbook
 from math import log
 import matplotlib.pyplot as plt
-import matplotlib
+
 import numpy as np
 
 #########################################
