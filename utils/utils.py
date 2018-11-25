@@ -9,6 +9,47 @@ import numpy as np
 
 
 #########################################
+def read_bed(infile, region_chrom, region_start, region_end):
+	intervals = []
+	inf = open(infile, "r")
+	for line in inf:
+		fields = line.rstrip().split("\t")
+		if len(fields)<3: continue
+		chrom = fields[0].replace('chr','')
+		if chrom != region_chrom: continue
+		try:
+			[start,end] = [int(i) for i in fields[1:3]]
+		except:
+			continue
+		# pass None as region start/end to skip this filter
+		if (region_start and region_end) and (end<=region_start or region_end<=start): continue
+		intervals.append([start,end])
+	inf.close()
+	return intervals
+
+
+#############
+def read_binding_intervals(data_dir, agonist_file, vehicle_file, chrom, region_start, region_end):
+	# agonist
+	infile = "{}/{}".format(data_dir, agonist_file)
+	agonist_binding_intervals = read_bed(infile, chrom, region_start, region_end)
+
+	if not vehicle_file: return agonist_binding_intervals
+
+	# if we have control file, subtract regions that popped up
+	# with vehicle only:
+	infile = "{}/{}".format(data_dir, vehicle_file)
+	vehicle_binding_intervals = read_bed(infile, chrom, region_start, region_end)
+
+	for interval in agonist_binding_intervals:
+		if overlap(vehicle_binding_intervals, interval):
+			agonist_binding_intervals.remove(interval)
+			continue
+
+	return agonist_binding_intervals
+
+
+#########################################
 def read_pfm(jaspar_motifs_file, tf_name):
 	motif = None
 	with open(jaspar_motifs_file) as handle:

@@ -1,6 +1,6 @@
 # Progesterone
 
-This is a set of scritps that try to answer the question: is it possible that a gene A 
+This is a set of scripts that try to answer the question: is it possible that a gene A 
 is under control of transcription  factor B, given currently available experimental 
 evidence. Response to progesterone and estrogen was the original topic.
 
@@ -13,7 +13,7 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
 
 <!-- this is a comment -->
 <!-- making TOC: https://github.com/ekalinin/github-markdown-toc -->
-<!-- once installed, use with gh-md-toc ~/projects/Dockerfile.vim/README.md    -->
+<!-- once installed, use with gh-md-toc README.md    -->
  
 ## Table of Contents
     
@@ -26,6 +26,7 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
     * [ChIPSeq from local bed files](#chipseq-from-local-bed-files)
         * [bed format](#bed-format)
         * [Assembly](#assembly)
+* [How are TF binding sites distributed across TADs](#how-are-tf-binding-sites-distributed-across-tads)
 * [Which regions come  in contact within the TAD (and how often)](#which-regions-come--in-contact-within-the-tad-and-how-often)
 * [Putting it all together](#putting-it-all-together)
 * [So, functional TF sites or not?](#so-functional-tf-sites-or-not)
@@ -33,8 +34,8 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
  
 ## Dependencies
 
-_Progesterone_ pipeline depends on several data sources and python packages. However, you can 
-download/install them only when they become necessary. 
+_Progesterone_ pipeline depends on several data sources and python packages. You don't have to
+install them right away but only (or when) they become necessary. 
 * [collection of TADs from Yue lab](http://promoter.bx.psu.edu/hi-c/publications.html)
 
 * [UCSC genome database, accessed directly through MySQL](https://genome.ucsc.edu/goldenpath/help/mysql.html)
@@ -141,12 +142,12 @@ Provided you have downloaded gene ranges using [02_gene_ranges_from_UCSC.py](02_
   [12_emve_tads.py](12_emve_tads.py) will find the
  coordinates of the TAD that your gene belons to.
 
-## Where do transcription factors bind in that TAD
+## Where do transcription factors bind within that TAD
 
 Note: in all cases we are actually looking at 
 [ChIPSeq](https://en.wikipedia.org/wiki/ChIP-sequencing)
 regions, which are much larger than the
-actual TF binding site. We will narrow each of these regions later in the pipeline.
+actual TF binding site. We will narrow down each of these regions later in the pipeline.
 
 ### ENCODE information in UCSC
 
@@ -154,7 +155,8 @@ actual TF binding site. We will narrow each of these regions later in the pipeli
 from [ENCODE](https://www.encodeproject.org/)
 deposited in [UCSC](https://genome.ucsc.edu/encode/). The contents of the relevant database table
 are described [here](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredV3).
-This iformation relates to human only. Also some TFs are notably absent - progesterone for example :}.
+This information relates to human only. Also some TFs are notably absent - progesterone for example :}.
+
 
 [15_tfbs_UCSC_sources.py](15_tfbs_UCSC_sources.py) will output the contents of the table 
 informatively named 
@@ -196,7 +198,7 @@ The data directory should preferably contain  bed files, grouped by experiment i
 
 The tsv should contain tab separated  columns of the form
 `organism | gene name	| TF name | experiment id | agonist file bed | control/vehicle file bed | assembly`.
-Control file is optional, but the peaks will be subtracted from the peaks in the presence of agonist, 
+Control file is optional -  but the control peaks will be subtracted from the peaks in the presence of agonist, 
 if available.
 
 There are some special considerations to be taken in account here:
@@ -230,7 +232,21 @@ or mm9 for mouse, the coordinates need to be translated.
  and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
  inform you if it cannot find these files in the place where it expects them.
 
-## Which regions come  in contact within the TAD (and how often)
+## How are TF binding sites distributed across TADs
+
+Is the TAD containing my gene of interest privileged in the number of TF binding sites (of some particular TF) 
+it harbors, or are the TF binding sites perhaps distributed equally across all TADs? In this latter case
+it might mean that the TF binding sites we are finding are just distributed by some random process - this
+raises an awkward possibility that we are  just looking at noise.
+
+[17_tfbs_distribution.py](17_tfbs_distribution.py) counts the number of TF binding sites for each TAD.
+FOr Gnuplot users, an input like [18_tfbs_distribution.gplt](18_tfbs_distribution.gplt) can be used to produce
+a quick and dirty visualization of the TFs-per-TAD histogram.
+
+The output from [17_tfbs_distribution.py](17_tfbs_distribution.py) can also be used to check correlation
+between TAD length and the number of TF binding sites therein (mercifully, there does not seem to be any).
+
+## Which regions within the TAD  come  in contact (and how often)
 
 
 ## Putting it all together

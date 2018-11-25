@@ -25,8 +25,10 @@ import sys, os
 # pycharm recognizes this if it says .linkto
 # however python3 does not like the dot
 from utils.mysqldb import *
+
 from utils.utils import *
 from utils.CrossMap import *
+
 
 def overlap(interval_list, qry_interval):
 	ovlp = False
@@ -36,45 +38,6 @@ def overlap(interval_list, qry_interval):
 		# some leeway could be left here one day ...
 		ovlp = True
 	return ovlp
-
-
-def read_bed(infile, region_chrom, region_start, region_end):
-	intervals = []
-	inf = open(infile, "r")
-	for line in inf:
-		fields = line.rstrip().split("\t")
-		if len(fields)<3: continue
-		chrom = fields[0].replace('chr','')
-		if chrom != region_chrom: continue
-		try:
-			[start,end] = [int(i) for i in fields[1:3]]
-		except:
-			continue
-		if (region_start and region_end) and (end<=region_start or region_end<=start): continue
-		intervals.append([start,end])
-	inf.close()
-	return intervals
-
-
-#############
-def read_binding_intervals(data_dir, agonist_file, vehicle_file, chrom, region_start, region_end):
-	# agonist
-	infile = "{}/{}".format(data_dir, agonist_file)
-	agonist_binding_intervals = read_bed(infile, chrom, region_start, region_end)
-
-	if not vehicle_file: return agonist_binding_intervals
-
-	# if we have control file, subtract regions that popped up
-	# with vehicle only:
-	infile = "{}/{}".format(data_dir, vehicle_file)
-	vehicle_binding_intervals = read_bed(infile, chrom, region_start, region_end)
-
-	for interval in agonist_binding_intervals:
-		if overlap(vehicle_binding_intervals, interval):
-			agonist_binding_intervals.remove(interval)
-			continue
-
-	return agonist_binding_intervals
 
 
 #########################################
@@ -161,9 +124,9 @@ def main():
 		print("Control file is optional.")
 		exit()
 
-	outdir  = "raw_data/tf_binding_sites_encode"
-	tadfile = "/storage/databases/tads/encode/ENCFF633ORE.bed"
 	[datadir, input_data_file] = sys.argv[1:3]
+	outdir  = "raw_data/tf_binding_sites_%s" % (datadir.split("/").pop())
+	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
 	for dependency in [outdir, datadir, tadfile, input_data_file]:
 		if not os.path.exists(dependency):
 			print(dependency,"not found")

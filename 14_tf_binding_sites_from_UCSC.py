@@ -25,9 +25,9 @@ import os, sys
 def main():
 
 	assembly = "hg19" # afaik this is the only assembly with ENCODE data
-	outdir = "raw_data/tf_binding_sites"
+	outdir = "raw_data/tf_binding_sites_ucsc"
 	if not os.path.exists(outdir):
-		print(outdir,"not found (make that  dir for output, or change %s appropriately)" % sys.argv[0])
+		print(outdir,"not found (make that  dir for output, or change %s)" % sys.argv[0])
 		exit()
 
 	#  the broader chromosome region (such as TAD)
