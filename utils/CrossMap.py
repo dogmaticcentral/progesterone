@@ -3,6 +3,7 @@
 ---------------------------------------------------------------------------------------
 CrossMap: lift over genomic coordinates between genome assemblies.
 Supports BED/BedGraph, GFF/GTF, BAM/SAM, BigWig/Wig, VCF format files.
+http://crossmap.sourceforge.net/
 ------------------------------------------------------------------------------------------
 '''
 

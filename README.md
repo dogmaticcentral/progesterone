@@ -11,6 +11,26 @@ They have been tested to run under python 3.6.6, and are supposed
 to be run in the  order in which they are enumerated. They answer a series of 
 sub-questions, which may add up to an answer. Depends on the answer you are hoping for.
 
+ <!-- this is a comment -->
+ <!-- making TOC: https://github.com/ekalinin/github-markdown-toc -->
+ <!-- once installed, use with gh-md-toc ~/projects/Dockerfile.vim/README.md    -->
+ 
+##Table of Contents
+    
+* [Dependencies](#dependencies)
+* [Gene coordinates](#gene-coordinates)
+* [What's with this TAD business](#whats-with-this-tad-business)
+* [Which TAD does my gene belong to](#which-tad-does-my-gene-belong-to)
+* [Where do transcription factors bind in that TAD](#where-do-transcription-factors-bind-in-that-tad)
+    * [ENCODE information in UCSC](#encode-information-in-ucsc)
+    * [ChIPSeq from local bed files](#chipseq-from-local-bed-files)
+        * [bed format](#bed-format)
+        * [Assembly](#assembly)
+* [Which regions come  in contact within the TAD (and how often)](#which-regions-come--in-contact-within-the-tad-and-how-often)
+* [Putting it all together](#putting-it-all-together)
+* [So, functional TF sites or not?](#so-functional-tf-sites-or-not)
+
+ 
 ## Dependencies
 
 _Progesterone_ pipeline depends on several data sources and python packages. However, you can 
@@ -205,7 +225,7 @@ or mm9 for mouse, the coordinates need to be translated.
  (In Windows you might try using a spreadsheet program to reformat the file. Just make sure
  you do not have too many  in your bed file). Include that information in the table you pass to 
  [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and it will translate the coordinates for you,
- provided the following two resources: [CrossMap](http://crossmap.sourceforge.net/) , a copy of
+ provided the following two resources: [CrossMap](http://crossmap.sourceforge.net/), a copy of
  which is included in this distribution in the [utils directory](utils/CrossMap.py), 
  and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
  inform you if it cannot find these files in the place where it expects them.
