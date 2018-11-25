@@ -19,8 +19,8 @@
             <file leaf-file-name="16_tfbs_from_local_bed.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="162">
-                    <caret line="87" column="97" lean-forward="true" selection-start-line="87" selection-start-column="97" selection-end-line="87" selection-end-column="97" />
+                  <state relative-caret-position="468">
+                    <caret line="104" column="51" lean-forward="true" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
                     <folding>
                       <element signature="e#835#849#0" expanded="true" />
                     </folding>
@@ -77,8 +77,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="504">
-                <caret line="238" column="12" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
+              <first_editor relative-caret-position="648">
+                <caret line="246" column="86" lean-forward="true" selection-start-line="246" selection-start-column="86" selection-end-line="246" selection-end-column="86" />
               </first_editor>
               <second_editor />
             </state>
@@ -467,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="87" column="97" lean-forward="true" selection-start-line="87" selection-start-column="97" selection-end-line="87" selection-end-column="97" />
+        <state relative-caret-position="468">
+          <caret line="104" column="51" lean-forward="true" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
           <folding>
             <element signature="e#835#849#0" expanded="true" />
           </folding>
@@ -478,8 +478,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="504">
-            <caret line="238" column="12" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
+          <first_editor relative-caret-position="648">
+            <caret line="246" column="86" lean-forward="true" selection-start-line="246" selection-start-column="86" selection-end-line="246" selection-end-column="86" />
           </first_editor>
           <second_editor />
         </state>

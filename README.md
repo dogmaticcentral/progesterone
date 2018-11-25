@@ -27,6 +27,7 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
         * [bed format](#bed-format)
         * [Assembly](#assembly)
 * [How are TF binding sites distributed across TADs](#how-are-tf-binding-sites-distributed-across-tads)
+* [Where exactly (and and how good) is the TF binding motif within each ChIPSeq region](#where-exactly-and-and-how-good-is-the-tf-binding-motif-within-each-chipseq-region)
 * [Which regions come  in contact within the TAD (and how often)](#which-regions-come--in-contact-within-the-tad-and-how-often)
 * [Putting it all together](#putting-it-all-together)
 * [So, functional TF sites or not?](#so-functional-tf-sites-or-not)
@@ -239,12 +240,12 @@ it harbors, or are the TF binding sites perhaps distributed equally across all T
  might imply that the TF binding sites we are finding are just distributed by some random process - this
 raises an awkward possibility that we are  just looking at noise.
 
-[17_tfbs_distribution.py](17_tfbs_distribution.py) counts the number of TF binding sites for each TAD.
-FOr Gnuplot users, an input like [18_tfbs_distribution.gplt](18_tfbs_distribution.gplt) can be used to produce
-a quick and dirty visualization of the TFs-per-TAD histogram.
-
-The output from [17_tfbs_distribution.py](17_tfbs_distribution.py) can also be used to check correlation
+[17_tfbs_distribution.py](17_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
+For Gnuplot users, an input like [18_tfbs_distribution.gplt](18_tfbs_distribution.gplt) can be used to produce
+a quick and dirty visualization of the TFs-per-TAD histogram. The output from [17_tfbs_distribution.py](17_tfbs_distribution.py) can also be used to check correlation
 between TAD length and the number of TF binding sites therein (mercifully, there does not seem to be any).
+
+## Where exactly (and and how good) is the TF binding motif within each ChIPSeq region
 
 ## Which regions within the TAD  come  in contact (and how often)
 
