@@ -183,7 +183,7 @@ There are some special considerations to be taken in account here:
 
 #### BED format
 
-The scripts expects "bed" format, which here means that the columns are tab separated, the
+ [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) expects "bed" format, which here means that the columns are tab separated, the
 first column is chromosome number (possibly prefixed by 'chr'), and the following two are
 region start and region end. The format is still not universally accepted as the standard, so in GEO for
 example you can find data deposited in assorted _ad hoc_ formats.  If the file is not

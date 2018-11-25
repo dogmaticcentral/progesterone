@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_emve_tads.py" beforeDir="false" afterPath="$PROJECT_DIR$/12_emve_tads.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_tfbs_UCSC_sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/15_tfbs_UCSC_sources.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_tf_binding_sites_from_GEO.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_tfbs_from_local_bed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,8 +55,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="639">
-                <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+              <first_editor relative-caret-position="189">
+                <caret line="185" column="56" selection-start-line="185" selection-start-column="56" selection-end-line="185" selection-end-column="56" />
               </first_editor>
               <second_editor />
             </state>
@@ -79,7 +75,7 @@
       <file leaf-file-name="16_tfbs_from_local_bed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
+            <state relative-caret-position="-612">
               <caret line="35" column="52" lean-forward="true" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
             </state>
           </provider>
@@ -399,6 +395,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="35" column="52" lean-forward="true" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/15_tfbs_UCSC_sources.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -406,18 +409,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="35" column="52" lean-forward="true" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="639">
-            <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+          <first_editor relative-caret-position="189">
+            <caret line="185" column="56" selection-start-line="185" selection-start-column="56" selection-end-line="185" selection-end-column="56" />
           </first_editor>
           <second_editor />
         </state>
