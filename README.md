@@ -19,7 +19,16 @@ download/install them only when they become necessary.
 
 * [UCSC genome database, accessed directly through MySQL](https://genome.ucsc.edu/goldenpath/help/mysql.html)
 
-* MySQLdb, installed with _sudo apt install python3-mysqldb_
+* MySQLdb, installed with _sudo apt install python3-mysqldb_. _Progesterone_ scripts 
+also count on mysql configuration  somewhere at the top of the current
+user's directory tree. Here it is called '.ucsc_mysql_conf'  and looks like this:
+
+`[client]`   
+`skip-auto-rehash`  
+`user = genome`  
+`host = genome-mysql.soe.ucsc.edu`  
+`port = 3306`
+
 
 
 * data from HiC experiment on [... something](https://www.encodeproject.org/experiments/ENCSR551IPY/) - 
@@ -38,7 +47,7 @@ _sudo apt install python3-tk_)
 
 * [tools](https://www.h5py.org/) for handling data in [HDF5 format](https://portal.hdfgroup.org/display/support)
 
-* TF binding motif databases [JASPAR](http://jaspar.genereg.net/) and 
+* transcription factor (TF) binding motif databases [JASPAR](http://jaspar.genereg.net/) and 
    [Hocomoco](http://hocomoco11.autosome.ru/)
 
 * [Motif](http://biopython.org/DIST/docs/api/Bio.motifs-module.html) 
@@ -101,9 +110,34 @@ vary widely between different experiments. Therefore we choose to stick with a s
 ([Homo sapiens endometrial microvascular endothelial cells](https://www.encodeproject.org/experiments/ENCSR551IPY/))
 because the  cell type it uses  matches most closely the type of cells we are interested in.
 
-## Which TAD does my gene belong to
+Caveat: on some OS/graphics card setups [11_tads_pic.py](11_tads_pic.py) may crash. It is the matter
+of Matplotlib rather than the script itself. 
 
-## Where are ChIPSeq regions on the chromosome
+
+## Which TAD does my gene belong to
+Provided you have downloaded gene ranges using [02_gene_ranges_from_UCSC.py](02_gene_ranges_from_UCSC.py) and installed bed file containig
+ definition of TADs you wnat to stick with 
+ (this pipeline originally used [this](https://www.encodeproject.org/files/ENCFF633ORE/)),
+  [12_emve_tads.py](12_emve_tads.py) will find the
+ coordinates of the TAD that your gene belons to.
+
+## Where do transcription factors bind in that TAD
+
+Note: in all cases we are actually looking at 
+[ChIPSeq](https://en.wikipedia.org/wiki/ChIP-sequencing)
+regions, which are much larger than the
+actual TF binding site. We will narrow each of these regions later in the pipeline.
+
+### ENCODE information in UCSC
+
+[14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) will download ChIPSeq information 
+from [ENCODE](https://www.encodeproject.org/)
+deposited in [UCSC](https://genome.ucsc.edu/encode/). The contents of the relevant database table
+are described [here](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgsid=2569_2EpBajh2NoUkAawz3xjCJbFi7pHX&hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredV3).
+This iformation relates to human only. Also some TFs are notably absent - progesterone for example :}.
+
+
+### ChIPSeq files in GEO
 _Progesterone_ pipeline takes hg19 and mm9  as its reference assemblies. 
 In GEO repositories there is usually a file called *_series_matrix.txt 
 (which is actually a tsv file), where this info can be found. 

@@ -27,15 +27,17 @@ import os
 #########################################
 def main():
 
-	storage = "/storage/databases/ucsc/chromosome_lengths"
-	if not os.path.exists(storage):
-		print("Please create %s." % storage)
-		exit()
+	storage   = "/storage/databases/ucsc/chromosome_lengths"
+	conf_file = "/home/ivana/.ucsc_mysql_conf"
+	for dependency in [storage, conf_file]:
+		if not os.path.exists(dependency):
+			print("Please create %s" % storage)
+			exit()
 
 	# note you should have the skip-auto-rehash option in .ucsc_myql_conf
 	# it is the equivalent to -A on the mysql command line
 	# means: no autocompletion, which makes mysql get up mych faster
-	db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
+	db     = connect_to_mysql(conf_file)
 	cursor = db.cursor()
 
 	for assembly in ["hg18","hg19", "mm9"]:
@@ -46,7 +48,7 @@ def main():
 			break
 		outf = open("%s/%s.tsv" % (storage,assembly),"w")
 		for row in rows:
-			outf.write("\t".join( [ str(r) for r in row])+"\n")
+			outf.write("\t".join([str(r) for r in row])+"\n")
 		outf.close()
 
 	cursor.close()

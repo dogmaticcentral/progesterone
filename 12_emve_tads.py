@@ -46,7 +46,7 @@ def main():
 	print ( "{} {} {}:{}-{}".format(gene_name, strand, chromosome, gene_range[0], gene_range[1]) )
 
 	[start, end] = get_tad (tadfile, chromosome, gene_range)
-	print ("TAD containing %s region: %s:%d-%d   length %d"%(gene_name, chromosome, start, end, end-start))
+	print ("TAD containing %s region: %s:%d-%d   length %d"%(gene_name, chromosome, start, end, end-start+1))
 
 
 #########################################

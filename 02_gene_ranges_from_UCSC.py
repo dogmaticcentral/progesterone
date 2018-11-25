@@ -18,37 +18,43 @@
 #
 
 from utils.mysqldb import *
+import os
+
 
 #########################################
 def main():
 
-    db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
-    cursor = db.cursor()
+	species ="human"
+	assembly = "hg19"
+	storage = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species,assembly)
+	if not os.path.exists(storage):
+		print("Please create %s" % storage)
+		exit()
 
-    assembly = "hg18"
-    #switch_to_db(cursor, "mm9") # mouse build name
-    # no Y chromosome, we are looking at uterus tissue
-    #chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX"]
-    switch_to_db(cursor, assembly) # human build name
-    chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
-    for chrom in chromosomes:
-        print("downloading data for", chrom)
-        outf = open("/storage/databases/ucsc/gene_ranges/human/{}/{}.csv".format(assembly,chrom), "w")
-        outf.write( "\t".join(["name", "name2", "strand", "txStart", "txEnd"]) )
-        qry  = "select name,  name2, strand, txStart, txEnd "
-        qry += "from refGene "
-        qry += "where chrom='%s' " % chrom
-        qry += "and name like 'NM_%'"   # refseq says: NM_	mRNA	Protein-coding transcripts (usually curated)
-        rows = search_db(cursor,qry)
-        for row in rows:
-            outf.write("\t".join( [ str(r) for r in row])+"\n")
-        outf.close()
-    cursor.close()
-    db.close()
-    return True
+	db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
+	cursor = db.cursor()
+
+	switch_to_db(cursor, assembly)
+	chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
+	for chrom in chromosomes:
+		print("downloading data for", chrom)
+		outf = open("/storage/databases/ucsc/gene_ranges/{}/{}/{}.csv".format(species,assembly,chrom), "w")
+		outf.write( "\t".join(["name", "name2", "strand", "txStart", "txEnd"]) )
+		qry  = "select name,  name2, strand, txStart, txEnd "
+		qry += "from refGene "
+		qry += "where chrom='%s' " % chrom
+		qry += "and name like 'NM_%'"   # refseq says: NM_	mRNA	Protein-coding transcripts (usually curated)
+		rows = search_db(cursor,qry)
+		for row in rows:
+			outf.write("\t".join( [ str(r) for r in row])+"\n")
+		outf.close()
+	cursor.close()
+	db.close()
+	return True
+
 
 #########################################
 if __name__ == '__main__':
-    main()
+	main()
 
 
