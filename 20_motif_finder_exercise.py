@@ -1,11 +1,24 @@
 #!/usr/bin/python3
 
-from  Bio import motifs
-from Bio.Alphabet.IUPAC import unambiguous_dna
-from Bio.Seq import Seq
-import os
-from linkto_python_modules.utils import *
-import numpy as np
+#
+# This file is part of Progesternoe pipeline.
+#
+# Progesterone pipeline  is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Progesterone pipeline is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Progesterone pipeline.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+
+from utils.utils import *
 
 
 def read_pfm(jaspar_motifs_file, tf_name):
@@ -39,7 +52,7 @@ def main():
 
 	tf = "ESR1"
 
-	if False:
+	if True:
 		assembly = "hg19"
 		chromosome = "4"
 		start = 174447651- 1000000

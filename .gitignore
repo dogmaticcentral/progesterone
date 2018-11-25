@@ -1,4 +1,5 @@
 # Ignore symlinks. Keep in mind Git considers symlinks to be files, not directories.
+.idea/
 linkto_*
 raw_data/
 results/
