@@ -234,9 +234,9 @@ or mm9 for mouse, the coordinates need to be translated.
 
 ## How are TF binding sites distributed across TADs
 
-Is the TAD containing my gene of interest privileged in the number of TF binding sites (of some particular TF) 
-it harbors, or are the TF binding sites perhaps distributed equally across all TADs? In this latter case
-it might mean that the TF binding sites we are finding are just distributed by some random process - this
+Is the TAD that contains 'my' gene  privileged in the number of TF binding sites (of some particular TF) 
+it harbors, or are the TF binding sites perhaps distributed equally across all TADs? The latter case
+ might imply that the TF binding sites we are finding are just distributed by some random process - this
 raises an awkward possibility that we are  just looking at noise.
 
 [17_tfbs_distribution.py](17_tfbs_distribution.py) counts the number of TF binding sites for each TAD.
