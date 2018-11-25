@@ -15,7 +15,7 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
 <!-- making TOC: https://github.com/ekalinin/github-markdown-toc -->
 <!-- once installed, use with gh-md-toc ~/projects/Dockerfile.vim/README.md    -->
  
-##Table of Contents
+## Table of Contents
     
 * [Dependencies](#dependencies)
 * [Gene coordinates](#gene-coordinates)
