@@ -11,9 +11,9 @@ They have been tested to run under python 3.6.6, and are supposed
 to be run in the  order in which they are enumerated. They answer a series of 
 sub-questions, which may add up to an answer. Depends on the answer you are hoping for.
 
- <!-- this is a comment -->
- <!-- making TOC: https://github.com/ekalinin/github-markdown-toc -->
- <!-- once installed, use with gh-md-toc ~/projects/Dockerfile.vim/README.md    -->
+<!-- this is a comment -->
+<!-- making TOC: https://github.com/ekalinin/github-markdown-toc -->
+<!-- once installed, use with gh-md-toc ~/projects/Dockerfile.vim/README.md    -->
  
 ##Table of Contents
     
