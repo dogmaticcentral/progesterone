@@ -203,8 +203,8 @@ In GEO repositories there is usually a file called *_series_matrix.txt
 You may grep for hg or mm to see which one is referred to. If it is not hg19 for human
 or mm9 for mouse, the coordinates need to be translated.
  (In Windows you might try using a spreadsheet program to reformat the file. Just make sure
- you do not have too many  in your bed file.) Include that information in hte table you pass to 
- [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and it will translate the coordintaed for yuo,
+ you do not have too many  in your bed file). Include that information in the table you pass to 
+ [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and it will translate the coordinates for you,
  provided the following two resources: [CrossMap](http://crossmap.sourceforge.net/) , a copy of
  which is included in this distribution in the [utils directory](utils/CrossMap.py), 
  and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
