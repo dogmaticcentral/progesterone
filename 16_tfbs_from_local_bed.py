@@ -1,5 +1,22 @@
 #!/usr/bin/python3
 
+#
+# This file is part of Progesternoe pipeline.
+#
+# Progesterone pipeline  is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Progesterone pipeline is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Progesterone pipeline.  If not, see <https://www.gnu.org/licenses/>.
+#
+
 # the main problem with the local (i.e. downloaded from GEO)
 # is the arbitrariness of the format
 
@@ -38,6 +55,7 @@ def read_bed(infile, region_chrom, region_start, region_end):
 	inf.close()
 	return intervals
 
+
 #############
 def read_binding_intervals(data_dir, agonist_file, vehicle_file, chrom, region_start, region_end):
 	# agonist
@@ -58,6 +76,7 @@ def read_binding_intervals(data_dir, agonist_file, vehicle_file, chrom, region_s
 
 	return agonist_binding_intervals
 
+
 #########################################
 def process_tf_binding(outdir, geodir, tadfile, input_line):
 
@@ -77,7 +96,6 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 
 	if input_assembly != ref_assembly:  # we'll need  tools to translate
 		chain_file="/storage/databases/liftover/{}To{}.over.chain".format(input_assembly, ref_assembly.capitalize())
-
 
 	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species, input_assembly)
 
@@ -134,16 +152,19 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 #########################################
 def main():
 
-	if len(sys.argv) < 2:
-		print  ("usage: %s <input_data.tsv>" % sys.argv[0])
+	if len(sys.argv) < 3:
+		print("Usage: %s <data directory path> <input_data.tsv>" % sys.argv[0])
+		print("<data directory path> should be something like \"/storage/databases/geo\"")
+		print("and contain bed files with sub-path <experiment id>/<file id>.bed")
+		print("<input_data.tsv> should contain tab separated  columns of the form")
+		print("organism | gene name | TF name | experiment id | agonist file bed | control/vehicle file bed | assembly")
+		print("Control file is optional.")
 		exit()
 
 	outdir  = "raw_data/tf_binding_sites_encode"
-	#geodir  = "/storage/databases/geo"
-	geodir  = "/storage/databases/encode"
 	tadfile = "/storage/databases/tads/encode/ENCFF633ORE.bed"
-	input_data_file = sys.argv[1]
-	for dependency in [outdir, geodir, tadfile, input_data_file]:
+	[datadir, input_data_file] = sys.argv[1:3]
+	for dependency in [outdir, datadir, tadfile, input_data_file]:
 		if not os.path.exists(dependency):
 			print(dependency,"not found")
 			exit()
@@ -151,7 +172,7 @@ def main():
 	inf = open(input_data_file, "r")
 	for line in inf:
 		if line[0]=='%': continue
-		process_tf_binding(outdir, geodir, tadfile, line)
+		process_tf_binding(outdir, datadir, tadfile, line)
 
 #########################################
 ########################################

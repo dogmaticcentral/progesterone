@@ -31,7 +31,7 @@ def main():
 
 	gene_name = "Hand2"
 
-	tadfile = "/storage/databases/tads/encode/ENCFF633ORE.bed"
+	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
 	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/human/hg19"
 
 	for prerequisite in [tadfile, ucsc_gene_regions_dir]:

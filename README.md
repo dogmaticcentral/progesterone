@@ -133,20 +133,60 @@ actual TF binding site. We will narrow each of these regions later in the pipeli
 [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) will download ChIPSeq information 
 from [ENCODE](https://www.encodeproject.org/)
 deposited in [UCSC](https://genome.ucsc.edu/encode/). The contents of the relevant database table
-are described [here](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgsid=2569_2EpBajh2NoUkAawz3xjCJbFi7pHX&hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredV3).
+are described [here](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredV3).
 This iformation relates to human only. Also some TFs are notably absent - progesterone for example :}.
 
+[15_tfbs_UCSC_sources.py](15_tfbs_UCSC_sources.py) will output the contents of the table 
+informatively named 
+[wgEncodeRegTfbsClusteredInputsV3](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredInputsV3).
+This is the closest yours truly could get to finding the actual information about the ENCODE experiments 
+behind each ChIPSeq entry. At this point, to get the actual ENCODE experiment ID you will have to get creative on the
+ENCODE search page and use the combined search on cell type and treatment or some such.
+Note that the experiment numbers output here refer to the expNum field in the tables 
+produced by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py).
 
-### ChIPSeq files in GEO
-_Progesterone_ pipeline takes hg19 and mm9  as its reference assemblies. 
-In GEO repositories there is usually a file called *_series_matrix.txt 
-(which is actually a tsv file), where this info can be found. 
-You may grep for hg or mm to see which one is referred to. If it is not hg19 for human
-or mm9 for mouse, the coordinates need to be translated.
 
-The scripts expect "bed" format, which here means that the columns are tab separated, the
+### ChIPSeq from local bed files
+
+For description of bed format click [here](https://genome.ucsc.edu/FAQ/FAQformat.html#format1).
+
+[16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) will produce equivalent output to 
+[14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py), but starting from a local
+list of bedfiles (the files should refer to ChIPSeq experiments, and can be found 
+on [GEO](https://www.ncbi.nlm.nih.gov/geo/)
+and [ENCODE](https://www.encodeproject.org/) pages, for example, or you may use your own source.)
+[16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) will take as the input on the command line the
+path to the data directory  and 
+[tsv](https://en.wikipedia.org/wiki/Tab-separated_values) table containing some basic input file meta-data.
+
+The data directory should preferably contain  bed files, grouped by experiment id, like this:
+
+<pre>
+├── GSE36455
+│   ├── GSE36455_series_matrix.tsv
+│   ├── GSM894053_WT_vehicle.ER_peaks.bed
+│   ├── GSM894054_WT_E2.ER_peaks.bed
+│   └── README
+└── GSE62475
+    ├── GSE62475_series_matrix.tsv
+    ├── GSM1527528_pgra-v-input-macs_peaks.bed
+    ├── GSM1527529_pgrb-v-input-macs_peaks.bed
+    └── README
+</pre>
+
+The tsv should contain tab separated  columns of the form
+`organism | gene name	| TF name | experiment id | agonist file bed | control/vehicle file bed | assembly`.
+Control file is optional, but the peaks will be subtracted from the peaks in the presence of agonist, 
+if available.
+
+There are some special considerations to be taken in account here:
+
+#### BED format
+
+The scripts expects "bed" format, which here means that the columns are tab separated, the
 first column is chromosome number (possibly prefixed by 'chr'), and the following two are
-region start and region end. If the file is not
+region start and region end. The format is still not universally accepted as the standard, so in GEO for
+example you can find data deposited in assorted _ad hoc_ formats.  If the file is not
 too far from that format, you can perhaps help yourself out with 
 [linux _cut_ command](https://www.thegeekstuff.com/2013/06/cut-command-examples/), 
 see also 
@@ -155,13 +195,23 @@ for tab delimiter handling with _cut_. For example
 
 `cut -d$'\t' -f3-5  GSM857545_1_PR_oil_s_4_aligned.tsv > GSM857545_1_PR_oil_s_4_aligned.bed`
 
+#### Assembly
 
+_Progesterone_ pipeline takes hg19 and mm9  as its reference assemblies. 
+In GEO repositories there is usually a file called *_series_matrix.txt 
+(which is actually a tsv file), where this info can be found. 
+You may grep for hg or mm to see which one is referred to. If it is not hg19 for human
+or mm9 for mouse, the coordinates need to be translated.
  (In Windows you might try using a spreadsheet program to reformat the file. Just make sure
- you do not have too many  in your bed file.)
+ you do not have too many  in your bed file.) Include that information in hte table you pass to 
+ [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and it will translate the coordintaed for yuo,
+ provided the following two resources: [CrossMap](http://crossmap.sourceforge.net/) , a copy of
+ which is included in this distribution in the [utils directory](utils/CrossMap.py), 
+ and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
+ inform you if it cannot find these files in the place where it expects them.
 
 ## Which regions come  in contact within the TAD (and how often)
 
-## Deja vu all over again: mouse data
 
 ## Putting it all together
 
