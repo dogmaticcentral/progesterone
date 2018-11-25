@@ -258,6 +258,6 @@ Print the table you have just made, and take it to a competent experimentalist.
 
 ## TODO
 
-Most of clunkyness in the pipeline comes from treating the UCSC and info in different ways. 
+Most of clunkyness in the pipeline comes from treating the UCSC and local info in different ways. 
 Register any new data into a local database as the first step, perhaps removing the need for the
 raw _data folder entirely.
