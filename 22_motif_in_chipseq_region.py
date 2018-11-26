@@ -8,12 +8,13 @@ from utils.utils import *
 
 
 #########################################
-def read_tfbs_ranges(infile, tf_name):
+def read_tfbs_ranges(infile, chr,  tf_name):
 	chipseq_regions =[]
 	for line in open(infile, "r"):
 		if line[0]=='%': continue
 		[chrom, chromStart, chromEnd, name] = line.rstrip().split("\t")[:4]
 		if name!=tf_name:continue
+		if chrom!="chr%s"%chr:continue
 		chipseq_regions.append("{}_{}".format(chromStart, chromEnd))
 	return chipseq_regions
 
@@ -31,7 +32,7 @@ def main():
 		chromosome = "8"
 
 
-	tfbs_file = "raw_data/tf_binding_sites/Hand2_{}_tfbs_{}.tsv".format(tf,assembly)
+	tfbs_file = "raw_data/tf_binding_sites_geo/Hand2_{}_tfbs_{}.tsv".format(tf,assembly)
 
 	if tf=="PGR":
 		motifs_file  = "/storage/databases/hocomoco/HOCOMOCOv11_core_%s_mono_jaspar_format.txt" % species.upper()
@@ -47,7 +48,7 @@ def main():
 			exit()
 
 	if tf == "PGR":
-		motif = read_pfm(motifs_file, 'PRGR_MOUSE.H11MO.0.A')
+		motif = read_pfm(motifs_file, "PRGR_%s.H11MO.0.A"%species.upper())
 	else:
 		motif = read_pfm(motifs_file, tf)
 
@@ -56,7 +57,7 @@ def main():
 	pssm = pwm.log_odds()
 
 
-	chipseq_regions = read_tfbs_ranges(tfbs_file, tf)
+	chipseq_regions = read_tfbs_ranges(tfbs_file, chromosome, tf)
 	for region in chipseq_regions:
 		[start, end] = [int(i) for i in region.split("_")]
 		seq = read_or_download_sequence(chipseq_regions_dir, assembly, chromosome, tf, start, end)
@@ -77,7 +78,7 @@ def main():
 			reasonable_hits += (motif.consensus) + "  <--- consensus"+ "\n"
 			reasonable_hits += bpseq[position:position+motif.length]+ "  <--- direct strand" + "\n"
 			almtfile = get_alignment_file(alignments_dir, species, assembly, chromosome,
-			                                  tf, start+offset, start+offset+motif.length)
+									tf, start+offset, start+offset+motif.length)
 			almt =  almt_simplified(species, almtfile,pssm, revstrand)
 			reasonable_hits += (almt) + "\n"
 

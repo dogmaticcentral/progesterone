@@ -77,6 +77,20 @@ _sudo apt install python3-tk_)
 
 * more ChIPSeq data from [GEO](https://www.ncbi.nlm.nih.gov/geo/) database ([GSE34927](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE34927),
  [GSE36455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36455), for example. Again YMMV.)
+ 
+* maf_parse from [PHAST](http://compgen.cshl.edu/phast/)
+
+* multiple alignment files for mouse and human - these are voluminous (65G in total) and optional
+ 
+ * for output, the pielien expects to see a provided (output) directory structure like this:
+ <pre>
+ raw_data/
+├── tads
+├── tf_binding_sites_geo
+└── tf_binding_sites_ucsc
+ </pre>
+ if nonexsistent, each script will prompt you to creadte directory as necesaary. Feel free to change the scripts 
+ if ypu would like to organize things differently.
 
 ## Gene coordinates
 You may start by downloading chromosome lengths and gene coordinates from UCSC using 
@@ -232,6 +246,8 @@ or mm9 for mouse, the coordinates need to be translated.
  which is included in this distribution in the [utils directory](utils/CrossMap.py), 
  and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
  inform you if it cannot find these files in the place where it expects them.
+ 
+
 
 ## How are TF binding sites distributed across TADs
 
@@ -268,3 +284,5 @@ Print the table you have just made, and take it to a competent experimentalist.
 Most of clunkyness in the pipeline comes from treating the UCSC and local info in different ways. 
 Register any new data into a local database as the first step, perhaps removing the need for the
 raw _data folder entirely.
+
+Get rid of CrossModule.py and use cmmodule directly.

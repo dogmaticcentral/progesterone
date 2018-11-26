@@ -29,6 +29,17 @@ def read_bed(infile, region_chrom, region_start, region_end):
 
 
 #############
+def overlap(interval_list, qry_interval):
+	ovlp = False
+	for interval in interval_list:
+		if qry_interval[1]<interval[0]: continue
+		if interval[1]<qry_interval[0]: continue
+		# some leeway could be left here one day ...
+		ovlp = True
+	return ovlp
+
+
+#############
 def read_binding_intervals(data_dir, agonist_file, vehicle_file, chrom, region_start, region_end):
 	# agonist
 	infile = "{}/{}".format(data_dir, agonist_file)

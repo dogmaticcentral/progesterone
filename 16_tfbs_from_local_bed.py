@@ -30,16 +30,6 @@ from utils.utils import *
 from utils.CrossMap import *
 
 
-def overlap(interval_list, qry_interval):
-	ovlp = False
-	for interval in interval_list:
-		if qry_interval[1]<interval[0]: continue
-		if interval[1]<qry_interval[0]: continue
-		# some leeway could be left here one day ...
-		ovlp = True
-	return ovlp
-
-
 #########################################
 def process_tf_binding(outdir, geodir, tadfile, input_line):
 
@@ -64,6 +54,7 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 
 	if ctrl_file.replace(" ","") == "": ctrl_file = None
 	data_dir = "{}/{}".format(geodir, geo_id)
+
 	dependencies = [ucsc_gene_regions_dir, data_dir, "{}/{}".format(data_dir,agonist_file)]
 	if ctrl_file: dependencies += ["{}/{}".format(data_dir,ctrl_file)]
 	if chain_file: dependencies += [chain_file]
@@ -125,6 +116,7 @@ def main():
 		exit()
 
 	[datadir, input_data_file] = sys.argv[1:3]
+	datadir = datadir.rstrip("/")
 	outdir  = "raw_data/tf_binding_sites_%s" % (datadir.split("/").pop())
 	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
 	for dependency in [outdir, datadir, tadfile, input_data_file]:

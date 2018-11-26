@@ -24,8 +24,8 @@ import os
 #########################################
 def main():
 
-	species ="human"
-	assembly = "hg19"
+	species ="mouse"
+	assembly = "mm9"
 	storage = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species,assembly)
 	if not os.path.exists(storage):
 		print("Please create %s" % storage)
@@ -35,7 +35,11 @@ def main():
 	cursor = db.cursor()
 
 	switch_to_db(cursor, assembly)
-	chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
+	chromosomes = []
+	if species =='human':
+		chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
+	elif species =='mouse':
+		chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX"]
 	for chrom in chromosomes:
 		print("downloading data for", chrom)
 		outf = open("/storage/databases/ucsc/gene_ranges/{}/{}/{}.csv".format(species,assembly,chrom), "w")
