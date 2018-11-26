@@ -4,7 +4,7 @@ linkto_*
 raw_data/
 results/
 tads/
-.idea
+.idea/
 
 *.csv
 

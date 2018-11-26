@@ -1,0 +1,6 @@
+%note: this is double-check for ucsc ESR1 data 
+%organism	gene name	TF name	GEO id	agonist file	control/vehicle file	assembly
+human	Hand2	ESR1	ENCSR000BQD	ENCFF475MKH.bed		hg19
+human	Hand2	ESR1	ENCSR000BJS	ENCFF516GZM.bed		hg19
+human	Hand2	ESR1	ENCSR000BIY	ENCFF248QIW.bed		hg19
+human	Hand2	ESR1	ENCSR000BQR	ENCFF078ATU.bed		hg19
