@@ -3,7 +3,7 @@
 
 from Bio.Alphabet.IUPAC import unambiguous_dna
 from Bio.Seq import Seq
-import os
+import sys
 from utils.utils import *
 
 
@@ -16,25 +16,34 @@ def read_tfbs_ranges(infile, chr,  tf_name):
 		if name!=tf_name:continue
 		if chrom!="chr%s"%chr:continue
 		chipseq_regions.append("{}_{}".format(chromStart, chromEnd))
+	if len(chipseq_regions)==0:
+		print("No chipseq region found for chr%s, transcription factor %s in %s." %(chr, tf_name, infile))
+		exit()
 	return chipseq_regions
 
 #########################################
 def main():
 
-	tf = "PGR"
-	species = "human"
+	if len(sys.argv)<6:
+		print("Usage: %s <species> <gene_name> <tf_name> <tfbs_file> <'almts'|'no_almts'>" % sys.argv[0])
+		exit()
+
+	do_almts = True
+	[species, gene_name, tf_name, tfbs_file, almts_choice] = sys.argv[1:6]
+	if almts_choice=='no_almts': do_almts=False
 
 	if species=="human":
 		assembly = "hg19"
 		chromosome = "4"
-	else:
+	elif species=="mouse":
 		assembly = "mm9"
 		chromosome = "8"
+	else:
+		print ("%s not enabled" % species)
+		exit()
 
 
-	tfbs_file = "raw_data/tf_binding_sites_geo/Hand2_{}_tfbs_{}.tsv".format(tf,assembly)
-
-	if tf=="PGR":
+	if tf_name=="PGR":
 		motifs_file  = "/storage/databases/hocomoco/HOCOMOCOv11_core_%s_mono_jaspar_format.txt" % species.upper()
 	else:
 		motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
@@ -47,23 +56,24 @@ def main():
 			print(dependency,"not found")
 			exit()
 
-	if tf == "PGR":
+	if tf_name == "PGR":
 		motif = read_pfm(motifs_file, "PRGR_%s.H11MO.0.A"%species.upper())
 	else:
-		motif = read_pfm(motifs_file, tf)
+		motif = read_pfm(motifs_file, tf_name)
 
 	# add something so that the counts are not 0
 	pwm = motif.counts.normalize(pseudocounts=1)
 	pssm = pwm.log_odds()
 
 
-	chipseq_regions = read_tfbs_ranges(tfbs_file, chromosome, tf)
+	chipseq_regions = read_tfbs_ranges(tfbs_file, chromosome, tf_name)
+	reasonable_hits_any = False
 	for region in chipseq_regions:
 		[start, end] = [int(i) for i in region.split("_")]
-		seq = read_or_download_sequence(chipseq_regions_dir, assembly, chromosome, tf, start, end)
+		seq = read_or_download_sequence(chipseq_regions_dir, assembly, chromosome, tf_name, start, end)
 		bpseq = Seq(seq,unambiguous_dna)
 		reasonable_hits = ""
-		for position, score in pssm.search(bpseq, threshold=10.0):
+		for position, score in pssm.search(bpseq, threshold=5.0):
 			revstrand=False
 			if position>0:
 				offset = position
@@ -77,17 +87,21 @@ def main():
 			reasonable_hits += (matched_seq.upper()) + "\n"
 			reasonable_hits += (motif.consensus) + "  <--- consensus"+ "\n"
 			reasonable_hits += bpseq[position:position+motif.length]+ "  <--- direct strand" + "\n"
-			almtfile = get_alignment_file(alignments_dir, species, assembly, chromosome,
-									tf, start+offset, start+offset+motif.length)
-			almt =  almt_simplified(species, almtfile,pssm, revstrand)
-			reasonable_hits += (almt) + "\n"
+			if do_almts:
+				almtfile = get_alignment_file(alignments_dir, species, assembly, chromosome,
+										tf_name, start+offset, start+offset+motif.length)
+				almt =  almt_simplified(species, almtfile,pssm, revstrand)
+				reasonable_hits += (almt) + "\n"
 
 		if len(reasonable_hits)>0:
+			reasonable_hits_any = True
 			print ("********************************")
-			print ("{}, {}, {} binding site candidates".format(species, assembly, tf))
+			print ("{}, {}, {} binding site candidates".format(species, assembly, tf_name))
 			print ("ChIPSeq region:", start, end)
 			print(reasonable_hits)
 
+	if not reasonable_hits_any:
+		print("No hits found. Try lowering the score threshold in motif search.")
 
 #########################################
 ########################################

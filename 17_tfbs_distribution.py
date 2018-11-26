@@ -116,7 +116,7 @@ def main():
 		print ("to process local  data file I need <data directory path>, <input_data.tsv>, and <scratch dir>")
 		exit ()
 
-	outdir = "raw_data"
+	outdir = "raw_data/tad_distributions"
 	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
 	dependencies = [outdir, tadfile]
 	if use_local_file: dependencies += [input_data_path, input_data_table, scratchdir]

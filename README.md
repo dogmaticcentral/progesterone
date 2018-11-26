@@ -80,17 +80,29 @@ _sudo apt install python3-tk_)
  
 * maf_parse from [PHAST](http://compgen.cshl.edu/phast/)
 
-* multiple alignment files for mouse and human - these are voluminous (65G in total) and optional
+* Multiple alignment files (mafs) from UCSC for 
+[mouse](http://hgdownload.soe.ucsc.edu/goldenPath/mm9/multiz30way/maf/) and 
+[human](http://hgdownload.soe.ucsc.edu/goldenPath/hg19/multiz100way/maf/) - 
+these are voluminous  and optional. If you
+know the chromsome your gene resides on, you can download maf(s) for that chromosome only.
  
- * for output, the pielien expects to see a provided (output) directory structure like this:
+ * for output, the pipeline expects to see a provided (output) directory structure like this:
  <pre>
  raw_data/
+├── alignments_human
+├── alignments_mouse
+├── chipseq_regions_human_seqs
+├── chipseq_regions_mouse_seqs
+├── chromatin_opening.tsv
+├── hic_interactions
+├── tad_distributions
 ├── tads
-├── tf_binding_sites_geo
-└── tf_binding_sites_ucsc
+├── tf_binding_sites_database1
+├── tf_binding_sites_database2
+ results/
  </pre>
- if nonexsistent, each script will prompt you to creadte directory as necesaary. Feel free to change the scripts 
- if ypu would like to organize things differently.
+ If a (sub)directory is nonexistent, each script will prompt you to create it as necessary. 
+ Feel free to change the scripts  if you would like to organize things differently.
 
 ## Gene coordinates
 You may start by downloading chromosome lengths and gene coordinates from UCSC using 
@@ -99,7 +111,6 @@ and [02_gene_ranges_from_UCSC.py](02_gene_ranges_from_UCSC.py),
 or you can download them later, when they become needed.
 
 ## What's with this TAD business
-
 
 With 2 meters of DNA squished  in the nucleus with 6 micrometres in diameter, we expect 
 that the packing is quite complex. What we know in addition, is that 
@@ -268,6 +279,14 @@ between TAD length and the number of TF binding sites therein (mercifully, there
 (courtesy of [JASPAR](http://jaspar.genereg.net/)) together with Motif from Biopython to find  a motif within a 
 given range.
 
+[22_motif_in_chipseq_region.py](22_motif_in_chipseq_region.py) will scan each chipseq range from a file produced 
+by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) 
+or [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and report all motifs scoring beyond certain cutoff.
+For such motifs it will proceed to look for the alignment with other vertebrates. (The idea with using
+all vertebrates is to see how far in back in the evolution the conservation can be tracked, or to eliminate motifs that are taxonomy branches that do not exhibit the same regulatory behavior;
+you may go for pairwise alignments with smaller number od species.) Note: extracting the alignment from maf files
+is a very slow process. You may turn it off in the first pass, or just choose not to use it at all, especially since 
+the required maf files take a lot of space and long time to download.
 
 
 ## Which regions within the TAD  come  in contact (and how often)
