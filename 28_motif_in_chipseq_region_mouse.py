@@ -32,25 +32,28 @@ def main():
 
 
 	tfbs_file = "raw_data/tf_binding_sites/Hand2_{}_tfbs_{}.tsv".format(tf,assembly)
-	jaspar_motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
+
 	if tf=="PGR":
-		jaspar_motifs_file  = "/storage/databases/hocomoco/HOCOMOCOv11_core_MOUSE_mono_jaspar_format.txt"
+		motifs_file  = "/storage/databases/hocomoco/HOCOMOCOv11_core_%s_mono_jaspar_format.txt" % species.upper()
+	else:
+		motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
+
 	chipseq_regions_dir = "raw_data/chipseq_regions_%s_seqs" % species
 	alignments_dir      = "raw_data/alignments_%s" % species
-	for f in [tfbs_file, jaspar_motifs_file, chipseq_regions_dir]:
-		if not os.path.exists(f):
-			print(f,"not found")
+
+	for dependency in [tfbs_file, motifs_file, chipseq_regions_dir, alignments_dir]:
+		if not os.path.exists(dependency):
+			print(dependency,"not found")
 			exit()
+
 	if tf == "PGR":
-		motif = read_pfm(jaspar_motifs_file, 'PRGR_MOUSE.H11MO.0.A')
+		motif = read_pfm(motifs_file, 'PRGR_MOUSE.H11MO.0.A')
 	else:
-		motif = read_pfm(jaspar_motifs_file, tf)
+		motif = read_pfm(motifs_file, tf)
 
 	# add something so that the counts are not 0
 	pwm = motif.counts.normalize(pseudocounts=1)
 	pssm = pwm.log_odds()
-
-
 
 
 	chipseq_regions = read_tfbs_ranges(tfbs_file, tf)

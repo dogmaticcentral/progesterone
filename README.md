@@ -247,6 +247,13 @@ between TAD length and the number of TF binding sites therein (mercifully, there
 
 ## Where exactly (and and how good) is the TF binding motif within each ChIPSeq region
 
+[20_motif_finder_exercise.py](20_motif_finder_exercise.py) illustrates basic usage of a 
+[position  weight matrix](https://en.wikipedia.org/wiki/Position_weight_matrix) 
+(courtesy of [JASPAR](http://jaspar.genereg.net/)) together with Motif from Biopython to find  a motif within a 
+given range.
+
+
+
 ## Which regions within the TAD  come  in contact (and how often)
 
 

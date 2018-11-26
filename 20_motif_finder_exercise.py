@@ -52,22 +52,17 @@ def main():
 
 	tf = "ESR1"
 
-	if True:
+	if False:
 		assembly = "hg19"
 		chromosome = "4"
-		start = 174447651- 1000000
+		start = 174447651- 10000
 		end   = 174447651
 	else:
-		#assembly = "mm10"
-		#chromosome = "8"
-		#Hand2 at chr8:57320983-57324517
-		#start = 57324517
-		#end = 57324517 + 1000000
 		assembly = "rn4"
 		# Hand2 at chr16:36324327-36326037
 		chromosome = "16"
 		start = 36326037
-		end = 36326037 + 1000000
+		end = 36326037 + 50000
 
 	jaspar_motifs_file  = "/storage/databases/jaspar/JASPAR2018_CORE_vertebrates_non-redundant_pfms_jaspar.txt"
 	for f in [ jaspar_motifs_file]:
@@ -85,18 +80,18 @@ def main():
 	seq = ucsc_fragment_sequence(assembly,chromosome,start,end)
 	bpseq = Seq(seq,unambiguous_dna)
 
-	for position, score in pssm.search(bpseq, threshold=10.0):
-		if position>0:
+	for position, score in pssm.search(bpseq, threshold=5.0):
+		if position>0: # motif is on the direct strand
 			offset = position
 			print("range:", start, end)
 			print("offset %d: score = %5.1f" % (offset, score))
 			matched_seq = bpseq[position:position+motif.length]
-		else:
+		else: # motif is on the negative strand
 			offset = len(bpseq)+position
 			print("offset %d: score = %5.1f (on the compl strand)" % (offset, score))
 			matched_seq = bpseq[position:position+motif.length].reverse_complement()
-		print(motif.consensus)
-		print(matched_seq.upper())
+		print(motif.consensus,"  <--- consensus")
+		print(matched_seq.upper(),"  <--- motif found")
 		print(bpseq[position:position+motif.length],"  <--- direct strand")
 		print()
 
