@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/22_motif_in_chipseq_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/22_motif_in_chipseq_region.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/24_hdf5_exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/24_hdf5_exercise.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" beforeDir="false" afterPath="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30_accessible_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/30_accessible_regions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,37 +60,19 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="270">
-                <caret line="15" column="49" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="49" />
+              <first_editor relative-caret-position="657">
+                <caret line="320" column="19" lean-forward="true" selection-start-line="320" selection-start-column="19" selection-end-line="320" selection-end-column="19" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20_motif_finder_exercise.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/20_motif_finder_exercise.py">
+      <file leaf-file-name="30_accessible_regions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="24_hdf5_exercise.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-768">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="25_hdf5_exercise2_normalization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/25_hdf5_exercise2_normalization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="-156">
+              <caret line="79" column="49" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -101,8 +80,8 @@
       <file leaf-file-name="26_chromatin_interactions_from_ENCODE.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+            <state relative-caret-position="690">
+              <caret line="75" selection-start-line="74" selection-end-line="75" />
             </state>
           </provider>
         </entry>
@@ -134,9 +113,11 @@
       <find>pwm</find>
       <find>pr_</find>
       <find>TF</find>
+      <find>*</find>
     </findStrings>
     <replaceStrings>
       <replace>col</replace>
+      <replace>*</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -165,7 +146,6 @@
         <option value="$PROJECT_DIR$/01_gene_ranges_from_UCSC.py" />
         <option value="$PROJECT_DIR$/07_tf_binding_sites_distribution.py" />
         <option value="$PROJECT_DIR$/08_tad_distr.gplt" />
-        <option value="$PROJECT_DIR$/30_accessible_regions.py" />
         <option value="$PROJECT_DIR$/04_tfbs_UCSC_sources.py" />
         <option value="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" />
         <option value="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" />
@@ -195,6 +175,7 @@
         <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
         <option value="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" />
         <option value="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" />
+        <option value="$PROJECT_DIR$/30_accessible_regions.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -318,13 +299,6 @@
     <entry file="file://$PROJECT_DIR$/esr1_distr.table" />
     <entry file="file://$PROJECT_DIR$/08_tad_distr.gplt" />
     <entry file="file://$PROJECT_DIR$/07_tf_binding_sites_distribution.py" />
-    <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/03_tf_binding_sites_from_UCSC.py" />
     <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -447,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/20_motif_finder_exercise.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-768">
@@ -470,16 +437,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+        <state relative-caret-position="690">
+          <caret line="75" selection-start-line="74" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/20_motif_finder_exercise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="79" column="49" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="270">
-            <caret line="15" column="49" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="49" />
+          <first_editor relative-caret-position="657">
+            <caret line="320" column="19" lean-forward="true" selection-start-line="320" selection-start-column="19" selection-end-line="320" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>

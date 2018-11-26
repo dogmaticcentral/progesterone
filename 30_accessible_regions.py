@@ -78,7 +78,7 @@ def main():
 	gene_name = "Hand2"
 
 	atac_file = '/storage/databases/geo/GSE104720/GSE104720_EnSC_decidualization_ATAC-seq.xlsx'
-	tadfile = "/storage/databases/tads/encode/ENCFF633ORE.bed"
+	tadfile   = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
 	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/human/hg19"
 	for prerequisite in [atac_file, tadfile, ucsc_gene_regions_dir]:
 		if os.path.exists(prerequisite): continue
@@ -102,8 +102,8 @@ def main():
 	for w in np_weights:
 		colors.append((0.29,0,0.5, w/maxw))
 
-	chipseq_regions_ESR1 = read_tfbs_ranges('raw_data/hic_interactions/Hand2_ESR1_tfbs_hg19.tsv')
-	chipseq_regions_PGR  = read_tfbs_ranges('raw_data/hic_interactions/Hand2_PGR_tfbs_hg19.tsv')
+	chipseq_regions_ESR1 = read_tfbs_ranges('raw_data/hic_interactions/Hand2_ESR1_hg19.tsv')
+	chipseq_regions_PGR  = read_tfbs_ranges('raw_data/hic_interactions/Hand2_PGR_hg19.tsv')
 
 	fig, ax = plt.subplots()
 	ax.axhline(0, color='black', lw=1)

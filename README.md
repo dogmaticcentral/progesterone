@@ -309,12 +309,21 @@ TF binding sites and HiC regions, sorted by the 'interaction strength' with the 
 of the regulated gene. The hardcoded paths at the top of the main() are kinda gross, fixing it is on the TODO list.
 
 ## Change in chromatin accessibility upon progesterone administration?
-
-
+In some cases data from [ATAC-Seq](https://en.wikipedia.org/wiki/ATAC-seq) experiment are available, 
+giving some indication  about the (change in) 
+chromatin accessibility. For the case this pipeline was originally intended for, it can be found 
+[here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104720), 
+the information about chromatin accessibility change upon progesteron administration in human 
+endometrial stromal cells. 
+[30_accessible_regions.py](30_accessible_regions.py)
+ pools it together, in the form of a Matplotlib plot, 
+ with the coordinates of our gene of interest and of  TF binding sites for two
+ TFs: ESR1 and PGR.
+ 
 ## Putting it all together
 
 ## So, functional TF sites or not?
-Print the table you have just made, and take it to a competent experimentalist. 
+Print the table you have made in the last step, and take it to a competent experimentalist. 
 (S)he might be able to help.
 
 ## TODO
