@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/17_tfbs_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/17_tfbs_distribution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/18_tfbs_distribution.gplt" beforeDir="false" afterPath="$PROJECT_DIR$/18_tfbs_distribution.gplt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/22_motif_in_chipseq_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/22_motif_in_chipseq_region.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/24_hdf5_exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/24_hdf5_exercise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" beforeDir="false" afterPath="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,43 +63,46 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="423">
-                <caret line="285" column="58" selection-start-line="285" selection-start-column="58" selection-end-line="285" selection-end-column="58" />
+              <first_editor relative-caret-position="270">
+                <caret line="15" column="49" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="49" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="17_tfbs_distribution.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
+      <file leaf-file-name="20_motif_finder_exercise.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/20_motif_finder_exercise.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
-              <folding>
-                <element signature="e#736#747#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="18_tfbs_distribution.gplt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.gplt">
+      <file leaf-file-name="24_hdf5_exercise.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="111" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
+            <state relative-caret-position="-768">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="22_motif_in_chipseq_region.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/22_motif_in_chipseq_region.py">
+      <file leaf-file-name="25_hdf5_exercise2_normalization.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/25_hdf5_exercise2_normalization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="103" column="79" selection-start-line="103" selection-start-column="79" selection-end-line="103" selection-end-column="79" />
-              <folding>
-                <element signature="e#21#67#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="26_chromatin_interactions_from_ENCODE.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -112,15 +115,6 @@
               <folding>
                 <element signature="e#835#849#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -151,9 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" />
-        <option value="$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" />
-        <option value="$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_from_UCSC.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_binding_region.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py" />
@@ -200,8 +191,11 @@
         <option value="$PROJECT_DIR$/28_motif_in_chipseq_region_mouse.py" />
         <option value="$PROJECT_DIR$/17_tfbs_distribution.py" />
         <option value="$PROJECT_DIR$/18_tfbs_distribution.gplt" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/22_motif_in_chipseq_region.py" />
+        <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
+        <option value="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" />
+        <option value="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -279,7 +273,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17448603" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14707433" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -302,9 +296,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/straightforward2016/01_get_gene_regions_from_UCSC.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/python_modules/utils.py" />
-    <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/02_emve_tads.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/tads2018/00_tads_overview.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/linkto_python_modules/utils.py" />
     <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/motifs/__init__.py" />
@@ -397,7 +388,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/20_motif_finder_exercise.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -420,12 +410,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
+    <entry file="file://$PROJECT_DIR$/22_motif_in_chipseq_region.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="108">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
-            <element signature="e#835#849#0" expanded="true" />
+            <element signature="e#21#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -439,7 +429,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
+        <state relative-caret-position="2070">
           <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
           <folding>
             <element signature="e#736#747#0" expanded="true" />
@@ -447,21 +437,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/22_motif_in_chipseq_region.py">
+    <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="103" column="79" selection-start-line="103" selection-start-column="79" selection-end-line="103" selection-end-column="79" />
+        <state relative-caret-position="558">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
-            <element signature="e#21#67#0" expanded="true" />
+            <element signature="e#835#849#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/20_motif_finder_exercise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/25_hdf5_exercise2_normalization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="423">
-            <caret line="285" column="58" selection-start-line="285" selection-start-column="58" selection-end-line="285" selection-end-column="58" />
+          <first_editor relative-caret-position="270">
+            <caret line="15" column="49" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>

@@ -16,21 +16,23 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
 <!-- once installed, use with gh-md-toc README.md    -->
  
 ## Table of Contents
-    
+* [Table of Contents](#table-of-contents)
 * [Dependencies](#dependencies)
 * [Gene coordinates](#gene-coordinates)
 * [What's with this TAD business](#whats-with-this-tad-business)
 * [Which TAD does my gene belong to](#which-tad-does-my-gene-belong-to)
-* [Where do transcription factors bind in that TAD](#where-do-transcription-factors-bind-in-that-tad)
-    * [ENCODE information in UCSC](#encode-information-in-ucsc)
-    * [ChIPSeq from local bed files](#chipseq-from-local-bed-files)
-        * [bed format](#bed-format)
-        * [Assembly](#assembly)
+* [Where do transcription factors bind within that TAD](#where-do-transcription-factors-bind-within-that-tad)
+   * [ENCODE information in UCSC](#encode-information-in-ucsc)
+   * [ChIPSeq from local bed files](#chipseq-from-local-bed-files)
+      * [BED format](#bed-format)
+      * [Assembly](#assembly)
 * [How are TF binding sites distributed across TADs](#how-are-tf-binding-sites-distributed-across-tads)
 * [Where exactly (and and how good) is the TF binding motif within each ChIPSeq region](#where-exactly-and-and-how-good-is-the-tf-binding-motif-within-each-chipseq-region)
-* [Which regions come  in contact within the TAD (and how often)](#which-regions-come--in-contact-within-the-tad-and-how-often)
+* [Which regions within the TAD  come  in contact (and how often)](#which-regions-within-the-tad--come--in-contact-and-how-often)
+* [Change in chromatin accessibility upon progesterone administration?](#change-in-chromatin-accessibility-upon-progesterone-administration)
 * [Putting it all together](#putting-it-all-together)
 * [So, functional TF sites or not?](#so-functional-tf-sites-or-not)
+* [TODO](#todo)
 
  
 ## Dependencies
@@ -41,7 +43,7 @@ install them right away but only (or when) they become necessary.
 
 * [UCSC genome database, accessed directly through MySQL](https://genome.ucsc.edu/goldenpath/help/mysql.html)
 
-* MySQLdb, installed with _sudo apt install python3-mysqldb_. _Progesterone_ scripts 
+* MySQLdb python module, installed with _sudo apt install python3-mysqldb_. _Progesterone_ scripts 
 also count on mysql configuration  somewhere at the top of the current
 user's directory tree. Here it is called '.ucsc_mysql_conf'  and looks like this:
 
@@ -63,11 +65,11 @@ user's directory tree. Here it is called '.ucsc_mysql_conf'  and looks like this
 
 * [Gnuplot](http://www.gnuplot.info/)
 
-* Matplotlib (_pip3 install matplotlib_; 
+* Matplotlib  python module (_pip3 install matplotlib_; 
 if your scripts complain about missing tkinter, you might also have to do
 _sudo apt install python3-tk_)
 
-* [tools](https://www.h5py.org/) for handling data in [HDF5 format](https://portal.hdfgroup.org/display/support)
+* python [tools](https://www.h5py.org/) for handling data in [HDF5 format](https://portal.hdfgroup.org/display/support)
 
 * transcription factor (TF) binding motif databases [JASPAR](http://jaspar.genereg.net/) and 
    [Hocomoco](http://hocomoco11.autosome.ru/)
@@ -265,7 +267,7 @@ or mm9 for mouse, the coordinates need to be translated.
 Is the TAD that contains 'my' gene  privileged in the number of TF binding sites (of some particular TF) 
 it harbors, or are the TF binding sites perhaps distributed equally across all TADs? The latter case
  might imply that the TF binding sites we are finding are just distributed by some random process - this
-raises an awkward possibility that we are  just looking at noise.
+would raise an awkward possibility that we are  just looking at noise.
 
 [17_tfbs_distribution.py](17_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
 For Gnuplot users, an input like [18_tfbs_distribution.gplt](18_tfbs_distribution.gplt) can be used to produce
@@ -290,6 +292,23 @@ the required maf files take a lot of space and long time to download.
 
 
 ## Which regions within the TAD  come  in contact (and how often)
+
+HiC experiment we came across here have their results stored in 
+[HDF5 format](https://portal.hdfgroup.org/display/support), so this is the place where you might want to install
+[h5py](https://www.h5py.org/). We will investigate  what is the 'intensity' (a number proportional to the
+probability that two HiC regions meet in time and space) of interaction between HiC region containing the promoter
+of the regulated gene, and regions containing the TF binding sites.
+
+[24_hdf5_exercise.py](24_hdf5_exercise.py) contains some warmup exercised in hdf5 file manipulation,  and
+[25_hdf5_exercise2_normalization.py](25_hdf5_exercise2_normalization.py) checks whether the rows and columns
+of the interaction matrix are normalized (or 'balanced'; 
+see [Lajoie, Dekker and Kaplan](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4347522/)).
+
+[26_chromatin_interactions_from_ENCODE.py](26_chromatin_interactions_from_ENCODE.py) will  create a mapping between
+TF binding sites and HiC regions, sorted by the 'interaction strength' with the HiC region that contains the promoter 
+of the regulated gene. The hardcoded paths at the top of the main() are kinda gross, fixing it is on the TODO list.
+
+## Change in chromatin accessibility upon progesterone administration?
 
 
 ## Putting it all together
