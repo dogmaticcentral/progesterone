@@ -26,34 +26,59 @@ def main():
 
 	species ="mouse"
 	assembly = "mm9"
-	storage = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species,assembly)
-	if not os.path.exists(storage):
-		print("Please create %s" % storage)
-		exit()
 
-	db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
-	cursor = db.cursor()
+	# The UCSC Genome Browser database: 2019 update.: pubmed id 30407534
+	pubmed_id = '30407534'
+	local_conf_file = "/home/ivana/.mysql_conf"
+	ucsc_conf_file  = "/home/ivana/.ucsc_mysql_conf"
 
-	switch_to_db(cursor, assembly)
+	for dependency in [local_conf_file, ucsc_conf_file]:
+		if not os.path.exists(dependency):
+			print(dependency, "not found")
+			exit()
+
+	local_db = connect_to_mysql(local_conf_file)
+	local_cursor = local_db.cursor()
+	# autocommit is on by default, except when it is not
+	search_db(local_cursor,"set autocommit=1")
+	switch_to_db(local_cursor,'progesterone')
+	# store reference info
+	xref_id = store_xref(local_cursor, 'pubmed', pubmed_id)
+
+	ucsc_db     = connect_to_mysql(ucsc_conf_file)
+	ucsc_cursor = ucsc_db.cursor()
+	switch_to_db(ucsc_cursor, assembly)
+
 	chromosomes = []
 	if species =='human':
-		chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX"]
+		chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX", "chrY"]
 	elif species =='mouse':
-		chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX"]
+		chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX", "chrY"]
 	for chrom in chromosomes:
 		print("downloading data for", chrom)
-		outf = open("/storage/databases/ucsc/gene_ranges/{}/{}/{}.csv".format(species,assembly,chrom), "w")
-		outf.write( "\t".join(["name", "name2", "strand", "txStart", "txEnd"]) )
 		qry  = "select name,  name2, strand, txStart, txEnd "
 		qry += "from refGene "
 		qry += "where chrom='%s' " % chrom
 		qry += "and name like 'NM_%'"   # refseq says: NM_	mRNA	Protein-coding transcripts (usually curated)
-		rows = search_db(cursor,qry)
+		rows = search_db(ucsc_cursor,qry)
 		for row in rows:
-			outf.write("\t".join( [ str(r) for r in row])+"\n")
-		outf.close()
-	cursor.close()
-	db.close()
+			[gene_name, strand, rfrom, rto] = row[1:]
+			# store region
+			fixed_fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'gene'}
+			update_fields = {'rfrom':rfrom, 'rto':rto, 'strand':strand, 'xref_id':xref_id}
+			region_id = store_or_update(local_cursor, 'regions', fixed_fields, update_fields)
+			# store gene
+			fixed_fields  = {'name':gene_name, 'region_id':region_id}
+			gene_id = store_or_update(local_cursor, 'genes', fixed_fields, None)
+
+		exit()
+
+	ucsc_cursor.close()
+	ucsc_db.close()
+
+
+	local_cursor.close()
+	local_db.close()
 	return True
 
 

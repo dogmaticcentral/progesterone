@@ -62,7 +62,7 @@ def main():
 	assembly  = "hg19"
 	gene_name = "Hand2"
 	# some groseness ...
-	if False:
+	if True:
 		tf_name   = "ESR1"
 		tfbs_dir  = "raw_data/tf_binding_sites_ucsc"
 		tfbs_file = "{}/{}_tfbs_{}.tsv".format(tfbs_dir, gene_name, assembly)
@@ -165,8 +165,14 @@ def main():
 			tfbs_inside = find_tfbs_in(bfrom, bto, ranges)
 			for t in tfbs_inside:
 				outf.write( "\t".join( [tf_name, t, "{}_{}".format(bfrom, bto), "%5.0f"%(int_strength[b])]) + "\n")
+	outf.close()
 
-
+	# write out the self interaction of the promoter encompassing region
+	hic_file = "{}/{}_{}_{}.tsv".format(hic_dir, gene_name, "self", assembly)
+	outf = open(hic_file,"w")
+	outf.write("\t".join(["% name", "promoter region", "hic_region", "hic_int_score"])+ "\n")
+	bfrom, bto =bin_positions[pb][1:3]
+	outf.write( "\t".join( ["self", "{}_{}".format(pstart, pend), "{}_{}".format(bfrom, bto), "%5.0f"%(int_strength[pb])]) + "\n")
 	outf.close()
 
 	return True

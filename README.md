@@ -309,6 +309,7 @@ TF binding sites and HiC regions, sorted by the 'interaction strength' with the 
 of the regulated gene. The hardcoded paths at the top of the main() are kinda gross, fixing it is on the TODO list.
 
 ## Change in chromatin accessibility upon progesterone administration?
+
 In some cases data from [ATAC-Seq](https://en.wikipedia.org/wiki/ATAC-seq) experiment are available, 
 giving some indication  about the (change in) 
 chromatin accessibility. For the case this pipeline was originally intended for, it can be found 

@@ -27,32 +27,49 @@ import os
 #########################################
 def main():
 
-	storage   = "/storage/databases/ucsc/chromosome_lengths"
-	conf_file = "/home/ivana/.ucsc_mysql_conf"
-	for dependency in [storage, conf_file]:
+
+	# The UCSC Genome Browser database: 2019 update.: pubmed id 30407534
+	pubmed_id = '30407534'
+	local_conf_file = "/home/ivana/.mysql_conf"
+	ucsc_conf_file  = "/home/ivana/.ucsc_mysql_conf"
+
+	for dependency in [local_conf_file, ucsc_conf_file]:
 		if not os.path.exists(dependency):
-			print("Please create %s" % storage)
+			print(dependency, "not found")
 			exit()
+
+	local_db = connect_to_mysql(local_conf_file)
+	local_cursor = local_db.cursor()
+	# autocommit is on by default, except when it is not
+	search_db(local_cursor,"set autocommit=1")
+	switch_to_db(local_cursor,'progesterone')
+	# store reference info
+	xref_id = store_xref(local_cursor, 'pubmed', pubmed_id)
+	species = {'hg18':'human','hg19':'human', 'mm9':'mouse'}
 
 	# note you should have the skip-auto-rehash option in .ucsc_myql_conf
 	# it is the equivalent to -A on the mysql command line
 	# means: no autocompletion, which makes mysql get up mych faster
-	db     = connect_to_mysql(conf_file)
-	cursor = db.cursor()
+	ucsc_db     = connect_to_mysql(ucsc_conf_file)
+	ucsc_cursor = ucsc_db.cursor()
 
 	for assembly in ["hg18","hg19", "mm9"]:
 		qry = "select chrom, size from %s.chromInfo" % assembly
-		rows = search_db(cursor,qry)
+		rows = search_db(ucsc_cursor,qry)
 		if not rows or 'Error' in rows[0][0]:
-			search_db(cursor,qry, verbose=True)
+			search_db(ucsc_cursor,qry, verbose=True)
 			break
-		outf = open("%s/%s.tsv" % (storage,assembly),"w")
 		for row in rows:
-			outf.write("\t".join([str(r) for r in row])+"\n")
-		outf.close()
+			[chrom, size] = row
+			if '_' in chrom: continue  # we don't want to get _too_ general here
+			fixed_fields  = {'species':species[assembly], 'chromosome':chrom, 'assembly':assembly, 'rtype':'chromosome'}
+			update_fields = {'rfrom':1, 'rto':int(size), 'xref_id':xref_id}
+			store_or_update(local_cursor, 'regions', fixed_fields, update_fields)
+	ucsc_cursor.close()
+	ucsc_db.close()
 
-	cursor.close()
-	db.close()
+	local_cursor.close()
+	local_db.close()
 	return True
 
 
