@@ -25,27 +25,44 @@
 # (under processed data)
 
 from utils.utils import *
+from utils.mysqldb import *
 
 #########################################
 def main():
 
-	gene_name = "Hand2"
-
+	gene_name = "TP53"
+	assembly = "hg19"
 	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
-	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/human/hg19"
+	conf_file = "/home/ivana/.mysql_conf"
 
-	for prerequisite in [tadfile, ucsc_gene_regions_dir]:
+	for prerequisite in [tadfile, conf_file]:
 		if os.path.exists(prerequisite): continue
 		print(prerequisite, "not found")
 		exit()
 
-	chromosome, strand, gene_range = ucsc_gene_coords(gene_name, ucsc_gene_regions_dir)
-	if not chromosome or not gene_range:
+	db = connect_to_mysql(conf_file)
+	cursor = db.cursor()
+	switch_to_db(cursor,'progesterone')
+	qry = "select r.chromosome, r.rfrom, r.rto, r.strand from regions as r, genes as g "
+	qry += "where g.name='%s' and g.region_id=r.id and r.assembly='%s' " % (gene_name,assembly)
+	ret = search_db(cursor,qry)
+	if not ret or (type(ret[0][0])==str and 'Error' in ret[0][0]):
+		search_db(cursor,qry, verbose=True)
 		exit()
+	cursor.close()
+	db.close()
 
-	print ( "{} {} {}:{}-{}".format(gene_name, strand, chromosome, gene_range[0], gene_range[1]) )
+	# there might be multiple returns, corresponding to different splices
+	[chromosome, min_start, max_end, strand] = ret[0]
+	for row in ret:
+		[chromosome, start, end, strand] = row
+		min_start = start if min_start>start else min_start
+		max_end = end if max_end<end else max_end
 
-	[start, end] = get_tad (tadfile, chromosome, gene_range)
+
+	print ( "{} {} {}:{}-{}".format(gene_name, strand, chromosome, min_start, max_end) )
+
+	[start, end] = get_tad (tadfile, chromosome, [min_start,max_end])
 	print ("TAD containing %s region: %s:%d-%d   length %d"%(gene_name, chromosome, start, end, end-start+1))
 
 

@@ -72,9 +72,14 @@ def store_without_checking(cursor, table, fields, verbose=False):
 	if rows:
 		rows   = search_db (cursor, qry, verbose=True)
 		print(rows)
-		return False
+		return -1
 
-	return True
+	rows = search_db (cursor, "select last_insert_id()" )
+	try:
+		row_id = int(rows[0][0])
+	except:
+		row_id = -1
+	return row_id
 
 ########
 def store_or_update (cursor, table, fixed_fields, update_fields, verbose=False, primary_key='id'):

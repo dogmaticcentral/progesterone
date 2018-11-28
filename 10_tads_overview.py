@@ -86,7 +86,7 @@ def main():
 			find_place(tads[chr], int(int(start)/1000), int(int(end)/1000))
 		inf.close()
 
-	# store for use ub the following script
+	# store for use by the following script
 	for chr, interval_clusters in tads.items():
 		stats = []
 		for interval_cluster in interval_clusters:

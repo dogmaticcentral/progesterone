@@ -55,23 +55,25 @@ def main():
 	elif species =='mouse':
 		chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX", "chrY"]
 	for chrom in chromosomes:
-		print("downloading data for", chrom)
+		print("downloading data for", assembly, chrom)
 		qry  = "select name,  name2, strand, txStart, txEnd "
 		qry += "from refGene "
 		qry += "where chrom='%s' " % chrom
 		qry += "and name like 'NM_%'"   # refseq says: NM_	mRNA	Protein-coding transcripts (usually curated)
 		rows = search_db(ucsc_cursor,qry)
+		print("loading ...")
 		for row in rows:
 			[gene_name, strand, rfrom, rto] = row[1:]
 			# store region
-			fixed_fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'gene'}
-			update_fields = {'rfrom':rfrom, 'rto':rto, 'strand':strand, 'xref_id':xref_id}
-			region_id = store_or_update(local_cursor, 'regions', fixed_fields, update_fields)
+			fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'gene',
+						'rfrom':rfrom, 'rto':rto, 'strand':strand, 'xref_id':xref_id}
+			region_id = store_without_checking(local_cursor, 'regions', fields)
+			if region_id<0:
+				print("insert failure for", gene_name, strand, rfrom, rto)
+				exit()
 			# store gene
-			fixed_fields  = {'name':gene_name, 'region_id':region_id}
-			gene_id = store_or_update(local_cursor, 'genes', fixed_fields, None)
-
-		exit()
+			fields  = {'name':gene_name, 'region_id':region_id}
+			gene_id = store_without_checking(local_cursor, 'genes', fields)
 
 	ucsc_cursor.close()
 	ucsc_db.close()

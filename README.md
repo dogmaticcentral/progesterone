@@ -167,7 +167,7 @@ of Matplotlib rather than the script itself.
 Provided you have downloaded gene ranges using [02_gene_ranges_from_UCSC.py](02_gene_ranges_from_UCSC.py) and installed bed file containig
  definition of TADs you wnat to stick with 
  (this pipeline originally used [this](https://www.encodeproject.org/files/ENCFF633ORE/)),
-  [12_emve_tads.py](12_emve_tads.py) will find the
+  [12_gene_tad.py](12_gene_tad.py) will find the
  coordinates of the TAD that your gene belons to.
 
 ## Where do transcription factors bind within that TAD
