@@ -46,9 +46,7 @@ def main():
 	qry = "select r.chromosome, r.rfrom, r.rto, r.strand from regions as r, genes as g "
 	qry += "where g.name='%s' and g.region_id=r.id and r.assembly='%s' " % (gene_name,assembly)
 	ret = search_db(cursor,qry)
-	if not ret or (type(ret[0][0])==str and 'Error' in ret[0][0]):
-		search_db(cursor,qry, verbose=True)
-		exit()
+	hard_check (db,cursor, ret, qry)
 	cursor.close()
 	db.close()
 

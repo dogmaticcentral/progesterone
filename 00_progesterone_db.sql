@@ -23,8 +23,9 @@ USE progesterone;
 
 CREATE TABLE xrefs (
   id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  xtype ENUM ('pubmed','geo','encode') NOT NULL,
+  xtype ENUM ('pubmed','geo','encode', 'ucsc') NOT NULL,
   external_id varchar(255) NOT NULL,
+  parent_id int DEFAULT NULL,
   bibtex text DEFAULT NULL
 ) ENGINE=InnoDB;
 

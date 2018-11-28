@@ -44,6 +44,13 @@ def search_db(cursor, qry, verbose=False):
 
 	return rows
 
+########
+def hard_check (db,cursor, ret, qry):
+	if not ret or (type(ret[0][0])==str and 'Error' in ret[0][0]):
+		search_db(cursor,qry, verbose=True)
+		cursor.close()
+		db.close()
+		exit()
 
 ########
 def val2mysqlval(value):

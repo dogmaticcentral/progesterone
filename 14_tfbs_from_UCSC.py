@@ -24,10 +24,14 @@ import os, sys
 #########################################
 def main():
 
-	assembly = "hg19" # afaik this is the only assembly with ENCODE data
-	outdir = "raw_data/tf_binding_sites_ucsc"
-	if not os.path.exists(outdir):
-		print(outdir,"not found (make that  dir for output, or change %s)" % sys.argv[0])
+	assembly = "hg19" # afaik this is the only assembly with ENCODE data\
+	species="human"
+	ucsc_conf_file  = "/home/ivana/.ucsc_mysql_conf"
+	local_conf_file = "/home/ivana/.mysql_conf"
+
+	for prerequisite in [ucsc_conf_file, local_conf_file]:
+		if os.path.exists(prerequisite): continue
+		print(prerequisite, "not found")
 		exit()
 
 	#  the broader chromosome region (such as TAD)
@@ -38,32 +42,44 @@ def main():
 		exit()
 
 	[gene_name, chrom, start,end] = sys.argv[1:5]
-	db     = connect_to_mysql("/home/ivana/.ucsc_mysql_conf")
+
+	print ("downloading from ucsc ...")
+	db     = connect_to_mysql(ucsc_conf_file)
 	cursor = db.cursor()
 	switch_to_db(cursor, assembly) # human build name
-
 	# our table du jour is wgEncodeRegTfbsClusteredV3;
 	table = 'wgEncodeRegTfbsClusteredV3'
 	# python thinks these are all strings
 	qry = "select * from %s where chrom='chr%s' and chromStart>%s and  chromEnd<%s" % (table, chrom, start,end)
 	# columns: bin, chrom, chromStart, chromEnd, name, score, expCount, expNums, expScores
-	ret = search_db(cursor, qry)
-
+	ucsc_ret = search_db(cursor, qry)
+	hard_check (db,cursor, ucsc_ret, qry)
 	cursor.close()
 	db.close()
 
+	print("loading to local db ...")
+	db = connect_to_mysql(local_conf_file)
+	cursor = db.cursor()
+	switch_to_db(cursor,'progesterone')
+	for row in ucsc_ret:
 
-	if ret==None:
-		print ("No ret for %s", qry)
-		exit()
-	if isinstance([0][0],str) and 'Error'in ret[0][0]:
-		print(ret)
-		exit()
+		[bin, chrom, chromStart, chromEnd, name, score, expCount, expNums, expScores] = row
+		# store reference
+		expid = ",".join([str(i) for i in sorted([int(s) for s in expNums.decode("utf-8").replace(" ","").split(",")])])
+		if len(expid)>255: expid='many' # 255 is the storage size for this field - I am not sure what's with all the refs in some cases
 
-	outf = open ("%s/%s_tfbs_%s.tsv"%(outdir, gene_name,assembly),"w")
-	outf.write("\t".join(["% chrom", "chromStart", "chromEnd", "name", "score", "expCount", "expNums", "expSCores"]) + "\n")
-	outf.write("\n".join( "\t".join([str(field).replace("b'","").replace("'","") for field in row[1:]]) for row in ret) + "\n")
-	outf.close()
+		xref_id = store_xref(cursor, 'ucsc', expid)
+
+		fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'chipseq',
+						'rfrom':chromStart, 'rto':chromEnd, 'xref_id':xref_id}
+		region_id = store_without_checking(cursor, 'regions', fields)
+
+		fields = {'tf_name':name, 'chipseq_region_id':region_id, 'xref_id':xref_id}
+		region_id = store_without_checking(cursor, 'binding_sites', fields)
+
+
+	cursor.close()
+	db.close()
 
 	return True
 
