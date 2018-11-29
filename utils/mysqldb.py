@@ -1,3 +1,19 @@
+#
+# This file is part of Progesterone pipeline.
+#
+# Progesterone pipeline  is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Progesterone pipeline is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Progesterone pipeline.  If not, see <https://www.gnu.org/licenses/>.
+#
 
 import MySQLdb
 import sys
@@ -91,7 +107,7 @@ def store_without_checking(cursor, table, fields, verbose=False):
 ########
 def store_or_update (cursor, table, fixed_fields, update_fields, verbose=False, primary_key='id'):
 
-	conditions = " and ".join(["{}={}".format(k,val2mysqlval(v)) for k,v in fixed_fields.items()] )
+	conditions = " and ".join(["{}={}".format(k,val2mysqlval(v)) for k,v in fixed_fields.items()])
 
 	# check if the row exists
 	qry = "select %s from %s  where %s "  % (primary_key, table, conditions)
@@ -106,7 +122,7 @@ def store_or_update (cursor, table, fixed_fields, update_fields, verbose=False, 
 	if exists: # if it exists, update
 		if verbose: print("exists; updating")
 		qry  = "update %s set " % table
-		qry += ",".join(["{}={}".format(k,val2mysqlval(v)) for k,v in update_fields.items()] )
+		qry += ",".join(["{}={}".format(k,val2mysqlval(v)) for k,v in update_fields.items()])
 		qry += " where %s " % conditions
 
 	else: # if not, make a new one
@@ -195,12 +211,15 @@ def get_all_tads(db, cursor, exp_file_xref_id, chromosome):
 	return ret
 
 ########################################
-def get_binding_regions(db, cursor, assembly, chromosome, tf_name):
+def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_binding_site_id=False):
 
-	qry   = "select r.rfrom, r.rto from regions as r, binding_sites as b "
+	qry   = "select "
+	if return_binding_site_id: qry  += "b.id, "
+	qry  += "r.rfrom, r.rto from regions as r, binding_sites as b "
 	qry  += "where b.tf_name='%s' " % tf_name
-	qry  += "and b.chipseq_region_id = r.id "
+	qry  += "and b.region_id = r.id "
 	qry  += "and r.assembly='%s' and r.chromosome='%s' " % (assembly, chromosome)
 	ret = search_db(cursor,qry)
 	hard_check (db,cursor, ret, qry)
 	return ret
+

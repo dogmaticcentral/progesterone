@@ -82,6 +82,9 @@ _sudo apt install python3-tk_)
  
 * maf_parse from [PHAST](http://compgen.cshl.edu/phast/)
 
+* [maf_to_fasta.py](https://raw.githubusercontent.com/bxlab/bx-python/master/scripts/maf_to_fasta.py)  - for this
+one to work you will also need _pip3 install bx-python_
+
 * Multiple alignment files (mafs) from UCSC for 
 [mouse](http://hgdownload.soe.ucsc.edu/goldenPath/mm9/multiz30way/maf/) and 
 [human](http://hgdownload.soe.ucsc.edu/goldenPath/hg19/multiz100way/maf/) - 
@@ -89,7 +92,7 @@ these are voluminous  and optional. If you
 know the chromsome your gene resides on, you can download maf(s) for that chromosome only.
  
  * For output, the pipeline expects to see a provided (output) directory 
-  called _raw_data_. If _raw_data_  or sometimes its subdirectory is nonexistent, 
+  called _raw_data_. If _raw_data_  or, sometimes, its subdirectory is nonexistent, 
   each script will prompt you to create it as necessary. 
  Feel free to change the scripts  if you would like to organize things differently.
 
@@ -270,7 +273,7 @@ between TAD length and the number of TF binding sites therein (mercifully, there
 (courtesy of [JASPAR](http://jaspar.genereg.net/)) together with Motif from Biopython to find  a motif within a 
 given range.
 
-[22_motif_in_chipseq_region.py](22_motif_in_chipseq_region.py) will scan each chipseq range from a file produced 
+[22_motif_in_chipseq_region.py](23_motif_in_chipseq_region.py) will scan each chipseq range from a file produced 
 by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) 
 or [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and report all motifs scoring beyond certain cutoff.
 For such motifs it will proceed to look for the alignment with other vertebrates. (The idea with using

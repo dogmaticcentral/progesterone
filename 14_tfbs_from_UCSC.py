@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 #
-# This file is part of Progesternoe pipeline.
+# This file is part of Progesterone pipeline.
 #
 # Progesterone pipeline  is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -80,7 +80,7 @@ def main():
 					store_without_checking(cursor, 'regions', fields)
 
 		# store info about the binding region
-		fields = {'tf_name':name, 'chipseq_region_id':region_id, 'xref_id':xref_id}
+		fields = {'tf_name':name, 'region_id':region_id, 'xref_id':xref_id}
 		binding_site_id = store_or_update (cursor, 'binding_sites', fields, None) if check_duplicates else \
 						store_without_checking(cursor, 'binding_sites', fields)
 

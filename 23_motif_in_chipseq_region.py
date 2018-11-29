@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 #
-# This file is part of Progesternoe pipeline.
+# This file is part of Progesterone pipeline.
 #
 # Progesterone pipeline  is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -58,7 +58,6 @@ def main():
 	else:
 		print ("%s not enabled" % species)
 		exit()
-
 
 	if tf_name=="PGR":
 		motifs_file  = "/storage/databases/hocomoco/HOCOMOCOv11_core_%s_mono_jaspar_format.txt" % species.upper()

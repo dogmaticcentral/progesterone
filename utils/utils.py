@@ -88,52 +88,46 @@ def read_or_download_sequence(chipseq_regions_dir, assembly, chromosome, tf, sta
 
 	return seq
 
+#########################################
+def remove_all_gaps(almt):
+	almt_length = min([len(seq) for seq in almt.values()])
+	gapped_pos = [i for i in range(almt_length) if len([seq for seq in almt.values() if seq[i]!='-'])==0]
+	for nm,seq in almt.items():
+		almt[nm] = ''.join([seq[i] for i in range(almt_length) if not i in gapped_pos ])
 
 #########################################
-def almt_simplified(qry_species, almtfile, pssm, revstrand):
+def almt_simplified(almtfile, species):
 
-	if (qry_species=='human'):
+	if (species=='human'):
 		relatives = ['hg19', 'macFas5', 'chlSab1']
 	else:
 		relatives = ['mm9', 'rn4']
 
-	outf = open(almtfile, "r")
-	assmbs = []
+	inf = open(almtfile, "r")
 	seq = {}
 	ranges = {}
-	for line in outf:
+	names  = []
+	for line in inf:
 		line = line.rstrip()
 		if line[0] == '>':
-			[asm, range] = line[1:].split(':')
-			if not asm in seq:
-				assmbs.append(asm)
-				seq[asm] = ""
-				ranges[asm] = []
-			ranges[asm].append(range)
+			name = line[1:]
+			if not name in names:
+				names.append(name)
+				seq[name] = ""
 		else:
-			seq[asm] += line
-	outf.close()
+			seq[name] += line.upper()
+	inf.close()
 
-	almt = ""
-	for asm in assmbs:
-		fields = asm.split(".")
-		[species, chrom] = fields[:2]
+	seq_relatives = {}
+	names_ordered = []
+	for name in names:
+		species = name.split(".")[0]
 		if not species in relatives: continue
-		seq_straight = seq[asm].replace("-", "")[:20].upper()
-		biopythonseq = Seq(seq_straight, unambiguous_dna)
-		if revstrand:
-			biopythonseq = biopythonseq.reverse_complement()
-		try:
-			score = pssm.calculate(biopythonseq)
-			maxscore = np.amax(score)
-		except:
-			maxscore = -100
-		r = [range.split("-") for range in ranges[asm]]
-		almt += "%-10s %-20s %5.1f %-5s %s\n" % (species, seq_straight, maxscore, chrom, "{}-{}".format(r[0][0],r[-1][1]))
-		#if (species == 'rn5'):
-		#	almt += "-------------------------------------------\n"
-	return almt
+		seq_relatives[name] = seq[name]
+		names_ordered.append(name)
+	remove_all_gaps(seq_relatives)
 
+	return names_ordered, seq_relatives
 
 #####
 def get_alignment_file(alignments_dir, species, assembly, chromosome, tf, start, end):
@@ -145,8 +139,9 @@ def get_alignment_file(alignments_dir, species, assembly, chromosome, tf, start,
 
 #########################################
 def ucsc_fragment_sequence(assembly, chrom, start, end):
+	if not 'chr' in chrom: chrom = 'chr'+chrom
 	das_request = "http://genome.ucsc.edu/cgi-bin/das/{}/".format(assembly)
-	das_request += "dna?segment=chr{}:{},{}".format(chrom, start, end)
+	das_request += "dna?segment={}:{},{}".format(chrom, start, end)
 	response = urllib.request.urlopen(das_request)
 	html = response.read()
 	soup = BeautifulSoup(html, 'html.parser')
@@ -186,7 +181,8 @@ def get_alignment(species, assembly, chrom, region_from, region_to, scratch, out
 	# mafs come from here http://hgdownload.cse.ucsc.edu/downloads.html
 	# http://hgdownload.cse.ucsc.edu/goldenPath/hg19/multiz100way/
 	# or whichever species or assembly appropriate
-	maf_file = "/storage/databases/ucsc/mafs/{}/{}/chr{}.maf".format(species, assembly, chrom)
+	if not 'chr' in chrom: chrom = "chr"+chrom
+	maf_file = "/storage/databases/ucsc/mafs/{}/{}/{}.maf".format(species, assembly, chrom)
 	# pip3 install bx-python
 	# then put https://raw.githubusercontent.com/bxlab/bx-python/master/scripts/maf_to_fasta.py
 	# into /usr/local/bin

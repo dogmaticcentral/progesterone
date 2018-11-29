@@ -1,6 +1,6 @@
 --
 --
--- This file is part of Progesternoe pipeline.
+-- This file is part of Progesterone pipeline.
 --
 -- Progesterone pipeline  is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -78,6 +78,7 @@ CREATE TABLE motifs (
   tf_name   varchar(50) NOT NULL,
   sequence  varchar(255) NOT NULL,
   consensus varchar(255) NOT NULL,
+  score float DEFAULT NULL,
   xref_id      int NOT NULL,
   alignment_id int DEFAULT NULL,
   FOREIGN KEY fk_region(region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -90,8 +91,18 @@ CREATE TABLE  binding_sites (
   id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
   tf_name   varchar(50) NOT NULL,
   motif_ids text DEFAULT NULL,
-  chipseq_region_id int NOT NULL,
+  region_id int NOT NULL,
   xref_id int DEFAULT NULL,
   FOREIGN KEY fk_region(chipseq_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY fk_xref(xref_id) REFERENCES xrefs(id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+CREATE TABLE  binding_site2motif (
+  id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  binding_site_id int  NOT NULL,
+  motif_id int  NOT NULL,
+  FOREIGN KEY fk_bs(binding_site_id) REFERENCES binding_sites(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY fk_mf(motif_id) REFERENCES motifs(id) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+
