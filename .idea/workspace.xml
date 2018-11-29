@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/10_store_tads.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10_tads_overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/06_tads_overview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11_tads_pic.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tads_pic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_gene_tad.py" beforeDir="false" afterPath="$PROJECT_DIR$/12_gene_tad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/14_tfbs_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/14_tfbs_from_UCSC.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/16_tfbs_from_local_bed.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_tfbs_from_local_bed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encode_files_input_for_16.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/encode_files_input_for_16.tsv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo_files_input_for_16.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/geo_files_input_for_16.tsv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo_whole_chr4_PGR.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/geo_whole_chr4_PGR.tsv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_tfbs_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/17_tfbs_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/18_tfbs_distribution.gplt" beforeDir="false" afterPath="$PROJECT_DIR$/18_tfbs_distribution.gplt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/mysqldb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mysqldb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,29 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="10_store_tads.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/10_store_tads.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="40" column="27" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="16_tfbs_from_local_bed.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="118" selection-start-line="118" selection-end-line="118" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="17_tfbs_distribution.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
+            <state relative-caret-position="557">
+              <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -101,8 +74,8 @@
       <file leaf-file-name="mysqldb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="178" column="80" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="80" />
+            <state relative-caret-position="773">
+              <caret line="206" selection-start-line="206" selection-end-line="206" />
               <folding>
                 <element signature="e#72#269#0" />
                 <element signature="e#175#243#0" />
@@ -115,16 +88,7 @@
                 <element signature="e#1015#1154#0" />
                 <element signature="e#1080#1154#0" />
                 <element signature="e#1191#1306#0" />
-                <element signature="e#1385#1884#0" />
                 <element signature="e#1685#1757#0" />
-                <element signature="e#1996#3478#0" />
-                <element signature="e#2496#2691#0" />
-                <element signature="e#2727#3102#0" />
-                <element signature="e#2909#2983#0" />
-                <element signature="e#3255#3330#0" />
-                <element signature="e#3350#3463#0" />
-                <element signature="e#3667#3784#0" />
-                <element signature="e#3906#3950#0" />
               </folding>
             </state>
           </provider>
@@ -133,57 +97,17 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="-631">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#915#1119#0" />
-                <element signature="e#962#1106#0" />
-                <element signature="e#1236#1829#0" />
-                <element signature="e#1432#1490#0" />
-                <element signature="e#1688#1794#0" />
-                <element signature="e#1740#1794#0" />
-                <element signature="e#1918#2078#0" />
-                <element signature="e#1975#2064#0" />
-                <element signature="e#2019#2064#0" />
-                <element signature="e#2045#2064#0" />
-                <element signature="e#2214#2604#0" />
-                <element signature="e#2380#2440#0" />
-                <element signature="e#2450#2591#0" />
-                <element signature="e#2712#3817#0" />
-                <element signature="e#2906#3126#0" />
-                <element signature="e#2951#3098#0" />
-                <element signature="e#3012#3069#0" />
-                <element signature="e#3175#3718#0" />
-                <element signature="e#3457#3522#0" />
-                <element signature="e#3721#3744#0" />
-                <element signature="e#3914#4181#0" />
-                <element signature="e#4284#4622#0" />
-                <element signature="e#4724#5618#0" />
-                <element signature="e#4890#4973#0" />
-                <element signature="e#5019#5116#0" />
-                <element signature="e#5140#5234#0" />
-                <element signature="e#5258#5369#0" />
-                <element signature="e#6589#7781#0" />
-                <element signature="e#6708#6775#0" />
-                <element signature="e#6981#7005#0" />
-                <element signature="e#7315#7379#0" />
-                <element signature="e#7346#7379#0" />
-                <element signature="e#7414#7453#0" />
-                <element signature="e#7854#8110#0" />
-                <element signature="e#7854#7915#0" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="14_tfbs_from_UCSC.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
+      <file leaf-file-name="18_tfbs_distribution.gplt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.gplt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-              <folding>
-                <element signature="e#736#764#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -249,7 +173,6 @@
         <option value="$PROJECT_DIR$/22_motif_finder.py" />
         <option value="$PROJECT_DIR$/20_motif_finder_exercise.py" />
         <option value="$PROJECT_DIR$/28_motif_in_chipseq_region_mouse.py" />
-        <option value="$PROJECT_DIR$/18_tfbs_distribution.gplt" />
         <option value="$PROJECT_DIR$/22_motif_in_chipseq_region.py" />
         <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
         <option value="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" />
@@ -259,17 +182,18 @@
         <option value="$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py" />
         <option value="$PROJECT_DIR$/10_tads_overview.py" />
         <option value="$PROJECT_DIR$/12_emve_tads.py" />
-        <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
         <option value="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/10_store_tads.py" />
         <option value="$PROJECT_DIR$/utils/utils.py" />
-        <option value="$PROJECT_DIR$/utils/mysqldb.py" />
         <option value="$PROJECT_DIR$/12_gene_tad.py" />
-        <option value="$PROJECT_DIR$/14_tfbs_from_UCSC.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/16_tfbs_from_local_bed.py" />
+        <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
+        <option value="$PROJECT_DIR$/utils/mysqldb.py" />
+        <option value="$PROJECT_DIR$/14_tfbs_from_UCSC.py" />
         <option value="$PROJECT_DIR$/17_tfbs_distribution.py" />
+        <option value="$PROJECT_DIR$/18_tfbs_distribution.gplt" />
       </list>
     </option>
   </component>
@@ -440,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.gplt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="111" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-768">
@@ -490,13 +407,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/14_tf_binding_sites_from_UCSC.py" />
-    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -535,80 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="178" column="80" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="80" />
-          <folding>
-            <element signature="e#72#269#0" />
-            <element signature="e#175#243#0" />
-            <element signature="e#316#440#0" />
-            <element signature="e#401#427#0" />
-            <element signature="e#495#965#0" />
-            <element signature="e#552#672#0" />
-            <element signature="e#737#858#0" />
-            <element signature="e#882#951#0" />
-            <element signature="e#1015#1154#0" />
-            <element signature="e#1080#1154#0" />
-            <element signature="e#1191#1306#0" />
-            <element signature="e#1385#1884#0" />
-            <element signature="e#1685#1757#0" />
-            <element signature="e#1996#3478#0" />
-            <element signature="e#2496#2691#0" />
-            <element signature="e#2727#3102#0" />
-            <element signature="e#2909#2983#0" />
-            <element signature="e#3255#3330#0" />
-            <element signature="e#3350#3463#0" />
-            <element signature="e#3667#3784#0" />
-            <element signature="e#3906#3950#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#915#1119#0" />
-            <element signature="e#962#1106#0" />
-            <element signature="e#1236#1829#0" />
-            <element signature="e#1432#1490#0" />
-            <element signature="e#1688#1794#0" />
-            <element signature="e#1740#1794#0" />
-            <element signature="e#1918#2078#0" />
-            <element signature="e#1975#2064#0" />
-            <element signature="e#2019#2064#0" />
-            <element signature="e#2045#2064#0" />
-            <element signature="e#2214#2604#0" />
-            <element signature="e#2380#2440#0" />
-            <element signature="e#2450#2591#0" />
-            <element signature="e#2712#3817#0" />
-            <element signature="e#2906#3126#0" />
-            <element signature="e#2951#3098#0" />
-            <element signature="e#3012#3069#0" />
-            <element signature="e#3175#3718#0" />
-            <element signature="e#3457#3522#0" />
-            <element signature="e#3721#3744#0" />
-            <element signature="e#3914#4181#0" />
-            <element signature="e#4284#4622#0" />
-            <element signature="e#4724#5618#0" />
-            <element signature="e#4890#4973#0" />
-            <element signature="e#5019#5116#0" />
-            <element signature="e#5140#5234#0" />
-            <element signature="e#5258#5369#0" />
-            <element signature="e#6589#7781#0" />
-            <element signature="e#6708#6775#0" />
-            <element signature="e#6981#7005#0" />
-            <element signature="e#7315#7379#0" />
-            <element signature="e#7346#7379#0" />
-            <element signature="e#7414#7453#0" />
-            <element signature="e#7854#8110#0" />
-            <element signature="e#7854#7915#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_PGR_tfbs_mm9_GSE34927.tsv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -623,16 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding>
-            <element signature="e#1022#1047#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,27 +479,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        <state relative-caret-position="273">
+          <caret line="131" column="11" lean-forward="true" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="48" selection-start-line="47" selection-end-line="48" />
+          <folding>
+            <element signature="e#1022#1047#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="206" selection-start-line="206" selection-end-line="206" />
+          <folding>
+            <element signature="e#72#269#0" />
+            <element signature="e#175#243#0" />
+            <element signature="e#316#440#0" />
+            <element signature="e#401#427#0" />
+            <element signature="e#495#965#0" />
+            <element signature="e#552#672#0" />
+            <element signature="e#737#858#0" />
+            <element signature="e#882#951#0" />
+            <element signature="e#1015#1154#0" />
+            <element signature="e#1080#1154#0" />
+            <element signature="e#1191#1306#0" />
+            <element signature="e#1685#1757#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
+        <state relative-caret-position="557">
+          <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="1313">
+          <caret line="90" selection-start-line="87" selection-end-line="90" />
           <folding>
             <element signature="e#736#764#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-631">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.gplt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

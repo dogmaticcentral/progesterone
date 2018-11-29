@@ -112,23 +112,26 @@ def get_binding_regions (db, cursor, scratchdir, data_homedir, input_line):
 	return [tf_name, source, datafile_id, species, chrom, ref_assembly, binding_regions]
 
 #########################################
-def store_binding_regions(cursor, binding_info):
+def store_binding_regions(cursor, binding_info, check_duplicates = False):
 	[tf_name, source, datafile_id, species, chrom, assembly, binding_regions] = binding_info
 	xref_id = store_xref(cursor, source, datafile_id)
 	for [start,end] in binding_regions:
 		# store region (address)
 		fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'chipseq',
 					'rfrom':start, 'rto':end, 'xref_id':xref_id}
-		region_id = store_without_checking(cursor, 'regions', fields)
+		region_id = store_or_update(cursor, 'regions', fields, None) if check_duplicates else \
+					store_without_checking(cursor, 'regions', fields)
 
 		# store info about the binding region
 		fields = {'tf_name':tf_name, 'chipseq_region_id':region_id, 'xref_id':xref_id}
-		binding_site_id = store_without_checking(cursor, 'binding_sites', fields)
-
+		binding_site_id = store_or_update (cursor, 'binding_sites', fields, None) if check_duplicates else \
+						store_without_checking(cursor, 'binding_sites', fields)
 	return
 
 #########################################
 def main():
+
+	check_duplicates = True # when storing to the local database - makes things slower
 
 	if len(sys.argv) < 3:
 		print("Usage: %s <data directory path> <input_data.tsv> " % sys.argv[0])
@@ -163,7 +166,7 @@ def main():
 		if len(line.replace(" ","").replace("\t",""))==0: continue
 		line = line.rstrip()
 		binding_info = get_binding_regions(db, cursor, scratchdir, data_homedir, line)
-		store_binding_regions(cursor, binding_info)
+		store_binding_regions(cursor, binding_info, check_duplicates)
 	cursor.close()
 	db.close()
 

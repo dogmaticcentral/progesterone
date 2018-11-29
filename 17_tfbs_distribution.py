@@ -94,14 +94,11 @@ def get_binding_regions_from_local_file(ref_assembly, species, chrom, tf_name, i
 #########################################
 def main():
 
-	if len(sys.argv) < 3:
-		print  ("usage: %s <species> <tf_name> <chrom> [<data directory path>  <input_data.tsv> <scratch dir>]" % sys.argv[0])
+	if len(sys.argv) < 4:
+		print  ("usage: %s <species> <tf_name> <chrom>" % sys.argv[0])
 		exit()
-	#  this should come from the previous script, 02_emve_tads.py
-	[species, tf_name, chrom] = sys.argv[1:4]
-	input_data_path  = sys.argv[4] if len(sys.argv) > 4 else None
-	input_data_table = sys.argv[5] if len(sys.argv) > 5 else None
-	scratchdir = sys.argv[6] if len(sys.argv) > 6 else None
+	[species, tf_name, chromosome] = sys.argv[1:4]
+	if not 'chr' in chromosome: chromosome = 'chr'+chromosome
 
 	##############################################
 	if species!='human':
@@ -111,30 +108,30 @@ def main():
 
 	ref_assembly = "hg19" if species=="human" else "mm9" # now this is what I call general
 
-	use_local_file =  (species=='mouse' or tf_name=="PGR")
-	if use_local_file and (input_data_path==None or input_data_table==None or scratchdir==None):
-		print ("to process local  data file I need <data directory path>, <input_data.tsv>, and <scratch dir>")
-		exit ()
+	external_exp_id = "ENCFF633ORE" # the only HiC experiment defining TADs we are using so far
 
+	conf_file = "/home/ivana/.mysql_conf"
 	outdir = "raw_data/tad_distributions"
-	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
-	dependencies = [outdir, tadfile]
-	if use_local_file: dependencies += [input_data_path, input_data_table, scratchdir]
+	dependencies = [outdir, conf_file]
 	for dep in dependencies:
 		if os.path.exists(dep): continue
 		print(dep, "not found")
 		exit()
 
 	##############################################
-	if use_local_file: # we know we don't have this in UCSC
-		binding_regions = get_binding_regions_from_local_file(ref_assembly, species, chrom, tf_name,
-							input_data_path, input_data_table, scratchdir)
-	else:
-		binding_regions = get_binding_regions_from_ucsc(ref_assembly, chrom, tf_name)
+	db = connect_to_mysql(conf_file)
+	cursor = db.cursor()
+	switch_to_db(cursor,'progesterone')
+	exp_file_xref_id = get_xref_id(db,cursor,external_exp_id)
+
+	binding_regions = get_binding_regions(db, cursor, ref_assembly, chromosome, tf_name)
+	tads = get_all_tads (db, cursor, exp_file_xref_id, chromosome)
+	cursor.close()
+	db.close()
+
 
 
 	##############################################
-	tads = get_all_tads (tadfile, "chr%s"%chrom)
 	number_of_tads = len(tads)
 	bin_counts = [0]*number_of_tads
 	for r in binding_regions:
@@ -155,7 +152,7 @@ def main():
 	stdv = stdev(bin_counts)
 	sum_pop = sum(bin_counts)
 
-	outfile = ("{}/{}_{}_{}_tad_distribution.tsv".format(outdir, tf_name, chrom, ref_assembly))
+	outfile = ("{}/{}_{}_{}_tad_distribution.tsv".format(outdir, tf_name, chromosome, ref_assembly))
 	outf = open(outfile,"w")
 	outf.write("\t".join(["% tad_nr", "region", "TFbs count", "TAD length in Kbp",
 						"TFbs count fraction", "TFbs count z-score", "TFbs count fraction/TAD length fraction"])+"\n")
@@ -163,8 +160,8 @@ def main():
 		z = (bin_counts[t]-avg)/stdv
 		bin_fraction =  bin_counts[t]/sum_pop
 		tad_fraction = (tads[t][1] - tads[t][0] + 1)/total_tad_length
-		outf.write("%d \t%s\t%d\t%d\t%.3f\t%.2f\t%.2f\n" %
-					(t,  "chr{}:{}-{}".format(chrom, tads[t][0], tads[t][1]),
+		outf.write("%d\t%s\t%d\t%d\t%.3f\t%.2f\t%.2f\n" %
+					(t,  "{}:{}-{}".format(chromosome, tads[t][0], tads[t][1]),
 					bin_counts[t],  int((tads[t][1] - tads[t][0] + 1)/1000),
 					bin_fraction, z, bin_fraction/tad_fraction) )
 	outf.close()

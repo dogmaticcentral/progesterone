@@ -91,7 +91,7 @@ def store_without_checking(cursor, table, fields, verbose=False):
 ########
 def store_or_update (cursor, table, fixed_fields, update_fields, verbose=False, primary_key='id'):
 
-	conditions = "and ".join(["{}={}".format(k,val2mysqlval(v)) for k,v in fixed_fields.items()] )
+	conditions = " and ".join(["{}={}".format(k,val2mysqlval(v)) for k,v in fixed_fields.items()] )
 
 	# check if the row exists
 	qry = "select %s from %s  where %s "  % (primary_key, table, conditions)
@@ -176,6 +176,7 @@ def get_gene_coords (db, cursor, gene_name, assembly):
 		max_end = end if max_end<end else max_end
 	return [chromosome, strand, min_start, max_end]
 
+#########################################
 def get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end):
 
 	# TODO: what if the gene is stradling the TAD region?
@@ -184,3 +185,22 @@ def get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end)
 	ret = search_db(cursor,qry)
 	hard_check (db,cursor, ret, qry)
 	return ret[0]
+
+########################################
+def get_all_tads(db, cursor, exp_file_xref_id, chromosome):
+	qry  = "select rfrom, rto from regions where xref_id=%d " % exp_file_xref_id
+	qry += "and chromosome='%s' " % chromosome
+	ret = search_db(cursor,qry)
+	hard_check (db,cursor, ret, qry)
+	return ret
+
+########################################
+def get_binding_regions(db, cursor, assembly, chromosome, tf_name):
+
+	qry   = "select r.rfrom, r.rto from regions as r, binding_sites as b "
+	qry  += "where b.tf_name='%s' " % tf_name
+	qry  += "and b.chipseq_region_id = r.id "
+	qry  += "and r.assembly='%s' and r.chromosome='%s' " % (assembly, chromosome)
+	ret = search_db(cursor,qry)
+	hard_check (db,cursor, ret, qry)
+	return ret

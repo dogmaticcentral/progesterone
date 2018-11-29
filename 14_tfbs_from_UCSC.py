@@ -24,6 +24,8 @@ import os, sys
 #########################################
 def main():
 
+	check_duplicates = True # when storing to the local database - makes things slower
+
 	assembly = "hg19" # afaik this is the only assembly with ENCODE data
 	species="human"
 	ucsc_conf_file  = "/home/ivana/.ucsc_mysql_conf"
@@ -35,12 +37,12 @@ def main():
 		exit()
 
 	#  input - a  broader chromosome region (such as TAD)
-	if len(sys.argv) < 4:
-		print  ("usage:   %s  <chrom>  <from>  <to>" % sys.argv[0])
-		print  ("example: %s  4 173880001 175320000" % sys.argv[0])
+	if len(sys.argv) < 5:
+		print  ("usage:   %s  <chrom> <tf_name>  <from|'none'>  <to|'none'>" % sys.argv[0])
+		print  ("example: %s  4 ESR1 173880001 175320000" % sys.argv[0])
 		exit()
 
-	[chrom, start,end] = sys.argv[1:4]
+	[chrom, tf_name, start, end] = sys.argv[1:5]
 
 	print ("downloading from ucsc ...")
 	db     = connect_to_mysql(ucsc_conf_file)
@@ -49,7 +51,9 @@ def main():
 	# our table du jour is wgEncodeRegTfbsClusteredV3;
 	table = 'wgEncodeRegTfbsClusteredV3'
 	# python thinks these are all strings
-	qry = "select * from %s where chrom='chr%s' and chromStart>%s and  chromEnd<%s" % (table, chrom, start,end)
+	qry = "select * from %s where chrom='chr%s' and name='%s' " % (table, chrom, tf_name)
+	if start!='none': qry += "and chromStart>%s " % start
+	if end!='none':   qry += "and chromEnd<%s" % end
 	# columns: bin, chrom, chromStart, chromEnd, name, score, expCount, expNums, expScores
 	ucsc_ret = search_db(cursor, qry)
 	hard_check (db,cursor, ucsc_ret, qry)
@@ -72,11 +76,13 @@ def main():
 		# store region (address)
 		fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'chipseq',
 						'rfrom':chromStart, 'rto':chromEnd, 'xref_id':xref_id}
-		region_id = store_without_checking(cursor, 'regions', fields)
+		region_id = store_or_update(cursor, 'regions', fields, None) if check_duplicates else \
+					store_without_checking(cursor, 'regions', fields)
 
 		# store info about the binding region
 		fields = {'tf_name':name, 'chipseq_region_id':region_id, 'xref_id':xref_id}
-		binding_site_id = store_without_checking(cursor, 'binding_sites', fields)
+		binding_site_id = store_or_update (cursor, 'binding_sites', fields, None) if check_duplicates else \
+						store_without_checking(cursor, 'binding_sites', fields)
 
 
 	cursor.close()

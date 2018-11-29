@@ -8,4 +8,4 @@ set yrange [0:0.03]
 
 set terminal png
 set output "results/ESR1_and_PGR_tad_distr.png"
-plot 'raw_data/tad_distributions/ESR1_4_hg19_tad_distribution.tsv' u 1:5 w  boxes, 'raw_data/tad_distributions/PGR_4_hg19_tad_distribution.tsv' u ($1+0.7):5 w  boxes
+plot 'raw_data/tad_distributions/ESR1_chr4_hg19_tad_distribution.tsv' u 1:5 w  boxes, 'raw_data/tad_distributions/PGR_chr4_hg19_tad_distribution.tsv' u ($1+0.7):5 w  boxes
