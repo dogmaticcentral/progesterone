@@ -24,7 +24,7 @@ import os, sys
 #########################################
 def main():
 
-	assembly = "hg19" # afaik this is the only assembly with ENCODE data\
+	assembly = "hg19" # afaik this is the only assembly with ENCODE data
 	species="human"
 	ucsc_conf_file  = "/home/ivana/.ucsc_mysql_conf"
 	local_conf_file = "/home/ivana/.mysql_conf"
@@ -34,14 +34,13 @@ def main():
 		print(prerequisite, "not found")
 		exit()
 
-	#  the broader chromosome region (such as TAD)
-	#  should come from the previous script, 02_emve_tads.py
-	if len(sys.argv) < 5:
-		print  ("usage:   %s <gene_name> <chrom>  <from>  <to>" % sys.argv[0])
-		print  ("example: %s  Hand2 4 173880001 175320000" % sys.argv[0])
+	#  input - a  broader chromosome region (such as TAD)
+	if len(sys.argv) < 4:
+		print  ("usage:   %s  <chrom>  <from>  <to>" % sys.argv[0])
+		print  ("example: %s  4 173880001 175320000" % sys.argv[0])
 		exit()
 
-	[gene_name, chrom, start,end] = sys.argv[1:5]
+	[chrom, start,end] = sys.argv[1:4]
 
 	print ("downloading from ucsc ...")
 	db     = connect_to_mysql(ucsc_conf_file)
@@ -60,6 +59,7 @@ def main():
 	print("loading to local db ...")
 	db = connect_to_mysql(local_conf_file)
 	cursor = db.cursor()
+	search_db(cursor,"set autocommit=1")
 	switch_to_db(cursor,'progesterone')
 	for row in ucsc_ret:
 
@@ -67,15 +67,16 @@ def main():
 		# store reference
 		expid = ",".join([str(i) for i in sorted([int(s) for s in expNums.decode("utf-8").replace(" ","").split(",")])])
 		if len(expid)>255: expid='many' # 255 is the storage size for this field - I am not sure what's with all the refs in some cases
-
 		xref_id = store_xref(cursor, 'ucsc', expid)
 
+		# store region (address)
 		fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'chipseq',
 						'rfrom':chromStart, 'rto':chromEnd, 'xref_id':xref_id}
 		region_id = store_without_checking(cursor, 'regions', fields)
 
+		# store info about the binding region
 		fields = {'tf_name':name, 'chipseq_region_id':region_id, 'xref_id':xref_id}
-		region_id = store_without_checking(cursor, 'binding_sites', fields)
+		binding_site_id = store_without_checking(cursor, 'binding_sites', fields)
 
 
 	cursor.close()

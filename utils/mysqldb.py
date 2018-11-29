@@ -27,19 +27,19 @@ def search_db(cursor, qry, verbose=False):
 		cursor.execute(qry)
 	except MySQLdb.Error as e:
 		if verbose:
-			print("Error running cursor.execute() for  qry: %s: %s " % (qry, e.args[1]))
-		return ["ERROR: " + e.args[1]]
+			print("Error running cursor.execute() for  qry:\n%s\n%s" % (qry, e.args[1]))
+		return [["Error"], e.args]
 
 	try:
 		rows = cursor.fetchall()
 	except MySQLdb.Error as e:
 		if verbose:
-			print("Error running cursor.fetchall() for  qry: %s: %s " % (qry, e.args[1]))
-		return ["ERROR: " + e.args[1]]
+			print("Error running cursor.fetchall() for  qry:\n%s\n%s" % (qry, e.args[1]))
+		return [["Error"], e.args]
 
 	if len(rows) == 0:
 		if verbose:
-			print("No return for query %s" % qry)
+			print("No return for query:\n%s" % qry)
 		return False
 
 	return rows
@@ -139,11 +139,48 @@ def store_or_update (cursor, table, fixed_fields, update_fields, verbose=False, 
 	return row_id
 
 #########################################
-def store_xref(cursor, xtype, xid, bibtex=None ):
-	fields = {'xtype': xtype,'external_id': xid}
-	update_fields={'bibtex':bibtex} if bibtex else None
-	xref_id = store_or_update (cursor, 'xrefs', fields, update_fields)
+def store_xref (cursor, xtype, xid, bibtex=None, parent_id=None ):
+	fixed_fields = {'xtype': xtype,'external_id': xid}
+	if bibtex or parent_id:
+		update_fields={}
+		if bibtex: update_fields['bibtex'] = bibtex
+		if parent_id: update_fields['parent_id'] = parent_id
+	else:
+		update_fields = None
+	xref_id = store_or_update (cursor, 'xrefs', fixed_fields, update_fields)
 	if xref_id<0:
 		print ("Error storing", xtype, xid)
 		exit()
 	return xref_id
+
+
+#########################################
+def get_xref_id (db, cursor, external_exp_id):
+	qry = "select id from xrefs where external_id='%s'" % external_exp_id
+	ret = search_db(cursor,qry)
+	hard_check (db, cursor, ret, qry)
+	return int(ret[0][0])
+
+
+#########################################
+def get_gene_coords (db, cursor, gene_name, assembly):
+	qry = "select r.chromosome, r.rfrom, r.rto, r.strand from regions as r, genes as g "
+	qry += "where g.name='%s' and g.region_id=r.id and r.assembly='%s' " % (gene_name,assembly)
+	ret = search_db(cursor,qry)
+	hard_check (db,cursor, ret, qry)
+	# there might be multiple returns, corresponding to different splices
+	[chromosome, min_start, max_end, strand] = ret[0]
+	for row in ret:
+		[chromosome, start, end, strand] = row
+		min_start = start if min_start>start else min_start
+		max_end = end if max_end<end else max_end
+	return [chromosome, strand, min_start, max_end]
+
+def get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end):
+
+	# TODO: what if the gene is stradling the TAD region?
+	qry  = "select rfrom, rto from regions where xref_id=%d " % exp_file_xref_id
+	qry += "and chromosome='%s' and rfrom<%d and %d<rto" % (chromosome, min_start, min_start)
+	ret = search_db(cursor,qry)
+	hard_check (db,cursor, ret, qry)
+	return ret[0]

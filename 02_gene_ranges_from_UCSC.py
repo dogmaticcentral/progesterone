@@ -24,8 +24,8 @@ import os
 #########################################
 def main():
 
-	species ="mouse"
-	assembly = "mm9"
+	species ="human"
+	assembly = "hg19"
 
 	# The UCSC Genome Browser database: 2019 update.: pubmed id 30407534
 	pubmed_id = '30407534'

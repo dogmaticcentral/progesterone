@@ -11,6 +11,8 @@ import numpy as np
 #########################################
 def read_bed(infile, region_chrom, region_start, region_end):
 	intervals = []
+	if region_start: region_start = int(region_start)
+	if region_end:   region_end   = int(region_end)
 	inf = open(infile, "r")
 	for line in inf:
 		fields = line.rstrip().split("\t")
@@ -175,39 +177,6 @@ def ucsc_gene_coords(gene_name, ucsc_gene_regions_dir):
 	chromosome = infile.split("/")[-1].replace(".csv", "")
 	[name, strand, txStart, txEnd] = lines[0]
 	return chromosome, strand, [int(txStart), int(txEnd)]
-
-
-#########################################
-def get_tad(tadfile, chromosome, gene_range):
-	tads = {}
-	inf = open(tadfile, "r")
-	for line in inf:
-		[chr, start, end] = line.rstrip().split()[:3]
-		if not chr in tads: tads[chr] = []
-		tads[chr].append([int(start), int(end)])
-
-	if not gene_range:
-		return tads[chromosome]
-
-	gene_tads = []
-	for start, end in tads[chromosome]:
-		if start <= gene_range[0] <= end or start <= gene_range[1] <= end:
-			gene_tads.append([start, end])
-
-	if len(gene_tads) == 0:
-		print("TAD not found for chromosome", chromosome, "gene range", gene_range)
-		exit()
-
-	if len(gene_tads) > 1:
-		print("gene straddles two TADS; generalize the code if needed")
-		exit()
-
-	return gene_tads[0]
-
-
-#########################################
-def get_all_tads(tadfile, chromosome):
-	return get_tad(tadfile, chromosome, None)
 
 
 #########################################

@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/00_progesterone_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/00_progesterone_db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10_store_tads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_tads_overview.py" beforeDir="false" afterPath="$PROJECT_DIR$/06_tads_overview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11_tads_pic.py" beforeDir="false" afterPath="$PROJECT_DIR$/08_tads_pic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/12_gene_tad.py" beforeDir="false" afterPath="$PROJECT_DIR$/12_gene_tad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/14_tfbs_UCSC_sources.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/15_tfbs_from_UCSC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/14_tfbs_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/14_tfbs_from_UCSC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/16_tfbs_from_local_bed.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_tfbs_from_local_bed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encode_files_input_for_16.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/encode_files_input_for_16.tsv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo_files_input_for_16.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/geo_files_input_for_16.tsv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo_whole_chr4_PGR.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/geo_whole_chr4_PGR.tsv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/mysqldb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mysqldb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,79 +71,118 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="4901">
-                <caret line="169" column="14" selection-start-line="169" selection-start-column="14" selection-end-line="169" selection-end-column="14" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/02_gene_ranges_from_UCSC.py">
+      <file leaf-file-name="10_store_tads.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10_store_tads.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="70" selection-start-line="67" selection-end-line="70" />
+            <state relative-caret-position="702">
+              <caret line="40" column="27" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
+      <file leaf-file-name="16_tfbs_from_local_bed.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="363">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
+      <file leaf-file-name="17_tfbs_distribution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="68" column="138" selection-start-line="68" selection-start-column="138" selection-end-line="68" selection-end-column="138" />
-              <folding>
-                <element signature="e#736#764#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="366">
+              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="47" lean-forward="true" selection-start-line="46" selection-end-line="47" />
-              <folding>
-                <element signature="e#818#845#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="mysqldb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1456">
-              <caret line="63" column="8" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+            <state relative-caret-position="557">
+              <caret line="178" column="80" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="80" />
               <folding>
-                <element signature="e#1#15#0" expanded="true" />
+                <element signature="e#72#269#0" />
+                <element signature="e#175#243#0" />
+                <element signature="e#316#440#0" />
+                <element signature="e#401#427#0" />
+                <element signature="e#495#965#0" />
+                <element signature="e#552#672#0" />
+                <element signature="e#737#858#0" />
+                <element signature="e#882#951#0" />
+                <element signature="e#1015#1154#0" />
+                <element signature="e#1080#1154#0" />
+                <element signature="e#1191#1306#0" />
+                <element signature="e#1385#1884#0" />
+                <element signature="e#1685#1757#0" />
+                <element signature="e#1996#3478#0" />
+                <element signature="e#2496#2691#0" />
+                <element signature="e#2727#3102#0" />
+                <element signature="e#2909#2983#0" />
+                <element signature="e#3255#3330#0" />
+                <element signature="e#3350#3463#0" />
+                <element signature="e#3667#3784#0" />
+                <element signature="e#3906#3950#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="49" lean-forward="true" selection-start-line="48" selection-end-line="49" />
+            <state relative-caret-position="198">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <element signature="e#1022#1047#0" expanded="true" />
+                <element signature="e#915#1119#0" />
+                <element signature="e#962#1106#0" />
+                <element signature="e#1236#1829#0" />
+                <element signature="e#1432#1490#0" />
+                <element signature="e#1688#1794#0" />
+                <element signature="e#1740#1794#0" />
+                <element signature="e#1918#2078#0" />
+                <element signature="e#1975#2064#0" />
+                <element signature="e#2019#2064#0" />
+                <element signature="e#2045#2064#0" />
+                <element signature="e#2214#2604#0" />
+                <element signature="e#2380#2440#0" />
+                <element signature="e#2450#2591#0" />
+                <element signature="e#2712#3817#0" />
+                <element signature="e#2906#3126#0" />
+                <element signature="e#2951#3098#0" />
+                <element signature="e#3012#3069#0" />
+                <element signature="e#3175#3718#0" />
+                <element signature="e#3457#3522#0" />
+                <element signature="e#3721#3744#0" />
+                <element signature="e#3914#4181#0" />
+                <element signature="e#4284#4622#0" />
+                <element signature="e#4724#5618#0" />
+                <element signature="e#4890#4973#0" />
+                <element signature="e#5019#5116#0" />
+                <element signature="e#5140#5234#0" />
+                <element signature="e#5258#5369#0" />
+                <element signature="e#6589#7781#0" />
+                <element signature="e#6708#6775#0" />
+                <element signature="e#6981#7005#0" />
+                <element signature="e#7315#7379#0" />
+                <element signature="e#7346#7379#0" />
+                <element signature="e#7414#7453#0" />
+                <element signature="e#7854#8110#0" />
+                <element signature="e#7854#7915#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="14_tfbs_from_UCSC.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="e#736#764#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,7 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/16_motif_in_ESR1_binding_region_mouse.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_ESR1_binding_region_human.py" />
         <option value="$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py" />
@@ -199,11 +248,7 @@
         <option value="$PROJECT_DIR$/18_tad_distr.gplt" />
         <option value="$PROJECT_DIR$/22_motif_finder.py" />
         <option value="$PROJECT_DIR$/20_motif_finder_exercise.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/16_tfbs_from_local_bed.py" />
-        <option value="$PROJECT_DIR$/utils/utils.py" />
         <option value="$PROJECT_DIR$/28_motif_in_chipseq_region_mouse.py" />
-        <option value="$PROJECT_DIR$/17_tfbs_distribution.py" />
         <option value="$PROJECT_DIR$/18_tfbs_distribution.gplt" />
         <option value="$PROJECT_DIR$/22_motif_in_chipseq_region.py" />
         <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
@@ -214,20 +259,25 @@
         <option value="$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py" />
         <option value="$PROJECT_DIR$/10_tads_overview.py" />
         <option value="$PROJECT_DIR$/12_emve_tads.py" />
-        <option value="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/12_gene_tad.py" />
         <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
+        <option value="$PROJECT_DIR$/02_gene_ranges_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/10_store_tads.py" />
+        <option value="$PROJECT_DIR$/utils/utils.py" />
         <option value="$PROJECT_DIR$/utils/mysqldb.py" />
+        <option value="$PROJECT_DIR$/12_gene_tad.py" />
         <option value="$PROJECT_DIR$/14_tfbs_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/16_tfbs_from_local_bed.py" />
+        <option value="$PROJECT_DIR$/17_tfbs_distribution.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="527" />
-    <option name="y" value="176" />
-    <option name="width" value="2865" />
-    <option name="height" value="1969" />
+    <option name="x" value="1926" />
+    <option name="y" value="38" />
+    <option name="width" value="1756" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -245,6 +295,17 @@
             <path>
               <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
               <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="raw_data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
+              <item name="raw_data" type="462c0819:PsiDirectoryNode" />
+              <item name="tf_binding_sites_geo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progesterone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progesterone" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -258,15 +319,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Hand2_regulation" />
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Hand2_regulation" />
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,39 +356,46 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="527" y="176" width="2865" height="1969" extended-state="0" />
+    <frame x="1926" y="38" width="1756" height="1001" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23196769" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.42044136" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22367954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13595505" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.tsv" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/Bio/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/08_chromatin_interactions_from_encode.py" />
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/14_tf_binding_sites_mouse.py" />
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/03_tf_binding_sites_human.py" />
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/12_motif_finder.py" />
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/10_motif_in_chipseq_region_human.py" />
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/linkto_python_modules/utils.py" />
@@ -350,17 +418,10 @@
     <entry file="file://$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" />
     <entry file="file://$PROJECT_DIR$/00_tads_overview.py" />
     <entry file="file://$PROJECT_DIR$/01_tads_pic.py" />
-    <entry file="file://$PROJECT_DIR$/11_tads_pic.py">
+    <entry file="file://$PROJECT_DIR$/08_tads_pic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="5" selection-start-line="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/CrossMap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -368,13 +429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="55" column="98" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -390,13 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="111" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -421,13 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -449,85 +489,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+    <entry file="file://$PROJECT_DIR$/14_tf_binding_sites_from_UCSC.py" />
+    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        <state relative-caret-position="228">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/10_tads_overview.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1010">
-          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+        <state relative-caret-position="108">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="4901">
-            <caret line="169" column="14" selection-start-line="169" selection-start-column="14" selection-end-line="169" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_tf_binding_sites_from_UCSC.py">
+    <entry file="file://$PROJECT_DIR$/02_gene_ranges_from_UCSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="49" lean-forward="true" selection-start-line="48" selection-end-line="49" />
-          <folding>
-            <element signature="e#1022#1047#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="324">
+          <caret line="43" selection-start-line="42" selection-end-line="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/01_chromosome_lengths_from_UCSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="47" lean-forward="true" selection-start-line="46" selection-end-line="47" />
+        <state relative-caret-position="355">
+          <caret line="44" selection-start-line="43" selection-end-line="44" />
           <folding>
             <element signature="e#818#845#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/06_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/CrossMap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="194" column="4" selection-start-line="194" selection-start-column="4" selection-end-line="194" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1456">
-          <caret line="63" column="8" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+        <state relative-caret-position="557">
+          <caret line="178" column="80" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="80" />
           <folding>
-            <element signature="e#1#15#0" expanded="true" />
+            <element signature="e#72#269#0" />
+            <element signature="e#175#243#0" />
+            <element signature="e#316#440#0" />
+            <element signature="e#401#427#0" />
+            <element signature="e#495#965#0" />
+            <element signature="e#552#672#0" />
+            <element signature="e#737#858#0" />
+            <element signature="e#882#951#0" />
+            <element signature="e#1015#1154#0" />
+            <element signature="e#1080#1154#0" />
+            <element signature="e#1191#1306#0" />
+            <element signature="e#1385#1884#0" />
+            <element signature="e#1685#1757#0" />
+            <element signature="e#1996#3478#0" />
+            <element signature="e#2496#2691#0" />
+            <element signature="e#2727#3102#0" />
+            <element signature="e#2909#2983#0" />
+            <element signature="e#3255#3330#0" />
+            <element signature="e#3350#3463#0" />
+            <element signature="e#3667#3784#0" />
+            <element signature="e#3906#3950#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="198">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#915#1119#0" />
+            <element signature="e#962#1106#0" />
+            <element signature="e#1236#1829#0" />
+            <element signature="e#1432#1490#0" />
+            <element signature="e#1688#1794#0" />
+            <element signature="e#1740#1794#0" />
+            <element signature="e#1918#2078#0" />
+            <element signature="e#1975#2064#0" />
+            <element signature="e#2019#2064#0" />
+            <element signature="e#2045#2064#0" />
+            <element signature="e#2214#2604#0" />
+            <element signature="e#2380#2440#0" />
+            <element signature="e#2450#2591#0" />
+            <element signature="e#2712#3817#0" />
+            <element signature="e#2906#3126#0" />
+            <element signature="e#2951#3098#0" />
+            <element signature="e#3012#3069#0" />
+            <element signature="e#3175#3718#0" />
+            <element signature="e#3457#3522#0" />
+            <element signature="e#3721#3744#0" />
+            <element signature="e#3914#4181#0" />
+            <element signature="e#4284#4622#0" />
+            <element signature="e#4724#5618#0" />
+            <element signature="e#4890#4973#0" />
+            <element signature="e#5019#5116#0" />
+            <element signature="e#5140#5234#0" />
+            <element signature="e#5258#5369#0" />
+            <element signature="e#6589#7781#0" />
+            <element signature="e#6708#6775#0" />
+            <element signature="e#6981#7005#0" />
+            <element signature="e#7315#7379#0" />
+            <element signature="e#7346#7379#0" />
+            <element signature="e#7414#7453#0" />
+            <element signature="e#7854#8110#0" />
+            <element signature="e#7854#7915#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02_gene_ranges_from_UCSC.py">
+    <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_PGR_tfbs_mm9_GSE34927.tsv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="70" selection-start-line="67" selection-end-line="70" />
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="3" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_ESR1_tfbs_mm9_GSE36455.tsv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_PGR_tfbs_hg19.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="e#1022#1047#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10_store_tads.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="771">
+            <caret line="240" column="62" lean-forward="true" selection-start-line="240" selection-start-column="62" selection-end-line="240" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_tfbs_from_local_bed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="68" column="138" selection-start-line="68" selection-start-column="138" selection-end-line="68" selection-end-column="138" />
+        <state relative-caret-position="515">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="e#736#764#0" expanded="true" />
           </folding>

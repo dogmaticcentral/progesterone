@@ -1,4 +1,4 @@
-%organism	gene name	TF name	GEO id	agonist file	control/vehicle file	assembly
-mouse	Hand2	PGR	GSE34927	GSM857546_2_PR_P4_s_1_aligned.bed	GSM857545_1_PR_oil_s_4_aligned.bed	mm9
-mouse	Hand2	ESR1	GSE36455	GSM894054_WT_E2.ER_peaks.bed	GSM894053_WT_vehicle.ER_peaks.bed	mm9
-human	Hand2	PGR	GSE62475	GSM1527528_pgra-v-input-macs_peaks.bed		hg18
+%organism	gene or chr name	TAD exp id	TF name	source	exp id	agonist file	control/vehicle file	assembly
+mouse	Hand2		PGR	geo	GSE34927	GSM857546_2_PR_P4_s_1_aligned.bed	GSM857545_1_PR_oil_s_4_aligned.bed	mm9
+mouse	Hand2		ESR1	geo	GSE36455	GSM894054_WT_E2.ER_peaks.bed	GSM894053_WT_vehicle.ER_peaks.bed	mm9
+human	Hand2	ENCFF633ORE	PGR	geo	GSE62475	GSM1527528_pgra-v-input-macs_peaks.bed		hg18

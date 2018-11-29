@@ -1,2 +1,2 @@
-%organism	gene name	TF name	GEO id	agonist file	control/vehicle file	assembly
-human	chr4	PGR	GSE62475	GSM1527528_pgra-v-input-macs_peaks.bed		hg18
+%organism	gene or chr name	TAD exp id	TF name	source	exp id	agonist file	control/vehicle file	assembly
+human	chr4	ENCFF633ORE	PGR	geo	GSE62475	GSM1527528_pgra-v-input-macs_peaks.bed		hg18

@@ -28,16 +28,39 @@ from utils.mysqldb import *
 
 from utils.utils import *
 from utils.CrossMap import *
+#########################################
+def transform_coords(scratchdir, chain_file, chrom, binding_regions):
 
+	outfile = "%s/tfbs_%s.tsv"%(scratchdir, os.getpid())
+	outf = open (outfile,"w")
+	for interval in binding_regions:
+		outf.write("\t".join([chrom, str(interval[0]), str(interval[1])]) + "\n")
+	outf.close()
+
+	# this is CrossMap now
+	outfile_translated  = "%s/tfbs_translated_%s.tsv"%(scratchdir, os.getpid())
+	(map_tree, target_chrom_sizes, source_chrom_sizes) = read_chain_file(chain_file, print_table = False)
+	crossmap_bed_file(map_tree, outfile, outfile_translated)
+
+	#read binding regions back in
+	with open(outfile_translated,"r") as inf:
+		new_binding_regions = [line.split("\t")[1:3] for line in inf.read().split("\n") if len(line.replace(" ",""))>0]
+	# remove aux files
+	os.remove(outfile)
+	os.remove(outfile_translated)
+
+	return new_binding_regions
 
 #########################################
-def process_tf_binding(outdir, geodir, tadfile, input_line):
-
-	[species, gene_name, tf_name, geo_id, agonist_file, ctrl_file, input_assembly] = input_line.rstrip().split("\t")
+def get_binding_regions (db, cursor, scratchdir, data_homedir, input_line):
 
 	#############################
-	# input checking
-	chain_file=None
+	# input processing
+	[species, gene_or_chr, tad_exp_id, tf_name, source, datafile_id, agonist_file, ctrl_file, input_assembly] = input_line.rstrip().split("\t")
+
+	chain_file_input_to_ref_assmb =None
+	chain_file_ref_to_input_assmb =None
+
 	ref_assembly = None
 	if species=="human":
 		ref_assembly="hg19"
@@ -48,86 +71,101 @@ def process_tf_binding(outdir, geodir, tadfile, input_line):
 		exit()
 
 	if input_assembly != ref_assembly:  # we'll need  tools to translate
-		chain_file="/storage/databases/liftover/{}To{}.over.chain".format(input_assembly, ref_assembly.capitalize())
-
-	ucsc_gene_regions_dir = "/storage/databases/ucsc/gene_ranges/%s/%s" % (species, input_assembly)
+		chain_file_input_to_ref_assmb ="/storage/databases/liftover/{}To{}.over.chain".format(input_assembly, ref_assembly.capitalize())
+		chain_file_ref_to_input_assmb ="/storage/databases/liftover/{}To{}.over.chain".format(ref_assembly, input_assembly.capitalize())
 
 	if ctrl_file.replace(" ","") == "": ctrl_file = None
-	data_dir = "{}/{}".format(geodir, geo_id)
+	data_dir = "{}/{}".format(data_homedir, datafile_id)
 
-	dependencies = [ucsc_gene_regions_dir, data_dir, "{}/{}".format(data_dir,agonist_file)]
+	dependencies = [data_dir, "{}/{}".format(data_dir,agonist_file)]
 	if ctrl_file: dependencies += ["{}/{}".format(data_dir,ctrl_file)]
-	if chain_file: dependencies += [chain_file]
+	if chain_file_input_to_ref_assmb : dependencies += [chain_file_input_to_ref_assmb ]
 	for dep in dependencies:
 		if not os.path.exists(dep):
 			print(dep,"not found")
 			exit()
 
-	#############################
-	# fetching additional info
-	if 'chr' in gene_name:
-		chrom = gene_name
-		gene_name = None
-		region_start, region_end = None, None
+	if 'chr' in gene_or_chr:
+		chrom = gene_or_chr
+		region_start =  region_end = None
 	else:
-		chrom, strand, gene_range = ucsc_gene_coords(gene_name, ucsc_gene_regions_dir)
-		print ("%s position:"%gene_name, chrom, strand, gene_range)
-		if species=="human" and input_assembly==ref_assembly: # TODO: fix this
-			[region_start, region_end] = get_tad (tadfile, chrom, gene_range)
+		gene_name = gene_or_chr
+		[chrom, strand, min_start, max_end] = get_gene_coords(db,cursor, gene_name, ref_assembly)
+		if tad_exp_id==None or tad_exp_id.replace(" ","") == "":
+			region_start = min_start - 1.0e6
+			region_end   = max_end   + 1.0e6
 		else:
-			# human TAD that includes Hand2 is 1440kbp longrm -rf
-			# so let's say we search in the region  1Mbp on each side od the gene region in mouse
-			region_start = gene_range[0] - 1400000
-			region_end   = gene_range[1] + 1400000
+			exp_file_xref_id = get_xref_id(db,cursor,tad_exp_id)
+			[region_start, region_end] = get_tad_region(db, cursor, exp_file_xref_id, chrom, min_start, max_end)
+		if input_assembly != ref_assembly:
+			[[region_start, region_end]] = transform_coords(scratchdir, chain_file_ref_to_input_assmb ,
+															chrom, [[region_start, region_end]])
 
 	#############################
 	# business
 	binding_regions = read_binding_intervals(data_dir, agonist_file, ctrl_file, chrom.replace('chr', ''), region_start, region_end)
-
 	#############################
-	# output
-	outfile = "%s/%s_%s_tfbs_%s_%s.tsv"%(outdir, gene_name if gene_name else chrom, tf_name, input_assembly, geo_id)
-	outf = open (outfile,"w")
-	outf.write("\t".join(["% chrom", "chromStart", "chromEnd", "name"]) + "\n")
-	for interval in binding_regions:
-		outf.write("\t".join([chrom, str(interval[0]), str(interval[1]), tf_name]) + "\n")
-	outf.close()
-
-	# translate regions if assembly not hg19 or mm9
+	# transform coords if needed
 	if input_assembly != ref_assembly:
-		# this is CrossMap now
-		outfile_translated = "%s/%s_%s_tfbs_%s.tsv"%(outdir, gene_name if gene_name else chrom, tf_name, ref_assembly)
-		(map_tree, target_chrom_sizes, source_chrom_sizes) = read_chain_file(chain_file, print_table = False)
-		crossmap_bed_file(map_tree, outfile, outfile_translated)
+		binding_regions = transform_coords(scratchdir, chain_file_input_to_ref_assmb , chrom, binding_regions)
 
-	return True
+	return [tf_name, source, datafile_id, species, chrom, ref_assembly, binding_regions]
 
+#########################################
+def store_binding_regions(cursor, binding_info):
+	[tf_name, source, datafile_id, species, chrom, assembly, binding_regions] = binding_info
+	xref_id = store_xref(cursor, source, datafile_id)
+	for [start,end] in binding_regions:
+		# store region (address)
+		fields  = {'species':species, 'chromosome':chrom, 'assembly':assembly, 'rtype':'chipseq',
+					'rfrom':start, 'rto':end, 'xref_id':xref_id}
+		region_id = store_without_checking(cursor, 'regions', fields)
+
+		# store info about the binding region
+		fields = {'tf_name':tf_name, 'chipseq_region_id':region_id, 'xref_id':xref_id}
+		binding_site_id = store_without_checking(cursor, 'binding_sites', fields)
+
+	return
 
 #########################################
 def main():
 
 	if len(sys.argv) < 3:
-		print("Usage: %s <data directory path> <input_data.tsv>" % sys.argv[0])
+		print("Usage: %s <data directory path> <input_data.tsv> " % sys.argv[0])
 		print("<data directory path> should be something like \"/storage/databases/geo\"")
 		print("and contain bed files with sub-path <experiment id>/<file id>.bed")
 		print("<input_data.tsv> should contain tab separated  columns of the form")
-		print("organism | gene name | TF name | experiment id | agonist file bed | control/vehicle file bed | assembly")
-		print("Control file is optional.")
+		print("organism |  gene or chr name | TAD exp id | TF name | source | experiment id | agonist file bed | control/vehicle file bed | assembly")
+		print("Source refers to the source database. Control file is optional, and so is TAD experiment ID.")
+		print("If control file is given, peaks will be subtracted from agonist peaks.")
+		print("TAD exp is ignored if a chromosome name is given. If TAD exp id is given,")
+		print("TAD region encompassing the gene will be used as target range.")
+		print("Otherwise 1Mbp on each side of the gene will be used. ")
 		exit()
 
-	[datadir, input_data_file] = sys.argv[1:3]
-	datadir = datadir.rstrip("/")
-	outdir  = "raw_data/tf_binding_sites_%s" % (datadir.split("/").pop())
-	tadfile = "/storage/databases/encode/ENCSR551IPY/ENCFF633ORE.bed"
-	for dependency in [outdir, datadir, tadfile, input_data_file]:
+	[data_homedir, input_data_file] = sys.argv[1:3]
+	data_homedir = data_homedir.rstrip("/")
+	scratchdir   = "/home/ivana/scratch"
+	local_conf_file = "/home/ivana/.mysql_conf"
+	for dependency in [data_homedir, input_data_file, local_conf_file, scratchdir]:
 		if not os.path.exists(dependency):
 			print(dependency,"not found")
 			exit()
 
+	db = connect_to_mysql(local_conf_file)
+	cursor = db.cursor()
+	search_db(cursor,"set autocommit=1")
+	switch_to_db(cursor,'progesterone')
+
 	inf = open(input_data_file, "r")
 	for line in inf:
 		if line[0]=='%': continue
-		process_tf_binding(outdir, datadir, tadfile, line)
+		if len(line.replace(" ","").replace("\t",""))==0: continue
+		line = line.rstrip()
+		binding_info = get_binding_regions(db, cursor, scratchdir, data_homedir, line)
+		store_binding_regions(cursor, binding_info)
+	cursor.close()
+	db.close()
 
 #########################################
 ########################################

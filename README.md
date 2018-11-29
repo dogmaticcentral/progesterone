@@ -88,22 +88,9 @@ _sudo apt install python3-tk_)
 these are voluminous  and optional. If you
 know the chromsome your gene resides on, you can download maf(s) for that chromosome only.
  
- * for output, the pipeline expects to see a provided (output) directory structure like this:
- <pre>
- raw_data/
-├── alignments_human
-├── alignments_mouse
-├── chipseq_regions_human_seqs
-├── chipseq_regions_mouse_seqs
-├── chromatin_opening.tsv
-├── hic_interactions
-├── tad_distributions
-├── tads
-├── tf_binding_sites_database1
-├── tf_binding_sites_database2
- results/
- </pre>
- If a (sub)directory is nonexistent, each script will prompt you to create it as necessary. 
+ * For output, the pipeline expects to see a provided (output) directory 
+  called _raw_data_. If _raw_data_  or sometimes its subdirectory is nonexistent, 
+  each script will prompt you to create it as necessary. 
  Feel free to change the scripts  if you would like to organize things differently.
 
 ## Gene coordinates
@@ -132,18 +119,18 @@ The idea repeatedly appears in the literature that TAD boundaries are conserved 
 That would be useful, beacuse with unversal definetion of TADs  we could write very many scripts with very many 
 purposes, having looked up the TAD definition only once.
 
- [10_tads_overview.py](10_tads_overview.py) explores that possibility  - with mixed results.
+ [06_tads_overview.py](06_tads_overview.py) explores that possibility  - with mixed results.
 
 You will need to download TAD files from the [Yue lab page](http://promoter.bx.psu.edu/hi-c/publications.html) 
  (we suggest  sticking with hg19 throughout the pipeline  - use link named 'TADs in  hg19'). 
- Adjust the dirpath in  [10_tad_overview.py](10_tad_overview.py) accordingly. This script groups TAD intervals 
+ Adjust the dirpath in  [06_tads_overview.py](06_tads_overview.py) accordingly. This script groups TAD intervals 
  that appear repeatedly in different experiments, in the hope of finding those
  that are supposedly conserved across different cell types. It seems that one could make some progress
  looking for regions that are rarely assigned to a domain, and thus delineate the topmost division in a 
  TAD hierarchy. The number of these divisions, however, appears to be an order of magnitude smaller
  than the number of TADs typically reported in each experiment.
  
- [11_tads_pic.py](11_tads_pic.py) contains basic code to illustrate  the reported TAD domains. 
+ [08_tads_pic.py](08_tads_pic.py) contains basic code to illustrate  the reported TAD domains. 
  It uses [Matplotlib](https://matplotlib.org/); note that in Matplotlib you can zoom 
  into any region of the graph you are interested in. 
  Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
@@ -153,13 +140,13 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  The whole chromosome length has been rescaled to the range [0,1].
 If you squint a little you can see that the basic TAD  structure corresponds to the regions of densest
 gene occupation region (middle and bottom panels) -  careful with the interpretation of this graph: see 
-[11_tads_pic.py](11_tads_pic.py):plot_2()). However the individual TAD assignments 
+[08_tads_pic.py](08_tads_pic.py):plot_2()). However the individual TAD assignments 
 (top panel; each horizontal level corresponds to one experiment) 
 vary widely between different experiments. Therefore we choose to stick with a single experiment
 ([Homo sapiens endometrial microvascular endothelial cells](https://www.encodeproject.org/experiments/ENCSR551IPY/))
 because the  cell type it uses  matches most closely the type of cells we are interested in.
 
-Caveat: on some OS/graphics card setups [11_tads_pic.py](11_tads_pic.py) may crash. It is the matter
+Caveat: on some OS/graphics card setups [08_tads_pic.py](08_tads_pic.py) may crash. It is the matter
 of Matplotlib rather than the script itself. 
 
 
@@ -179,7 +166,7 @@ actual TF binding site. We will narrow down each of these regions later in the p
 
 ### ENCODE information in UCSC
 
-[14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) will download ChIPSeq information 
+[14_tfbs_from_UCSC.py](14_tfbs_from_UCSC.py) will download ChIPSeq information 
 from [ENCODE](https://www.encodeproject.org/)
 deposited in [UCSC](https://genome.ucsc.edu/encode/). The contents of the relevant database table
 are described [here](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredV3).
@@ -225,9 +212,11 @@ The data directory should preferably contain  bed files, grouped by experiment i
 </pre>
 
 The tsv should contain tab separated  columns of the form
-`organism | gene name	| TF name | experiment id | agonist file bed | control/vehicle file bed | assembly`.
+`organism | gene or chr name |  TAD exp id | TF name | source | experiment id | agonist file bed | control/vehicle file bed | assembly`.
 Control file is optional -  but the control peaks will be subtracted from the peaks in the presence of agonist, 
-if available.
+if available. TAD experiment is ignored if a chromosome name is given. 
+If TAD exp id is given, TAD region encompassing the gene will be used as target range. 
+Otherwise 1Mbp on each side of the gene will be used. 
 
 There are some special considerations to be taken in account here:
 
@@ -329,8 +318,5 @@ Print the table you have made in the last step, and take it to a competent exper
 
 ## TODO
 
-Most of clunkyness in the pipeline comes from treating the UCSC and local info in different ways. 
-Register any new data into a local database as the first step, perhaps removing the need for the
-raw _data folder entirely.
 
 Get rid of CrossModule.py and use cmmodule directly.
