@@ -21,9 +21,16 @@
 CREATE DATABASE progesterone;
 USE progesterone;
 
+CREATE TABLE assemblies (
+  id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  common_name  varchar(255) NOT NULL,
+  scientific_name  varchar(255) NOT NULL,
+  assembly  varchar(50) NOT NULL
+) ENGINE=InnoDB;
+
 CREATE TABLE xrefs (
   id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  xtype ENUM ('pubmed','geo','encode', 'ucsc') NOT NULL,
+  xtype ENUM ('pubmed','geo','encode', 'ucsc', 'this_db') NOT NULL,
   external_id varchar(255) NOT NULL,
   parent_id int DEFAULT NULL,
   bibtex text DEFAULT NULL
