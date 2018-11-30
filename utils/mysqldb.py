@@ -154,6 +154,7 @@ def store_or_update (cursor, table, fixed_fields, update_fields, verbose=False, 
 			row_id = -1
 	return row_id
 
+
 #########################################
 def store_xref (cursor, xtype, xid, bibtex=None, parent_id=None ):
 	fixed_fields = {'xtype': xtype,'external_id': xid}
@@ -192,6 +193,7 @@ def get_gene_coords (db, cursor, gene_name, assembly):
 		max_end = end if max_end<end else max_end
 	return [chromosome, strand, min_start, max_end]
 
+
 #########################################
 def get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end):
 
@@ -202,6 +204,7 @@ def get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end)
 	hard_check (db,cursor, ret, qry)
 	return ret[0]
 
+
 ########################################
 def get_all_tads(db, cursor, exp_file_xref_id, chromosome):
 	qry  = "select rfrom, rto from regions where xref_id=%d " % exp_file_xref_id
@@ -209,6 +212,7 @@ def get_all_tads(db, cursor, exp_file_xref_id, chromosome):
 	ret = search_db(cursor,qry)
 	hard_check (db,cursor, ret, qry)
 	return ret
+
 
 ########################################
 def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_binding_site_id=False):
@@ -223,3 +227,10 @@ def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_bindin
 	hard_check (db,cursor, ret, qry)
 	return ret
 
+
+########################################
+def assembly2species_common(cursor,assembly):
+	ret = search_db(cursor,"select common_name from assemblies where  assembly='%s'"% assembly)
+	if not ret or type(ret[0][0])!=str or 'Error' in ret[0][0]:
+		return ""
+	return ret[0][0].strip().lower()
