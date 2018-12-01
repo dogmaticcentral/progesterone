@@ -36,6 +36,9 @@ CREATE TABLE xrefs (
   bibtex text DEFAULT NULL
 ) ENGINE=InnoDB;
 
+-- there should be a mechanism to delete region entry
+-- when the claller (motif, binding_site) is deleted
+-- beyond my scope now
 CREATE TABLE regions (
   id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
   species  varchar(50) NOT NULL,

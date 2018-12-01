@@ -57,30 +57,37 @@ def store_inferred_motif(cursor, region_id, tf_name, biopythonseq, consensus, ps
 
 
 #########################################
-def simplify_alignment(cursor, labels, seqs, species):
+def simplify_alignment(cursor, seq, assemblies, species):
 	if (species=='human'):
-		relatives = ['human', 'crab-eating macaque', 'green monkey'] # macFas & chlSab
+		relatives = ['human', 'rhesus', 'marmoset'] # rheMac and calJac
 	else:
 		relatives = ['mouse', 'rat']
 
 	seq_relatives = {}
-	labels_relatives = []
-	for label in labels:
-		assembly = label.split("_")[0]
+	assms_relatives = []
+	for  assembly in assemblies:
 		tgt_species = assembly2species_common(cursor,assembly)
 		if not tgt_species: continue
 		if not tgt_species in relatives: continue
-		labels_relatives.append(label)
-		seq_relatives[label] = seqs[label]
+		assms_relatives.append(assembly)
+		seq_relatives[assembly] = seq[assembly]
 
 	remove_all_gaps(seq_relatives)
-	return labels_relatives, seq_relatives
+	return assms_relatives, seq_relatives
+
+
+#########################################
+def store_alignment(cursor, motif_ids, sequences, xref_id):
+	fields = {'motif_ids':",".join(motif_ids), 'alignment': ",".join(sequences), 'xref_id':xref_id}
+	alignment_id = store_or_update(cursor, 'alignments', fields, None)
+	return alignment_id
+
 
 #########################################
 def main():
 
-	species = 'mouse'
-	tf_name = 'PGR'
+	species = 'human'
+	tf_name = 'ESR1'
 
 	conf_file  = "/home/ivana/.mysql_conf"
 	scratch    = "/home/ivana/scratch"
@@ -125,42 +132,45 @@ def main():
 	for address in get_motif_regions_wo_alignment(db, cursor, tf_name, species):
 		print(address)
 		[motif_id, qry_assembly, chrom, region_from, region_to, qry_strand] = address
-		labels, seqs = get_alignment(species, qry_assembly, chrom, region_from, region_to, scratch)
-		labels, seqs = simplify_alignment(cursor, labels, seqs, species)
+		[assemblies, address, seq] = get_alignment(species, qry_assembly, chrom, region_from, region_to, scratch)
+		[assemblies, seq] = simplify_alignment(cursor, seq, assemblies, species)
 
 		# store each sequence from this alignment as motif
 		motif_ids = []
 		sequences = []
-		for label in labels:
-			[tgt_assembly, chrom, rfrom, rto, tgt_strand]  = label.split("_")
-			rfrom = int(rfrom)
-			rto   = int(rto)
-			seq_straight = seqs[label].replace("-", "").upper()
-			#biopythonseq = Seq(seq_straight, unambiguous_dna)
+		for tgt_assembly in assemblies:
+			[chrom, rfrom, rto, tgt_strand]  = address[tgt_assembly]
+			bp_seq_straight = Seq(seq[tgt_assembly].replace("-", "").upper(), unambiguous_dna)
+
 			# we search with region on "+" strand, even if the motif is on "-"
-			# thus we need to take reverse compl whenever the strands are different
-			#if tgt_strand!=qry_strand: biopythonseq = biopythonseq.reverse_complement()
+			# thus, reverse complement all seqs if the original motif was on "-"
+			if qry_strand=='-':
+				bp_seq_straight = bp_seq_straight.reverse_complement()
+
 			if tgt_assembly==qry_assembly:
 				mi = motif_id
 			else:
 				tgt_species = assembly2species_common(cursor,tgt_assembly)
 				print(tgt_assembly, tgt_species, chrom, rfrom, rto, xref_id)
+				if qry_strand=="-": # we were actually looking for the complement
+					tgt_strand = "-" if tgt_strand=="+" else "+"
 				region_id = store_region(cursor, tgt_species, tgt_assembly, chrom,
 										rfrom, rto, tgt_strand, xref_id) # regions table
-				# we do not need to take reverse complement, because mafsInRegion already
-				# works with the complement if needed (and reports tha it was found on "-" strand)
-				mi = store_inferred_motif(cursor, region_id, tf_name, seq_straight,
+				mi = store_inferred_motif(cursor, region_id, tf_name, bp_seq_straight,
 										motif.consensus, pssm, xref_id) # motifs table
 			motif_ids.append(str(mi))
-			sequences.append(seqs[label]) # these might still have  gaps
+			seq_w_gaps = seq[tgt_assembly].upper()
+			if qry_strand=='-':
+				seq_w_gaps = str(Seq(seq_w_gaps, unambiguous_dna).reverse_complement())
+
+			sequences.append(seq_w_gaps) # these might still have  gaps (and then, if the motif is good, there, shouldn't)
 
 		# take motif_ids and seqs (possibly with gaps) and store them in alignments table
-		print(",".join(motif_ids), ",".join(sequences))
 
-		# store alignment
-		
-		exit()
-
+		alignment_id = store_alignment(cursor, motif_ids, sequences, maf_xref_id)
+		# store alignment ids
+		for motif_id in motif_ids:
+			search_db(cursor, "update motifs set alignment_id=%d where id=%d"%(alignment_id, int(motif_id)))
 	cursor.close()
 	db.close()
 

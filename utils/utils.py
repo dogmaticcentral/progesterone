@@ -127,16 +127,17 @@ def ucsc_gene_coords(gene_name, ucsc_gene_regions_dir):
 	return chromosome, strand, [int(txStart), int(txEnd)]
 
 #########################################
-def parsed_alignment(maf_file):
+def parse_alignment(maf_file):
 	infile = open(maf_file, "r")
-	labels = []
-	seqs = {}
+	assemblies = []
+	address = {}
+	seq = {}
 	for line in infile:
 		if line[0] != 's': continue
 		fields = line.rstrip().split()
 		if len(fields)!=7: continue
-		[src, start,size,strand, src_size, sequence] = fields[1:7]
-		[start,size,src_size] = [int(i) for i in [start,size,src_size]]
+		[src, start, size, strand, src_size, sequence] = fields[1:7]
+		[start, size, src_size] = [int(i) for i in [start, size, src_size]]
 		fields = src.split(".")
 		assembly = fields[0]
 		chrom = ".".join(fields[1:]).replace("_","")
@@ -144,16 +145,23 @@ def parsed_alignment(maf_file):
 			rfrom = start
 			rto = start + size -1
 		else:
-			rto   = src_size - start + 1
-			rfrom = rto - size + 1
-		label = "_".join([assembly, chrom, str(rfrom), str(rto), strand])
-		if not label in labels:
-			labels.append(label)
-			seqs[label] = ""
-		seqs[label] += sequence
+			rto   = src_size - start #+ 1 no "+1" bcs in ucsc we count from 0
+			rfrom = rto - size  + 1
+		if not assembly in assemblies:
+			assemblies.append(assembly)
+			address[assembly] = [chrom, rfrom, rto, strand]
+			seq[assembly] = sequence
+		else:
+			if strand=="+":
+				address[assembly][2] = rto
+			else:
+				address[assembly][1] = rfrom
+
+			seq[assembly] += sequence
+
 	infile.close()
 
-	return labels, seqs
+	return assemblies, address, seq
 
 #########################################
 def get_alignment(species, assembly, chrom, region_from, region_to, scratch):
@@ -182,12 +190,12 @@ def get_alignment(species, assembly, chrom, region_from, region_to, scratch):
 	cmd = "{} {} {} {}".format(maf_region_extraction_tool, bed_in, maf_out, maf_file)
 	subprocess.call(cmd, shell=True)
 
-	labels, sequences = parsed_alignment(maf_out)
+	assemblies, address, seq = parse_alignment(maf_out)
 
 	os.remove(maf_out)
 	os.remove(bed_in)
 
-	return labels, sequences
+	return [assemblies, address, seq]
 
 
 #########################################
