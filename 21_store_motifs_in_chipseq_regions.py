@@ -23,7 +23,7 @@ from utils.mysqldb import *
 #########################################
 def main():
 
-	species = 'human'
+	species = 'mouse'
 	tf_name = 'PGR'
 	verbose = True
 

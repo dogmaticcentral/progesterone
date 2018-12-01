@@ -157,7 +157,7 @@ def parsed_alignment(maf_file):
 
 #########################################
 def get_alignment(species, assembly, chrom, region_from, region_to, scratch):
-	# from http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_6
+	# from https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_6
 	maf_region_extraction_tool = "/usr/bin/mafsInRegion"
 	# mafs come from here http://hgdownload.cse.ucsc.edu/downloads.html
 	# http://hgdownload.cse.ucsc.edu/goldenPath/hg19/multiz100way/

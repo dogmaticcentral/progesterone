@@ -136,10 +136,10 @@ def main():
 			rfrom = int(rfrom)
 			rto   = int(rto)
 			seq_straight = seqs[label].replace("-", "").upper()
-			biopythonseq = Seq(seq_straight, unambiguous_dna)
+			#biopythonseq = Seq(seq_straight, unambiguous_dna)
 			# we search with region on "+" strand, even if the motif is on "-"
-			# we need to take rev compl whenever the strads are different
-			if tgt_strand!=qry_strand: biopythonseq = biopythonseq.reverse_complement()
+			# thus we need to take reverse compl whenever the strands are different
+			#if tgt_strand!=qry_strand: biopythonseq = biopythonseq.reverse_complement()
 			if tgt_assembly==qry_assembly:
 				mi = motif_id
 			else:
@@ -147,7 +147,9 @@ def main():
 				print(tgt_assembly, tgt_species, chrom, rfrom, rto, xref_id)
 				region_id = store_region(cursor, tgt_species, tgt_assembly, chrom,
 										rfrom, rto, tgt_strand, xref_id) # regions table
-				mi = store_inferred_motif(cursor, region_id, tf_name, biopythonseq,
+				# we do not need to take reverse complement, because mafsInRegion already
+				# works with the complement if needed (and reports tha it was found on "-" strand)
+				mi = store_inferred_motif(cursor, region_id, tf_name, seq_straight,
 										motif.consensus, pssm, xref_id) # motifs table
 			motif_ids.append(str(mi))
 			sequences.append(seqs[label]) # these might still have  gaps
@@ -156,6 +158,7 @@ def main():
 		print(",".join(motif_ids), ",".join(sequences))
 
 		# store alignment
+		
 		exit()
 
 	cursor.close()
