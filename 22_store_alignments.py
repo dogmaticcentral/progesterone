@@ -86,8 +86,8 @@ def store_alignment(cursor, motif_ids, sequences, xref_id):
 #########################################
 def main():
 
-	species = 'human'
-	tf_name = 'ESR1'
+	species = 'mouse'
+	tf_name = 'PGR'
 
 	conf_file  = "/home/ivana/.mysql_conf"
 	scratch    = "/home/ivana/scratch"
