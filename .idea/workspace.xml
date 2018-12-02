@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/23_alignment_stats.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/00_progesterone_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/00_progesterone_db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/22_store_alignments.py" beforeDir="false" afterPath="$PROJECT_DIR$/22_store_alignments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,25 +16,25 @@
     <session id="-786834255">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="5" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="gplt" value="1" />
-          <entry key="py" value="32" />
+          <entry key="py" value="36" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="32" />
+          <entry key="Python" value="36" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
@@ -47,78 +44,57 @@
           <entry key="gitignore" value="7" />
           <entry key="gplt" value="1" />
           <entry key="md" value="2040" />
-          <entry key="py" value="3603" />
-          <entry key="sql" value="30" />
+          <entry key="py" value="3697" />
+          <entry key="sql" value="171" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="2040" />
           <entry key="PLAIN_TEXT" value="30" />
-          <entry key="Python" value="3603" />
-          <entry key="SQL" value="30" />
+          <entry key="Python" value="3697" />
+          <entry key="SQL" value="171" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="21_store_motifs_in_chipseq_regions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/21_store_motifs_in_chipseq_regions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding>
-                <element signature="e#736#761#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="22_store_alignments.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/22_store_alignments.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
-              <folding>
-                <element signature="e#736#761#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="23_alignment_stats.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/23_alignment_stats.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mysqldb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="236" lean-forward="true" selection-start-line="236" selection-end-line="236" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/utils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
-              <caret line="157" selection-start-line="157" selection-end-line="157" />
+              <caret line="165" selection-start-line="165" selection-end-line="165" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="00_progesterone_db.sql" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1286">
+              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+              <folding>
+                <element signature="e#951#962#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="54" lean-forward="true" selection-start-line="42" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="111" column="17" lean-forward="true" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="17" />
+            <state relative-caret-position="1188">
+              <caret line="114" column="67" selection-start-line="114" selection-start-column="67" selection-end-line="114" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -195,32 +171,32 @@
         <option value="$PROJECT_DIR$/23_motif_in_chipseq_region.py" />
         <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
         <option value="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" />
-        <option value="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" />
         <option value="$PROJECT_DIR$/30_accessible_regions.py" />
         <option value="$PROJECT_DIR$/35_report.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py" />
         <option value="$PROJECT_DIR$/utils/mysqldb.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
         <option value="$PROJECT_DIR$/utils/utils.py" />
         <option value="$PROJECT_DIR$/21_store_motifs_in_chipseq_regions.py" />
         <option value="$PROJECT_DIR$/22_store_alignments.py" />
         <option value="$PROJECT_DIR$/23_alignment_stats.py" />
+        <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
+        <option value="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="548" />
+    <option name="y" value="152" />
+    <option name="width" value="3126" />
+    <option name="height" value="2089" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,6 +213,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,36 +258,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2080" y="27" width="1597" height="1014" extended-state="0" />
+    <frame x="548" y="152" width="3126" height="2089" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14231259" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20019467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2310042" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -364,13 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/15_tfbs_UCSC_sources.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -410,27 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/25_hdf5_exercise2_normalization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -495,24 +434,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/23_alignment_stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1682">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="236" lean-forward="true" selection-start-line="236" selection-end-line="236" />
+        <state relative-caret-position="6815">
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+    <entry file="file://$PROJECT_DIR$/22_store_alignments.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="111" column="17" lean-forward="true" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="17" />
+        <state relative-caret-position="393">
+          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+          <folding>
+            <element signature="e#736#761#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -526,19 +468,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/23_alignment_stats.py">
+    <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="580">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/22_store_alignments.py">
+    <entry file="file://$PROJECT_DIR$/25_hdf5_exercise2_normalization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+        <state relative-caret-position="-207">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="54" lean-forward="true" selection-start-line="42" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="114" column="67" selection-start-line="114" selection-start-column="67" selection-end-line="114" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1286">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
           <folding>
-            <element signature="e#736#761#0" expanded="true" />
+            <element signature="e#951#962#0" expanded="true" />
           </folding>
         </state>
       </provider>

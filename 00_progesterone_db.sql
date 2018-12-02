@@ -116,3 +116,14 @@ CREATE TABLE  binding_site2motif (
 ) ENGINE=InnoDB;
 
 
+CREATE TABLE  hic_interactions (
+  id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  gene_name varchar(50) NOT NULL,
+  gene_hic_region_id  int  NOT NULL,
+  interacting_hic_region_id  int  NOT NULL,
+  interaction int  NOT NULL,
+  FOREIGN KEY fk_gene_hic_region(gene_hic_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY fk_iny_region(interacting_hic_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE
+
+) ENGINE=InnoDB;
+
