@@ -50,8 +50,10 @@ def atac_points(db, cursor, assembly, chromosome, tad_start, tad_end, tad_length
 		if start>tad_end: continue
 		midpoint = (start+end)/2
 		point_rescaled = rescaled(midpoint, tad_start, tad_length)
-		if pval==0: continue
-		weight = -log(float(pval))
+		if pval==0:
+			weight = 5
+		else:
+			weight = -log(float(pval))
 		points.append(point_rescaled)
 		values.append(float(logfold_change))
 		weights.append(weight)
@@ -82,6 +84,7 @@ def main():
 		print(prerequisite, "not found")
 		exit()
 
+	######################################
 	db = connect_to_mysql(conf_file)
 	cursor = db.cursor()
 	switch_to_db(cursor,'progesterone')
@@ -101,6 +104,10 @@ def main():
 	# atacseq regions (np_ are numpy arrays)
 	np_atac_points, np_atac_values, np_atac_weights = atac_points(db, cursor, assembly, chromosome,  tad_start, tad_end, tad_length)
 
+	cursor.close()
+	db.close()
+
+	######################################
 	colors = []
 	maxw = np.amax(np_atac_weights)
 	for w in np_atac_weights:

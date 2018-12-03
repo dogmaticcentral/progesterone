@@ -60,9 +60,19 @@ def search_db(cursor, qry, verbose=False):
 
 	return rows
 
+
 ########
 def hard_check (db,cursor, ret, qry):
 	if not ret or (type(ret[0][0])==str and 'Error' in ret[0][0]):
+		search_db(cursor,qry, verbose=True)
+		cursor.close()
+		db.close()
+		exit()
+
+
+########
+def permissive_check (db,cursor, ret, qry):
+	if ret and (type(ret[0][0])==str and 'Error' in ret[0][0]):
 		search_db(cursor,qry, verbose=True)
 		cursor.close()
 		db.close()
@@ -192,13 +202,7 @@ def get_region_coords (db, cursor, region_id):
 	qry += "where id=%d" % region_id
 	ret = search_db(cursor,qry)
 	hard_check (db, cursor, ret, qry)
-	# there might be multiple returns, corresponding to different splices
-	[chromosome, min_start, max_end, strand] = ret[0]
-	for row in ret:
-		[chromosome, start, end, strand] = row
-		min_start = start if min_start>start else min_start
-		max_end = end if max_end<end else max_end
-	return [chromosome, strand, min_start, max_end]
+	return ret[0]
 
 
 #########################################
@@ -235,7 +239,6 @@ def get_all_tads(db, cursor, exp_file_xref_id, chromosome):
 	hard_check (db,cursor, ret, qry)
 	return ret
 
-
 ########################################
 def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_binding_site_id=False):
 
@@ -249,9 +252,12 @@ def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_bindin
 	hard_check (db,cursor, ret, qry)
 	return ret
 
+
 ########################################
-def get_binding_regions_in_interval(db, cursor, assembly, chromosome, interval_start, interval_end, tf_name):
-	qry   = "select r.rfrom, r.rto from regions as r, binding_sites as b "
+def get_binding_regions_in_interval(db, cursor, assembly, chromosome, interval_start, interval_end, tf_name, return_binding_site_id=False):
+	qry   = "select "
+	if return_binding_site_id: qry  += "b.id, "
+	qry  += "r.rfrom, r.rto from regions as r, binding_sites as b "
 	qry  += "where b.tf_name='%s' " % tf_name
 	qry  += "and b.region_id = r.id "
 	qry  += "and r.assembly='%s' and r.chromosome='%s' " % (assembly, chromosome)
@@ -260,6 +266,14 @@ def get_binding_regions_in_interval(db, cursor, assembly, chromosome, interval_s
 	hard_check (db,cursor, ret, qry)
 	return ret
 
+
+########################################
+def get_motifs_in_binding_site(db, cursor, binding_site_id):
+	qry = "select motif_id from binding_site2motif "
+	qry += "where binding_site_id='%d' " % binding_site_id
+	ret = search_db(cursor,qry)
+	permissive_check(db,cursor, ret, qry)
+	return [r[0] for r in ret] if ret else []
 
 ########################################
 def assembly2species_common(cursor,assembly):

@@ -17,93 +17,141 @@
 # along with Progesterone pipeline.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-
-from Bio.Alphabet.IUPAC import unambiguous_dna
-from Bio.Seq import Seq
-import sys
 from utils.utils import *
+from utils.mysqldb import *
+
+
+def get_atac_regions(db, cursor, assembly, chromosome, tfbs_start, tfbs_end):
+	qry  = "select r.rfrom, r.rto, a. logfold_change, a.pval from regions as r, atac_acc_changes as a "
+	qry += "where r.assembly='%s' and r.chromosome='%s' " % (assembly, chromosome)
+	qry += "and r.rtype='atacseq' "
+	qry += "and not (r.rto<%d or  r.rfrom>%d) " % (tfbs_start, tfbs_end)
+	qry += "and a.atac_region_id=r.id"
+	ret = search_db(cursor,qry)
+	permissive_check (db,cursor, ret, qry)
+	return ret if ret else []
 
 
 #########################################
-def read_tfbs_ranges(infile, chr,  tf_name):
-	chipseq_regions =[]
-	for line in open(infile, "r"):
-		if line[0]=='%': continue
-		[chrom, chromStart, chromEnd, name] = line.rstrip().split("\t")[:4]
-		if name!=tf_name:continue
-		if chrom!="chr%s"%chr:continue
-		chipseq_regions.append("{}_{}".format(chromStart, chromEnd))
-	return chipseq_regions
+def get_interacting_regions(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end):
+	qry  = "select r.rfrom, r.rto, h.interaction from regions as r, hic_interactions as h "
+	qry += "where r.assembly='%s' and r.chromosome='%s' and r.rtype='interacting' " % (assembly, chromosome)
+	qry += "and h.gene_name='%s' and  h.interacting_hic_region_id=r.id  " % (gene_name)
+	qry += "and not (r.rto<%d or  r.rfrom>%d)" % (tfbs_start, tfbs_end)
+	ret = search_db(cursor,qry)
+	permissive_check (db,cursor, ret, qry)
+	return ret if ret else []
 
 
 #########################################
-def get_tfbs_files(binding_site_dirs, assembly, gene_name):
-	fnms = []
-	for tfbs_dir in binding_site_dirs:
-		for fnm in os.listdir(tfbs_dir):
-			if not fnm[-4]!=".tsv": continue
-			if not assembly in fnm: continue
-			if not gene_name in fnm: continue
-			fnms.append("{}/{}".format(tfbs_dir,fnm))
-	return fnms
-
-def get_int_strength(hic_dirs, assembly, gene_name, tf_name, region):
-	intstr = ""
-	interaction = {}
-	for hic_dir in hic_dirs:
-		for fnm in os.listdir(hic_dir):
-			if not fnm[-4]!=".tsv": continue
-			if not assembly in fnm: continue
-			if not gene_name in fnm: continue
-			if tf_name in fnm:
-				intfor = tf_name
-				cmd = "grep {} {}/{}".format(region, hic_dir, fnm)
-			elif "self" in fnm:
-				intfor = "self"
-				cmd = "grep {} {}/{}".format("self", hic_dir, fnm)
-			else:
-				continue
-			for line in subprocess.getoutput(cmd).split("\n"):
-				print(cmd)
-				print(line)
-				interaction[intfor] = int(line.rstrip().split().pop())
-				# if there is more than one line ... too bad
-				break
-
-	if tf_name in interaction or  "self" in interaction:
-		intstr = "%d%%"%(int(interaction[tf_name]/interaction["self"]*100))
-	return intstr
-
-#########################################
-def process(dirs,  assembly, gene_name, tf_name, region):
-	# if interaction strength available, spit it out
-	int_strength = get_int_strength(dirs["hic"],  assembly, gene_name, tf_name, region)
-	print("\t{}  {}".format(region, int_strength))
+def find_selfint(db, cursor, assembly, chromosome, gene_name):
+	qry  = "select h.interaction from regions as r, hic_interactions as h "
+	qry += "where r.assembly='%s' and r.chromosome='%s' and r.rtype='interacting' " % (assembly, chromosome)
+	qry += "and h.gene_name='%s' and  h.interacting_hic_region_id=r.id  " % (gene_name)
+	qry += "and  h.interacting_hic_region_id = h.gene_hic_region_id"
+	ret = search_db(cursor,qry)
+	if not ret: return None
+	permissive_check (db,cursor, ret, qry)
+	if len(ret)>1:
+		print(" ? multiple self int for ", assembly, chromosome, gene_name)
+		cursor.close()
+		db.close()
+		exit()
+	if ret[0][0]==0:
+		print(" ? zero self int for ", assembly, chromosome, gene_name)
+		cursor.close()
+		db.close()
+		exit()
+	return ret[0][0]
 
 
 #########################################
-def report (dirs, assembly, chromosome, gene_name, tf_name):
+def int_report(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end):
+	selfint_value = find_selfint(db, cursor, assembly, chromosome, gene_name)
+	if not selfint_value:
+		return
+	ints = get_interacting_regions(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end)
+	for [rfrom, rto, interaction] in ints:
+		print("\t interaction:", rfrom, rto, interaction, "%.1f%%"%(interaction/selfint_value*100))
 
-	for fnm_path in get_tfbs_files(dirs["binding_site"], assembly, gene_name):
-		chipseq_regions = read_tfbs_ranges(fnm_path, chromosome,  tf_name)
-		if len(chipseq_regions)==0: continue
-		print(fnm_path)
-		for region in chipseq_regions:
-			process(dirs, assembly, gene_name, tf_name, region)
+
+def find_dist_to_gene (strand, gene_start, gene_end,rfrom,rto):
+	if rto<gene_start:
+		dist = (gene_start-rto)/1000
+		direction = "upstream" if strand=="+" else "downstream"
+	elif gene_end<rfrom:
+		dist = (rfrom-gene_end)/1000
+		direction = "downstream" if strand=="+" else "upstream"
+	else:
+		dist = 0
+		direction = "within gene_region"
+
+	return "%1.f Kbp, %s" %(dist, direction)
+
+
+#########################################
+def report (db, cursor, assembly,  species, gene_name, tf_name, tad_external_exp_id):
+	# find gene coordinates
+	[chromosome, gene_strand, gene_start, gene_end] = get_gene_coords(db,cursor,gene_name,assembly)
+	# tad?
+	if species=='human':
+		tad_xref_id  = get_xref_id(db,cursor, tad_external_exp_id)
+		[tad_start, tad_end] = get_tad_region(db, cursor, tad_xref_id, chromosome, gene_start, gene_end)
+	else:
+		[tad_start, tad_end] = [gene_start - 1.e6, gene_end+ 1.e6]
+
+	# get all tfbs' inside tad
+	tfbs = get_binding_regions_in_interval(db, cursor, assembly, chromosome, tad_start, tad_end, tf_name, return_binding_site_id=True)
+	# for each tfbs
+	for [binding_site_id, tfbs_start, tfbs_end] in tfbs:
+		print(tfbs_start, tfbs_end)
+		#   find interacting region(s) and interaction value(s)
+		int_report(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end)
+		# find nearby accessibility change regions
+		for atac_region  in get_atac_regions(db, cursor, assembly, chromosome, tfbs_start-10000, tfbs_end+10000):
+			print ("\tatac region:", atac_region)
+		#   find all motifs
+		motif_ids =  get_motifs_in_binding_site(db, cursor, binding_site_id)
+		#   for each motif
+		for motif_id in motif_ids:
+			print("\t-------------------")
+			print("\t motif_id:",motif_id)
+			# find motif score, alignment
+			qry = "select * from motifs where id=%d" % motif_id
+			ret = search_db(cursor, qry)
+			hard_check(db,cursor, ret, qry)
+			[mid, region_id, tf_name, sequence, consensus, score, xref_id, alignment_id] = ret[0]
+			# reconstruct alignment from alignment_id
+			# find distance to gene
+			[chromosome, rfrom, rto, strand] = get_region_coords (db, cursor, region_id)
+			dist_to_gene = find_dist_to_gene(gene_strand, gene_start, gene_end,rfrom,rto)
+			print ("\t{} ({})  score: {}  dist to gene: {}".format(sequence, consensus,score, dist_to_gene))
+		#exit()
+	return
 
 #########################################
 def main():
 
 	assembly   = {'human':'hg19', 'mouse':'mm9'}
 	gene_name  = "Hand2"
-	chromosome = {'human':'4', 'mouse':'8'}
-	dirs = {}
-	dirs["binding_site"] = ['raw_data/tf_binding_sites_geo', 'raw_data/tf_binding_sites_ucsc']
-	dirs["hic"] = ['raw_data/hic_interactions']
+	tad_external_exp_id = "ENCFF633ORE"
+	conf_file = "/home/ivana/.mysql_conf"
+	for prerequisite in [conf_file]:
+		if os.path.exists(prerequisite): continue
+		print(prerequisite, "not found")
+		exit()
+
+	db = connect_to_mysql(conf_file)
+	cursor = db.cursor()
+	switch_to_db(cursor,'progesterone')
+
 	for species in ['human','mouse']:
 		for tf_name in ['ESR1', 'PGR']:
-			report (dirs, assembly[species], chromosome[species], gene_name, tf_name)
+			print ("\n\n", species,tf_name)
+			report (db, cursor, assembly[species], species, gene_name, tf_name, tad_external_exp_id)
 
+	cursor.close()
+	db.close()
 
 
 #########################################
