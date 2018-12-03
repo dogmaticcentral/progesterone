@@ -60,16 +60,6 @@ CREATE TABLE  genes (
   FOREIGN KEY fk_region(region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-CREATE TABLE interactions (
-  id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  region_id1 int NOT NULL,
-  region_id2 int NOT NULL,
-  ivalue int NOT NULL,
-  xref_id int DEFAULT NULL,
-  FOREIGN KEY fk_region1(region_id1) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY fk_region2(region_id2) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY fk_xref(xref_id) REFERENCES xrefs(id) ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB;
 
 -- motif ids and alignment use ";" as separator - their entries should match respectively
 -- i.e the sequence in the alignment should be the same as in motifs, up to indels

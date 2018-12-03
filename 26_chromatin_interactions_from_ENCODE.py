@@ -23,23 +23,19 @@
 import math
 
 import h5py
-import os
 from utils.utils import *
 from utils.mysqldb import *
 
 
-def inside(container_from, container_to, start, end):
-	return container_from<=start<=container_to or container_from<=end<=container_to
 
-
-
+# this will store only bins within the TAD that contains our gene of interest
 #########################################
 #
 def main():
 
 	assembly  = "hg19"
 	gene_name = "Hand2"
-	tf_name = "PGR"
+	species = "human"
 	external_exp_id = "ENCFF633ORE"
 	conf_file = "/home/ivana/.mysql_conf"
 
@@ -56,8 +52,11 @@ def main():
 	# find xref_id for the experimental data file
 	exp_file_xref_id = get_xref_id(db,cursor,external_exp_id)
 
+	# regions id for gene of interest (will need it below)
+	gene_region_id = get_gene_region_id (db, cursor, gene_name, assembly)
+
 	# find gene coordinates
-	[chromosome, strand, gene_start, gene_end] = get_gene_coords(db,cursor,gene_name,assembly)
+	[chromosome, strand, gene_start, gene_end] = get_region_coords (db,cursor,gene_region_id)
 
 	# ind the TAD
 	[tad_start, tad_end] = get_tad_region(db, cursor, exp_file_xref_id, chromosome, gene_start, gene_end)
@@ -99,9 +98,13 @@ def main():
 	#				(bin_positions[b][1]<=pend<=bin_positions[b][2])]
 	# this is 2.5 times faster
 	promoter_bins = []
+	tad_bins = []
 	for b in range(chrom_bin_from,chrom_bin_to+1):
 		bfrom, bto =bin_positions[b][1:3]
 		if bfrom<=pstart<=bto or  bfrom<=pend<=bto: promoter_bins.append(b)
+		if tad_start<=bfrom<=tad_end or tad_start<=bto<=tad_end: tad_bins.append(b)
+
+	# generalize, at some point
 	if len(promoter_bins)>1:
 		print("bins containining promoter:", promoter_bins)
 		for pb in promoter_bins:
@@ -110,20 +113,33 @@ def main():
 		exit()
 	pb = promoter_bins[0]
 	print("promoter bin: ", pb)
+	print("numer of tad bins", len(tad_bins))
 
 	###############################
 	# interactions between the promoter-containing bin and everybody else
 	pb_interactions = infile['interactions'][pb][:]
 	int_strength = {}
-	for b in range(chrom_bin_from, chrom_bin_to+1):
+	for b in  tad_bins:
 		if not math.isnan(pb_interactions[b]) and pb_interactions[b]>0.0:
 			int_strength[b] = pb_interactions[b]
-	print("number of bins in chromosome %s"%chromosome, chrom_bin_to-chrom_bin_from+1, "interacting bins:",  len(int_strength))
-	bins_sorted_by_strength = [b for b in sorted(int_strength, key=int_strength.get, reverse=True)]
 
 	###############################
+	# store
+	for b in  tad_bins:
+		bfrom, bto =bin_positions[b][1:3]
+		# store region (address)
+		fields  = {'species':species, 'chromosome':chromosome, 'assembly':assembly, 'rtype':'interacting',
+						'rfrom':bfrom, 'rto':bto, 'xref_id':exp_file_xref_id}
+		interacting_hic_region_id = store_or_update(cursor, 'regions', fields, None)
+
+		# store info about the binding region
+		fields = {'gene_name':gene_name, 'gene_hicregion_id':gene_region_id,
+				  'interacting_hic_region_id':interacting_hic_region_id, 'interaction':int_strength[b] }
+		interaction_id = store_or_update (cursor, 'hic_interactions', fields, None)
 
 
+
+	###############################
 	return True
 
 

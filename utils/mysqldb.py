@@ -178,6 +178,28 @@ def get_xref_id (db, cursor, external_exp_id):
 	hard_check (db, cursor, ret, qry)
 	return int(ret[0][0])
 
+#########################################
+def get_gene_region_id (db, cursor, gene_name, assembly):
+	qry = "select r.id  from regions as r, genes as g "
+	qry += "where g.name='%s' and g.region_id=r.id and r.assembly='%s' " % (gene_name,assembly)
+	ret = search_db(cursor,qry)
+	hard_check (db,cursor, ret, qry)
+	return ret[0][0]
+
+#########################################
+def get_region_coords (db, cursor, region_id):
+	qry  = "select chromosome, rfrom, rto, strand from regions "
+	qry += "where id=%d" % region_id
+	ret = search_db(cursor,qry)
+	hard_check (db, cursor, ret, qry)
+	# there might be multiple returns, corresponding to different splices
+	[chromosome, min_start, max_end, strand] = ret[0]
+	for row in ret:
+		[chromosome, start, end, strand] = row
+		min_start = start if min_start>start else min_start
+		max_end = end if max_end<end else max_end
+	return [chromosome, strand, min_start, max_end]
+
 
 #########################################
 def get_gene_coords (db, cursor, gene_name, assembly):
