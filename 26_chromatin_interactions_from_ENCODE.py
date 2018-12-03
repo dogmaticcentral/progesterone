@@ -48,15 +48,13 @@ def main():
 	db = connect_to_mysql(conf_file)
 	cursor = db.cursor()
 	switch_to_db(cursor,'progesterone')
+	search_db(cursor,"set autocommit=1")
 
 	# find xref_id for the experimental data file
 	exp_file_xref_id = get_xref_id(db,cursor,external_exp_id)
 
-	# regions id for gene of interest (will need it below)
-	gene_region_id = get_gene_region_id (db, cursor, gene_name, assembly)
-
 	# find gene coordinates
-	[chromosome, strand, gene_start, gene_end] = get_region_coords (db,cursor,gene_region_id)
+	[chromosome, strand, gene_start, gene_end] = get_gene_coords (db,cursor, gene_name, assembly)
 
 	# ind the TAD
 	[tad_start, tad_end] = get_tad_region(db, cursor, exp_file_xref_id, chromosome, gene_start, gene_end)
@@ -124,16 +122,24 @@ def main():
 			int_strength[b] = pb_interactions[b]
 
 	###############################
-	# store
+	# store hic region that contains  our gene
+	bfrom, bto = bin_positions[pb][1:3]
+	fields  = {'species':species, 'chromosome':chromosome, 'assembly':assembly, 'rtype':'interacting',
+						'rfrom':bfrom, 'rto':bto, 'xref_id':exp_file_xref_id}
+	gene_hic_region_id = store_or_update(cursor, 'regions', fields, None)
+
 	for b in  tad_bins:
 		bfrom, bto =bin_positions[b][1:3]
 		# store region (address)
-		fields  = {'species':species, 'chromosome':chromosome, 'assembly':assembly, 'rtype':'interacting',
-						'rfrom':bfrom, 'rto':bto, 'xref_id':exp_file_xref_id}
-		interacting_hic_region_id = store_or_update(cursor, 'regions', fields, None)
+		if b==pb:
+			interacting_hic_region_id = gene_hic_region_id
+		else: # we've done it already
+			fields  = {'species':species, 'chromosome':chromosome, 'assembly':assembly, 'rtype':'interacting',
+							'rfrom':bfrom, 'rto':bto, 'xref_id':exp_file_xref_id}
+			interacting_hic_region_id = store_or_update(cursor, 'regions', fields, None)
 
 		# store info about the binding region
-		fields = {'gene_name':gene_name, 'gene_hicregion_id':gene_region_id,
+		fields = {'gene_name':gene_name, 'gene_hic_region_id':gene_hic_region_id,
 				  'interacting_hic_region_id':interacting_hic_region_id, 'interaction':int_strength[b] }
 		interaction_id = store_or_update (cursor, 'hic_interactions', fields, None)
 
