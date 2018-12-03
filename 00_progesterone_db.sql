@@ -117,3 +117,11 @@ CREATE TABLE  hic_interactions (
 
 ) ENGINE=InnoDB;
 
+
+CREATE TABLE atac_acc_changes (
+   id int  NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   atac_region_id  int  NOT NULL,
+   logfold_change float NOT NULL,
+   pval float NOT NULL,
+   FOREIGN KEY fk_atac_region(atac_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB;

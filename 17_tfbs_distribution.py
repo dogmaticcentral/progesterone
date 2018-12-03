@@ -48,49 +48,6 @@ def  get_binding_regions_from_ucsc(assembly, chrom, tf_name):
 
 	return ret
 
-
-#########################################
-def get_binding_regions_from_local_file(ref_assembly, species, chrom, tf_name, input_data_path, input_data_table, scratchdir):
-	inf =  open(input_data_table,"r")
-	[geo_id, agonist_file, control_file, input_assembly] = [None]*4
-	for line in inf:
-		[spec, gene_name, tfnm, gid, ag_file, ctrl_file, assm] = line.rstrip().split("\t")
-		if spec==species and tfnm==tf_name:
-			[geo_id, agonist_file, control_file, input_assembly] = [gid, ag_file, ctrl_file, assm]
-			break
-	if not geo_id:
-		print("Input file not found for", species, tf_name)
-		exit()
-	binding_regions = read_binding_intervals("{}/{}".format(input_data_path, geo_id), agonist_file, control_file, chrom, None, None)
-
-	if input_assembly == ref_assembly:  # we'll need  tools to translate
-		return binding_regions
-	else:
-		chain_file="/storage/databases/liftover/{}To{}.over.chain".format(input_assembly, ref_assembly.capitalize())
-		for dep in [chain_file, scratchdir]:
-			if not dep or not os.path.exists(dep):
-				print ("I need scratch dir and chain file to translate %s to %s" %(input_assembly, ref_assembly))
-				exit()
-		outfile = "{}/{}.{}.bed".format(scratchdir, os.getpid(), input_assembly)
-		outfile_translated = "{}/{}.{}.bed".format(scratchdir, os.getpid(), ref_assembly)
-		outf = open (outfile,"w")
-		for interval in binding_regions:
-			outf.write("\t".join(["chr%s"%chrom, str(interval[0]), str(interval[1])]) + "\n")
-		outf.close()
-		(map_tree, target_chrom_sizes, source_chrom_sizes) = read_chain_file(chain_file, print_table = False)
-		crossmap_bed_file(map_tree, outfile, outfile_translated)
-		inf = open(outfile_translated,"r")
-		translated_binding_regions = []
-		for line in inf:
-			[chrom, start, end] = line.rstrip().split("\t")
-			translated_binding_regions.append([start, end])
-		os.remove(outfile)
-		os.remove(outfile_translated)
-		unmapped = outfile_translated+".unmap"
-		if os.path.exists(unmapped): os.remove(unmapped)
-		return translated_binding_regions
-
-
 #########################################
 def main():
 

@@ -35,8 +35,8 @@ def main():
 
 	assembly  = "hg19"
 	gene_name = "Hand2"
-	species = "human"
-	external_exp_id = "ENCFF633ORE"
+	species   = "human"
+	tad_external_exp_id = "ENCFF633ORE"
 	conf_file = "/home/ivana/.mysql_conf"
 
 	contacts_file = "/storage/databases/encode/ENCSR551IPY/ENCFF331ABN.h5"
@@ -51,13 +51,13 @@ def main():
 	search_db(cursor,"set autocommit=1")
 
 	# find xref_id for the experimental data file
-	exp_file_xref_id = get_xref_id(db,cursor,external_exp_id)
+	tad_xref_id = get_xref_id(db,cursor,tad_external_exp_id)
 
 	# find gene coordinates
 	[chromosome, strand, gene_start, gene_end] = get_gene_coords (db,cursor, gene_name, assembly)
 
 	# ind the TAD
-	[tad_start, tad_end] = get_tad_region(db, cursor, exp_file_xref_id, chromosome, gene_start, gene_end)
+	[tad_start, tad_end] = get_tad_region(db, cursor, tad_xref_id, chromosome, gene_start, gene_end)
 
 
 	###############################
@@ -125,7 +125,7 @@ def main():
 	# store hic region that contains  our gene
 	bfrom, bto = bin_positions[pb][1:3]
 	fields  = {'species':species, 'chromosome':chromosome, 'assembly':assembly, 'rtype':'interacting',
-						'rfrom':bfrom, 'rto':bto, 'xref_id':exp_file_xref_id}
+						'rfrom':bfrom, 'rto':bto, 'xref_id':tad_xref_id}
 	gene_hic_region_id = store_or_update(cursor, 'regions', fields, None)
 
 	for b in  tad_bins:
@@ -135,17 +135,18 @@ def main():
 			interacting_hic_region_id = gene_hic_region_id
 		else: # we've done it already
 			fields  = {'species':species, 'chromosome':chromosome, 'assembly':assembly, 'rtype':'interacting',
-							'rfrom':bfrom, 'rto':bto, 'xref_id':exp_file_xref_id}
+							'rfrom':bfrom, 'rto':bto, 'xref_id':tad_xref_id}
 			interacting_hic_region_id = store_or_update(cursor, 'regions', fields, None)
 
-		# store info about the binding region
-		fields = {'gene_name':gene_name, 'gene_hic_region_id':gene_hic_region_id,
-				  'interacting_hic_region_id':interacting_hic_region_id, 'interaction':int_strength[b] }
-		interaction_id = store_or_update (cursor, 'hic_interactions', fields, None)
+		# store info about the hic region
+		fixed_fields   = {'gene_name':gene_name, 'gene_hic_region_id':gene_hic_region_id,
+						'interacting_hic_region_id':interacting_hic_region_id}
+		update_fields  = {'interaction':int_strength[b] }
+		interaction_id = store_or_update (cursor, 'hic_interactions', fixed_fields, update_fields)
 
+	cursor.close()
+	db.close()
 
-
-	###############################
 	return True
 
 

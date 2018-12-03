@@ -249,6 +249,17 @@ def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_bindin
 	hard_check (db,cursor, ret, qry)
 	return ret
 
+########################################
+def get_binding_regions_in_interval(db, cursor, assembly, chromosome, interval_start, interval_end, tf_name):
+	qry   = "select r.rfrom, r.rto from regions as r, binding_sites as b "
+	qry  += "where b.tf_name='%s' " % tf_name
+	qry  += "and b.region_id = r.id "
+	qry  += "and r.assembly='%s' and r.chromosome='%s' " % (assembly, chromosome)
+	qry  += "and r.rfrom>=%d and r.rto<=%d " % (interval_start, interval_end)
+	ret = search_db(cursor,qry)
+	hard_check (db,cursor, ret, qry)
+	return ret
+
 
 ########################################
 def assembly2species_common(cursor,assembly):

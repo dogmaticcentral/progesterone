@@ -2,14 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/32_accessible_regions_pic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/00_progesterone_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/00_progesterone_db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_tfbs_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/17_tfbs_distribution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30_accessible_regions.py" beforeDir="false" afterPath="$PROJECT_DIR$/30_accessible_regions_store.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/mysqldb.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/mysqldb.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="30_accessible_regions_store.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/30_accessible_regions_store.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="222">
+                    <caret line="53" selection-start-line="51" selection-end-line="53" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="17_tfbs_distribution.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="706">
+                    <caret line="83" column="88" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="00_progesterone_db.sql" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="733">
+                    <caret line="123" column="17" selection-start-line="123" selection-start-column="3" selection-end-line="123" selection-end-column="17" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="mysqldb.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="654">
+                    <caret line="252" column="35" selection-start-line="252" selection-start-column="23" selection-end-line="252" selection-end-column="35" />
+                    <folding>
+                      <element signature="n#!!doc" />
+                      <element signature="e#787#984#0" />
+                      <element signature="e#890#958#0" />
+                      <element signature="e#1031#1155#0" />
+                      <element signature="e#1116#1142#0" />
+                      <element signature="e#1210#1680#0" />
+                      <element signature="e#1267#1387#0" />
+                      <element signature="e#1452#1573#0" />
+                      <element signature="e#1597#1666#0" />
+                      <element signature="e#1730#1869#0" />
+                      <element signature="e#1795#1869#0" />
+                      <element signature="e#1906#2021#0" />
+                      <element signature="e#2100#2599#0" />
+                      <element signature="e#2400#2472#0" />
+                      <element signature="e#2711#4192#0" />
+                      <element signature="e#3211#3405#0" />
+                      <element signature="e#3441#3816#0" />
+                      <element signature="e#3623#3697#0" />
+                      <element signature="e#3969#4044#0" />
+                      <element signature="e#4064#4177#0" />
+                      <element signature="e#4305#4682#0" />
+                      <element signature="e#4383#4500#0" />
+                      <element signature="e#4622#4666#0" />
+                      <element signature="e#4775#4931#0" />
+                      <element signature="e#5034#5259#0" />
+                      <element signature="e#5351#5836#0" />
+                      <element signature="e#5651#5787#0" />
+                      <element signature="e#5937#6504#0" />
+                      <element signature="e#6319#6455#0" />
+                      <element signature="e#6633#6933#0" />
+                      <element signature="e#7038#7233#0" />
+                      <element signature="e#7827#8025#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-786834255">
@@ -60,53 +147,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <file leaf-file-name="12_gene_tad.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4640">
-              <caret line="165" selection-start-line="165" selection-end-line="165" />
+            <state relative-caret-position="481">
+              <caret line="47" column="32" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
+      <file leaf-file-name="32_accessible_regions_pic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/32_accessible_regions_pic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="751">
-              <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-              <folding>
-                <element signature="e#951#962#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1146">
-              <caret line="65" column="4" selection-start-line="65" selection-end-line="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1465">
-              <caret line="216" selection-start-line="216" selection-end-line="216" />
-              <folding>
-                <marker date="1543835095171" expanded="true" signature="5349:5839" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+            <state relative-caret-position="1232">
+              <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -144,8 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/05_tf_binding_sites_from_local_source.py" />
-        <option value="$PROJECT_DIR$/18_chromatin_interactions_from_encode.py" />
         <option value="$PROJECT_DIR$/18_chromatin_interactions_from_ENCODE.py" />
         <option value="$PROJECT_DIR$/01_gene_ranges_from_UCSC.py" />
         <option value="$PROJECT_DIR$/07_tf_binding_sites_distribution.py" />
@@ -178,7 +230,6 @@
         <option value="$PROJECT_DIR$/14_tfbs_from_UCSC.py" />
         <option value="$PROJECT_DIR$/15_tfbs_UCSC_sources.py" />
         <option value="$PROJECT_DIR$/16_tfbs_from_local_bed.py" />
-        <option value="$PROJECT_DIR$/17_tfbs_distribution.py" />
         <option value="$PROJECT_DIR$/08_tads_pic.py" />
         <option value="$PROJECT_DIR$/23_motif_in_chipseq_region.py" />
         <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
@@ -192,24 +243,26 @@
         <option value="$PROJECT_DIR$/21_store_motifs_in_chipseq_regions.py" />
         <option value="$PROJECT_DIR$/22_store_alignments.py" />
         <option value="$PROJECT_DIR$/23_alignment_stats.py" />
-        <option value="$PROJECT_DIR$/utils/mysqldb.py" />
         <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
         <option value="$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py" />
+        <option value="$PROJECT_DIR$/30_accessible_regions_store.py" />
+        <option value="$PROJECT_DIR$/17_tfbs_distribution.py" />
+        <option value="$PROJECT_DIR$/utils/mysqldb.py" />
+        <option value="$PROJECT_DIR$/32_accessible_regions_pic.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="666" />
-    <option name="y" value="53" />
-    <option name="width" value="3050" />
-    <option name="height" value="2076" />
+    <option name="x" value="2011" />
+    <option name="y" value="36" />
+    <option name="width" value="1788" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,6 +279,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,15 +287,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Hand2_regulation" />
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Hand2_regulation" />
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -270,27 +324,50 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="666" y="53" width="3050" height="2076" extended-state="0" />
+    <frame x="2011" y="36" width="1788" height="1010" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25815037" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="DB Browser" order="2" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21359773" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25777543" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="DB Browser" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
+    </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.tsv" />
@@ -300,7 +377,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Hand2_regulation/00_tads_overview.py" />
     <entry file="file://$PROJECT_DIR$/PR_binding_sites/20_get_all_ChIPSeq_regions.rb" />
     <entry file="file://$PROJECT_DIR$/Hand2_regulation/02_emve_tads.py" />
     <entry file="file://$PROJECT_DIR$/18_chromatin_interactions_from_ENCODE.py" />
@@ -357,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/08_tads_pic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -382,13 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/30_accessible_regions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -439,27 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/23_alignment_stats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1682">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/22_store_alignments.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/21_store_motifs_in_chipseq_regions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -474,51 +515,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1015">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4640">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        <state relative-caret-position="2736">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
+    <entry file="file://$PROJECT_DIR$/23_alignment_stats.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1465">
-          <caret line="216" selection-start-line="216" selection-end-line="216" />
-          <folding>
-            <marker date="1543835095171" expanded="true" signature="5349:5839" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+        <state relative-caret-position="696">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/14_tfbs_from_UCSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1146">
-          <caret line="65" column="4" selection-start-line="65" selection-end-line="66" />
+        <state relative-caret-position="618">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/21_store_motifs_in_chipseq_regions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <element signature="e#736#761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/22_store_alignments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+          <folding>
+            <element signature="e#736#761#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/26_chromatin_interactions_from_ENCODE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        <state relative-caret-position="635">
+          <caret line="144" column="98" lean-forward="true" selection-start-line="144" selection-start-column="98" selection-end-line="144" selection-end-column="98" />
           <folding>
             <element signature="e#951#962#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/30_accessible_regions_store.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="53" selection-start-line="51" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17_tfbs_distribution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="83" column="88" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00_progesterone_db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="123" column="17" selection-start-line="123" selection-start-column="3" selection-end-line="123" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_gene_tad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="252" column="35" selection-start-line="252" selection-start-column="23" selection-end-line="252" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#787#984#0" />
+            <element signature="e#890#958#0" />
+            <element signature="e#1031#1155#0" />
+            <element signature="e#1116#1142#0" />
+            <element signature="e#1210#1680#0" />
+            <element signature="e#1267#1387#0" />
+            <element signature="e#1452#1573#0" />
+            <element signature="e#1597#1666#0" />
+            <element signature="e#1730#1869#0" />
+            <element signature="e#1795#1869#0" />
+            <element signature="e#1906#2021#0" />
+            <element signature="e#2100#2599#0" />
+            <element signature="e#2400#2472#0" />
+            <element signature="e#2711#4192#0" />
+            <element signature="e#3211#3405#0" />
+            <element signature="e#3441#3816#0" />
+            <element signature="e#3623#3697#0" />
+            <element signature="e#3969#4044#0" />
+            <element signature="e#4064#4177#0" />
+            <element signature="e#4305#4682#0" />
+            <element signature="e#4383#4500#0" />
+            <element signature="e#4622#4666#0" />
+            <element signature="e#4775#4931#0" />
+            <element signature="e#5034#5259#0" />
+            <element signature="e#5351#5836#0" />
+            <element signature="e#5651#5787#0" />
+            <element signature="e#5937#6504#0" />
+            <element signature="e#6319#6455#0" />
+            <element signature="e#6633#6933#0" />
+            <element signature="e#7038#7233#0" />
+            <element signature="e#7827#8025#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/32_accessible_regions_pic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
         </state>
       </provider>
     </entry>

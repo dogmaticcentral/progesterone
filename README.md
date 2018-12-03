@@ -308,7 +308,7 @@ chromatin accessibility. For the case this pipeline was originally intended for,
 [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104720), 
 the information about chromatin accessibility change upon progesteron administration in human 
 endometrial stromal cells. 
-[30_accessible_regions.py](30_accessible_regions.py)
+[30_accessible_regions.py](30_accessible_regions_store.py)
  pools it together, in the form of a Matplotlib plot, 
  with the coordinates of our gene of interest and of  TF binding sites for two
  TFs: ESR1 and PGR.
