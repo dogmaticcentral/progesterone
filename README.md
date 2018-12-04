@@ -18,8 +18,8 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
 ## Table of Contents
 
 * [Dependencies](#dependencies)
-* [Organizing work/data flow](#organizing-work-data-flow)
-* [Gene coordinates](#gene-coordinates)
+* [Organizing work/data flow](#organizing-workdata-flow)
+* [Gene coordinates](#gene-coordinates)ivanamihalek
 * [What's with this TAD business](#whats-with-this-tad-business)
 * [Which TAD does my gene belong to](#which-tad-does-my-gene-belong-to)
 * [Where do transcription factors bind within that TAD](#where-do-transcription-factors-bind-within-that-tad)
