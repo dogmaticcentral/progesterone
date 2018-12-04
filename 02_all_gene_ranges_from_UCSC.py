@@ -24,8 +24,18 @@ import os
 #########################################
 def main():
 
-	species ="human"
-	assembly = "hg19"
+	#species ="human"
+	species ="mouse"
+
+	chromosomes = []
+	if species =='human':
+		#chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX", "chrY"]
+		assembly = "hg19"
+		chromosomes = ["chr4"]
+	elif species =='mouse':
+		assembly = "mm9"
+		chromosomes = ["chr8"]
+		#chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX", "chrY"]
 
 	# The UCSC Genome Browser database: 2019 update.: pubmed id 30407534
 	pubmed_id = '30407534'
@@ -49,11 +59,6 @@ def main():
 	ucsc_cursor = ucsc_db.cursor()
 	switch_to_db(ucsc_cursor, assembly)
 
-	chromosomes = []
-	if species =='human':
-		chromosomes = ["chr"+str(x) for x in range(1,23)] + ["chrX", "chrY"]
-	elif species =='mouse':
-		chromosomes = ["chr"+str(x) for x in range(1,20)] + ["chrX", "chrY"]
 	for chrom in chromosomes:
 		print("downloading data for", assembly, chrom)
 		qry  = "select name,  name2, strand, txStart, txEnd "

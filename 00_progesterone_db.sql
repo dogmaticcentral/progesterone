@@ -93,7 +93,7 @@ CREATE TABLE  binding_sites (
   motif_ids text DEFAULT NULL,
   region_id int NOT NULL,
   xref_id int DEFAULT NULL,
-  FOREIGN KEY fk_region(chipseq_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY fk_region(region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY fk_xref(xref_id) REFERENCES xrefs(id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
 

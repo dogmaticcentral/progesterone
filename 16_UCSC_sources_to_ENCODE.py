@@ -62,9 +62,9 @@ def main():
 		[ucsc_xref_id, ucsc_id] = line
 		if not ucsc_id in ucsc_ids: continue
 		encode_file_xref_id = store_or_update(cursor, 'xrefs', {'xtype':'encode', 'external_id': encode_file_id[ucsc_id]}, None)
-		search_db(cursor, "update xrefs set parent_id=%d where id=%d" % (encode_file_xref_id, ucsc_xref_id), verbose=True)
+		search_db(cursor, "update xrefs set parent_id=%d where id=%d" % (encode_file_xref_id, ucsc_xref_id))
 		encode_exp_xref_id = store_or_update(cursor, 'xrefs', {'xtype':'encode', 'external_id': encode_exp_id[ucsc_id]}, None)
-		search_db(cursor, "update xrefs set parent_id=%d where id=%d" % (encode_exp_xref_id, encode_file_xref_id), verbose=True)
+		search_db(cursor, "update xrefs set parent_id=%d where id=%d" % (encode_exp_xref_id, encode_file_xref_id))
 
 	cursor.close()
 	db.close()

@@ -2,7 +2,7 @@
 
 This is a set of scripts that try to answer the question: is it possible that a gene A 
 is under control of transcription  factor B, given currently available experimental 
-evidence. Response to progesterone and estrogen was the original topic.
+evidence. Response of a genet called Hand2 to progesterone and estrogen was the original topic.
 
 _Progesterone_ is not a library  - the scripts are loosely connected by a couple of common methods 
 in the utils module. They average some hundred lines in length, and can
@@ -16,7 +16,7 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
 <!-- once installed, use with gh-md-toc README.md    -->
  
 ## Table of Contents
-* [Table of Contents](#table-of-contents)
+
 * [Dependencies](#dependencies)
 * [Gene coordinates](#gene-coordinates)
 * [What's with this TAD business](#whats-with-this-tad-business)
@@ -44,8 +44,8 @@ install them right away but only (or when) they become necessary.
 * [UCSC genome database, accessed directly through MySQL](https://genome.ucsc.edu/goldenpath/help/mysql.html)
 
 * MySQLdb python module, installed with _sudo apt install python3-mysqldb_. _Progesterone_ scripts 
-also count on mysql configuration  somewhere at the top of the current
-user's directory tree. Here it is called '.ucsc_mysql_conf'  and looks like this:
+also count on 2 mysql configuration  files somewhere at the top of the current
+user's directory tree. One is called '.ucsc_mysql_conf'  and looks like this:
 
 `[client]`   
 `skip-auto-rehash`  
@@ -53,7 +53,8 @@ user's directory tree. Here it is called '.ucsc_mysql_conf'  and looks like this
 `host = genome-mysql.soe.ucsc.edu`  
 `port = 3306`
 
-
+The other one is '.mysql_conf' providing credentials for logging into MySQL running locally. 
+You can template it on the one above.
 
 * data from HiC experiment on [... something](https://www.encodeproject.org/experiments/ENCSR551IPY/) - 
   adapt this to the cell/tissue type you are interested in
@@ -87,7 +88,7 @@ one to work you will also need _pip3 install bx-python_
 
 * Multiple alignment files (mafs) from UCSC for 
 [mouse](http://hgdownload.soe.ucsc.edu/goldenPath/mm9/multiz30way/maf/) and 
-[human](http://hgdownload.soe.ucsc.edu/goldenPath/hg19/multiz100way/maf/) - 
+[human](http://hgdownload.soe.ucsc.edu/goldenPath/hg19/multiz4way/maf/) - 
 these are voluminous  and optional. If you
 know the chromsome your gene resides on, you can download maf(s) for that chromosome only.
  
@@ -96,11 +97,27 @@ know the chromsome your gene resides on, you can download maf(s) for that chromo
   each script will prompt you to create it as necessary. 
  Feel free to change the scripts  if you would like to organize things differently.
 
+## Organizing work/data flow
+While it is possible to organize this type of work around a set of local files, it quickly turns into unworkable mess 
+(guess how I know). The recommendation is thus to use a database. This is not so much about the volume of the data,
+which in this exercise is actually not so big, but rather about the ability to crossreference and 
+collate the information.
+_Progesterone_ pipeline uses MySQL.
+Running
+"mysql -u` <username> `-p `<passw> `< [00_progesterone_db.sql](00_progesterone_db.sql)"
+will create the database
+called "progesterone" for you. We will fill it as we progress though the steps below. 
+
+
 ## Gene coordinates
-You may start by downloading chromosome lengths and gene coordinates from UCSC using 
+You may start by downloading (human and mouse) chromosome lengths and gene coordinates from UCSC using 
 [01_chromosome_lengths_from_UCSC.py](01_chromosome_lengths_from_UCSC.py) 
-and [02_gene_ranges_from_UCSC.py](02_all_gene_ranges_from_UCSC.py), 
-or you can download them later, when they become needed.
+and [02_all_gene_ranges_from_UCSC.py](02_all_gene_ranges_from_UCSC.py). The scripts will stuff them in the
+database we have just created. On the top of [02_all_gene_ranges_from_UCSC.py](02_all_gene_ranges_from_UCSC.py) you can specify
+the chromosome and assembly to be (down)loaded. [03_assembly_shorthands_from_UCSC.py](03_assembly_shorthands_from_UCSC.py) 
+downloads mapping between assembly and species names. This comes handy in 
+[04_single_gene_range_from_UCSC.py](04_single_gene_range_from_UCSC.py) where we specify gene coordinates for gene 
+of special interest, across multiple species.
 
 ## What's with this TAD business
 
@@ -134,6 +151,7 @@ You will need to download TAD files from the [Yue lab page](http://promoter.bx.p
  than the number of TADs typically reported in each experiment.
  
  [08_tads_pic.py](08_tads_pic.py) contains basic code to illustrate  the reported TAD domains. 
+ It relies on the output produced by [06_tads_overview.py](06_tads_overview.py).
  It uses [Matplotlib](https://matplotlib.org/); note that in Matplotlib you can zoom 
  into any region of the graph you are interested in. 
  Here are the TADS for human chromsome 1, from 35 different experiments from the Yue lab collection:
@@ -155,10 +173,11 @@ of Matplotlib rather than the script itself.
 
 ## Which TAD does my gene belong to
 Provided you have downloaded gene ranges using [02_gene_ranges_from_UCSC.py](02_all_gene_ranges_from_UCSC.py) and installed bed file containig
- definition of TADs you wnat to stick with 
- (this pipeline originally used [this](https://www.encodeproject.org/files/ENCFF633ORE/)),
-  [12_gene_tad.py](12_gene_tad.py) will find the
- coordinates of the TAD that your gene belons to.
+ definition of TADs you would like  to stick with 
+ (this pipeline originally used [this](https://www.encodeproject.org/files/ENCFF633ORE/)), 
+ [10_store_tads.py ](10_store_tads.py) will store it  in the db. After that
+  [12_gene_tad.py](12_gene_tad.py) will quickly find the
+ coordinates of the TAD that your gene belongs to.
 
 ## Where do transcription factors bind within that TAD
 
@@ -185,17 +204,20 @@ ENCODE search page and use the combined search on cell type and treatment or som
 Note that the experiment numbers output here refer to the expNum field in the tables 
 produced by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py).
 
+[16_UCSC_sources_to_ENCODE.py](16_UCSC_sources_to_ENCODE.py) is a patch to systematically connect that info inside a
+database table.
+
 
 ### ChIPSeq from local bed files
 
 For description of bed format click [here](https://genome.ucsc.edu/FAQ/FAQformat.html#format1).
 
-[16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) will produce equivalent output to 
+[17_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) will produce equivalent output to 
 [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py), but starting from a local
 list of bedfiles (the files should refer to ChIPSeq experiments, and can be found 
 on [GEO](https://www.ncbi.nlm.nih.gov/geo/)
 and [ENCODE](https://www.encodeproject.org/) pages, for example, or you may use your own source.)
-[16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) will take as the input on the command line the
+[17_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) will take as the input on the command line the
 path to the data directory  and 
 [tsv](https://en.wikipedia.org/wiki/Tab-separated_values) table containing some basic input file meta-data.
 

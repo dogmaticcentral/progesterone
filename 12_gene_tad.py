@@ -56,8 +56,8 @@ def main():
 	cursor.close()
 	db.close()
 
-	print ( "{} {} {}:{}-{}".format(gene_name, strand, chromosome, min_start, max_end) )
-	print ("TAD containing %s region: %s:%d-%d   length %d"%(gene_name, chromosome,
+	print ( "{} {} {}:{}:{}-{}".format(gene_name, strand, assembly, chromosome, min_start, max_end) )
+	print ("TAD containing %s region: %s:%s:%d-%d   length %d"%(gene_name, assembly, chromosome,
 															 tad_start, tad_end, tad_end-tad_start+1))
 
 #########################################
