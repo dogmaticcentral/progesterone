@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/00_progesterone_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/00_progesterone_db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_single_gene_range_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/04_single_gene_range_from_UCSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/12_gene_tad.py" beforeDir="false" afterPath="$PROJECT_DIR$/12_gene_tad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/16_UCSC_sources_to_ENCODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/16_UCSC_sources_to_ENCODE.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,8 +64,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="774">
-                <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
+              <first_editor relative-caret-position="72">
+                <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               </first_editor>
               <second_editor />
             </state>
@@ -250,7 +244,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="2105" y="7" width="1717" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -261,7 +255,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19873485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22255018" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -575,8 +569,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="774">
-            <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
+          <first_editor relative-caret-position="72">
+            <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           </first_editor>
           <second_editor />
         </state>

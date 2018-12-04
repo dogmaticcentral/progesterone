@@ -2,7 +2,7 @@
 
 This is a set of scripts that try to answer the question: is it possible that a gene A 
 is under control of transcription  factor B, given currently available experimental 
-evidence. Response of a genet called Hand2 to progesterone and estrogen was the original topic.
+evidence. Response of a gene called Hand2 to progesterone and estrogen was the original topic.
 
 _Progesterone_ is not a library  - the scripts are loosely connected by a couple of common methods 
 in the utils module. They average some hundred lines in length, and can
@@ -18,6 +18,7 @@ sub-questions, which may add up to an answer. Depends on the answer you are hopi
 ## Table of Contents
 
 * [Dependencies](#dependencies)
+* [Organizing work/data flow](#organizing-work/data-flow)
 * [Gene coordinates](#gene-coordinates)
 * [What's with this TAD business](#whats-with-this-tad-business)
 * [Which TAD does my gene belong to](#which-tad-does-my-gene-belong-to)
