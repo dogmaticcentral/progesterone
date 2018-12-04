@@ -99,7 +99,7 @@ know the chromsome your gene resides on, you can download maf(s) for that chromo
 ## Gene coordinates
 You may start by downloading chromosome lengths and gene coordinates from UCSC using 
 [01_chromosome_lengths_from_UCSC.py](01_chromosome_lengths_from_UCSC.py) 
-and [02_gene_ranges_from_UCSC.py](02_gene_ranges_from_UCSC.py), 
+and [02_gene_ranges_from_UCSC.py](02_all_gene_ranges_from_UCSC.py), 
 or you can download them later, when they become needed.
 
 ## What's with this TAD business
@@ -154,7 +154,7 @@ of Matplotlib rather than the script itself.
 
 
 ## Which TAD does my gene belong to
-Provided you have downloaded gene ranges using [02_gene_ranges_from_UCSC.py](02_gene_ranges_from_UCSC.py) and installed bed file containig
+Provided you have downloaded gene ranges using [02_gene_ranges_from_UCSC.py](02_all_gene_ranges_from_UCSC.py) and installed bed file containig
  definition of TADs you wnat to stick with 
  (this pipeline originally used [this](https://www.encodeproject.org/files/ENCFF633ORE/)),
   [12_gene_tad.py](12_gene_tad.py) will find the
@@ -190,12 +190,12 @@ produced by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py)
 
 For description of bed format click [here](https://genome.ucsc.edu/FAQ/FAQformat.html#format1).
 
-[16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) will produce equivalent output to 
+[16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) will produce equivalent output to 
 [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py), but starting from a local
 list of bedfiles (the files should refer to ChIPSeq experiments, and can be found 
 on [GEO](https://www.ncbi.nlm.nih.gov/geo/)
 and [ENCODE](https://www.encodeproject.org/) pages, for example, or you may use your own source.)
-[16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) will take as the input on the command line the
+[16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) will take as the input on the command line the
 path to the data directory  and 
 [tsv](https://en.wikipedia.org/wiki/Tab-separated_values) table containing some basic input file meta-data.
 
@@ -225,7 +225,7 @@ There are some special considerations to be taken in account here:
 
 #### BED format
 
- [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) expects "bed" format, which here means that the columns are tab separated, the
+ [16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) expects "bed" format, which here means that the columns are tab separated, the
 first column is chromosome number (possibly prefixed by 'chr'), and the following two are
 region start and region end. The format is still not universally accepted as the standard, so in GEO for
 example you can find data deposited in assorted _ad hoc_ formats.  If the file is not
@@ -246,7 +246,7 @@ You may grep for hg or mm to see which one is referred to. If it is not hg19 for
 or mm9 for mouse, the coordinates need to be translated.
  (In Windows you might try using a spreadsheet program to reformat the file. Just make sure
  you do not have too many  in your bed file). Include that information in the table you pass to 
- [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and it will translate the coordinates for you,
+ [16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) and it will translate the coordinates for you,
  provided the following two resources: [CrossMap](http://crossmap.sourceforge.net/), a copy of
  which is included in this distribution in the [utils directory](utils/CrossMap.py), 
  and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
@@ -261,9 +261,9 @@ it harbors, or are the TF binding sites perhaps distributed equally across all T
  might imply that the TF binding sites we are finding are just distributed by some random process - this
 would raise an awkward possibility that we are  just looking at noise.
 
-[17_tfbs_distribution.py](17_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
-For Gnuplot users, an input like [18_tfbs_distribution.gplt](18_tfbs_distribution.gplt) can be used to produce
-a quick and dirty visualization of the TFs-per-TAD histogram. The output from [17_tfbs_distribution.py](17_tfbs_distribution.py) can also be used to check correlation
+[17_tfbs_distribution.py](18_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
+For Gnuplot users, an input like [18_tfbs_distribution.gplt](19_tfbs_distribution.gplt) can be used to produce
+a quick and dirty visualization of the TFs-per-TAD histogram. The output from [17_tfbs_distribution.py](18_tfbs_distribution.py) can also be used to check correlation
 between TAD length and the number of TF binding sites therein (mercifully, there does not seem to be any).
 
 ## Where exactly (and and how good) is the TF binding motif within each ChIPSeq region
@@ -275,7 +275,7 @@ given range.
 
 [22_motif_in_chipseq_region.py](23_motif_in_chipseq_region.py) will scan each chipseq range from a file produced 
 by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) 
-or [16_tfbs_from_local_bed.py](16_tfbs_from_local_bed.py) and report all motifs scoring beyond certain cutoff.
+or [16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) and report all motifs scoring beyond certain cutoff.
 For such motifs it will proceed to look for the alignment with other vertebrates. (The idea with using
 all vertebrates is to see how far in back in the evolution the conservation can be tracked, or to eliminate motifs that are taxonomy branches that do not exhibit the same regulatory behavior;
 you may go for pairwise alignments with smaller number od species.) Note: extracting the alignment from maf files

@@ -275,9 +275,39 @@ def get_motifs_in_binding_site(db, cursor, binding_site_id):
 	permissive_check(db,cursor, ret, qry)
 	return [r[0] for r in ret] if ret else []
 
+
 ########################################
 def assembly2species_common(cursor,assembly):
 	ret = search_db(cursor,"select common_name from assemblies where  assembly='%s'"% assembly)
 	if not ret or type(ret[0][0])!=str or 'Error' in ret[0][0]:
 		return ""
 	return ret[0][0].strip().lower()
+
+
+########################################
+def get_references(db, cursor, xref_id):
+	refs = []
+	ret = search_db(cursor,"select xtype, external_id, parent_id  from xrefs where id=%d"% xref_id)
+	if not ret or type(ret[0][0])!=str or 'Error' in ret[0][0]:
+		return refs
+	for line in ret:
+		[xtype, external_id, parent_id] = line
+		if "," in external_id:
+			ref_lineage = []
+			for ext_id in external_id.split(","):
+				qry = "select id from xrefs where external_id='%s'"% ext_id
+				ret2 = search_db(cursor,qry)
+				hard_check(db,cursor,ret2, qry)
+				xref_id2 = ret2[0][0]
+				this_ref = get_references(db, cursor, xref_id2)
+				if len(this_ref)>0: ref_lineage.append(get_references(db, cursor, xref_id2))
+			return ";".join(ref_lineage)
+
+		elif not xtype=='ucsc':
+			refs.append("{}:{}".format(xtype.upper(),external_id))
+
+		if parent_id:
+			refs.append(get_references(db, cursor, parent_id))
+	return ",".join(refs)
+
+

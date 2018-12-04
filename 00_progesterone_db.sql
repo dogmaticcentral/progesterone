@@ -113,7 +113,7 @@ CREATE TABLE  hic_interactions (
   interacting_hic_region_id  int  NOT NULL,
   interaction int  NOT NULL,
   FOREIGN KEY fk_gene_hic_region(gene_hic_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY fk_iny_region(interacting_hic_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY fk_int_region(interacting_hic_region_id) REFERENCES regions(id) ON UPDATE CASCADE ON DELETE CASCADE
 
 ) ENGINE=InnoDB;
 
