@@ -31,7 +31,6 @@ def get_atac_regions(db, cursor, assembly, chromosome, tfbs_start, tfbs_end):
 	permissive_check (db,cursor, ret, qry)
 	return ret if ret else []
 
-
 #########################################
 def get_interacting_regions(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end):
 	qry  = "select r.rfrom, r.rto, h.interaction from regions as r, hic_interactions as h "
@@ -41,7 +40,6 @@ def get_interacting_regions(db, cursor, assembly, chromosome, gene_name, tfbs_st
 	ret = search_db(cursor,qry)
 	permissive_check (db,cursor, ret, qry)
 	return ret if ret else []
-
 
 #########################################
 def find_selfint(db, cursor, assembly, chromosome, gene_name):
@@ -64,7 +62,6 @@ def find_selfint(db, cursor, assembly, chromosome, gene_name):
 		exit()
 	return ret[0][0]
 
-
 #########################################
 def int_report(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end):
 	selfint_value = find_selfint(db, cursor, assembly, chromosome, gene_name)
@@ -75,7 +72,7 @@ def int_report(db, cursor, assembly, chromosome, gene_name, tfbs_start, tfbs_end
 		print("\t interaction:", rfrom, rto, interaction, "%.1f%%"%(interaction/selfint_value*100))
 
 
-def find_dist_to_gene (strand, gene_start, gene_end,rfrom,rto):
+def find_dist_to_gene (strand, gene_start, gene_end, rfrom, rto):
 	if rto<gene_start:
 		dist = (gene_start-rto)/1000
 		direction = "upstream" if strand=="+" else "downstream"
@@ -87,6 +84,30 @@ def find_dist_to_gene (strand, gene_start, gene_end,rfrom,rto):
 		direction = "within gene_region"
 
 	return "%1.f Kbp, %s" %(dist, direction)
+
+
+#########################################
+def get_alignment(db, cursor, alignment_id, gene_name):
+	qry = "select motif_ids, alignment from alignments wehere id=%d" % alignment_id
+	ret = search_db(cursor,qry)
+	hard_check(db, cursor, ret, qry)
+	motif_ids = ret[0][0].split(",")
+	seqs = ret[0][1].split(",")
+	alignment = dict(zip(motif_ids,seqs))
+	# get info for all motifs
+	qry  = "select m.id, r.assembly, r.chrom, r.rfrom, r.rto from ragions as r, motifs as m "
+	qry += "where m.alignment.id = %d  and m.region_id=reion.id" % alignment_id
+	ret = search_db(cursor,qry)
+	hard_check(db, cursor, ret, qry)
+	label = []
+	for [motif_id, assembly, rchrom, rform, rto]  in ret:
+		# species common name
+		species_common = ""
+		# gene position in this assmebly
+		# distance to gene
+		distance_to_gene = ""
+		label[motif_id] = ",".join(species_common, assembly,distance_to_gene)
+
 
 
 #########################################
@@ -122,6 +143,8 @@ def report (db, cursor, assembly,  species, gene_name, tf_name, tad_external_exp
 			hard_check(db,cursor, ret, qry)
 			[mid, region_id, tf_name, sequence, consensus, score, xref_id, alignment_id] = ret[0]
 			# reconstruct alignment from alignment_id
+			alignment, labels = get_alignment(db, cursor, alignment_id, gene_name)
+			alignment_report(alignment, labels)
 			# find distance to gene
 			[chromosome, rfrom, rto, strand] = get_region_coords (db, cursor, region_id)
 			dist_to_gene = find_dist_to_gene(gene_strand, gene_start, gene_end,rfrom,rto)
