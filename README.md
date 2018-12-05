@@ -248,7 +248,7 @@ There are some special considerations to be taken in account here:
 
 #### BED format
 
- [16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) expects "bed" format, which here means that the columns are tab separated, the
+ [17_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) expects "bed" format, which here means that the columns are tab separated, the
 first column is chromosome number (possibly prefixed by 'chr'), and the following two are
 region start and region end. The format is still not universally accepted as the standard, so in GEO for
 example you can find data deposited in assorted _ad hoc_ formats.  If the file is not
@@ -269,7 +269,7 @@ You may grep for hg or mm to see which one is referred to. If it is not hg19 for
 or mm9 for mouse, the coordinates need to be translated.
  (In Windows you might try using a spreadsheet program to reformat the file. Just make sure
  you do not have too many  in your bed file). Include that information in the table you pass to 
- [16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) and it will translate the coordinates for you,
+ [17tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) and it will translate the coordinates for you,
  provided the following two resources: [CrossMap](http://crossmap.sourceforge.net/), a copy of
  which is included in this distribution in the [utils directory](utils/CrossMap.py), 
  and [transformation chain files](http://crossmap.sourceforge.net/#chain-file)). The script will
@@ -284,8 +284,8 @@ it harbors, or are the TF binding sites perhaps distributed equally across all T
  might imply that the TF binding sites we are finding are just distributed by some random process - this
 would raise an awkward possibility that we are  just looking at noise.
 
-[17_tfbs_distribution.py](18_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
-For Gnuplot users, an input like [18_tfbs_distribution.gplt](19_tfbs_distribution.gplt) can be used to produce
+[18_tfbs_distribution.py](18_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
+For Gnuplot users, an input like [19_tfbs_distribution.gplt](19_tfbs_distribution.gplt) can be used to produce
 a quick and dirty visualization of the TFs-per-TAD histogram. The output from [17_tfbs_distribution.py](18_tfbs_distribution.py) can also be used to check correlation
 between TAD length and the number of TF binding sites therein (mercifully, there does not seem to be any).
 

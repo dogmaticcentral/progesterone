@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_tfbs_from_local_bed.py" beforeDir="false" afterPath="$PROJECT_DIR$/17_tfbs_from_local_bed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,25 +18,25 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="2" />
-          <entry key="project.open.time.4" value="7" />
+          <entry key="project.open.time.4" value="8" />
           <entry key="project.open.time.5" value="5" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="gplt" value="1" />
-          <entry key="py" value="39" />
+          <entry key="py" value="43" />
           <entry key="sql" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="39" />
+          <entry key="Python" value="43" />
           <entry key="SQL" value="2" />
         </counts>
       </usages-collector>
@@ -43,16 +45,16 @@
           <entry key="dummy" value="22" />
           <entry key="gitignore" value="7" />
           <entry key="gplt" value="1" />
-          <entry key="md" value="2040" />
-          <entry key="py" value="5401" />
+          <entry key="md" value="2044" />
+          <entry key="py" value="5523" />
           <entry key="sql" value="171" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="2040" />
+          <entry key="Markdown" value="2044" />
           <entry key="PLAIN_TEXT" value="30" />
-          <entry key="Python" value="5401" />
+          <entry key="Python" value="5523" />
           <entry key="SQL" value="171" />
         </counts>
       </usages-collector>
@@ -60,26 +62,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="72">
-                <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+              <first_editor relative-caret-position="710">
+                <caret line="287" column="36" selection-start-line="287" selection-start-column="36" selection-end-line="287" selection-end-column="36" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="16_UCSC_sources_to_ENCODE.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/16_UCSC_sources_to_ENCODE.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/17_tfbs_from_local_bed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="66" column="113" selection-start-line="66" selection-start-column="113" selection-end-line="66" selection-end-column="113" />
-              <folding>
-                <element signature="e#736#763#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="929">
+              <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1503">
+              <caret line="83" column="88" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -118,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/08_tad_distr.gplt" />
         <option value="$PROJECT_DIR$/04_tfbs_UCSC_sources.py" />
         <option value="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" />
         <option value="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" />
@@ -150,7 +157,6 @@
         <option value="$PROJECT_DIR$/24_hdf5_exercise.py" />
         <option value="$PROJECT_DIR$/25_hdf5_exercise2_normalization.py" />
         <option value="$PROJECT_DIR$/30_accessible_regions.py" />
-        <option value="$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/utils/utils.py" />
         <option value="$PROJECT_DIR$/22_store_alignments.py" />
@@ -164,19 +170,21 @@
         <option value="$PROJECT_DIR$/utils/mysqldb.py" />
         <option value="$PROJECT_DIR$/35_report.py" />
         <option value="$PROJECT_DIR$/00_progesterone_db.sql" />
-        <option value="$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py" />
         <option value="$PROJECT_DIR$/04_single_gene_range_from_UCSC.py" />
         <option value="$PROJECT_DIR$/12_gene_tad.py" />
         <option value="$PROJECT_DIR$/16_UCSC_sources_to_ENCODE.py" />
+        <option value="$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py" />
+        <option value="$PROJECT_DIR$/17_tfbs_from_local_bed.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2105" />
-    <option name="y" value="7" />
-    <option name="width" value="1717" />
-    <option name="height" value="1008" />
+    <option name="x" value="530" />
+    <option name="y" value="236" />
+    <option name="width" value="3198" />
+    <option name="height" value="1871" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -244,62 +252,49 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2105" y="7" width="1717" height="1008" extended-state="0" />
+    <frame x="530" y="236" width="3198" height="1871" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="DB Browser" order="2" />
-      <window_info anchor="bottom" id="DB Execution Console" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22255018" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23779328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="DB Execution Console" order="7" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="DB Browser" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983367" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="DB Browser" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25777543" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="DB Execution Console" order="7" />
-      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="DB Browser" order="3" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -401,20 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="83" column="88" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/17_tfbs_from_local_bed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1674">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/32_accessible_regions_pic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -454,32 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#787#984#0" />
-            <element signature="e#890#958#0" />
-            <element signature="e#1210#1680#0" />
-            <element signature="e#1267#1387#0" />
-            <element signature="e#1452#1573#0" />
-            <element signature="e#1597#1666#0" />
-            <element signature="e#1731#1870#0" />
-            <element signature="e#1796#1870#0" />
-            <element signature="e#1927#2063#0" />
-            <element signature="e#1989#2063#0" />
-            <element signature="e#2100#2215#0" />
-            <element signature="e#2294#2793#0" />
-            <element signature="e#2594#2666#0" />
-            <element signature="e#2905#4386#0" />
-            <element signature="e#3405#3599#0" />
-            <element signature="e#3635#4010#0" />
-            <element signature="e#3817#3891#0" />
-            <element signature="e#4163#4238#0" />
-            <element signature="e#4258#4371#0" />
-            <element signature="e#4499#4876#0" />
-            <element signature="e#4577#4694#0" />
-            <element signature="e#4816#4860#0" />
-            <element signature="e#4969#5125#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -487,9 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2357">
           <caret line="206" column="35" lean-forward="true" selection-start-line="206" selection-start-column="35" selection-end-line="206" selection-end-column="35" />
-          <folding>
-            <element signature="e#736#761#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -504,20 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -558,7 +496,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/16_UCSC_sources_to_ENCODE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
+        <state relative-caret-position="1885">
           <caret line="66" column="113" selection-start-line="66" selection-start-column="113" selection-end-line="66" selection-end-column="113" />
           <folding>
             <element signature="e#736#763#0" expanded="true" />
@@ -566,11 +504,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/02_all_gene_ranges_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03_assembly_shorthands_from_UCSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17_tfbs_from_local_bed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="929">
+          <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1503">
+          <caret line="83" column="88" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="72">
-            <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <first_editor relative-caret-position="710">
+            <caret line="287" column="36" selection-start-line="287" selection-start-column="36" selection-end-line="287" selection-end-column="36" />
           </first_editor>
           <second_editor />
         </state>

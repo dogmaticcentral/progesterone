@@ -42,7 +42,6 @@ def main():
 	ucsc_db.close()
 
 
-
 	local_db = connect_to_mysql(local_conf_file)
 	local_cursor = local_db.cursor()
 	# autocommit is on by default, except when it is not

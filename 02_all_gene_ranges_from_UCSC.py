@@ -24,8 +24,8 @@ import os
 #########################################
 def main():
 
-	#species ="human"
-	species ="mouse"
+	species ="human"
+	#species ="mouse"
 
 	chromosomes = []
 	if species =='human':

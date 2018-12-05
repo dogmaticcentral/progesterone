@@ -131,7 +131,9 @@ def store_binding_regions(cursor, binding_info, check_duplicates = False):
 #########################################
 def main():
 
-	check_duplicates = True # when storing to the local database - makes things slower
+	# setting check_duplicates to True  makes things slower
+	# set to False may  produce duplicate rows in the database if run twice on the same input
+	check_duplicates = True
 
 	if len(sys.argv) < 3:
 		print("Usage: %s <data directory path> <input_data.tsv> " % sys.argv[0])
