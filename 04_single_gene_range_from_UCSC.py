@@ -24,7 +24,7 @@ import os
 def main():
 
 	gene_name = "Hand2"
-	species = ['human', 'gorilla','rhesus',  'mouse', 'rat']
+	species = ['human', 'chimp','rhesus',  'mouse', 'rat']
 
 	# The UCSC Genome Browser database: 2019 update.: pubmed id 30407534
 	pubmed_id = '30407534'

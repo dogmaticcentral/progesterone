@@ -23,8 +23,10 @@ from utils.mysqldb import *
 #########################################
 def main():
 
-	species = 'mouse'
-	tf_name = 'PGR'
+	species   = 'human'
+	gene_name = 'Hand2'
+	tf_name   = 'PGR'
+	tad_external_exp_id = "ENCFF633ORE"
 	verbose = True
 
 	if not species in ['human','mouse']:
@@ -33,12 +35,10 @@ def main():
 
 	if species=="human":
 		assembly = "hg19"
-		chromosome = "chr4"
 		sequences_dir = "raw_data/chipseq_region_seqs_human"
 		score_threshold = 10
 	else:
 		assembly = "mm9"
-		chromosome = "chr8"
 		sequences_dir = "raw_data/chipseq_region_seqs_mouse"
 		score_threshold = 5
 
@@ -77,8 +77,23 @@ def main():
 	xref_id = store_xref(cursor, 'pubmed', pubmed_id)
 
 	#########################
+	[chromosome, strand, gene_start, gene_end] = get_gene_coords(db,cursor,gene_name,assembly)
+
+	#########################
+	# tad boundaries
+	if species=="human":
+		# find xref_id for the experimental data file
+		tad_file_xref_id = get_xref_id(db,cursor,tad_external_exp_id)
+		[tad_start, tad_end] = get_tad_region(db, cursor, tad_file_xref_id, chromosome, gene_start, gene_end)
+	else:
+		[tad_start, tad_end] = [gene_start-750000, gene_end+750000]
+
+	#########################
 	# read chipseq_regions
-	chipseq_regions = get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_binding_site_id=True)
+	chipseq_regions = get_binding_regions_in_interval(db, cursor, assembly, chromosome,
+													tad_start, tad_end, tf_name, return_binding_site_id=True)
+	print ("number of chipseq regions:", len(chipseq_regions))
+
 
 	#########################
 	# search_regions

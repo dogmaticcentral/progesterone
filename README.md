@@ -193,7 +193,8 @@ actual TF binding site. We will narrow down each of these regions later in the p
 from [ENCODE](https://www.encodeproject.org/)
 deposited in [UCSC](https://genome.ucsc.edu/encode/). The contents of the relevant database table
 are described [here](http://rohsdb.cmb.usc.edu/GBshape/cgi-bin/hgTables?hgta_doSchemaDb=hg19&hgta_doSchemaTable=wgEncodeRegTfbsClusteredV3).
-This information relates to human only. Also some TFs are notably absent - progesterone for example :}.
+This information relates to human only. Also some TFs are notably absent - progesterone for example :}. When running the script you
+can choose (from the command line) whether to run it for a region or for a whole chromosome.
 
 
 [15_tfbs_UCSC_sources.py](15_tfbs_UCSC_sources.py) will output the contents of the table 
@@ -296,7 +297,7 @@ between TAD length and the number of TF binding sites therein (mercifully, there
 (courtesy of [JASPAR](http://jaspar.genereg.net/)) together with Motif from Biopython to find  a motif within a 
 given range.
 
-[22_motif_in_chipseq_region.py](23_motif_in_chipseq_region.py) will scan each chipseq range from a file produced 
+[23_motif_in_chipseq_region.py](23_motif_in_chipseq_region.py) will scan each chipseq range from a file produced 
 by [14_tf_binding_sites_from_UCSC.py](14_tf_binding_sites_from_UCSC.py) 
 or [16_tfbs_from_local_bed.py](17_tfbs_from_local_bed.py) and report all motifs scoring beyond certain cutoff.
 For such motifs it will proceed to look for the alignment with other vertebrates. (The idea with using
@@ -338,6 +339,10 @@ endometrial stromal cells.
  
 ## Putting it all together
 
+The final goal of the whole  exercise is to collate data from all these disparate sources we started with.
+[35_report.py](35_report.py) is one possibility, but this is definitely one you should rewrite or replace with something
+that more closely fits your needs. 
+
 ## So, functional TF sites or not?
 Print the table you have made in the last step, and take it to a competent experimentalist. 
 (S)he might be able to help.
@@ -345,4 +350,8 @@ Print the table you have made in the last step, and take it to a competent exper
 ## TODO
 
 
-Get rid of CrossModule.py and use cmmodule directly.
+* Some files still have 'human', 'mouse', 'ESR1' or 'PGR' etc hardcoded. Move to command line. 
+* Pull all  reference choices (reference assemblies, reference species for the alignment) in a single place 
+* Get rid of CrossModule.py and use cmmodule directly. 
+
+

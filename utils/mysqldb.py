@@ -188,6 +188,7 @@ def get_xref_id (db, cursor, external_exp_id):
 	hard_check (db, cursor, ret, qry)
 	return int(ret[0][0])
 
+
 #########################################
 def get_gene_region_id (db, cursor, gene_name, assembly):
 	qry = "select r.id  from regions as r, genes as g "
@@ -218,7 +219,6 @@ def get_gene_coords (db, cursor, gene_name, assembly):
 		min_start = start if min_start>start else min_start
 		max_end = end if max_end<end else max_end
 	return [chromosome, strand, min_start, max_end]
-
 
 #########################################
 def get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end):
@@ -252,7 +252,6 @@ def get_binding_regions(db, cursor, assembly, chromosome, tf_name, return_bindin
 	hard_check (db,cursor, ret, qry)
 	return ret
 
-
 ########################################
 def get_binding_regions_in_interval(db, cursor, assembly, chromosome, interval_start, interval_end, tf_name, return_binding_site_id=False):
 	qry   = "select "
@@ -265,7 +264,6 @@ def get_binding_regions_in_interval(db, cursor, assembly, chromosome, interval_s
 	ret = search_db(cursor,qry)
 	hard_check (db,cursor, ret, qry)
 	return ret
-
 
 ########################################
 def get_motifs_in_binding_site(db, cursor, binding_site_id):

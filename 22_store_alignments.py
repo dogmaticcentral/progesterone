@@ -59,7 +59,7 @@ def store_inferred_motif(cursor, region_id, tf_name, biopythonseq, consensus, ps
 #########################################
 def simplify_alignment(cursor, seq, assemblies, species):
 	if (species=='human'):
-		relatives = ['human', 'rhesus', 'marmoset'] # rheMac and calJac
+		relatives = ['human', 'chimp', 'rhesus'] # rheMac and calJac
 	else:
 		relatives = ['mouse', 'rat']
 
@@ -86,7 +86,7 @@ def store_alignment(cursor, motif_ids, sequences, xref_id):
 #########################################
 def main():
 
-	species = 'mouse'
+	species = 'human'
 	tf_name = 'PGR'
 
 	conf_file  = "/home/ivana/.mysql_conf"

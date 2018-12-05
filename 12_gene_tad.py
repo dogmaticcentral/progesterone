@@ -45,18 +45,18 @@ def main():
 	switch_to_db(cursor,'progesterone')
 
 	# find xref_id for the experimental data file
-	exp_file_xref_id = get_xref_id(db,cursor,external_exp_id)
+	tad_file_xref_id = get_xref_id(db,cursor,external_exp_id)
 
 	# find gene coordinates
 	[chromosome, strand, min_start, max_end] = get_gene_coords(db,cursor,gene_name,assembly)
 
 	# finally, use that info to find the TAD
-	[tad_start, tad_end] = get_tad_region(db, cursor, exp_file_xref_id, chromosome, min_start, max_end)
+	[tad_start, tad_end] = get_tad_region(db, cursor, tad_file_xref_id, chromosome, min_start, max_end)
 
 	cursor.close()
 	db.close()
 
-	print ( "{} {} {}:{}:{}-{}".format(gene_name, strand, assembly, chromosome, min_start, max_end) )
+	print ("{} {} {}:{}:{}-{}".format(gene_name, strand, assembly, chromosome, min_start, max_end) )
 	print ("TAD containing %s region: %s:%s:%d-%d   length %d"%(gene_name, assembly, chromosome,
 															 tad_start, tad_end, tad_end-tad_start+1))
 
