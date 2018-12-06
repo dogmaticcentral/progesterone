@@ -103,11 +103,12 @@ While it is possible to organize this type of work around a set of local files, 
 (guess how I know). The recommendation is thus to use a database. This is not so much about the volume of the data,
 which in this exercise is actually not so big, but rather about the ability to crossreference and 
 collate the information.
-_Progesterone_ pipeline uses MySQL.
+_Progesterone_ pipeline uses MySQL,  the schema can be found in  [00_progesterone_db.sql](00_progesterone_db.sql)
 Running
-"mysql -u` <username> `-p `<passw> `< [00_progesterone_db.sql](00_progesterone_db.sql)"
-will create the database
-called "progesterone" for you. We will fill it as we progress though the steps below. 
+
+`mysql -u <username> -p <passw> < 00_progesterone_db.sql`
+
+will create the database called "progesterone" for you. We will fill it as we progress though the steps below. 
 
 
 ## Gene coordinates
@@ -351,7 +352,7 @@ Print the table you have made in the last step, and take it to a competent exper
 
 
 * Some files still have 'human', 'mouse', 'ESR1' or 'PGR' etc hardcoded. Move to command line. 
-* Pull all  reference choices (reference assemblies, reference species for the alignment) in a single place 
+* Pull (pool?) all  reference choices (reference assemblies, reference species for the alignment) in a single place. 
 * Get rid of CrossModule.py and use cmmodule directly. 
 
 
