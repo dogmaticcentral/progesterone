@@ -103,7 +103,7 @@ While it is possible to organize this type of work around a set of local files, 
 (guess how I know). The recommendation is thus to use a database. This is not so much about the volume of the data,
 which in this exercise is actually not so big, but rather about the ability to crossreference and 
 collate the information.
-_Progesterone_ pipeline uses MySQL,  the schema can be found in  [00_progesterone_db.sql](00_progesterone_db.sql)
+_Progesterone_ pipeline uses MySQL,  the schema can be found in  [00_progesterone_db.sql](00_progesterone_db.sql).
 Running
 
 `mysql -u <username> -p <passw> < 00_progesterone_db.sql`
