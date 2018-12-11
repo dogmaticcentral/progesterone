@@ -1,0 +1,10 @@
+unset key
+set xlabel 'TAD length'
+set ylabel 'number of ESR1 binding sites'
+# set xrange [0:210]
+# set yrange [0:0.03]
+
+set terminal png
+set output "results/ESR1_and_PGR_number_vs_TAD_length.png"
+plot 'raw_data/tad_distributions/ESR1_chr4_hg19_tad_distribution.tsv' u 4:3, \
+    'raw_data/tad_distributions/PGR_chr4_hg19_tad_distribution.tsv' u 4:3

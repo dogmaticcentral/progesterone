@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c20a5856-e179-4a7f-8cfb-317ce9e18f6c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/19b_tfbs_distr_vs_TAD_length.gplt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/19_tfbs_distribution.gplt" beforeDir="false" afterPath="$PROJECT_DIR$/19a_tfbs_distribution.gplt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,14 +63,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="639">
-                <caret line="110" column="25" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="1890">
+                <caret line="105" column="114" selection-start-line="105" selection-start-column="114" selection-end-line="105" selection-end-column="114" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="18_tfbs_distribution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6">
+              <caret line="83" column="88" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="19b_tfbs_distr_vs_TAD_length.gplt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/19b_tfbs_distr_vs_TAD_length.gplt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -106,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/04_tfbs_UCSC_sources.py" />
         <option value="$PROJECT_DIR$/05_tf_binding_sites_from_GEO.py" />
         <option value="$PROJECT_DIR$/10_motif_in_chipseq_region_human.py" />
         <option value="$PROJECT_DIR$/26_motif_in_chipseq_region_mouse.py" />
@@ -157,6 +177,7 @@
         <option value="$PROJECT_DIR$/21_store_motifs_in_chipseq_regions.py" />
         <option value="$PROJECT_DIR$/22_store_alignments.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/19b_tfbs_distr_vs_TAD_length.gplt" />
       </list>
     </option>
   </component>
@@ -195,15 +216,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Hand2_regulation" />
-      <recent name="$PROJECT_DIR$/PR_binding_sites" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Hand2_regulation" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018" />
       <recent name="$PROJECT_DIR$/PR_binding_sites/tads2018/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Hand2_regulation" />
+      <recent name="$PROJECT_DIR$/PR_binding_sites" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -235,7 +256,7 @@
     <frame x="1993" y="14" width="1717" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23730814" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17650531" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
@@ -258,23 +279,23 @@
     <layout-to-restore>
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25777543" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="DB Browser" order="3" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.13386728" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -285,7 +306,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/18_chromatin_interactions_from_ENCODE.py" />
     <entry file="file://$PROJECT_DIR$/02_emve_tads.py" />
     <entry file="file://$PROJECT_DIR$/01_gene_ranges_from_UCSC.py" />
     <entry file="file://$PROJECT_DIR$/pgr_distr.table" />
@@ -318,20 +338,6 @@
     <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_PGR_tfbs_mm9_GSE34927.tsv" />
     <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_ESR1_tfbs_mm9_GSE36455.tsv" />
     <entry file="file://$PROJECT_DIR$/raw_data/tf_binding_sites_geo/Hand2_PGR_tfbs_hg19.tsv" />
-    <entry file="file://$PROJECT_DIR$/06_tads_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/19_tfbs_distribution.gplt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/23_motif_in_chipseq_region.py" />
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/24_hdf5_exercise.py">
@@ -432,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1503">
-          <caret line="83" column="88" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/mysqldb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="647">
@@ -471,9 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3690">
           <caret line="206" column="35" selection-start-line="206" selection-start-column="35" selection-end-line="206" selection-end-column="35" />
-          <folding>
-            <element signature="e#736#761#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -512,13 +508,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/06_tads_overview.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="639">
-            <caret line="110" column="25" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1890">
+            <caret line="105" column="114" selection-start-line="105" selection-start-column="114" selection-end-line="105" selection-end-column="114" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/19a_tfbs_distribution.gplt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18_tfbs_distribution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="83" column="88" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/19b_tfbs_distr_vs_TAD_length.gplt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
         </state>
       </provider>
     </entry>

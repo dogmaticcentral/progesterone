@@ -287,7 +287,7 @@ it harbors, or are the TF binding sites perhaps distributed equally across all T
 would raise an awkward possibility that we are  just looking at noise.
 
 [18_tfbs_distribution.py](18_tfbs_distribution.py) counts the number of TF binding sites for each TAD. 
-For Gnuplot users, an input like [19_tfbs_distribution.gplt](19_tfbs_distribution.gplt) can be used to produce
+For Gnuplot users, an input like [19_tfbs_distribution.gplt](19a_tfbs_distribution.gplt) can be used to produce
 a quick and dirty visualization of the TFs-per-TAD histogram. The output from [17_tfbs_distribution.py](18_tfbs_distribution.py) can also be used to check correlation
 between TAD length and the number of TF binding sites therein (mercifully, there does not seem to be any).
 
